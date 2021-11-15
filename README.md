@@ -14,10 +14,10 @@ Script prepares parallel corpus based on two datasets: europarl and tatoeba remo
 Information about removed sentences is stored in log file.
 
 ### parsing.py
-Scripts executes stanza tokenization on a given list of sentences for a given language and produces output ConLLu file.
+Script executes stanza tokenization on a given list of sentences for a given language and produces output ConLLu file.
 
 ### word_alignment.py
-Scripts executes word alignments on two parallel ConLLu files for source and target language.
+Scripts executes word alignments on two parallel text files for source and target language.
 
 ## Python virtual environment
 Create python virtual environment:
