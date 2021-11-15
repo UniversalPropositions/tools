@@ -3,18 +3,18 @@
 ## Description
 Three scripts are available:
 - preprocess.py
-- parsing.py
+- parse.py
 - word_alignment.py
 
 ### preprocess.py
 Script prepares parallel corpus based on two datasets: europarl and tatoeba removing:
 - sentences that does not contain any alpha characters
 - sentences that have less than min_tokens or more than max_tokens
-- duplicate sentences
+- duplicated sentences
 Information about removed sentences is stored in log file.
 
-### parsing.py
-Script executes stanza tokenization on a given list of sentences for a given language and produces output ConLLu file.
+### parse.py
+Script executes stanza tokenization on a given list of sentences for a given language and produces output ConLLu file and output tokenized file.
 
 ### word_alignment.py
 Scripts executes word alignments on two parallel text files for source and target language.
