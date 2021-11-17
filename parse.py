@@ -8,11 +8,6 @@ from stanza.utils.conll import CoNLL
 
 LINESEP = "\n"
 
-GPU = True
-POOL_SIZE = 4
-BATCH_SIZE = 10000
-CUDA_DEVICES = 1
-
 nlp = None
 
 #torch.set_num_threads(1)
@@ -99,7 +94,7 @@ if __name__ == '__main__':
       "cuda_devices": args.cuda_devices
     })
     
-  pool = Pool(POOL_SIZE)
+  pool = Pool(args.pool_size)
   result = pool.map(process_batch, batches)
 
   sorted_result = sorted(result, key=lambda d: d['index']) 
