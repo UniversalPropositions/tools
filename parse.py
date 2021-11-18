@@ -29,8 +29,9 @@ def process_batch(batch_data):
   lang = batch_data["lang"]
   cuda_devices = batch_data["cuda_devices"]
   gpu = batch_data["gpu"]
-  dev = index % cuda_devices
-  torch.cuda.set_device(dev)
+  if gpu:
+    dev = index % cuda_devices
+    torch.cuda.set_device(dev)
   if not nlp:
     nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, pos_batch_size=1000)
     print(f'Initializing NLP {index}')

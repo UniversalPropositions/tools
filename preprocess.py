@@ -1,5 +1,6 @@
 import argparse
 import time
+import re
 
 LINESEP = "\n"
 
@@ -8,6 +9,10 @@ def validate_alpha(text):
     if i.isalpha():
       return True
   return False
+
+def preprocess(s):
+  s = s.replace("­", "") #\xad
+  return re.sub('\s+',' ', s) #remove multiple spaces with one
 
 def validate_tokens(text, min, max):
   tokens = text.split(" ")
@@ -30,8 +35,8 @@ def validate(text, context):
 def process_europarl(src, tgt, context):
   counter = 0
   for item in zip(src, tgt):
-    s = item[0]
-    t = item[1]
+    s = preprocess(item[0])
+    t = preprocess(item[1])
     counter += 1
     so, sm = validate(s, context)
     to, tm = validate(t, context)
@@ -46,8 +51,8 @@ def process_tatoeba(src, context):
   for item in src:
     segments = item.split("\t")
     if len(segments) == 4:
-      s = segments[1]
-      t = segments[3]
+      s = preprocess(segments[1])
+      t = preprocess(segments[3])
       counter += 1
       so, sm = validate(s, context)
       to, tm = validate(t, context)

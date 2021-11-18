@@ -20,16 +20,18 @@ def save_alignments(file, batches):
     f.write('\n'.join(sentences))
 
 def process_batch(batch_data):
-  s1 = time.time()
   global aligner
+  s1 = time.time()
   index = batch_data["index"]
-  lang = batch_data["lang"]
   cuda_devices = batch_data["cuda_devices"]
   gpu = batch_data["gpu"]
-  dev = index % cuda_devices
-  torch.cuda.set_device(dev)
+  device = "cpu"
+  if gpu:
+    device = "cuda"
+    dev = index % cuda_devices
+    torch.cuda.set_device(dev)
   if not aligner:
-    aligner = SentenceAligner(model="bert", token_type="word", matching_methods="mai", device='cuda')
+    aligner = SentenceAligner(model="bert", token_type="word", matching_methods="i", device=device)
     print(f'Initializing aligner {index}')
   
   data = batch_data["data"]
@@ -41,7 +43,6 @@ def process_batch(batch_data):
     alignments = aligner.get_word_aligns(d["src"], d["tgt"])[TYPE]
     print(f'Alignment: {d["counter"]}')
     processed.append(alignments)
-    
 
   result = {
     "index": index,
@@ -70,8 +71,6 @@ if __name__ == '__main__':
                       help='Number of samples to be processed in one iteration within single process')
   parser.add_argument('--cuda_devices', type=int, default=1,
                       help='Number of GPUs that should be used')
-  parser.add_argument('--lang', type=str,
-                  help='Target language'),
 
   args = parser.parse_args()
 
@@ -95,8 +94,6 @@ if __name__ == '__main__':
       "tgt": target_tokens
     })
 
-  sentences = sentences[0:20]
-
   counter = 0
   batches = []
   for i in range(0, len(sentences), args.batch_size):
@@ -107,7 +104,6 @@ if __name__ == '__main__':
     batches.append({
       "index": counter,
       "data": sentences[start:end],
-      "lang": args.lang,
       "gpu": args.gpu,
       "cuda_devices": args.cuda_devices
     })
