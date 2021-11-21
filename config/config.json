@@ -1,0 +1,51 @@
+{
+    "params": {
+        "min_tokens": 5,
+        "max_tokens": 80,
+        "sentences": {
+            "europarl": 0.005,
+            "tatoeba": 0.01,
+            "subtitles": 0.005
+        },
+        "gpu": true,
+        "processes": 2,
+        "batch_size": 1000
+    },
+    "pipelines": {
+        "en-fr": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-fr.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-fr.txt.zip"
+        },
+        "en-fi": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-fi.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-fi.txt.zip"
+        },
+        "en-de": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/de-en.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/de-en.txt.zip"
+        },
+        "en-it": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-it.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-it.txt.zip"
+        },
+        "en-pt": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-pt.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-pt.txt.zip"
+        },
+        "en-es": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-es.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-es.txt.zip"
+        },
+        "en-pl": {
+            "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-pl.txt.zip",
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-pl.txt.zip"
+        },
+        "en-zh": {
+            "subtitles": "https://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/moses/en-zh_cn.txt.zip"
+        },
+        "en-vi": {
+            "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-vi.txt.zip",
+            "subtitles": "https://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/moses/en-vi.txt.zip"
+        }
+    }
+}

@@ -11,7 +11,7 @@ logging.basicConfig(
   datefmt='%Y/%m/%d %H:%M:%S', 
   level=logging.INFO,
   handlers=[
-    logging.FileHandler("./data/logs/download.log"),
+    logging.FileHandler("./logs/download.log"),
     logging.StreamHandler()
   ]
 )
