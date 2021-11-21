@@ -78,7 +78,7 @@ data
                 ...
 ```
 ## EN-FR dataset
-Below information how to execute each script. This is important to keep this order.
+This is important to keep the order of scripts execution.
 ### Download
 ```
 python.exe download.py --pipeline=en-fr
