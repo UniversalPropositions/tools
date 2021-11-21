@@ -3,6 +3,7 @@ import time
 import argparse
 import stanza
 from multiprocessing import Pool
+#from torch.multiprocessing import Pool, Process, set_start_method
 import torch
 from stanza.utils.conll import CoNLL
 import json
@@ -160,6 +161,8 @@ def process_language(config, pipeline, lang):
         f.write(conllu)
 
 if __name__ == '__main__':
+
+  torch.multiprocessing.set_start_method('spawn')
 
   parser = argparse.ArgumentParser(
       description='Parsers evaluation')
