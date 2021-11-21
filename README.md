@@ -11,18 +11,23 @@ Available scripts:
 Script downloads selected parallel corpus.
 
 ### preprocess.py
-Script prepares parallel corpus based on two datasets: europarl and tatoeba removing:
-- sentences that does not contain any alpha characters
-- sentences that have less than min_tokens or more than max_tokens
+Script prepares parallel corpus based on datasets in moses format configured in config/config.json file, removing:
+- sentences that do not contain any alpha characters
+- sentences that have tokens less than min_tokens or more than max_tokens
 - duplicated sentences
 - some problematic characters from sentences
-Information about removed sentences is stored in log file.
+Processing results are stored in ./data/[pipeline]/bitext_raw/ folder.
+Information about removed sentences is stored in the same folder in the preprocess.log file.
 
 ### parse.py
 Script executes stanza tokenization on a given list of sentences for a given language and produces output ConLLu file and output tokenized file.
+Input files are read from ./data/[pipeline]/bitext_raw/ folder.
+Output files are stored in: ./data/[pipeline]/parsed/ and ./data/[pipeline]/tokenized/ folders.
 
 ### wordalignment.py
 Scripts executes word alignments on two parallel text files for source and target language.
+Input files are read from ./data/[pipeline]/tokenized.
+Output file is stored in ./data/[pipeline]/aligned/training.align file.
 
 ## Python virtual environment
 Create python virtual environment:
