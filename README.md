@@ -62,9 +62,9 @@ python.exe preprocess.py --pipeline=en-fr
 ```
 ### Parse
 ```
-python.exe parse.py --pipeline=en-fr
+python.exe parse.py --pipeline=en-fr --lang=en
 ```
 ### Word alignments
 ```
-python.exe wordalignment.py --input_tokenized_source=./data/en-fr-200k/tokenized/en-fr.en.tokenized.txt --input_tokenized_target=./data/en-fr-200k/tokenized/en-fr.fr.tokenized.txt --output_file=./data/en-fr-200k/aligned/training.align --gpu=True --pool_size=3 --batch_size=10000 --cuda_devices=1
+python.exe wordalignment.py --pipeline=en-fr
 ```
