@@ -77,6 +77,12 @@ data
             tatoeba
                 ...
 ```
+## Configuration
+./config/config.json contains configuration file for all applications. It consists of three sections:
+- params - defines processing parameters common for all applications
+- pipelines - defined execution pipelines to be executed
+- sources - defines datasets to be downloaded
+
 ## EN-FR dataset
 This is important to keep the order of scripts execution.
 ### Download
