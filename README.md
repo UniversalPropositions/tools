@@ -1,7 +1,7 @@
 # UniversalPropositions 2.0 - processing scripts
 
 ## Description
-Three scripts are available:
+Available scripts:
 - download.py
 - preprocess.py
 - parse.py
@@ -37,10 +37,16 @@ Activate python virtual environment:
 source envs/ud20/bin/activate
 ```
 ## Libraries
-Visit https://pytorch.org/get-started/locally/ and select appropriate version for your environment. For example for Windows pip with Cuda 11.3 it will be command as in the first line below.
-Install all required libraries:
+Visit https://pytorch.org/get-started/locally/ and select appropriate version for your environment. For example for Windows pip with Cuda 11.3:
 ```
 pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+```
+For mac:
+```
+pip3 install torch torchvision torchaudio
+```
+Other libraries:
+```
 pip install --upgrade git+https://github.com/cisnlp/simalign.git#egg=simalign
 pip install -r requirements.txt
 ```
@@ -57,8 +63,6 @@ python.exe preprocess.py --pipeline=en-fr
 ### Parse
 ```
 python.exe parse.py --pipeline=en-fr
-```
-python.exe parse.py --input_file=./data/en-fr-200k/bitext_raw/en-fr.fr.txt --output_parsed_file=./data/en-fr-200k/parsed/en-fr.fr.parse.conllu --output_tokenized_file=./data/en-fr-200k/tokenized/en-fr.fr.tokenized.txt --gpu=True --pool_size=4 --batch_size=10000 --cuda_devices=1 --lang=fr
 ```
 ### Word alignments
 ```

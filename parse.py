@@ -1,3 +1,4 @@
+import multiprocessing
 import stanza
 import time
 import argparse
@@ -47,13 +48,19 @@ def get_cuda_info():
   gpu_ids = []
   if torch.cuda.is_available():
     gpu_ids += [gpu_id for gpu_id in range(torch.cuda.device_count())]
-  
-  result = {
-    "available": torch.cuda.is_available(),
-    "count": torch.cuda.device_count(),
-    "current": torch.cuda.current_device(),
-    "gpus": gpu_ids
-  }
+    result = {
+      "available": torch.cuda.is_available(),
+      "count": torch.cuda.device_count(),
+      "current": torch.cuda.current_device(),
+      "gpus": gpu_ids
+    }
+  else:
+    result = {
+      "available": False,
+      "count": 0,
+      "current": 0,
+      "gpus": []
+    }
   
   return result
 
@@ -64,10 +71,14 @@ def process_batch(batch_data):
   index = batch_data["index"]
 
   if not nlp:
+    current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    logging.info(f'Current process: {current_process}')
     gpu = batch_data["gpu"]
     if gpu:
-      device = randrange(torch.cuda.device_count())
+      device = current_process % torch.cuda.device_count()
       set_cuda_device(device)
+    else:
+      device = "cpu"
     lang = batch_data["lang"]
     nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, pos_batch_size=1000)
     logging.info(f'Initializing NLP batch: {index}, device: {device}')
@@ -167,28 +178,23 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(
       description='Parsers evaluation')
   parser.add_argument('--pipeline', type=str)
+  parser.add_argument('--lang', type=str)
 
   args = parser.parse_args()
-
+ 
   config = utils.read_config()
 
   if args.pipeline not in config["pipelines"]:
     raise Exception("Pipeline not available")
 
-  segments = args.pipeline.split("-")
-  src_lang = segments[0]
-  tgt_lang = segments[1]
-
   cuda = get_cuda_info()
 
-  logging.info(json.dumps(cuda))
+  logging.info("Cuda: " + json.dumps(cuda))
 
   s1 = time.time()
 
-  logging.info(f'Processing {src_lang}')
-  process_language(config, args.pipeline, src_lang)
-  logging.info(f'Processing {tgt_lang}')
-  process_language(config, args.pipeline, tgt_lang)
+  logging.info(f'Processing {args.lang}')
+  process_language(config, args.pipeline, args.lang)
 
   s2 = time.time()
   logging.info(f'Total processing time: {s2-s1} seconds')
