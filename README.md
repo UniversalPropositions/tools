@@ -50,6 +50,27 @@ Other libraries:
 pip install --upgrade git+https://github.com/cisnlp/simalign.git#egg=simalign
 pip install -r requirements.txt
 ```
+## Folders structure
+Sample folder structure
+```
+data
+    en-fr-200k
+        aligned
+        bitext_raw
+        parsed
+        tokenized
+    en-fr
+        aligned
+        bitext_raw
+        parsed
+        tokenized
+    source
+        en-fr
+            europarl
+                ...
+            tatoeba
+                ...
+```
 ## EN-FR dataset
 Below information how to execute each script. This is important to keep this order.
 ### Download
