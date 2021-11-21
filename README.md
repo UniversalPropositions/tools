@@ -63,6 +63,7 @@ python.exe preprocess.py --pipeline=en-fr
 ### Parse
 ```
 python.exe parse.py --pipeline=en-fr --lang=en
+python.exe parse.py --pipeline=en-fr --lang=fr
 ```
 ### Word alignments
 ```
