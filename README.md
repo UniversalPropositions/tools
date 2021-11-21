@@ -2,9 +2,13 @@
 
 ## Description
 Three scripts are available:
+- download.py
 - preprocess.py
 - parse.py
 - wordalignment.py
+
+### download.py
+Script downloads selected parallel corpus.
 
 ### preprocess.py
 Script prepares parallel corpus based on two datasets: europarl and tatoeba removing:
@@ -40,11 +44,15 @@ pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+c
 pip install --upgrade git+https://github.com/cisnlp/simalign.git#egg=simalign
 pip install -r requirements.txt
 ```
-## EN-FR dataset - 200k
+## EN-FR dataset
 Below information how to execute each script. This is important to keep this order.
+### Download
+```
+python.exe download.py --pipeline=en-fr
+```
 ### Preprocess
 ```
-python.exe preprocess.py --europarl_src=./data/source/en-fr/europarl/europarl-v7.fr-en.en --europarl_tgt=./data/source/en-fr/europarl/europarl-v7.fr-en.fr --tatoeba="./data/source/en-fr/tatoeba/Sentence pairs in English-French - 2021-11-15.tsv" --output_src=./data/en-fr-200k/bitext_raw/en-fr.en.txt --output_tgt=./data/en-fr-200k/bitext_raw/en-fr.fr.txt --output_log=./data/en-fr-200k/bitext_raw/log --min_tokens=5 --max_tokens=80 --max_sentences=200000 --split_ratio=0.2
+python.exe preprocess.py --pipeline=en-fr
 ```
 ### Parse
 ```

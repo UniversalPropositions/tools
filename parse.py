@@ -5,6 +5,18 @@ import stanza
 from multiprocessing import Pool
 import torch
 from stanza.utils.conll import CoNLL
+import json
+import logging
+
+logging.basicConfig(
+  format='%(asctime)s %(levelname)s %(message)s', 
+  datefmt='%Y/%m/%d %H:%M:%S', 
+  level=logging.INFO,
+  handlers=[
+    logging.FileHandler("./data/logs/parse.log"),
+    logging.StreamHandler()
+  ]
+)
 
 LINESEP = "\n"
 
@@ -22,9 +34,29 @@ def doc2conll_text(doc):
   return "\n\n".join("\n".join(line for line in sentence)
                       for sentence in doc_conll) + "\n\n"
 
+def set_cuda_device(processes):
+  count = torch.cuda.device_count()
+  device = 
+  torch.cuda.set_device(device)
+
+def get_cuda_info():
+  gpu_ids = []
+  if torch.cuda.is_available():
+    gpu_ids += [gpu_id for gpu_id in range(torch.cuda.device_count())]
+  
+  result = {
+    "available": torch.cuda.is_available(),
+    "count": torch.cuda.device_count(),
+    "current": torch.cuda.current_device(),
+    "names": gpu_ids
+  }
+  
+  return result
+
 def process_batch(batch_data):
   s1 = time.time()
   global nlp
+
   index = batch_data["index"]
   lang = batch_data["lang"]
   cuda_devices = batch_data["cuda_devices"]
@@ -69,6 +101,11 @@ if __name__ == '__main__':
                       help='Language: pl, de, es, fr, pt')
 
   args = parser.parse_args()
+
+
+  cuda = get_cuda_info()
+
+  logging.info(json.dump(cuda))
 
   stanza.download(args.lang)
 
