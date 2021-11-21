@@ -1,8 +1,21 @@
 import argparse
 import time
 import re
+import impl.utils as utils
+import logging
+import glob
 
 LINESEP = "\n"
+
+logging.basicConfig(
+  format='%(asctime)s %(levelname)s %(message)s', 
+  datefmt='%Y/%m/%d %H:%M:%S', 
+  level=logging.INFO,
+  handlers=[
+    logging.FileHandler("./data/logs/preprocess.log"),
+    logging.StreamHandler()
+  ]
+)
 
 def validate_alpha(text):
   for i in text:
@@ -24,7 +37,8 @@ def validate_tokens(text, min, max):
 def validate(text, context):
   if not validate_alpha(text):
     return False, "Not alpha"
-  if not validate_tokens(text, context["min_tokens"], context["max_tokens"]):
+  params = context["config"]["params"]
+  if not validate_tokens(text, params["min_tokens"], params["max_tokens"]):
     return False, "Incorrect tokens length"
   if text in context["map"]:
     return False, "Duplicate" #we do not allow for duplicates both in source and target language
@@ -32,8 +46,19 @@ def validate(text, context):
     context["map"][text] = {}
   return True, ""
 
-def process_europarl(src, tgt, context):
+def get_data_from_file(folder, type, lang):
+  path = folder + "/" + type + "/*."+lang
+  files = glob.glob(path)
+  if len(files) != 1:
+    raise Exception(f'Problem with finding a file for {path}')
+  with open(files[0], "r", encoding="utf-8") as f:
+    return f.read().split(LINESEP)
+
+def process(folder, type, src_lang, tgt_lang, context):
+  data = context["data"]
   counter = 0
+  src = get_data_from_file(folder, type, src_lang)
+  tgt = get_data_from_file(folder, type, tgt_lang)
   for item in zip(src, tgt):
     s = preprocess(item[0])
     t = preprocess(item[1])
@@ -41,112 +66,89 @@ def process_europarl(src, tgt, context):
     so, sm = validate(s, context)
     to, tm = validate(t, context)
     if so and to:
-      context["europarl"]['src'].append(s)
-      context["europarl"]['tgt'].append(t)
+      data[type]['src'].append(s)
+      data[type]['tgt'].append(t)
     else:
-      context['log'].append(f'Skipping EUROPARL sentence {counter} / SRC: {s} / TGT: {t} / SRC MSG: {sm} / TGT MSG: {tm}')
-
-def process_tatoeba(src, context):
-  counter = 0
-  for item in src:
-    segments = item.split("\t")
-    if len(segments) == 4:
-      s = preprocess(segments[1])
-      t = preprocess(segments[3])
-      counter += 1
-      so, sm = validate(s, context)
-      to, tm = validate(t, context)
-      if so and to:
-        context["tatoeba"]['src'].append(s)
-        context["tatoeba"]['tgt'].append(t)
-      else:
-        context['log'].append(f'Skipping TATOEBA sentence {counter} / SRC: {s} / TGT: {t} / SRC MSG: {sm} / TGT MSG: {tm}')
+      context['log'].append(f'Skipping {type} sentence {counter} / SRC: {s} / TGT: {t} / SRC MSG: {sm} / TGT MSG: {tm}')
 
 if __name__ == '__main__':
 
   parser = argparse.ArgumentParser(
-      description='Preprocessing')
-  parser.add_argument('--europarl_src', type=str,
-                      help='Input europarl parallel corpus source language EN')
-  parser.add_argument('--europarl_tgt', type=str,
-                      help='Input europarl parallel corpus target language')
-  parser.add_argument('--tatoeba', type=str,
-                      help='Input tatoeba parallel corpus')
-  parser.add_argument('--output_src', type=str,
-                      help='Output preprocessed parallel corpus source language EN')
-  parser.add_argument('--output_tgt', type=str,
-                      help='Output preprocessed parallel corpus target language')
-  parser.add_argument('--output_log', type=str,
-                      help='Output processing log')
-  parser.add_argument('--min_tokens', type=int, default=2,
-                      help='Minimal number of tokens')
-  parser.add_argument('--max_tokens', type=int, default=100,
-                      help='Maximal number of tokens')
-  parser.add_argument('--max_sentences', type=int, default=0,
-                      help='Maximal number of sentences')
-  parser.add_argument('--split_ratio', type=float, default=0,
-                      help='Split ratio between tatoeba and europarl, applies only if max_sentences is different than 0')
+      description='Preprocess')
+  parser.add_argument('--pipeline', type=str,
+                      help='Language pipeline')
 
   args = parser.parse_args()
 
+  logging.info(f'Starting preprocessing: {args.pipeline}')
+
   t0 = time.time()
 
-  context = {
-    "europarl": {
-      "src": [],
-      "tgt": []
-    },
-    "tatoeba": {
-      "src": [],
-      "tgt": []
-    },
-    "log": [],
-    "map": {},
-    "min_tokens": args.min_tokens,
-    "max_tokens": args.max_tokens
-  }
+  try:
 
-  with open(args.europarl_src, "r", encoding="utf-8") as f:
-    europarl_src = f.read().split(LINESEP)
-  with open(args.europarl_tgt, "r", encoding="utf-8") as f:
-    europarl_tgt = f.read().split(LINESEP)
-  with open(args.tatoeba, "r", encoding="utf-8") as f:
-    tatoeba = f.read().split(LINESEP)
+    config = utils.read_config()
+
+    args = parser.parse_args()
+
+    t0 = time.time()
+
+    if args.pipeline not in config["pipelines"]:
+      raise Exception("Pipeline not available")
+
+    context = {
+      "data": {},
+      "log": [],
+      "map": {},
+      "config": config
+    }
+
+    folder = "./data/source/" + args.pipeline
+
+    segments = args.pipeline.split("-")
+    src_lang = segments[0]
+    tgt_lang = segments[1]
+
+    for type in config["pipelines"][args.pipeline]:
+      context["data"][type] = {
+        "src": [],
+        "tgt": []
+      }
+      process(folder, type, src_lang, tgt_lang, context)
+
+    folder_br = "./data/" + args.pipeline +  "/bitext_raw"
+    src_file = folder_br + "/" + args.pipeline + "." + src_lang + ".txt"
+    tgt_file = folder_br + "/" + args.pipeline + "." + tgt_lang + ".txt"
+    log_file = folder_br + ".log"
+
+    src_f = open(src_file, 'w', encoding='utf8')
+    tgt_f = open(tgt_file, 'w', encoding='utf8')
+
+    type_count = len(config["pipelines"][args.pipeline]) - 1
+
+    for i, type in enumerate(config["pipelines"][args.pipeline]):
+      length = len(context["data"][type]["src"])
+
+      ratio = config["params"]["sentences"][type]
+
+      length = round(length * ratio)
+
+      logging.info(f'Saving {length} of {type} sentences.')
+
+      src_f.write('\n'.join(context["data"][type]['src'][0:length]))
+      tgt_f.write('\n'.join(context["data"][type]['tgt'][0:length]))
+      if i < type_count:
+        src_f.write("\n")
+        tgt_f.write("\n")
+
+    src_f.close()
+    tgt_f.close()
+
+    with open(log_file, 'w', encoding='utf8') as f:
+      f.write('\n'.join(context['log']))
   
-  process_europarl(europarl_src, europarl_tgt, context)
-  process_tatoeba(tatoeba, context)
-
-  europarl_total = len(context["europarl"]["src"])
-  tatoeba_total = len(context["tatoeba"]["src"])
-
-  if args.max_sentences > 0:
-    tatoeba_count = round(args.max_sentences * args.split_ratio)
-    europarl_count = args.max_sentences - tatoeba_count
-  else:
-    europarl_count = europarl_total
-    tatoeba_count = tatoeba_total
-
-  if tatoeba_count > tatoeba_total:
-    tatoeba_count = tatoeba_total
-  
-  if europarl_count > europarl_total:
-    europarl_count = europarl_total
-
-  print(f'Saving {tatoeba_count} tatoeba sentences and {europarl_count} europarl sentences.')
-
-  with open(args.output_src, 'w', encoding='utf8') as f:
-    f.write('\n'.join(context['europarl']['src'][0:europarl_count]))
-    f.write("\n")
-    f.write('\n'.join(context['tatoeba']['src'][0:tatoeba_count]))
-
-  with open(args.output_tgt, 'w', encoding='utf8') as f:
-    f.write('\n'.join(context['europarl']['tgt'][0:europarl_count]))
-    f.write("\n")
-    f.write('\n'.join(context['tatoeba']['tgt'][0:tatoeba_count]))
-
-  with open(args.output_log, 'w', encoding='utf8') as f:
-    f.write('\n'.join(context['log']))
+  except Exception as e:
+    logging.error(e)
   
   t1 = time.time()
 
-  print(f'Total preprocessing time: {(t1 - t0):.2f} s')
+  logging.info(f'Total preprocessing time: {(t1 - t0):.2f} s')
