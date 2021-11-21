@@ -4,6 +4,7 @@ import re
 import impl.utils as utils
 import logging
 import glob
+import os
 
 LINESEP = "\n"
 
@@ -12,7 +13,7 @@ logging.basicConfig(
   datefmt='%Y/%m/%d %H:%M:%S', 
   level=logging.INFO,
   handlers=[
-    logging.FileHandler("./data/logs/preprocess.log"),
+    logging.FileHandler("./logs/preprocess.log"),
     logging.StreamHandler()
   ]
 )
@@ -118,7 +119,9 @@ if __name__ == '__main__':
     folder_br = "./data/" + args.pipeline +  "/bitext_raw"
     src_file = folder_br + "/" + args.pipeline + "." + src_lang + ".txt"
     tgt_file = folder_br + "/" + args.pipeline + "." + tgt_lang + ".txt"
-    log_file = folder_br + ".log"
+    log_file = folder_br + "/preprocess.log"
+
+    os.makedirs(folder_br, exist_ok = True)
 
     src_f = open(src_file, 'w', encoding='utf8')
     tgt_f = open(tgt_file, 'w', encoding='utf8')

@@ -3,9 +3,9 @@
         "min_tokens": 5,
         "max_tokens": 80,
         "sentences": {
-            "europarl": 0.005,
-            "tatoeba": 0.01,
-            "subtitles": 0.005
+            "europarl": 1,
+            "tatoeba": 1,
+            "subtitles": 1
         },
         "gpu": true,
         "processes": 2,
