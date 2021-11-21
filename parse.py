@@ -39,31 +39,6 @@ def doc2conll_text(doc):
   return "\n\n".join("\n".join(line for line in sentence)
                       for sentence in doc_conll) + "\n\n"
 
-def set_cuda_device(process):
-  count = torch.cuda.device_count()
-  device = process % count
-  torch.cuda.set_device(device)
-
-def get_cuda_info():
-  gpu_ids = []
-  if torch.cuda.is_available():
-    gpu_ids += [gpu_id for gpu_id in range(torch.cuda.device_count())]
-    result = {
-      "available": torch.cuda.is_available(),
-      "count": torch.cuda.device_count(),
-      "current": torch.cuda.current_device(),
-      "gpus": gpu_ids
-    }
-  else:
-    result = {
-      "available": False,
-      "count": 0,
-      "current": 0,
-      "gpus": []
-    }
-  
-  return result
-
 def process_batch(batch_data):
   s1 = time.time()
   global nlp
@@ -72,16 +47,15 @@ def process_batch(batch_data):
 
   if not nlp:
     current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
-    logging.info(f'Current process: {current_process}')
     gpu = batch_data["gpu"]
     if gpu:
       device = current_process % torch.cuda.device_count()
-      set_cuda_device(device)
+      utils.set_cuda_device(device)
     else:
       device = "cpu"
     lang = batch_data["lang"]
     nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, pos_batch_size=1000)
-    logging.info(f'Initializing NLP batch: {index}, device: {device}')
+    logging.info(f'Initializing NLP batch: {index}, process: {current_process}, device: {device}')
   
   data = batch_data["data"]
   processed = nlp(data)
@@ -187,7 +161,7 @@ if __name__ == '__main__':
   if args.pipeline not in config["pipelines"]:
     raise Exception("Pipeline not available")
 
-  cuda = get_cuda_info()
+  cuda = utils.get_cuda_info()
 
   logging.info("Cuda: " + json.dumps(cuda))
 
