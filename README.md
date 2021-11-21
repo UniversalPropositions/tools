@@ -16,6 +16,7 @@ Script prepares parallel corpus based on datasets in moses format configured in 
 - sentences that have tokens less than min_tokens or more than max_tokens
 - duplicated sentences
 - some problematic characters from sentences
+
 Processing results are stored in ./data/[pipeline]/bitext_raw/ folder.
 Information about removed sentences is stored in the same folder in the preprocess.log file.
 
