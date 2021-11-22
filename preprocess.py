@@ -135,7 +135,7 @@ if __name__ == '__main__':
 
       sentences = pipeline["sentences"][type]
 
-      if sentences == 0:
+      if sentences == 0 or sentences > length:
         sentences = length
 
       logging.info(f'Saving {sentences} of {type} sentences.')

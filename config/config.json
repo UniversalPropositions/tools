@@ -2,8 +2,8 @@
     "params": {
         "min_tokens": 5,
         "max_tokens": 80,
-        "gpu": false,
-        "processes": 8,
+        "gpu": true,
+        "processes": 2,
         "batch_size": 10000
     },
     "pipelines": {
