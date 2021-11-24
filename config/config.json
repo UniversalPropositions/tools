@@ -2,11 +2,11 @@
     "params": {
         "min_tokens": 5,
         "max_tokens": 80,
-        "gpu": false,
+        "gpu": true,
         "processes": 1,
-        "batch_size": 100,
+        "batch_size": 10000,
         "batch_save": false,
-        "limit": 400
+        "limit": 0
     },
     "pipelines": {
         "en-fr-200k": {
