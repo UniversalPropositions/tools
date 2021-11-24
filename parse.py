@@ -27,8 +27,6 @@ LINESEP = "\n"
 
 nlp = None
 
-#torch.set_num_threads(1)
-
 def doc2conll_text(doc):
   doc_conll = CoNLL.doc2conll(doc)
   for sentence in doc_conll:
@@ -43,7 +41,7 @@ def check_if_result(pipeline, lang, index):
   folder_tokenized = "./data/" + pipeline +  "/tokenized/tmp"
   s = ""
   if index:
-    s = str(index) + "."
+    s = str(index).zfill(4) + "."
   file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
   return os.path.isfile(file_tokenized)
 
@@ -164,9 +162,9 @@ def save(pipeline, lang, sorted_result, index = None, batch_size = None):
   
   s = ""
   if index:
-    s = str(index) + "."
+    s = str(index).zfill(4) + "."
 
-  file_parsed = folder_parsed + "/" + pipeline + "." + lang + ".parse." + s + "conllu"
+  file_parsed = folder_parsed + "/" + pipeline + "." + lang + ".parsed." + s + "conllu"
   file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
     
   with open(file_tokenized, 'w', encoding='utf8') as f:
