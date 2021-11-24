@@ -4,7 +4,8 @@
         "max_tokens": 80,
         "gpu": true,
         "processes": 2,
-        "batch_size": 10000
+        "batch_size": 100000,
+        "batch_save": true
     },
     "pipelines": {
         "en-fr-200k": {

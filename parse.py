@@ -39,11 +39,29 @@ def doc2conll_text(doc):
   return "\n\n".join("\n".join(line for line in sentence)
                       for sentence in doc_conll) + "\n\n"
 
+def check_if_result(pipeline, lang, index):
+  folder_tokenized = "./data/" + pipeline +  "/tokenized/tmp"
+  s = ""
+  if index:
+    s = str(index) + "."
+  file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
+  return os.path.isfile(file_tokenized)
+
 def process_batch(batch_data):
   s1 = time.time()
   global nlp
 
   index = batch_data["index"]
+  batch_size = batch_data["batch_size"]
+  batch_save = batch_data["save"]
+  pipeline = batch_data["pipeline"]
+  lang = batch_data["lang"]
+
+  if batch_save:
+    available = check_if_result(pipeline, lang, index)
+    if available:
+      logging.info(f'Skipping batch {index}')
+      return None
 
   if not nlp:
     current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
@@ -66,7 +84,12 @@ def process_batch(batch_data):
   }
   s2 = time.time()
   logging.info(f'Processing NLP {index} time: {s2-s1} seconds')
-  return result
+
+  if batch_save:
+    save(pipeline, lang, [result], index, batch_size)
+    return None
+  else:
+    return result
 
 def process_language(config, pipeline, lang):
   
@@ -83,6 +106,7 @@ def process_language(config, pipeline, lang):
 
   processes = config["params"]["processes"]
   batch_size = config["params"]["batch_size"]
+  batch_save = config["params"]["batch_save"]
   gpu = config["params"]["gpu"]
 
   counter = 0
@@ -94,15 +118,23 @@ def process_language(config, pipeline, lang):
       "index": counter,
       "data": documents[start:end],
       "lang": lang,
-      "gpu": gpu
+      "gpu": gpu,
+      "save": batch_save,
+      "pipeline": pipeline,
+      "batch_size": batch_size
     })
     
   pool = Pool(processes)
   result = pool.map(process_batch, batches)
 
-  sorted_result = sorted(result, key=lambda d: d['index']) 
+  if not batch_save:
 
-  #tokenized sentences
+    sorted_result = sorted(result, key=lambda d: d['index']) 
+
+    save(pipeline, lang, sorted_result)
+
+def save(pipeline, lang, sorted_result, index = None, batch_size = None):
+   #tokenized sentences
   asentences = []
   sentences = []
   for s in sorted_result:
@@ -122,13 +154,20 @@ def process_language(config, pipeline, lang):
       asentences.append(asentence)
       sentences.append(sentence)
 
-  folder_parsed = "./data/" + args.pipeline +  "/parsed"
-  folder_tokenized = "./data/" + args.pipeline +  "/tokenized"
+  s = ""
+  if index:
+    s = "/tmp"
+  folder_parsed = "./data/" + pipeline +  "/parsed" + s
+  folder_tokenized = "./data/" + pipeline +  "/tokenized" + s
   os.makedirs(folder_parsed, exist_ok = True)
   os.makedirs(folder_tokenized, exist_ok = True)
   
-  file_parsed = folder_parsed + "/" + args.pipeline + "." + lang + ".parse.conllu"
-  file_tokenized = folder_tokenized + "/" + args.pipeline + "." + lang + ".tokenized.txt"
+  s = ""
+  if index:
+    s = str(index) + "."
+
+  file_parsed = folder_parsed + "/" + pipeline + "." + lang + ".parse." + s + "conllu"
+  file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
     
   with open(file_tokenized, 'w', encoding='utf8') as f:
     f.write('\n'.join(sentences))
@@ -138,7 +177,8 @@ def process_language(config, pipeline, lang):
     for s in sorted_result:
       for d in s['data']:
         counter += 1
-        f.write("# sent_id = " + str(counter) + "\n")
+        sent = (index - 1) * batch_size + counter
+        f.write("# sent_id = " + str(sent) + "\n")
         if sentences[counter - 1] != asentences[counter - 1]:
           f.write("# actual text = " + asentences[counter - 1] + "\n")
         f.write("# text = " + sentences[counter - 1] + "\n")
