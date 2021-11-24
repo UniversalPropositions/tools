@@ -50,6 +50,8 @@ def process_batch(batch_data):
   global nlp
 
   index = batch_data["index"]
+  processes = batch_data["processes"]
+  logging.info(f'Starting batch {index}')
   batch_size = batch_data["batch_size"]
   batch_save = batch_data["save"]
   pipeline = batch_data["pipeline"]
@@ -62,7 +64,10 @@ def process_batch(batch_data):
       return None
 
   if not nlp:
-    current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    if processes > 1:
+      current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    else:
+      current_process = 1
     gpu = batch_data["gpu"]
     if gpu:
       device = current_process % torch.cuda.device_count()
@@ -81,7 +86,7 @@ def process_batch(batch_data):
     "data": processed
   }
   s2 = time.time()
-  logging.info(f'Processing NLP {index} time: {s2-s1} seconds')
+  logging.info(f'Processing batch {index} time: {s2-s1} seconds')
 
   if batch_save:
     save(pipeline, lang, [result], index, batch_size)
@@ -98,7 +103,12 @@ def process_language(config, pipeline, lang):
   with open(input_file, "r", encoding="utf-8") as f:
     sentences = f.read().split(LINESEP)
 
-  documents = [stanza.Document([], text=d) for d in sentences]
+  limit = config["params"]["limit"]
+
+  if limit == 0 or len(sentences) < limit:
+    limit = len(sentences)
+
+  documents = [stanza.Document([], text=d) for d in sentences[0:limit]]
 
   batches = []
 
@@ -119,11 +129,18 @@ def process_language(config, pipeline, lang):
       "gpu": gpu,
       "save": batch_save,
       "pipeline": pipeline,
-      "batch_size": batch_size
+      "batch_size": batch_size,
+      "processes": processes
     })
-    
-  pool = Pool(processes)
-  result = pool.map(process_batch, batches)
+  
+  if processes > 1:
+    pool = Pool(processes)
+    result = pool.map(process_batch, batches)
+  else:
+    result = []
+    for batch in batches:
+      batch_result = process_batch(batch)
+      result.append(batch_result)
 
   if not batch_save:
 
@@ -175,7 +192,10 @@ def save(pipeline, lang, sorted_result, index = None, batch_size = None):
     for s in sorted_result:
       for d in s['data']:
         counter += 1
-        sent = (index - 1) * batch_size + counter
+        if index and batch_size:
+          sent = (index - 1) * batch_size + counter
+        else:
+          sent = counter
         f.write("# sent_id = " + str(sent) + "\n")
         if sentences[counter - 1] != asentences[counter - 1]:
           f.write("# actual text = " + asentences[counter - 1] + "\n")
