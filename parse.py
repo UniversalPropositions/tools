@@ -160,7 +160,7 @@ def process_language(config, pipeline, lang):
         f.write(conllu)
 
 if __name__ == '__main__':
-
+  
   parser = argparse.ArgumentParser(
       description='Parsers evaluation')
   parser.add_argument('--pipeline', type=str)
@@ -189,3 +189,4 @@ if __name__ == '__main__':
 
   s2 = time.time()
   logging.info(f'Total processing time: {s2-s1} seconds')
+
