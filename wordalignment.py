@@ -3,11 +3,26 @@ from conllu import parse_incr
 import time
 from simalign import SentenceAligner
 from multiprocessing import Pool
+import multiprocessing
 import torch
+import impl.utils as utils
+import logging
+import os
+import json
 
 LINESEP = "\n"
 TYPE = 'itermax'
 aligner = None
+
+logging.basicConfig(
+  format='%(asctime)s %(levelname)s %(message)s', 
+  datefmt='%Y/%m/%d %H:%M:%S', 
+  level=logging.INFO,
+  handlers=[
+    logging.FileHandler("./logs/wordalignment.log"),
+    logging.StreamHandler()
+  ]
+)
 
 def save_alignments(file, batches):
   sentences = []
@@ -21,18 +36,18 @@ def save_alignments(file, batches):
 
 def process_batch(batch_data):
   global aligner
-  s1 = time.time()
   index = batch_data["index"]
-  cuda_devices = batch_data["cuda_devices"]
-  gpu = batch_data["gpu"]
-  device = "cpu"
-  if gpu:
-    device = "cuda"
-    dev = index % cuda_devices
-    torch.cuda.set_device(dev)
   if not aligner:
+    current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    gpu = batch_data["gpu"]
+    if gpu:
+      device = current_process % torch.cuda.device_count()
+      utils.set_cuda_device(device)
+      device = "cuda:"+str(device)
+    else:
+      device = "cpu"
     aligner = SentenceAligner(model="bert", token_type="word", matching_methods="i", device=device)
-    print(f'Initializing aligner {index}')
+    logging.info(f'Initializing aligner batch: {index}, process: {current_process}, device: {device}')
   
   data = batch_data["data"]
   processed = []
@@ -41,7 +56,7 @@ def process_batch(batch_data):
 
   for d in data:
     alignments = aligner.get_word_aligns(d["src"], d["tgt"])[TYPE]
-    print(f'Alignment: {d["counter"]}')
+    logging.info(f'Alignment: {d["counter"]}')
     processed.append(alignments)
 
   result = {
@@ -49,35 +64,52 @@ def process_batch(batch_data):
     "data": processed
   }
   s2 = time.time()
-  print(f'Processing alignment {index} time: {s2-s1} seconds')
+  logging.info(f'Processing alignment {index} time: {s2-s1} seconds')
   
   return result
 
 if __name__ == '__main__':
 
+  torch.multiprocessing.set_start_method('spawn')
+
   parser = argparse.ArgumentParser(
-      description='Word alignment evaluation')
-  parser.add_argument('--input_tokenized_source', type=str,
-                      help='Input file with tokenized source sentences')
-  parser.add_argument('--input_tokenized_target', type=str,
-                      help='Input file with tokenized target sentences')
-  parser.add_argument('--output_file', type=str,
-                      help='Output file with alignments')
-  parser.add_argument('--gpu', type=bool, default=True,
-                      help='True/False - if GPU should be used')
-  parser.add_argument('--pool_size', type=int, default=4,
-                      help='Number of parallel processes')
-  parser.add_argument('--batch_size', type=int, default=10000,
-                      help='Number of samples to be processed in one iteration within single process')
-  parser.add_argument('--cuda_devices', type=int, default=1,
-                      help='Number of GPUs that should be used')
+      description='Parsers evaluation')
+  parser.add_argument('--pipeline', type=str)
 
   args = parser.parse_args()
 
-  with open(args.input_tokenized_source, "r", encoding="utf-8") as f:
+  config = utils.read_config()
+
+  if args.pipeline not in config["pipelines"]:
+      raise Exception("Pipeline not available")
+
+  cuda = utils.get_cuda_info()
+
+  logging.info("Cuda: " + json.dumps(cuda))
+
+  pipeline = config["pipelines"][args.pipeline]
+  source = config["sources"][pipeline["source"]]
+  src_lang = source["src_lang"]
+  tgt_lang = source["tgt_lang"]
+
+  folder = "./data/" + args.pipeline
+
+  tokenized = folder + "/tokenized"
+
+  aligned = folder + "/aligned"
+
+  os.makedirs(aligned, exist_ok = True)
+
+  src_file = tokenized + "/" + args.pipeline + "." + src_lang + ".tokenized.txt"
+
+  tgt_file = tokenized + "/" + args.pipeline + "." + tgt_lang + ".tokenized.txt"
+
+  output_file = aligned + "/training.align"
+
+  with open(src_file, "r", encoding="utf-8") as f:
     source_data = f.read().split(LINESEP)
 
-  with open(args.input_tokenized_target, "r", encoding="utf-8") as f:
+  with open(tgt_file, "r", encoding="utf-8") as f:
     target_data = f.read().split(LINESEP)
 
   t0 = time.time()
@@ -94,27 +126,29 @@ if __name__ == '__main__':
       "tgt": target_tokens
     })
 
+  processes = config["params"]["processes"]
+  batch_size = config["params"]["batch_size"]
+  gpu = config["params"]["gpu"]
+
   counter = 0
   batches = []
-  for i in range(0, len(sentences), args.batch_size):
+  for i in range(0, len(sentences), batch_size):
     counter += 1
-    batch = counter % args.pool_size
     start = i
-    end = start + args.batch_size
+    end = start + batch_size
     batches.append({
       "index": counter,
       "data": sentences[start:end],
-      "gpu": args.gpu,
-      "cuda_devices": args.cuda_devices
+      "gpu": gpu
     })
     
-  pool = Pool(args.pool_size)
+  pool = Pool(processes)
   result = pool.map(process_batch, batches)
 
   sorted_result = sorted(result, key=lambda d: d['index']) 
   
-  save_alignments(args.output_file, sorted_result)
+  save_alignments(output_file, sorted_result)
 
   t1 = time.time()
 
-  print(f'Total preprocessing time: {(t1 - t0):.2f} s')
+  logging.info(f'Total preprocessing time: {(t1 - t0):.2f} s')

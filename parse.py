@@ -1,8 +1,10 @@
+import multiprocessing
 import stanza
 import time
 import argparse
 import stanza
 from multiprocessing import Pool
+#from torch.multiprocessing import Pool, Process, set_start_method
 import torch
 from stanza.utils.conll import CoNLL
 import json
@@ -25,8 +27,6 @@ LINESEP = "\n"
 
 nlp = None
 
-#torch.set_num_threads(1)
-
 def doc2conll_text(doc):
   doc_conll = CoNLL.doc2conll(doc)
   for sentence in doc_conll:
@@ -37,39 +37,46 @@ def doc2conll_text(doc):
   return "\n\n".join("\n".join(line for line in sentence)
                       for sentence in doc_conll) + "\n\n"
 
-def set_cuda_device(process):
-  count = torch.cuda.device_count()
-  device = process % count
-  torch.cuda.set_device(device)
-
-def get_cuda_info():
-  gpu_ids = []
-  if torch.cuda.is_available():
-    gpu_ids += [gpu_id for gpu_id in range(torch.cuda.device_count())]
-  
-  result = {
-    "available": torch.cuda.is_available(),
-    "count": torch.cuda.device_count(),
-    "current": torch.cuda.current_device(),
-    "gpus": gpu_ids
-  }
-  
-  return result
+def check_if_result(pipeline, lang, index):
+  folder_tokenized = "./data/" + pipeline +  "/tokenized/tmp"
+  s = ""
+  if index:
+    s = str(index).zfill(4) + "."
+  file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
+  return os.path.isfile(file_tokenized)
 
 def process_batch(batch_data):
   s1 = time.time()
   global nlp
 
   index = batch_data["index"]
+  processes = batch_data["processes"]
+  logging.info(f'Starting batch {index}')
+  batch_size = batch_data["batch_size"]
+  batch_save = batch_data["save"]
+  pipeline = batch_data["pipeline"]
+  lang = batch_data["lang"]
+
+  if batch_save:
+    available = check_if_result(pipeline, lang, index)
+    if available:
+      logging.info(f'Skipping batch {index}')
+      return None
 
   if not nlp:
+    if processes > 1:
+      current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    else:
+      current_process = 1
     gpu = batch_data["gpu"]
     if gpu:
-      device = randrange(torch.cuda.device_count())
-      set_cuda_device(device)
+      device = current_process % torch.cuda.device_count()
+      utils.set_cuda_device(device)
+    else:
+      device = "cpu"
     lang = batch_data["lang"]
     nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, pos_batch_size=1000)
-    logging.info(f'Initializing NLP batch: {index}, device: {device}')
+    logging.info(f'Initializing NLP batch: {index}, process: {current_process}, device: {device}')
   
   data = batch_data["data"]
   processed = nlp(data)
@@ -79,8 +86,13 @@ def process_batch(batch_data):
     "data": processed
   }
   s2 = time.time()
-  logging.info(f'Processing NLP {index} time: {s2-s1} seconds')
-  return result
+  logging.info(f'Processing batch {index} time: {s2-s1} seconds')
+
+  if batch_save:
+    save(pipeline, lang, [result], index, batch_size)
+    return None
+  else:
+    return result
 
 def process_language(config, pipeline, lang):
   
@@ -91,12 +103,18 @@ def process_language(config, pipeline, lang):
   with open(input_file, "r", encoding="utf-8") as f:
     sentences = f.read().split(LINESEP)
 
-  documents = [stanza.Document([], text=d) for d in sentences]
+  limit = config["params"]["limit"]
+
+  if limit == 0 or len(sentences) < limit:
+    limit = len(sentences)
+
+  documents = [stanza.Document([], text=d) for d in sentences[0:limit]]
 
   batches = []
 
   processes = config["params"]["processes"]
   batch_size = config["params"]["batch_size"]
+  batch_save = config["params"]["batch_save"]
   gpu = config["params"]["gpu"]
 
   counter = 0
@@ -108,15 +126,30 @@ def process_language(config, pipeline, lang):
       "index": counter,
       "data": documents[start:end],
       "lang": lang,
-      "gpu": gpu
+      "gpu": gpu,
+      "save": batch_save,
+      "pipeline": pipeline,
+      "batch_size": batch_size,
+      "processes": processes
     })
-    
-  pool = Pool(processes)
-  result = pool.map(process_batch, batches)
+  
+  if processes > 1:
+    pool = Pool(processes)
+    result = pool.map(process_batch, batches)
+  else:
+    result = []
+    for batch in batches:
+      batch_result = process_batch(batch)
+      result.append(batch_result)
 
-  sorted_result = sorted(result, key=lambda d: d['index']) 
+  if not batch_save:
 
-  #tokenized sentences
+    sorted_result = sorted(result, key=lambda d: d['index']) 
+
+    save(pipeline, lang, sorted_result)
+
+def save(pipeline, lang, sorted_result, index = None, batch_size = None):
+   #tokenized sentences
   asentences = []
   sentences = []
   for s in sorted_result:
@@ -136,13 +169,20 @@ def process_language(config, pipeline, lang):
       asentences.append(asentence)
       sentences.append(sentence)
 
-  folder_parsed = "./data/" + args.pipeline +  "/parsed"
-  folder_tokenized = "./data/" + args.pipeline +  "/tokenized"
+  s = ""
+  if index:
+    s = "/tmp"
+  folder_parsed = "./data/" + pipeline +  "/parsed" + s
+  folder_tokenized = "./data/" + pipeline +  "/tokenized" + s
   os.makedirs(folder_parsed, exist_ok = True)
   os.makedirs(folder_tokenized, exist_ok = True)
   
-  file_parsed = folder_parsed + "/" + args.pipeline + "." + lang + ".parse.conllu"
-  file_tokenized = folder_tokenized + "/" + args.pipeline + "." + lang + ".tokenized.txt"
+  s = ""
+  if index:
+    s = str(index).zfill(4) + "."
+
+  file_parsed = folder_parsed + "/" + pipeline + "." + lang + ".parsed." + s + "conllu"
+  file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
     
   with open(file_tokenized, 'w', encoding='utf8') as f:
     f.write('\n'.join(sentences))
@@ -152,7 +192,11 @@ def process_language(config, pipeline, lang):
     for s in sorted_result:
       for d in s['data']:
         counter += 1
-        f.write("# sent_id = " + str(counter) + "\n")
+        if index and batch_size:
+          sent = (index - 1) * batch_size + counter
+        else:
+          sent = counter
+        f.write("# sent_id = " + str(sent) + "\n")
         if sentences[counter - 1] != asentences[counter - 1]:
           f.write("# actual text = " + asentences[counter - 1] + "\n")
         f.write("# text = " + sentences[counter - 1] + "\n")
@@ -160,32 +204,27 @@ def process_language(config, pipeline, lang):
         f.write(conllu)
 
 if __name__ == '__main__':
-  
+
   parser = argparse.ArgumentParser(
       description='Parsers evaluation')
   parser.add_argument('--pipeline', type=str)
+  parser.add_argument('--lang', type=str)
 
   args = parser.parse_args()
-
+ 
   config = utils.read_config()
 
   if args.pipeline not in config["pipelines"]:
     raise Exception("Pipeline not available")
 
-  segments = args.pipeline.split("-")
-  src_lang = segments[0]
-  tgt_lang = segments[1]
+  cuda = utils.get_cuda_info()
 
-  cuda = get_cuda_info()
-
-  logging.info(json.dumps(cuda))
+  logging.info("Cuda: " + json.dumps(cuda))
 
   s1 = time.time()
 
-  logging.info(f'Processing {src_lang}')
-  process_language(config, args.pipeline, src_lang)
-  logging.info(f'Processing {tgt_lang}')
-  process_language(config, args.pipeline, tgt_lang)
+  logging.info(f'Processing {args.lang}')
+  process_language(config, args.pipeline, args.lang)
 
   s2 = time.time()
   logging.info(f'Total processing time: {s2-s1} seconds')

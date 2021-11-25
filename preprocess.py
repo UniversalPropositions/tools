@@ -103,13 +103,15 @@ if __name__ == '__main__':
       "config": config
     }
 
-    folder = "./data/source/" + args.pipeline
+    pipeline = config["pipelines"][args.pipeline]
+    source = config["sources"][pipeline["source"]]
+    datasets = source["datasets"]
+    src_lang = source["src_lang"]
+    tgt_lang = source["tgt_lang"]
 
-    segments = args.pipeline.split("-")
-    src_lang = segments[0]
-    tgt_lang = segments[1]
+    folder = "./data/source/" + pipeline["source"]
 
-    for type in config["pipelines"][args.pipeline]:
+    for type in datasets:
       context["data"][type] = {
         "src": [],
         "tgt": []
@@ -126,19 +128,20 @@ if __name__ == '__main__':
     src_f = open(src_file, 'w', encoding='utf8')
     tgt_f = open(tgt_file, 'w', encoding='utf8')
 
-    type_count = len(config["pipelines"][args.pipeline]) - 1
+    type_count = len(pipeline) - 1
 
-    for i, type in enumerate(config["pipelines"][args.pipeline]):
+    for i, type in enumerate(datasets):
       length = len(context["data"][type]["src"])
 
-      ratio = config["params"]["sentences"][type]
+      sentences = pipeline["sentences"][type]
 
-      length = round(length * ratio)
+      if sentences == 0 or sentences > length:
+        sentences = length
 
-      logging.info(f'Saving {length} of {type} sentences.')
+      logging.info(f'Saving {sentences} of {type} sentences.')
 
-      src_f.write('\n'.join(context["data"][type]['src'][0:length]))
-      tgt_f.write('\n'.join(context["data"][type]['tgt'][0:length]))
+      src_f.write('\n'.join(context["data"][type]['src'][0:sentences]))
+      tgt_f.write('\n'.join(context["data"][type]['tgt'][0:sentences]))
       if i < type_count:
         src_f.write("\n")
         tgt_f.write("\n")

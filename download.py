@@ -16,9 +16,9 @@ logging.basicConfig(
   ]
 )
 
-def download_file(pipeline, type, url):
+def download_file(source, type, url):
   logging.info(f'Starting: {url}')
-  dir = './data/source/' + pipeline
+  dir = './data/source/' + source
   segments = url.split("/")
   file = segments[len(segments) - 1]
   path = dir + '/' + file
@@ -36,23 +36,23 @@ if __name__ == '__main__':
 
   parser = argparse.ArgumentParser(
       description='Download')
-  parser.add_argument('--pipeline', type=str,
-                      help='Language pipeline')
+  parser.add_argument('--source', type=str,
+                      help='Language source')
 
   args = parser.parse_args()
 
-  logging.info(f'Starting download: {args.pipeline}')
+  logging.info(f'Starting download: {args.source}')
 
   t0 = time.time()
 
   config = utils.read_config()
 
-  if args.pipeline not in config["pipelines"]:
-    raise Exception("Pipeline not available")
+  if args.source not in config["sources"]:
+    raise Exception("Source definition not available")
 
-  downloads = config["pipelines"][args.pipeline]
-  for d in downloads:
-    download_file(args.pipeline, d, downloads[d])
+  downloads = config["sources"][args.source]
+  for d in downloads["datasets"]:
+    download_file(args.source, d, downloads["datasets"][d])
 
   t1 = time.time()
 
