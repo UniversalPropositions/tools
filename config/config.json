@@ -22,6 +22,61 @@
                 "europarl": 0,
                 "tatoeba": 0
             }
+        },
+        "en-fi": {
+            "source": "en-fi",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-de": {
+            "source": "en-de",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-it": {
+            "source": "en-it",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-pt": {
+            "source": "en-pt",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-es": {
+            "source": "en-es",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-pl": {
+            "source": "en-pl",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-zh": {
+            "source": "en-zh",
+            "sentences": {
+                "subtitles": 0,
+            }
+        },
+        "en-vi": {
+            "source": "en-vi",
+            "sentences": {
+                "europarl": 0,
+                "subtitles": 0
+            }
         }
     },
     "sources": {
