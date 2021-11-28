@@ -5,6 +5,14 @@ import os
 import zipfile
 import logging
 import impl.utils as utils
+import glob
+
+REPLACEMENTS = [
+  {
+    "src": "zh_cn",
+    "tgt": "zh"
+  }
+]
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)s %(message)s', 
@@ -15,6 +23,11 @@ logging.basicConfig(
     logging.StreamHandler()
   ]
 )
+
+def replacements(file):
+  for r in REPLACEMENTS:
+    file = file.replace(r['src'], r['tgt'])
+  return file
 
 def download_file(source, type, url):
   logging.info(f'Starting: {url}')
@@ -30,6 +43,14 @@ def download_file(source, type, url):
   with zipfile.ZipFile(path, "r") as zip:
     zip.extractall(dir + "/" + type)
   os.remove(path)
+
+  dir = './data/source/' + source + '/' + type
+  for file in glob.glob(dir + "/*"):
+    newfile = replacements(file)
+    if newfile != file:
+      os.rename(file, newfile)
+      logging.info(f'Renaming {file} to {newfile}')
+
   logging.info(f'Completed: {url}, file size: {length} MB')
 
 if __name__ == '__main__':
