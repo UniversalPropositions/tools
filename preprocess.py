@@ -24,9 +24,14 @@ def validate_alpha(text):
       return True
   return False
 
-def preprocess(s):
-  s = s.replace("­", "") #\xad
-  return re.sub('\s+',' ', s) #remove multiple spaces with one
+def preprocess(sentence):
+  out = []
+  for tok in sentence:
+      if not "\\x" in repr(tok) and not "\\u" in repr(tok):
+          out.append(tok)
+  result = ''.join(out)
+  result = re.sub('\s+',' ', result) #remove multiple spaces with one
+  return result
 
 def validate_tokens(text, min, max):
   global ml
