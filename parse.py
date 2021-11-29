@@ -223,8 +223,6 @@ def save(pipeline, lang, sorted_result, index = None, batch_size = None):
 
 if __name__ == '__main__':
 
-  torch.multiprocessing.set_start_method('spawn')
-
   parser = argparse.ArgumentParser(
       description='Parsers evaluation')
   parser.add_argument('--pipeline', type=str)
@@ -248,3 +246,4 @@ if __name__ == '__main__':
 
   s2 = time.time()
   logging.info(f'Total processing time: {s2-s1} seconds')
+
