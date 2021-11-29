@@ -65,16 +65,16 @@
                 "tatoeba": 0
             }
         },
-        "en-zh": {
-            "source": "en-zh",
-            "sentences": {
-                "subtitles": 0
-            }
-        },
         "en-vi": {
             "source": "en-vi",
             "sentences": {
-                "europarl": 0,
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-zh": {
+            "source": "en-zh",
+            "sentences": {
                 "subtitles": 0
             }
         }
@@ -140,7 +140,7 @@
             "src_lang": "en",
             "tgt_lang": "zh",
             "datasets": {
-                "subtitles": "https://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/moses/en-zh_cn.txt.zip"
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-zh_cn.txt.zip"
             }
         },
         "en-vi": {
@@ -148,7 +148,7 @@
             "tgt_lang": "vi",
             "datasets": {
                 "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-vi.txt.zip",
-                "subtitles": "https://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/moses/en-vi.txt.zip"
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-vi.txt.zip"
             }
         }
     }

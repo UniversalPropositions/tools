@@ -24,21 +24,58 @@ logging.basicConfig(
   ]
 )
 
-def save_alignments(file, batches):
+def check_if_result(pipeline, index):
+  folder = "./data/" + pipeline +  "/aligned/tmp"
+  s = ""
+  if index:
+    s = str(index).zfill(4) + "."
+  output_file = folder + "/training." + s + "align"
+  return os.path.isfile(output_file)
+
+def save_alignments(pipeline, batches, index = None, batch_size = None):
+
   sentences = []
   for b in batches:
     for d in b["data"]:
       sentence = ' '.join([str(x[0]) + '-' + str(x[1]) for x in d])
       sentences.append(sentence)
+
+  s = ""
+  if index:
+    s = "/tmp"
+
+  folder = "./data/" + pipeline + "/aligned" + s
+  os.makedirs(folder, exist_ok = True)
   
-  with open(file, 'w', encoding='utf8') as f:
+  s = ""
+  if index:
+    s = str(index).zfill(4) + "."
+
+  output_file = folder + "/training." + s + "align"
+
+  with open(output_file, 'w', encoding='utf8') as f:
     f.write('\n'.join(sentences))
 
 def process_batch(batch_data):
+  
   global aligner
+
   index = batch_data["index"]
+  batch_size = batch_data["batch_size"]
+  batch_save = batch_data["save"]
+  pipeline = batch_data["pipeline"]
+
+  if batch_save:
+    available = check_if_result(pipeline, index)
+    if available:
+      logging.info(f'Skipping batch {index}')
+      return None
+
   if not aligner:
-    current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    if processes > 1:
+      current_process = int(multiprocessing.current_process().name.split('-')[1]) - 1
+    else:
+      current_process = 1
     gpu = batch_data["gpu"]
     if gpu:
       device = current_process % torch.cuda.device_count()
@@ -55,8 +92,13 @@ def process_batch(batch_data):
   s1 = time.time()
 
   for d in data:
-    alignments = aligner.get_word_aligns(d["src"], d["tgt"])[TYPE]
-    logging.info(f'Alignment: {d["counter"]}')
+    try:
+      alignments = []
+      alignments = aligner.get_word_aligns(d["src"], d["tgt"])[TYPE]
+      #logging.info(f'Alignment: {d["counter"]}')
+    except Exception as e:
+      logging.error(f'Alignment error: {d["counter"]} {e}')
+    
     processed.append(alignments)
 
   result = {
@@ -65,8 +107,12 @@ def process_batch(batch_data):
   }
   s2 = time.time()
   logging.info(f'Processing alignment {index} time: {s2-s1} seconds')
-  
-  return result
+
+  if batch_save:
+    save_alignments(pipeline, [result], index, batch_size)
+    return None
+  else:
+    return result
 
 if __name__ == '__main__':
 
@@ -104,8 +150,6 @@ if __name__ == '__main__':
 
   tgt_file = tokenized + "/" + args.pipeline + "." + tgt_lang + ".tokenized.txt"
 
-  output_file = aligned + "/training.align"
-
   with open(src_file, "r", encoding="utf-8") as f:
     source_data = f.read().split(LINESEP)
 
@@ -126,8 +170,17 @@ if __name__ == '__main__':
       "tgt": target_tokens
     })
 
+  
+  limit = config["params"]["limit"]
+
+  if limit == 0 or len(sentences) < limit:
+    limit = len(sentences)
+
+  sentences = sentences[0:limit]
+
   processes = config["params"]["processes"]
   batch_size = config["params"]["batch_size"]
+  batch_save = config["params"]["batch_save"]
   gpu = config["params"]["gpu"]
 
   counter = 0
@@ -139,15 +192,26 @@ if __name__ == '__main__':
     batches.append({
       "index": counter,
       "data": sentences[start:end],
-      "gpu": gpu
+      "gpu": gpu,
+      "save": batch_save,
+      "pipeline": args.pipeline,
+      "batch_size": batch_size,
+      "processes": processes
     })
-    
-  pool = Pool(processes)
-  result = pool.map(process_batch, batches)
-
-  sorted_result = sorted(result, key=lambda d: d['index']) 
   
-  save_alignments(output_file, sorted_result)
+  if processes > 1:
+    pool = Pool(processes)
+    result = pool.map(process_batch, batches)
+  else:
+    result = []
+    for batch in batches:
+      batch_result = process_batch(batch)
+      result.append(batch_result)
+
+  if not batch_save:
+    sorted_result = sorted(result, key=lambda d: d['index']) 
+    
+    save_alignments(args.pipeline, sorted_result)
 
   t1 = time.time()
 

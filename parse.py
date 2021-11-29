@@ -75,8 +75,26 @@ def process_batch(batch_data):
     else:
       device = "cpu"
     lang = batch_data["lang"]
-    nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, pos_batch_size=1000)
+    nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, depparse_min_length_to_batch_separately=40, deepparse_batch_size=25)
     logging.info(f'Initializing NLP batch: {index}, process: {current_process}, device: {device}')
+  
+  '''
+  processed = []
+  counter = 0
+  step = 10000
+  while counter < batch_size:
+    start = counter
+    stop = counter + step
+    if stop > batch_size:
+      stop = batch_size
+    data = batch_data["data"][start:stop]
+    print(f'Batch: {counter}')
+    print(data[0].text)
+    torch.cuda.empty_cache()
+    p = nlp(data)
+    processed.extend(p)
+    counter += step
+  '''
   
   data = batch_data["data"]
   processed = nlp(data)

@@ -29,8 +29,9 @@ def preprocess(s):
   return re.sub('\s+',' ', s) #remove multiple spaces with one
 
 def validate_tokens(text, min, max):
+  global ml
   tokens = text.split(" ")
-  length = len(tokens)
+  length = len(tokens)  
   if length >= min and length <= max:
     return True
   return False
