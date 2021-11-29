@@ -5,9 +5,9 @@ Available scripts:
 - download.py
 - preprocess.py
 - parse.py
-- merge_parse.py
+- merge-parse.py
 - wordalignment.py
-- merge_align.py
+- merge-align.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
