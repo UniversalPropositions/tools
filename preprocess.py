@@ -7,6 +7,7 @@ import glob
 import os
 
 LINESEP = "\n"
+EXCLUDED_VALIDATION_LANG = ["zh"]
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)s %(message)s', 
@@ -30,6 +31,7 @@ def preprocess(sentence):
       if not "\\x" in repr(tok) and not "\\u" in repr(tok):
           out.append(tok)
   result = ''.join(out)
+  result = result.replace("�", "")
   result = re.sub('\s+',' ', result) #remove multiple spaces with one
   return result
 
@@ -41,12 +43,13 @@ def validate_tokens(text, min, max):
     return True
   return False
 
-def validate(text, context):
+def validate(text, context, lang):
   if not validate_alpha(text):
     return False, "Not alpha"
   params = context["config"]["params"]
-  if not validate_tokens(text, params["min_tokens"], params["max_tokens"]):
-    return False, "Incorrect tokens length"
+  if lang not in EXCLUDED_VALIDATION_LANG:
+    if not validate_tokens(text, params["min_tokens"], params["max_tokens"]):
+      return False, "Incorrect tokens length"
   if text in context["map"]:
     return False, "Duplicate" #we do not allow for duplicates both in source and target language
   else:
@@ -70,8 +73,8 @@ def process(folder, type, src_lang, tgt_lang, context):
     s = preprocess(item[0])
     t = preprocess(item[1])
     counter += 1
-    so, sm = validate(s, context)
-    to, tm = validate(t, context)
+    so, sm = validate(s, context, src_lang)
+    to, tm = validate(t, context, tgt_lang)
     if so and to:
       data[type]['src'].append(s)
       data[type]['tgt'].append(t)

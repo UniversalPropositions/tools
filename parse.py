@@ -98,6 +98,16 @@ def process_batch(batch_data):
   
   data = batch_data["data"]
   processed = nlp(data)
+  for p in processed:
+    for s in p.sentences:
+      for t in s.tokens:
+        if t.text[-1] == " ":
+          t.text = t.text.strip()
+      for t in s.words:
+        if t.text[-1] == " ":
+          t.text = t.text.strip()
+        if t.lemma[-1] == " ":
+          t.lemma = t.lemma.strip()
 
   result = {
     "index": index,
@@ -112,7 +122,7 @@ def process_batch(batch_data):
   else:
     return result
 
-def process_language(config, pipeline, lang):
+def process_language(config, pipeline, lang, selected_sentences):
   
   stanza.download(lang)
 
@@ -120,6 +130,9 @@ def process_language(config, pipeline, lang):
 
   with open(input_file, "r", encoding="utf-8") as f:
     sentences = f.read().split(LINESEP)
+
+  if selected_sentences:
+    sentences = [ sentences[i] for i in selected_sentences ]
 
   limit = config["params"]["limit"]
 
@@ -235,6 +248,15 @@ if __name__ == '__main__':
   if args.pipeline not in config["pipelines"]:
     raise Exception("Pipeline not available")
 
+  selected_sentences = []
+  try:
+    with open("./data/" + args.pipeline +  "/ids.txt", "r", encoding="utf-8") as f:
+      list = f.read().split(LINESEP)
+      for l in list:
+        selected_sentences.append(int(l) - 1)
+  except Exception:
+    selected_sentences = None
+    
   cuda = utils.get_cuda_info()
 
   logging.info("Cuda: " + json.dumps(cuda))
@@ -242,7 +264,7 @@ if __name__ == '__main__':
   s1 = time.time()
 
   logging.info(f'Processing {args.lang}')
-  process_language(config, args.pipeline, args.lang)
+  process_language(config, args.pipeline, args.lang, selected_sentences)
 
   s2 = time.time()
   logging.info(f'Total processing time: {s2-s1} seconds')
