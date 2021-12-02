@@ -21,6 +21,7 @@ def merge(config, pipeline):
     mask = folder + "/tmp/training.*.align"
     name = folder + "/training.align"
     files = glob.glob(mask)
+    files.sort()
     with open(name, 'w', encoding='utf8') as outfile:
       length = len(files) - 1
       for i, file in enumerate(files):
