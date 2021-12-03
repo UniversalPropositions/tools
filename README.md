@@ -8,6 +8,7 @@ Available scripts:
 - merge-parse.py
 - wordalignment.py
 - merge-align.py
+- postprocess.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
@@ -63,6 +64,9 @@ Output file is stored in ./data/[pipeline]/aligned/training.align file.
 
 ### merge-align.py
 Used only if params.save_batch is set to true. Allows to merge all the batch results from ./data/[pipeline]/align/tmp/ to a single file that contain all sentences stored in ./data/[pipeline]/align/ folder.
+
+### postprocess.py
+Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza into more than one sentence. It creates new files with _ at the beginning of the file name.
 
 ## Python virtual environment
 Create python virtual environment:
@@ -138,4 +142,8 @@ python.exe wordalignment.py --pipeline=en-fr
 ### merga-align.py
 ```
 python.exe merge-align.py --pipeline=en-fr 
+```
+### postprocess.py
+```
+python.exe postprocess.py --pipeline=en-fr 
 ```

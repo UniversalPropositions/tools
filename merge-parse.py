@@ -20,6 +20,7 @@ def merge_lang(pipeline, type, ext, lang):
     mask = folder + "/tmp/" + pipeline + "." + lang + "*"
     name = folder + "/" + pipeline + "." + lang + "." + type + "." + ext
     files = glob.glob(mask)
+    files.sort()
     with open(name, 'w', encoding='utf8') as outfile:
       length = len(files) - 1
       for i, file in enumerate(files):
