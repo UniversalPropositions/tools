@@ -107,6 +107,7 @@ def remove_sentences(pipeline, src_lang, tgt_lang, sentences):
   folder = "./data/" + pipeline + "/"
   remove_from_conllu (folder + 'parsed/'+ pipeline + "." + src_lang + ".parsed.conllu", sentences)
   remove_from_conllu (folder + 'parsed/'+ pipeline + "." + tgt_lang + ".parsed.conllu", sentences)
+  remove_from_conllu(folder + 'tokenized/' + pipeline + "." + src_lang + ".tokenized.txt.srl", sentences)
   remove_from_text (folder + 'tokenized/'+ pipeline + "." + src_lang + ".tokenized.txt", sentences)
   remove_from_text (folder + 'tokenized/'+ pipeline + "." + tgt_lang + ".tokenized.txt", sentences)
   remove_from_text (folder + 'aligned/training.align', sentences)
@@ -116,7 +117,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(
       description='Preprocess')
   parser.add_argument('--pipeline', type=str,
-                      help='Language pipeline')
+                      help='Language pipeline', default="en-fr-200k")
 
   args = parser.parse_args()
 
