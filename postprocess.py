@@ -19,29 +19,43 @@ logging.basicConfig(
   ]
 )
 
+def read_large_data(filename):
+  """
+  To get one sentence at a time from a big file
+  :param filename: path to the filename
+  :return: Yield one sentence at a time
+  """
+  with open(filename) as f:
+      data = f.readlines()
+
+  sen = []
+  for line in data:
+      if line == "\n" or line == "---\n":
+          if sen != []:
+              yield sen
+          sen = []
+      else:
+          sen.append(line.strip())
+  if sen != []:
+      yield sen
+      
 def read_file(file):
   with open(file, "r", encoding="utf-8") as f:
     return f.read().split(LINESEP)
 
-def read_conllu(file):
-  #f = open(file, "r", encoding="utf-8")
-  conllu = CoNLL.conll2doc(file)
-  #f.close()
-  return conllu
-
 def find_sent_to_remove_file(pipeline, lang):
   file = "./data/" + pipeline + "/parsed/" + pipeline + "." + lang + ".parsed.conllu"
-  conllu = read_conllu(file)
-  l = len(conllu.sentences)
   result = []
-  sent_id = None
-  for i, item in enumerate(conllu.sentences):
-    if len(item.comments) == 0:
-      result.append(sent_id)
-    else:
-      v = item.comments[0]
-      seg = v.split(" = ")
-      sent_id = int(seg[1])
+  sentence_number = 0
+  for sentence in read_large_data(file):
+    if len(sentence) > 0:
+      sent = sentence[0]
+      if sent.startswith("# sent_id = "):
+        segments = sent.split(" = ")
+        seg = segments[1]
+        sentence_number = int(seg)
+      else:
+        result.append(sentence_number)
   return result
 
 def find_sent_to_remove(pipeline, src_lang, tgt_lang):
@@ -51,19 +65,42 @@ def find_sent_to_remove(pipeline, src_lang, tgt_lang):
   return result
 
 def remove_from_text(file, sentences):
-  data = read_file(file)
-  output_data = []
-  for i, sentence in enumerate(data):
-    index = i + 1
-    if index not in sentences:
-      output_data.append(sentence)
+  try:
+    data = read_file(file)
+    output_data = []
+    index = 0
+    for sentence in data:
+      index += 1
+      if index not in sentences:
+        output_data.append(sentence)
 
-  segments = file.split("/")
-  segments[-1] = "_" + segments[-1]
-  output_file = "/".join(segments)
+    segments = file.split("/")
+    segments[-1] = "_" + segments[-1]
+    output_file = "/".join(segments)
 
-  with open(output_file, 'w', encoding='utf8') as f:
-    f.write('\n'.join(output_data))
+    with open(output_file, 'w', encoding='utf8') as f:
+      f.write('\n'.join(output_data))
+  except Exception as e:
+    logging.error(e)
+
+def remove_from_srl(file, sentences):
+  try:
+    segments = file.split("/")
+    segments[-1] = "_" + segments[-1]
+    output_file = "/".join(segments)
+
+    output = open(output_file, 'w', encoding='utf8')
+
+    sentence_number = 0
+    for sentence in read_large_data(file):
+      sentence_number += 1
+      if sentence_number not in sentences:
+        for s in sentence:
+          output.write(s+"\n")
+        output.write("\n")
+    output.close()
+  except Exception as e:
+    logging.error(e)
 
 def doc2conll_text(doc):
   doc_conll = CoNLL.doc2conll(doc)
@@ -76,40 +113,46 @@ def doc2conll_text(doc):
                       for sentence in doc_conll) + "\n\n"
 
 def remove_from_conllu(file, sentences):
-  conllu = read_conllu(file)
+  try:
+    segments = file.split("/")
+    segments[-1] = "_" + segments[-1]
+    output_file = "/".join(segments)
 
-  segments = file.split("/")
-  segments[-1] = "_" + segments[-1]
-  output_file = "/".join(segments)
+    output = open(output_file, 'w', encoding='utf8')
 
-  indexes_to_remove = []
-  for i, item in enumerate(conllu.sentences):
-    if len(item.comments) > 0:
-      v = item.comments[0]
-      seg = v.split(" = ")
-      sent_id = int(seg[1])
-      if sent_id in sentences:
-        indexes_to_remove.append(i)
-    else:
-      indexes_to_remove.append(i)
-
-  for i in reversed(indexes_to_remove):
-    del conllu.sentences[i]
-
-  counter = 0
-  for item in conllu.sentences:
-    counter += 1
-    item.comments[0] = "# sent_id = " + str(counter)
-
-  CoNLL.write_doc2conll(conllu, output_file)
+    sentence_number = 0
+    added_counter = 0
+    for sentence in read_large_data(file):
+      if len(sentence) > 0:
+        sent = sentence[0]
+        if sent.startswith("# sent_id = "):
+          segments = sent.split(" = ")
+          seg = segments[1]
+          sentence_number = int(seg)
+          if sentence_number not in sentences:
+            added_counter += 1
+            sentence[0] = "# sent_id = " + str(added_counter)
+            for s in sentence:
+              output.write(s+"\n")
+            output.write("\n")
+    output.close()
+  except Exception as e:
+    logging.error(e)
 
 def remove_sentences(pipeline, src_lang, tgt_lang, sentences):
   folder = "./data/" + pipeline + "/"
+  logging.info("Updating src parsed")
   remove_from_conllu (folder + 'parsed/'+ pipeline + "." + src_lang + ".parsed.conllu", sentences)
+  logging.info("Updating tgt parsed")
   remove_from_conllu (folder + 'parsed/'+ pipeline + "." + tgt_lang + ".parsed.conllu", sentences)
+  logging.info("Updating src tokenized")
   remove_from_text (folder + 'tokenized/'+ pipeline + "." + src_lang + ".tokenized.txt", sentences)
+  logging.info("Updating tgt tokenized")
   remove_from_text (folder + 'tokenized/'+ pipeline + "." + tgt_lang + ".tokenized.txt", sentences)
+  logging.info("Updating aligned")
   remove_from_text (folder + 'aligned/training.align', sentences)
+  logging.info("Updating src srl")
+  remove_from_srl (folder + 'tokenized/'+ pipeline + "." + src_lang + ".tokenized.txt.srl", sentences)
 
 if __name__ == '__main__':
 
