@@ -101,13 +101,19 @@ def process_batch(batch_data):
   for p in processed:
     for s in p.sentences:
       for t in s.tokens:
-        if t.text[-1] == " ":
-          t.text = t.text.strip()
+        try:
+          if t.text is not None and t.text[-1] == " ":
+            t.text = t.text.strip()
+        except Exception as e:
+          logging.error(e)
       for t in s.words:
-        if t.text[-1] == " ":
-          t.text = t.text.strip()
-        if t.lemma[-1] == " ":
-          t.lemma = t.lemma.strip()
+        try:
+          if t.text is not None and t.text[-1] == " ":
+            t.text = t.text.strip()
+          if t.lemma is not None and t.lemma[-1] == " ":
+            t.lemma = t.lemma.strip()
+        except Exception as e:
+          logging.error(e)
 
   result = {
     "index": index,
