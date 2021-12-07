@@ -48,9 +48,9 @@ if __name__ == "__main__":
     if not os.path.exists(nnsrl):
         os.makedirs(nnsrl)
 
-    parsed_file = os.path.join(parsed, "{}.{}.parsed.conllu".format(args.pipeline, src_lang))
-    srl_file = os.path.join(tokenized, "{}.{}.tokenized.txt.srl".format(args.pipeline, src_lang))
-    labeled_file = os.path.join(nnsrl, "{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
+    parsed_file = os.path.join(parsed, "_{}.{}.parsed.conllu".format(args.pipeline, src_lang))
+    srl_file = os.path.join(tokenized, "_{}.{}.tokenized.txt.srl".format(args.pipeline, src_lang))
+    labeled_file = os.path.join(nnsrl, "_{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
     f_out = open(labeled_file, "w")
     # for sen_id, sen in enumerate(read_large_data(parsed_file)):
     #     print("\rsen no {}".format(sen_id), end="")
@@ -60,11 +60,11 @@ if __name__ == "__main__":
     # data = Reader(parsed_file, "conllu")
     i = 0
     for  sen_parse, sen_srl in zip(read_large_data(parsed_file), read_large_data(srl_file)):
-        print(sen_parse[1], sen_srl[0])
+        # print(sen_parse[1], sen_srl[0])
         parse_srl = []
         parse_sen = []
         srl_sen = []
-        if (i == 100) or (sen_parse[1] != sen_srl[0]):
+        if (sen_parse[1] != sen_srl[0]):
             break
         else:
             for parse_s in sen_parse:
@@ -79,7 +79,9 @@ if __name__ == "__main__":
                     continue
                 else:
                     srl_sen.append(srl_s)
-            assert len(parse_sen) == len(srl_sen)
+            if len(parse_sen) != len(srl_sen):
+                print(sen_parse[1])
+                continue
             parse_sen = list(map(list, zip(*parse_sen)))[:-2]
             srl_sen = list(map(list, zip(*srl_sen)))[1:]
             parse_sen.extend(srl_sen)
