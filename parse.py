@@ -31,7 +31,7 @@ def doc2conll_text(doc):
   doc_conll = CoNLL.doc2conll(doc)
   for sentence in doc_conll:
     for i, line in enumerate(sentence):
-      seg = line.split("\r")
+      seg = line.split("\t")
       if len(seg[0].split("-")) == 2:
         del sentence[i]
   return "\n\n".join("\n".join(line for line in sentence)
