@@ -68,14 +68,14 @@ if __name__ == "__main__":
             break
         else:
             for parse_s in sen_parse:
-                if parse_s[0][0] == "#":
+                if parse_s[0][0:2] == "# ":
                     parse_srl.append(parse_s)
                 else:
                     parse_sen.append(parse_s)
             for srl_s in sen_srl:
                 if "span_srl" in srl_s[0]:
                     parse_srl.append(srl_s)
-                elif srl_s[0][0] == "#":
+                elif srl_s[0][0:2] == "# ":
                     continue
                 else:
                     srl_sen.append(srl_s)
