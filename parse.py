@@ -1,17 +1,24 @@
+'''
+Script executes stanza tokenization on a given list of sentences for a given language 
+and produces output CoNLL-U file and output tokenized file.
+Input files are read from ./data/[pipeline]/bitext_raw/ folder.
+Output files are stored in: ./data/[pipeline]/parsed/ and ./data/[pipeline]/tokenized/ folders.
+'''
+
 import multiprocessing
 import stanza
 import time
 import argparse
 import stanza
 from multiprocessing import Pool
-#from torch.multiprocessing import Pool, Process, set_start_method
 import torch
 from stanza.utils.conll import CoNLL
 import json
 import logging
 import impl.utils as utils
 from random import randrange
-import os
+import os 
+from typing import List
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)s %(message)s', 
@@ -27,7 +34,13 @@ LINESEP = "\n"
 
 nlp = None
 
-def doc2conll_text(doc):
+def doc2conll_text(doc: stanza.Document) -> str:
+  '''
+  Converts Stanza document to string that contains data in CoNLL-U format
+
+  :param doc: stanza.Document to be converted
+  :return: string with CoNLL-U data
+  '''
   doc_conll = CoNLL.doc2conll(doc)
   for sentence in doc_conll:
     for i, line in enumerate(sentence):
@@ -37,7 +50,16 @@ def doc2conll_text(doc):
   return "\n\n".join("\n".join(line for line in sentence)
                       for sentence in doc_conll) + "\n\n"
 
-def check_if_result(pipeline, lang, index):
+def check_if_result(pipeline: str, lang: str, index: int) -> bool:
+  '''
+  Checks if temporary result is available in the file system for a given pipeline, 
+  language and batch index
+
+  :param pipeline: processing pipeline from config.json file
+  :param lang: source or target language identifier
+  :param index: batch index to be checked
+  :return: information if file is present or not
+  '''
   folder_tokenized = "./data/" + pipeline +  "/tokenized/tmp"
   s = ""
   if index:
@@ -45,7 +67,15 @@ def check_if_result(pipeline, lang, index):
   file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
   return os.path.isfile(file_tokenized)
 
-def process_batch(batch_data):
+def process_batch(batch_data: dict) -> dict:
+  '''
+  Processes single batch
+
+  :param batch_data: dictionary containing all information required to process a given batch
+  :return: dictionary with batch processing result, in case batch_save is set to true in 
+          config.json None is returned and then merge-parse.py script must be used to merge partial
+          results into one file
+  '''
   s1 = time.time()
   global nlp
 
@@ -77,24 +107,6 @@ def process_batch(batch_data):
     lang = batch_data["lang"]
     nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, depparse_min_length_to_batch_separately=40, deepparse_batch_size=25)
     logging.info(f'Initializing NLP batch: {index}, process: {current_process}, device: {device}')
-  
-  '''
-  processed = []
-  counter = 0
-  step = 10000
-  while counter < batch_size:
-    start = counter
-    stop = counter + step
-    if stop > batch_size:
-      stop = batch_size
-    data = batch_data["data"][start:stop]
-    print(f'Batch: {counter}')
-    print(data[0].text)
-    torch.cuda.empty_cache()
-    p = nlp(data)
-    processed.extend(p)
-    counter += step
-  '''
   
   data = batch_data["data"]
   processed = nlp(data)
@@ -128,8 +140,15 @@ def process_batch(batch_data):
   else:
     return result
 
-def process_language(config, pipeline, lang, selected_sentences):
-  
+def process_language(config: dict, pipeline: str, lang: str, selected_sentences: List[int]):
+  '''
+  Prepares batches to be processed for a given language.
+
+  :param config: dictionary with all configuration information
+  :param pipeline: processed pipeline name from config.json file
+  :param lang: processing language
+  :selected_sentences: the list of sentences to be processed, in case of None all sentneces will be processed
+  '''
   stanza.download(lang)
 
   input_file = "./data/" + pipeline + "/bitext_raw/" + pipeline + "." + lang + ".txt"
@@ -185,8 +204,16 @@ def process_language(config, pipeline, lang, selected_sentences):
 
     save(pipeline, lang, sorted_result)
 
-def save(pipeline, lang, sorted_result, index = None, batch_size = None):
-   #tokenized sentences
+def save(pipeline: str, lang: str, sorted_result: dict, index: int = None, batch_size: int = None):
+  '''
+  Saves file with tokenized sentences and file with data in ConLL-U format
+
+  :param pipeline: processed pipeline name from config.json file
+  :param lang: processing language
+  :param sorted_result: Stanza result to be saved into the files
+  :index: batch number (applies only when config.json parameter batch_save=true)
+  :batch_size: batch size (applies only when config.json parameter batch_save=true)
+  '''
   asentences = []
   sentences = []
   for s in sorted_result:

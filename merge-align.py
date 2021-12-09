@@ -1,3 +1,8 @@
+'''
+Used only if params.save_batch is set to true. Allows to merge all the batch results 
+from ./data/[pipeline]/align/tmp/ to a single file that contain all sentences stored 
+in ./data/[pipeline]/align/ folder.
+'''
 import argparse
 import impl.utils as utils
 import logging
@@ -14,8 +19,13 @@ logging.basicConfig(
   ]
 )
 
-def merge(config, pipeline):
-  src = config["pipelines"][pipeline]["source"]
+def merge(config: dict, pipeline: str):
+  '''
+  Merges alignment results stored in /tmp folder (for batch_save=true) into one file
+
+  :param config: config.json file content
+  :param pipeline: pipeline name from config.json file that is processed
+  '''
   folder = "./data/" + pipeline + "/aligned"
   try:
     mask = folder + "/tmp/training.*.align"

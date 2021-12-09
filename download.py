@@ -1,3 +1,8 @@
+'''
+Script downloads selected parallel corpus based on configuration defined
+in config/config.json file.
+'''
+
 import argparse
 import time
 import requests
@@ -24,12 +29,25 @@ logging.basicConfig(
   ]
 )
 
-def replacements(file):
+def replacements(file: str) -> str:
+  '''
+  Updates file names for some languages based on REPLACEMENTS constant
+  
+  :param file: file name to be updated
+  :return: updated file name
+  '''
   for r in REPLACEMENTS:
     file = file.replace(r['src'], r['tgt'])
   return file
 
-def download_file(source, type, url):
+def download_file(source: str, type: str, url: str):
+  '''
+  Downloads the set of files based on configuration in config.json file for specific dataset and url
+  
+  :param source: config.json -> params.sources - the name of source definition that is used to download files
+  :param type: one of: europarl, tatoeba, subtitles
+  :param url: destination URL used to download a file configured in config.json
+  '''
   logging.info(f'Starting: {url}')
   dir = './data/source/' + source
   segments = url.split("/")
