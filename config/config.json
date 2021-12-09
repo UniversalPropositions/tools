@@ -16,6 +16,12 @@
                 "tatoeba": 20000
             }
         },
+        "en-zh-2M": {
+            "source": "en-zh",
+            "sentences": {
+                "subtitles": 2000000,
+            }
+        },
         "en-fr": {
             "source": "en-fr",
             "sentences": {
