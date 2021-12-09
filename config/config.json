@@ -19,7 +19,7 @@
         "en-zh-2M": {
             "source": "en-zh",
             "sentences": {
-                "subtitles": 2000000,
+                "subtitles": 2000000
             }
         },
         "en-fr": {
