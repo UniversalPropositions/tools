@@ -1,0 +1,2172 @@
+# sentence-text = Dochody ogromnej większości z tych 20 obywateli klasy wyższej w Chinach są w zasadzie dochodami niezgłoszonymi ; część ich dochodów , która pochodzi z w pełni zadeklarowanych zarobków , stanowi znikomą część ich bogactwa .
+1	Dochody	dochód	NOUN	_	_	15	nsubj	_	_	A1	_	_
+2	ogromnej	ogromny	ADJ	_	_	3	amod	_	_	_	_	_
+3	większości	większość	NOUN	_	_	1	nmod	_	_	_	_	_
+4	z	z	ADP	_	_	7	case	_	_	_	_	_
+5	tych	tych	DET	_	_	6	det	_	_	_	_	_
+6	20	20	NUM	_	_	7	nummod	_	_	_	_	_
+7	obywateli	obywatel	NOUN	_	_	3	nmod:arg	_	_	_	_	_
+8	klasy	klasa	NOUN	_	_	7	nmod:arg	_	_	_	_	_
+9	wyższej	wysoki	ADJ	_	_	8	amod	_	_	_	_	_
+10	w	w	ADP	_	_	11	case	_	_	_	_	_
+11	Chinach	Chiny	PROPN	_	_	8	nmod	_	_	_	_	_
+12	są	być	VERB	_	_	15	cop	Y	be.01	_	_	_
+13	w	w	ADP	_	_	15	case	_	_	_	_	_
+14	zasadzie	zasada	NOUN	_	_	10	fixed	_	_	AM-ADV	_	_
+15	dochodami	dochód	NOUN	_	_	0	ROOT	_	_	A2	_	_
+16	niezgłoszonymi	niezgłoszonymi	ADJ	_	_	15	amod	_	_	_	_	_
+17	;	;	PUNCT	_	_	30	punct	_	_	_	_	_
+18	część	część	NOUN	_	_	30	nsubj	_	_	_	_	A0
+19	ich	on	PRON	_	_	20	nmod	_	_	_	_	_
+20	dochodów	dochód	NOUN	_	_	18	nmod:arg	_	_	_	A1	_
+21	,	,	PUNCT	_	_	23	punct	_	_	_	_	_
+22	która	która	DET	_	_	23	nsubj	_	_	_	_	_
+23	pochodzi	pochodzić	VERB	_	_	20	acl:relcl	Y	come.03	_	_	_
+24	z	z	ADP	_	_	28	case	_	_	_	_	_
+25	w	w	ADP	_	_	4	fixed	_	_	_	_	_
+26	pełni	pełnia	NOUN	_	_	10	fixed	_	_	_	AM-EXT	_
+27	zadeklarowanych	zadeklarowanych	ADJ	_	_	28	amod	_	_	_	_	_
+28	zarobków	zarobek	NOUN	_	_	23	obl:arg	_	_	_	A2	_
+29	,	,	PUNCT	_	_	18	punct	_	_	_	_	_
+30	stanowi	stanowić	VERB	_	_	0	ROOT	Y	represent.01	_	_	_
+31	znikomą	znikomy	ADJ	_	_	18	amod	_	_	_	_	AM-ADJ
+32	część	część	NOUN	_	_	30	xcomp:pred	_	_	_	_	A1
+33	ich	on	PRON	_	_	34	nmod	_	_	_	_	_
+34	bogactwa	bogactwo	NOUN	_	_	18	nmod:arg	_	_	_	_	_
+35	.	.	PUNCT	_	_	30	punct	_	_	_	_	_
+
+
+# sentence-text = Urzędnicy wyjeżdżają na wieś z wielką świtą , a ludzie idą do petycji sami .
+1	Urzędnicy	urzędnik	NOUN	_	_	2	nsubj	_	_	A0	_
+2	wyjeżdżają	wyjeżdżać	VERB	_	_	0	ROOT	Y	go.02	_	_
+3	na	na	ADP	_	_	4	case	_	_	_	_
+4	wieś	wieś	NOUN	_	_	2	obl:arg	_	_	A4	_
+5	z	z	ADP	_	_	7	case	_	_	_	_
+6	wielką	wielki	ADJ	_	_	7	amod	_	_	_	_
+7	świtą	świta	NOUN	_	_	2	obl:arg	_	_	AM-NMR	_
+8	,	,	PUNCT	_	_	11	punct	_	_	_	_
+9	a	a	CCONJ	_	_	11	cc	_	_	_	_
+10	ludzie	lud	NOUN	_	_	11	nsubj	_	_	_	A0
+11	idą	iść	VERB	_	_	2	conj	Y	go.05	_	_
+12	do	do	ADP	_	_	13	case	_	_	_	_
+13	petycji	petycja	NOUN	_	_	11	obl	_	_	_	A1
+14	sami	sam	ADJ	_	_	11	nsubj	_	_	_	AM-MNR
+15	.	.	PUNCT	_	_	2	punct	_	_	_	_
+
+
+# sentence-text = Zgodnie z jego życzeniem strona z pisma zawierającego skargę została zastąpiona inną stroną
+1	Zgodnie	zgodnie	ADV	_	_	11	advmod	_	_	_	AM-MNR
+2	z	z	ADP	_	_	4	case	_	_	_	_
+3	jego	on	PRON	_	_	4	nmod	_	_	_	_
+4	życzeniem	życzenie	NOUN	_	_	1	obl:arg	_	_	_	_
+5	strona	strona	NOUN	_	_	4	nmod	_	_	_	A1
+6	z	z	ADP	_	_	7	case	_	_	_	_
+7	pisma	pismo	NOUN	_	_	5	nmod	_	_	_	_
+8	zawierającego	zawierać	ADJ	_	_	7	acl	_	_	_	_
+9	skargę	skarga	NOUN	_	_	8	obj	_	_	_	_
+10	została	zostać	AUX	_	_	11	aux:pass	Y	be.03	_	_
+11	zastąpiona	zastąpić	ADJ	_	_	0	ROOT	Y	replace.01	_	_
+12	inną	inny	ADJ	_	_	13	amod	_	_	_	_
+13	stroną	strona	NOUN	_	_	11	iobj	_	_	_	A2
+
+
+# sentence-text = Zły sad mamy tutaj .
+1	Zły	zły	NOUN	_	_	3	nsubj	_	_	_
+2	sad	sad	NOUN	_	_	1	nmod:arg	_	_	A1
+3	mamy	mieć	VERB	_	_	0	ROOT	Y	have.03	_
+4	tutaj	tutaj	ADV	_	_	3	advmod	_	_	AM-LOC
+5	.	.	PUNCT	_	_	3	punct	_	_	_
+
+
+# sentence-text = Nigdy nie napisałem tej historii .
+1	Nigdy	nigdy	ADV	_	_	3	advmod	_	_	A0
+2	nie	nie	PART	_	_	3	advmod:neg	_	_	AM-NEG
+3	napisałem	napisać	VERB	_	_	0	ROOT	Y	write.01	_
+4	tej	tej	DET	_	_	5	det	_	_	_
+5	historii	historia	NOUN	_	_	3	obj	_	_	A1
+6	.	.	PUNCT	_	_	3	punct	_	_	_
+
+
+# sentence-text = Po okresie zamętu i tyranii , para gorąco wierzyła , że inwazja przyniesie pokój .
+1	Po	po	ADP	_	_	2	case	_	_	_	_
+2	okresie	okres	NOUN	_	_	9	obl	_	_	AM-TMP	_
+3	zamętu	zamęt	NOUN	_	_	2	nmod	_	_	_	_
+4	i	i	CCONJ	_	_	5	cc	_	_	_	_
+5	tyranii	tyrania	NOUN	_	_	3	conj	_	_	_	_
+6	,	,	PUNCT	_	_	2	punct	_	_	_	_
+7	para	par	NOUN	_	_	9	nsubj	_	_	A0	_
+8	gorąco	gorąco	ADV	_	_	9	advmod	_	_	AM-MNR	_
+9	wierzyła	wierzyć	VERB	_	_	0	ROOT	Y	believe.01	_	_
+10	,	,	PUNCT	_	_	13	punct	_	_	_	_
+11	że	że	SCONJ	_	_	13	mark	_	_	_	_
+12	inwazja	inwazja	NOUN	_	_	13	nsubj	_	_	_	A0
+13	przyniesie	przynieść	VERB	_	_	9	ccomp	Y	bring.01	A1	_
+14	pokój	pokój	NOUN	_	_	13	obj	_	_	_	A1
+15	.	.	PUNCT	_	_	9	punct	_	_	_	_
+
+
+# sentence-text = Wieczorem 23 - go dwunastego miesiąca księżycowego należy umieścić na stole tacę z kandyzowanymi melonami .
+1	Wieczorem	wieczór	NOUN	_	_	0	ROOT	_	_	AM-TMP
+2	23	23	ADJ	_	_	1	amod	_	_	_
+3	-	-	ADJ	_	_	1	amod	_	_	_
+4	go	on	PRON	_	_	8	obj	_	_	_
+5	dwunastego	dwunasty	ADJ	_	_	6	acl	_	_	_
+6	miesiąca	miesiąc	NOUN	_	_	9	obl	_	_	_
+7	księżycowego	księżycowy	ADJ	_	_	6	amod	_	_	_
+8	należy	należeć	VERB	_	_	0	ROOT	_	_	_	should be placed	8	the	the	DET	DT	_
+9	umieścić	umieścić	VERB	_	_	8	xcomp	Y	place.01	_
+10	na	na	ADP	_	_	11	case	_	_	_
+11	stole	stół	NOUN	_	_	9	obl	_	_	A2
+12	tacę	taca	NOUN	_	_	9	obj	_	_	A1
+13	z	z	ADP	_	_	15	case	_	_	_
+14	kandyzowanymi	kandyzowanymi	ADJ	_	_	15	amod	_	_	_
+15	melonami	melon	NOUN	_	_	12	nmod	_	_	_
+16	.	.	PUNCT	_	_	8	punct	_	_	_
+
+
+# sentence-text = Le Beverly jakoś przebrnął przez lata 90 .
+1	Le	le	X	_	_	4	nsubj	_	_	_
+2	Beverly	beverly	PROPN	_	_	1	flat	_	_	A0
+3	jakoś	jakoś	ADV	_	_	4	advmod	_	_	AM-MNR
+4	przebrnął	przebrnąć	VERB	_	_	0	ROOT	Y	struggle.01	_
+5	przez	przez	ADP	_	_	6	case	_	_	_
+6	lata	rok	NOUN	_	_	4	obl	_	_	AM-TMP
+7	90	90	ADJ	_	_	6	amod	_	_	_
+8	.	.	PUNCT	_	_	4	punct	_	_	_
+
+
+# sentence-text = Tylko , że nie przegrał ... to było zwycięstwo .
+1	Tylko	tylko	PART	_	_	0	ROOT	_	_	_	_
+2	,	,	PUNCT	_	_	5	punct	_	_	_	_
+3	że	że	SCONJ	_	_	5	mark	_	_	_	_
+4	nie	nie	PART	_	_	5	advmod:neg	_	_	AM-NEG	_
+5	przegrał	przegrać	VERB	_	_	1	ccomp	Y	lose.03	_	_
+6	...	...	PUNCT	_	_	1	punct	_	_	_	_
+7	to	to	AUX	_	_	9	cop	_	_	_	A1
+8	było	było	AUX	_	_	9	aux	Y	be.01	_	_
+9	zwycięstwo	zwycięstwo	NOUN	_	_	0	ROOT	_	_	_	A2
+10	.	.	PUNCT	_	_	9	punct	_	_	_	_
+
+
+# sentence-text = W ten sposób powoli zrażają się do siebie i zaczynają odmawiać .
+1	W	w	ADP	_	_	3	case	_	_	_	_	_
+2	ten	ten	DET	_	_	3	det	_	_	_	_	_
+3	sposób	sposób	NOUN	_	_	5	obl	_	_	AM-DIS	_	_
+4	powoli	powoli	ADV	_	_	5	advmod	_	_	_	_	_
+5	zrażają	zrażać	VERB	_	_	0	ROOT	Y	alienate.01	_	_	_
+6	się	się	PRON	_	_	5	expl:pv	_	_	A1	_	_
+7	do	do	ADP	_	_	8	case	_	_	_	_	_
+8	siebie	siebie	PRON	_	_	5	obl:arg	_	_	A2	_	_
+9	i	i	CCONJ	_	_	10	cc	_	_	_	_	_
+10	zaczynają	zaczynać	VERB	_	_	5	conj	Y	begin.01	_	_	_
+11	odmawiać	odmawiać	VERB	_	_	10	xcomp	Y	refuse.01	_	A1	_
+12	.	.	PUNCT	_	_	5	punct	_	_	_	_	_
+
+
+# sentence-text = Nasi urzędnicy utknęli z podejmowaniem decyzji przy braku jakichkolwiek wymiernych kryteriów ,
+1	Nasi	nasi	DET	_	_	2	det:poss	_	_	_
+2	urzędnicy	urzędnik	NOUN	_	_	3	nsubj	_	_	A1
+3	utknęli	utknąć	VERB	_	_	0	ROOT	Y	stuck.01
+4	z	z	ADP	_	_	5	case	_	_	_
+5	podejmowaniem	podejmowaniem	NOUN	_	_	3	obl:arg	_	_	A2
+6	decyzji	decyzja	NOUN	_	_	5	nmod:arg	_	_	_
+7	przy	przy	ADP	_	_	8	case	_	_	_
+8	braku	brak	NOUN	_	_	5	nmod	_	_	_
+9	jakichkolwiek	jakichkolwiek	DET	_	_	11	det	_	_	_
+10	wymiernych	wymierny	ADJ	_	_	11	amod	_	_	_
+11	kryteriów	kryterium	NOUN	_	_	8	nmod:arg	_	_	_
+12	,	,	PUNCT	_	_	3	punct	_	_	_
+
+
+# sentence-text = W przeciwnym razie wojska radzieckie wpadłyby w szereg niszczących pułapek na przyszłym , zdalnie sterowanym polu walki , na którym wróg wykorzystałby najnowsze komputerowe systemy nadzoru i informacji w nowej formie wojny high - tech .
+1	W	w	ADP	_	_	3	case	_	_	_	_
+2	przeciwnym	przeciwny	ADJ	_	_	3	amod	_	_	AM-DIS	_
+3	razie	raz	NOUN	_	_	6	obl	_	_	_	_
+4	wojska	wojsko	NOUN	_	_	6	nsubj	_	_	A1	_
+5	radzieckie	radziecki	ADJ	_	_	4	amod	_	_	_	_
+6	wpadłyby	wpaść	VERB	_	_	0	ROOT	Y	fall.01	_	_
+7	w	w	ADP	_	_	8	case	_	_	_	_
+8	szereg	szereg	NOUN	_	_	6	obl:arg	_	_	A4	_
+9	niszczących	niszczący	ADJ	_	_	10	amod	_	_	_	_
+10	pułapek	pułapka	NOUN	_	_	8	nmod:arg	_	_	_	_
+11	na	na	ADP	_	_	14	case	_	_	_	_
+12	przyszłym	przyszły	ADJ	_	_	14	amod	_	_	_	_
+13	,	,	PUNCT	_	_	14	punct	_	_	_	_
+14	zdalnie	zdalnie	NOUN	_	_	8	nmod	_	_	AM-LOC	_
+15	sterowanym	sterowanym	ADJ	_	_	14	acl	_	_	_	_
+16	polu	pole	NOUN	_	_	14	nsubj	_	_	_	_
+17	walki	walka	NOUN	_	_	16	nmod	_	_	_	_
+18	,	,	PUNCT	_	_	22	punct	_	_	_	_
+19	na	na	ADP	_	_	20	case	_	_	_	_
+20	którym	którym	DET	_	_	22	obl	_	_	_	R-AM-LOC
+21	wróg	wróg	NOUN	_	_	22	nsubj	_	_	_	A0
+22	wykorzystałby	wykorzystać	VERB	_	_	14	acl:relcl	Y	utilize.01	_	_
+23	najnowsze	nowy	ADJ	_	_	25	amod	_	_	_	_
+24	komputerowe	komputerowy	ADJ	_	_	25	amod	_	_	_	_
+25	systemy	systema	NOUN	_	_	22	obj	_	_	_	A1
+26	nadzoru	nadzór	NOUN	_	_	25	nmod:arg	_	_	_	_
+27	i	i	CCONJ	_	_	28	cc	_	_	_	_
+28	informacji	informacja	NOUN	_	_	26	conj	_	_	_	_
+29	w	w	ADP	_	_	31	case	_	_	_	_
+30	nowej	nowy	ADJ	_	_	31	amod	_	_	_	_
+31	formie	forma	NOUN	_	_	26	nmod	_	_	_	_
+32	wojny	wojna	NOUN	_	_	26	nmod	_	_	_	_
+33	high	high	NOUN	_	_	25	nmod	_	_	_	_
+34	-	-	NOUN	_	_	33	nmod	_	_	_	_
+35	tech	tech	NOUN	_	_	33	nmod	_	_	_	_
+36	.	.	PUNCT	_	_	6	punct	_	_	_	_
+
+
+# sentence-text = Potem był czas , kiedy Jaymz podniósł swój komputer i roztrzaskał go o ścianę .
+1	Potem	potem	ADV	_	_	2	advmod	_	_	_	_	_
+2	był	być	VERB	_	_	0	ROOT	Y	be.01	_	_	_
+3	czas	czas	NOUN	_	_	2	nsubj	_	_	A2	_	_
+4	,	,	PUNCT	_	_	7	punct	_	_	_	_	_
+5	kiedy	kiedy	ADV	_	_	7	advmod	_	_	_	_	_
+6	Jaymz	jaymz	PROPN	_	_	7	nsubj	_	_	_	A0	_
+7	podniósł	podnieść	VERB	_	_	3	acl:relcl	Y	pick_up.04	_	_	_
+8	swój	swój	DET	_	_	9	det:poss	_	_	_	_	_
+9	komputer	komputer	NOUN	_	_	7	obj	_	_	_	A1	_
+10	i	i	CCONJ	_	_	11	cc	_	_	_	_	_
+11	roztrzaskał	roztrzaskać	VERB	_	_	7	conj	_	smash.01	_	_	_
+12	go	on	PRON	_	_	11	obj	_	_	_	_	R-A1
+13	o	o	ADP	_	_	14	case	_	_	_	_	_
+14	ścianę	ściana	NOUN	_	_	11	obl:arg	_	_	_	_	_
+15	.	.	PUNCT	_	_	2	punct	_	_	_	_	_
+
+
+# sentence-text = Rzeczywiście - przypuszczam , że mój sarkazm nie był wystarczająco ociekający .
+1	Rzeczywiście	rzeczywiście	ADV	_	_	3	parataxis:obj	_	_	AM-ADV	_
+2	-	-	PUNCT	_	_	3	punct	_	_	_	_
+3	przypuszczam	przypuszczać	VERB	_	_	0	ROOT	Y	suppose.01	_	_
+4	,	,	PUNCT	_	_	11	punct	_	_	_	_
+5	że	że	SCONJ	_	_	11	mark	_	_	_	_
+6	mój	mój	DET	_	_	7	det:poss	_	_	_	_
+7	sarkazm	sarkazm	NOUN	_	_	11	nsubj:pass	_	_	A1	A1
+8	nie	nie	PART	_	_	9	advmod:neg	_	_	_	AM-NEG
+9	był	był	AUX	_	_	11	aux:pass	Y	be.01	_	_
+10	wystarczająco	wystarczająco	ADV	_	_	11	advmod	_	_	_	_
+11	ociekający	ociekający	ADJ	_	_	3	ccomp	_	_	_	A2
+12	.	.	PUNCT	_	_	3	punct	_	_	_	_
+
+
+# sentence-text = [ jilian ] Ale z żywotnych interesów dziesiątków tysięcy rodaków w Rosji i presji w domu , ambasada nie może pomóc , ale oferują wyjaśnienia .
+1	[	[	PUNCT	_	_	2	punct	_	_	_	_
+2	jilian	jilian	NOUN	_	_	0	ROOT	_	_	_	_
+3	]	]	PUNCT	_	_	2	punct	_	_	_	_
+4	Ale	ale	CCONJ	_	_	20	cc	_	_	_	_
+5	z	z	ADP	_	_	7	case	_	_	_	_
+6	żywotnych	żywotny	ADJ	_	_	7	amod	_	_	_	_
+7	interesów	interes	NOUN	_	_	21	obl	_	_	_	_
+8	dziesiątków	dziesiątek	NOUN	_	_	7	nmod:arg	_	_	_	_
+9	tysięcy	tysiąc	NOUN	_	_	8	nmod:arg	_	_	_	_
+10	rodaków	rodak	NOUN	_	_	8	nmod:arg	_	_	_	_
+11	w	w	ADP	_	_	12	case	_	_	_	_
+12	Rosji	Rosja	PROPN	_	_	8	nmod	_	_	_	_
+13	i	i	CCONJ	_	_	14	cc	_	_	_	_
+14	presji	presja	NOUN	_	_	12	conj	_	_	_	_
+15	w	w	ADP	_	_	16	case	_	_	_	_
+16	domu	dom	NOUN	_	_	8	nmod	_	_	_	_
+17	,	,	PUNCT	_	_	7	punct	_	_	_	_
+18	ambasada	ambasada	NOUN	_	_	20	nsubj	_	_	A0	_
+19	nie	nie	PART	_	_	20	advmod:neg	_	_	AM-NEG	_
+20	może	móc	VERB	_	_	0	ROOT	_	_	AM-MOD	_
+21	pomóc	pomóc	VERB	_	_	20	xcomp	Y	help.01	_	_
+22	,	,	PUNCT	_	_	24	punct	_	_	_	_
+23	ale	ale	CCONJ	_	_	24	cc	_	_	_	_
+24	oferują	oferować	VERB	_	_	20	conj	Y	offer.01	_	_
+25	wyjaśnienia	wyjaśnienie	NOUN	_	_	24	obj	_	_	_	A1
+26	.	.	PUNCT	_	_	20	punct	_	_	_	_
+
+
+# sentence-text = Masowe mordy , które mają miejsce teraz w Sudanie , gdzie arabski reżim muzułmański masakruje swoich czarnych obywateli chrześcijan , nie mają nic wspólnego z Izraelem .
+1	Masowe	masowy	ADJ	_	_	2	amod	_	_	_	_	_
+2	mordy	morda	NOUN	_	_	0	ROOT	_	_	A0	_	A0
+3	,	,	PUNCT	_	_	5	punct	_	_	_	_	_
+4	które	które	DET	_	_	5	nsubj	_	_	_	_	_
+5	mają	mieć	VERB	_	_	2	acl:relcl	Y	have.03	_	_	_
+6	miejsce	miejsce	NOUN	_	_	5	iobj	_	_	_	_	_
+7	teraz	teraz	ADV	_	_	5	advmod	_	_	_	_	_
+8	w	w	ADP	_	_	9	case	_	_	_	_	_
+9	Sudanie	Sudan	PROPN	_	_	5	obl	_	_	AM-LOC	AM-LOC	_
+10	,	,	PUNCT	_	_	15	punct	_	_	_	_	_
+11	gdzie	gdzie	ADV	_	_	15	advmod	_	_	_	R-AM-LOC	_
+12	arabski	arabski	ADJ	_	_	13	nsubj	_	_	_	_	_
+13	reżim	reżim	NOUN	_	_	15	nsubj	_	_	_	A0	_
+14	muzułmański	muzułmański	NOUN	_	_	13	obj	_	_	_	_	_
+15	masakruje	masakrować	VERB	_	_	9	acl:relcl	Y	massacre.01	_	_	_
+16	swoich	swoich	DET	_	_	18	det:poss	_	_	_	_	_
+17	czarnych	czarny	ADJ	_	_	18	amod	_	_	_	_	_
+18	obywateli	obywatel	NOUN	_	_	15	obj	_	_	_	A1	_
+19	chrześcijan	chrześcijanin	NOUN	_	_	18	appos	_	_	_	_	_
+20	,	,	PUNCT	_	_	5	punct	_	_	_	_	_
+21	nie	nie	PART	_	_	5	advmod:neg	_	_	_	_	AM-NEG
+22	mają	mieć	VERB	_	_	2	conj	Y	have.03	_	_	_
+23	nic	nic	PRON	_	_	5	iobj	_	_	_	_	A1
+24	wspólnego	wspólny	ADJ	_	_	23	amod	_	_	_	_	_
+25	z	z	ADP	_	_	26	case	_	_	_	_	_
+26	Izraelem	Izrael	PROPN	_	_	24	obl:arg	_	_	_	_	AM-LOC
+27	.	.	PUNCT	_	_	2	punct	_	_	_	_	_
+
+
+# sentence-text = Jednak w nowym trybie web - centric takie sytuacje nie będą już miały miejsca , ponieważ wszystkie usługi i aplikacje są dostarczane online - -
+1	Jednak	jednak	CCONJ	_	_	13	cc	_	_	_	_	_
+2	w	w	ADP	_	_	4	case	_	_	_	_	_
+3	nowym	nowy	ADJ	_	_	4	amod	_	_	_	_	_
+4	trybie	tryba	NOUN	_	_	13	obl	_	_	_	_	_
+5	web	weba	PROPN	_	_	4	nmod:arg	_	_	_	_	_
+6	-	-	PUNCT	_	_	13	punct	_	_	_	_	_
+7	centric	centric	ADJ	_	_	13	advmod	_	_	_	_	_
+8	takie	takie	DET	_	_	9	det	_	_	_	_	_
+9	sytuacje	sytuacja	NOUN	_	_	13	nsubj	_	_	A0	_	_
+10	nie	nie	PART	_	_	11	advmod:neg	_	_	AM-NEG	_	_
+11	będą	być	AUX	_	_	13	aux	_	_	_	_	_
+12	już	już	PART	_	_	13	advmod:emph	_	_	_	_	_
+13	miały	mieć	VERB	_	_	0	ROOT	Y	have.03	_	_	_
+14	miejsca	miejsce	NOUN	_	_	13	iobj	_	_	A1	_	_
+15	,	,	PUNCT	_	_	22	punct	_	_	_	_	_
+16	ponieważ	ponieważ	SCONJ	_	_	22	mark	_	_	_	_	_
+17	wszystkie	wszystkie	DET	_	_	18	det	_	_	_	_	_
+18	usługi	usługa	NOUN	_	_	22	nsubj:pass	_	_	_	_	_
+19	i	i	CCONJ	_	_	20	cc	_	_	_	_	_
+20	aplikacje	aplikacja	NOUN	_	_	18	conj	_	_	_	_	A1
+21	są	są	AUX	_	_	22	aux:pass	Y	be.03	_	_	_
+22	dostarczane	dostarczane	ADJ	_	_	13	advcl	Y	provide.01	_	_	_
+23	online	online	ADV	_	_	22	advmod	_	_	_	_	_
+24	-	-	PUNCT	_	_	6	punct	_	_	_	_	_
+25	-	-	PUNCT	_	_	13	punct	_	_	_	_	_
+
+
+# sentence-text = Wydaje się , że to wyrażenie ma dwie strony
+1	Wydaje	wydawać	VERB	_	_	0	ROOT	Y	seem.01	_	_
+2	się	się	PRON	_	_	1	expl:pv	_	_	_	_
+3	,	,	PUNCT	_	_	7	punct	_	_	_	_
+4	że	że	SCONJ	_	_	7	mark	_	_	_	_
+5	to	to	DET	_	_	6	det	_	_	_	_
+6	wyrażenie	wyrażenie	NOUN	_	_	7	nsubj	_	_	A1	A0
+7	ma	mieć	VERB	_	_	1	csubj	Y	have.03	_	_
+8	dwie	dwa	NUM	_	_	9	nummod	_	_	_	_
+9	strony	strona	NOUN	_	_	7	iobj	_	_	_	A1
+
+
+# sentence-text = W Kongo żołnierze przyjmowali ludzi do partii za jedną paczkę papierosów i jedno uderzenie kolbą karabinu .
+1	W	w	ADP	_	_	2	case	_	_	_
+2	Kongo	kongo	PROPN	_	_	4	obl	_	_	AM-LOC
+3	żołnierze	żołnierz	NOUN	_	_	4	nsubj	_	_	A0
+4	przyjmowali	przyjmować	VERB	_	_	0	ROOT	Y	accept.01	_
+5	ludzi	człowiek	NOUN	_	_	4	obj	_	_	A1
+6	do	do	ADP	_	_	7	case	_	_	_
+7	partii	partia	NOUN	_	_	4	obl	_	_	A3
+8	za	za	ADP	_	_	10	case	_	_	_
+9	jedną	jeden	ADJ	_	_	10	amod	_	_	_
+10	paczkę	paczka	NOUN	_	_	4	obl:arg	_	_	AM-PRP
+11	papierosów	papieros	NOUN	_	_	10	nmod	_	_	_
+12	i	i	CCONJ	_	_	14	cc	_	_	_
+13	jedno	jeden	ADJ	_	_	14	amod	_	_	_
+14	uderzenie	uderzenie	NOUN	_	_	4	conj	_	_	_
+15	kolbą	kolba	NOUN	_	_	14	obj	_	_	_
+16	karabinu	karabin	NOUN	_	_	15	nmod	_	_	_
+17	.	.	PUNCT	_	_	4	punct	_	_	_
+
+
+# sentence-text = Bochenki były bezpośrednio przekazywane do Ośrodka Pracy .
+1	Bochenki	bochenek	NOUN	_	_	4	nsubj:pass	_	_	_	A1
+2	były	były	AUX	_	_	4	aux:pass	Y	be.03	_	_
+3	bezpośrednio	bezpośrednio	ADV	_	_	4	advmod	_	_	_	AM-MNR
+4	przekazywane	przekazywane	ADJ	_	_	0	ROOT	Y	transfer.01	_	_
+5	do	do	ADP	_	_	6	case	_	_	_	_
+6	Ośrodka	ośrodek	NOUN	_	_	4	obl	_	_	_	A2
+7	Pracy	praca	NOUN	_	_	6	nmod:flat	_	_	_	_
+8	.	.	PUNCT	_	_	4	punct	_	_	_	_
+
+
+# sentence-text = Budżet Busha nie zostanie przyjęty z wieloma machnięciami ręką w Kongresie , gdzie nowa większość stanie przed trudnymi decyzjami .
+1	Budżet	budżet	NOUN	_	_	5	nsubj:pass	_	_	_	_
+2	Busha	Bush	PROPN	_	_	1	appos	_	_	_	_
+3	nie	nie	PART	_	_	4	advmod:neg	_	_	_	_
+4	zostanie	zostanie	AUX	_	_	5	aux:pass	Y	be.03	_	_
+5	przyjęty	przyjęty	ADJ	_	_	0	ROOT	_	_	_	_
+6	z	z	ADP	_	_	8	case	_	_	_	_
+7	wieloma	wieloma	DET	_	_	8	det:nummod	_	_	_	_
+8	machnięciami	machnięciami	NOUN	_	_	5	obl	_	_	_	_
+9	ręką	ręka	NOUN	_	_	5	obl	_	_	_	_
+10	w	w	ADP	_	_	11	case	_	_	_	_
+11	Kongresie	kongres	NOUN	_	_	9	nmod	_	_	_	AM-LOC
+12	,	,	PUNCT	_	_	16	punct	_	_	_	_
+13	gdzie	gdzie	ADV	_	_	16	advmod	_	_	_	R-AM-LOC
+14	nowa	nowy	ADJ	_	_	15	amod	_	_	_	_
+15	większość	większość	NOUN	_	_	16	nsubj	_	_	_	A0
+16	stanie	stać	VERB	_	_	11	acl:relcl	Y	face.01	_	_
+17	przed	przed	ADP	_	_	19	case	_	_	_	_
+18	trudnymi	trudny	ADJ	_	_	19	amod	_	_	_	_
+19	decyzjami	decyzja	NOUN	_	_	16	obl:arg	_	_	_	A1
+20	.	.	PUNCT	_	_	5	punct	_	_	_	_
+
+
+# sentence-text = Stany Zjednoczone przyjmują więcej uchodźców niż jakikolwiek inny kraj na świecie ,
+1	Stany	Stano	PROPN	_	_	3	nsubj	_	_	_
+2	Zjednoczone	zjednoczone	ADJ	_	_	1	amod:flat	_	_	A0
+3	przyjmują	przyjmować	VERB	_	_	0	ROOT	Y	admit.02	_
+4	więcej	więcej	DET	_	_	5	det:numgov	_	_	_
+5	uchodźców	uchodźca	NOUN	_	_	3	obj	_	_	A1
+6	niż	niż	SCONJ	_	_	9	mark	_	_	_
+7	jakikolwiek	jakikolwiek	DET	_	_	9	det	_	_	_
+8	inny	inny	ADJ	_	_	9	amod	_	_	_
+9	kraj	kraj	NOUN	_	_	3	obl:cmpr	_	_	_
+10	na	na	ADP	_	_	11	case	_	_	_
+11	świecie	świat	NOUN	_	_	9	nmod	_	_	_
+12	,	,	PUNCT	_	_	3	punct	_	_	_
+
+
+# sentence-text = Tylko w ten sposób możemy uspokoić duchy uczniów , którzy zginęli w katastrofie , możemy rozliczyć się z rodzicami ofiar , możemy uzyskać sprawiedliwość dla społeczności , możemy ostrzec przyszłe pokolenia przed lekcjami , które należy wyciągnąć .
+1	Tylko	tylko	PART	_	_	4	advmod:emph	_	_	_	_	_	_	_	_
+2	w	w	ADP	_	_	4	case	_	_	_	_	_	_	_	_
+3	ten	ten	DET	_	_	4	det	_	_	_	_	_	_	_	_
+4	sposób	sposób	NOUN	_	_	5	obl	_	_	_	_	_	_	_	_
+5	możemy	móc	VERB	_	_	0	ROOT	_	_	AM-MOD	_	_	_	_	_
+6	uspokoić	uspokoić	VERB	_	_	5	xcomp	Y	calm.01	_	_	_	_	_	_
+7	duchy	duch	NOUN	_	_	6	obj	_	_	A1	_	_	_	_	_
+8	uczniów	uczeń	NOUN	_	_	7	nmod	_	_	_	_	_	_	_	_
+9	,	,	PUNCT	_	_	11	punct	_	_	_	_	_	_	_	_
+10	którzy	którzy	DET	_	_	11	nsubj	_	_	_	R-A1	_	_	_	_
+11	zginęli	zginąć	VERB	_	_	7	acl:relcl	Y	die.01	_	_	_	_	_	_
+12	w	w	ADP	_	_	13	case	_	_	_	_	_	_	_	_
+13	katastrofie	katastrofa	NOUN	_	_	11	obl	_	_	_	_	_	_	_	_
+14	,	,	PUNCT	_	_	11	punct	_	_	_	_	_	_	_	_
+15	możemy	móc	VERB	_	_	5	conj	_	_	_	_	AM-MOD	_	_	_
+16	rozliczyć	rozliczyć	VERB	_	_	5	xcomp	Y	account.01	_	_	_	_	_	_
+17	się	się	PRON	_	_	16	expl:pv	_	_	_	_	_	_	_	_
+18	z	z	ADP	_	_	19	case	_	_	_	_	_	_	_	_
+19	rodzicami	rodzice	NOUN	_	_	16	obl:arg	_	_	_	_	_	_	_	_
+20	ofiar	ofiara	NOUN	_	_	19	nmod:arg	_	_	_	_	_	_	_	_
+21	,	,	PUNCT	_	_	5	punct	_	_	_	_	_	_	_	_
+22	możemy	móc	VERB	_	_	5	conj	_	_	_	_	_	AM-MOD	_	_
+23	uzyskać	uzyskać	VERB	_	_	5	xcomp	Y	obtain.01	_	_	_	_	_	_
+24	sprawiedliwość	sprawiedliwość	NOUN	_	_	23	obj	_	_	_	_	_	_	_	_
+25	dla	dla	ADP	_	_	26	case	_	_	_	_	_	_	_	_
+26	społeczności	społeczność	NOUN	_	_	24	nmod	_	_	_	_	_	A0	_	_
+27	,	,	PUNCT	_	_	5	punct	_	_	_	_	_	_	_	_
+28	możemy	móc	VERB	_	_	5	conj	_	_	_	_	_	_	AM-MOD	_
+29	ostrzec	ostrzec	VERB	_	_	5	xcomp	Y	warn.01	_	_	_	_	_	_
+30	przyszłe	przyszły	ADJ	_	_	31	amod	_	_	_	_	_	_	_	_
+31	pokolenia	pokolenie	NOUN	_	_	29	obj	_	_	_	_	_	_	A2	_
+32	przed	przed	ADP	_	_	33	case	_	_	_	_	_	_	_	_
+33	lekcjami	lekcja	NOUN	_	_	31	nmod	_	_	_	_	_	_	A1	_
+34	,	,	PUNCT	_	_	36	punct	_	_	_	_	_	_	_	_
+35	które	które	DET	_	_	37	obj	_	_	_	_	_	_	_	R-A1
+36	należy	należeć	VERB	_	_	33	acl:relcl	_	_	_	_	_	_	_	AM-MOD
+37	wyciągnąć	wyciągnąć	VERB	_	_	36	xcomp	Y	draw.02	_	_	_	_	_	_
+38	.	.	PUNCT	_	_	5	punct	_	_	_	_	_	_	_	_
+
+
+# sentence-text = Ten młody człowiek pomyślał sobie i powiedział : Jestem tu w Ameryce od dziesięciu lat i nie wysłałem ani jednego listu do mojej rodziny .
+1	Ten	ten	DET	_	_	3	det	_	_	_	_	_	_
+2	młody	młody	ADJ	_	_	3	amod	_	_	_	_	_	_
+3	człowiek	człowiek	NOUN	_	_	4	nsubj	_	_	A0	A0	_	_
+4	pomyślał	pomyśleć	VERB	_	_	0	ROOT	Y	think.01	_	_	_	_
+5	sobie	sobie	PRON	_	_	4	expl:pv	_	_	A2	_	_	_
+6	i	i	CCONJ	_	_	7	cc	_	_	_	_	_	_
+7	powiedział	powiedzieć	VERB	_	_	4	conj	Y	say.01	_	_	_	_
+8	:	:	PUNCT	_	_	7	punct	_	_	_	_	_	_
+9	Jestem	być	VERB	_	_	18	cop	Y	be.01	_	_	_	_
+10	tu	tu	ADV	_	_	18	advmod	_	_	_	_	A2	_
+11	w	w	ADP	_	_	12	case	_	_	_	_	_	_
+12	Ameryce	Ameryka	PROPN	_	_	18	obl	_	_	_	_	AM-LOC	_
+13	od	od	ADP	_	_	15	case	_	_	_	_	_	_
+14	dziesięciu	dziesięć	NUM	_	_	15	nummod	_	_	_	AM-TMP	AM-TMP	_
+15	lat	rok	NOUN	_	_	18	obl	_	_	_	_	_	_
+16	i	i	CCONJ	_	_	18	cc	_	_	_	_	_	_
+17	nie	nie	PART	_	_	18	advmod:neg	_	_	_	AM-NEG	_	AM-NEG
+18	wysłałem	wysłać	VERB	_	_	7	parataxis:obj	Y	send.01	_	A1	_	_
+19	ani	ani	CCONJ	_	_	21	cc:preconj	_	_	_	_	_	_
+20	jednego	jeden	ADJ	_	_	21	amod	_	_	_	_	_	_
+21	listu	list	NOUN	_	_	18	obj	_	_	_	_	_	A1
+22	do	do	ADP	_	_	24	case	_	_	_	_	_	_
+23	mojej	mojej	DET	_	_	24	det:poss	_	_	_	_	_	_
+24	rodziny	rodzina	NOUN	_	_	21	nmod	_	_	_	_	_	A2
+25	.	.	PUNCT	_	_	4	punct	_	_	_	_	_	_
+
+
+# sentence-text = Saddam Husajn nie najechał na Kuwejt , nie zagroził Arabii Saudyjskiej i nie dokonał rzezi własnego narodu z powodu Izraela .
+1	Saddam	saddam	PROPN	_	_	4	nsubj	_	_	_	_	_
+2	Husajn	husajn	PROPN	_	_	1	flat	_	_	A0	A0	_
+3	nie	nie	PART	_	_	4	advmod:neg	_	_	AM-NEG	_	_
+4	najechał	najechać	VERB	_	_	0	ROOT	Y	invade.01	_	_	_
+5	na	na	ADP	_	_	6	case	_	_	_	_	_
+6	Kuwejt	kuwejt	PROPN	_	_	4	obl	_	_	A1	_	_
+7	,	,	PUNCT	_	_	9	punct	_	_	_	_	_
+8	nie	nie	PART	_	_	9	advmod:neg	_	_	_	AM-NEG	_
+9	zagroził	zagrozić	VERB	_	_	4	conj	Y	endanger.01	_	_	_
+10	Arabii	Arabia	PROPN	_	_	9	obj	_	_	_	A1	_
+11	Saudyjskiej	saudyjski	ADJ	_	_	10	amod:flat	_	_	_	_	_
+12	i	i	CCONJ	_	_	14	cc	_	_	_	_	_
+13	nie	nie	PART	_	_	14	advmod:neg	_	_	_	_	AM-NEG
+14	dokonał	dokonać	VERB	_	_	4	conj	Y	make.01	_	_	_
+15	rzezi	rzeź	NOUN	_	_	14	obj	_	_	_	_	A1
+16	własnego	własny	ADJ	_	_	17	amod	_	_	_	_	_
+17	narodu	naród	NOUN	_	_	15	nmod	_	_	_	_	_
+18	z	z	ADP	_	_	20	case	_	_	_	_	_
+19	powodu	powód	NOUN	_	_	18	fixed	_	_	_	_	_
+20	Izraela	Izrael	PROPN	_	_	17	nmod	_	_	AM-CAU	AM-CAU	AM-CAU
+21	.	.	PUNCT	_	_	4	punct	_	_	_	_	_
+
+
+# sentence-text = Sytuacja nie jest inna dla osób , które wcześniej były właścicielami działek na mapie NoSrawlTax.org .
+1	Sytuacja	sytuacja	NOUN	_	_	4	nsubj	_	_	A1	_
+2	nie	nie	PART	_	_	3	advmod:neg	_	_	_	_
+3	jest	jest	AUX	_	_	4	cop	Y	be.01	_	_
+4	inna	inny	ADJ	_	_	0	ROOT	_	_	A2	_
+5	dla	dla	ADP	_	_	6	case	_	_	_	_
+6	osób	osoba	NOUN	_	_	4	obl	_	_	_	A0
+7	,	,	PUNCT	_	_	11	punct	_	_	_	_
+8	które	które	DET	_	_	11	nsubj	_	_	_	R-A0
+9	wcześniej	wcześnie	ADV	_	_	11	advmod	_	_	_	AM-TMP
+10	były	były	AUX	_	_	11	cop	Y	be.01	_	_
+11	właścicielami	właściciel	NOUN	_	_	6	acl:relcl	_	_	_	A1
+12	działek	działko	NOUN	_	_	11	nmod:arg	_	_	_	_
+13	na	na	ADP	_	_	14	case	_	_	_	_
+14	mapie	mapa	NOUN	_	_	12	nmod:arg	_	_	_	_
+15	NoSrawlTax.org	nosrawltax.org	PROPN	_	_	14	nmod	_	_	_	_
+16	.	.	PUNCT	_	_	4	punct	_	_	_	_
+
+
+# sentence-text = Zaczęło się to latem 2002 roku , kiedy Sarkozy , ówczesny minister spraw wewnętrznych , wprowadził surowe kary dla uliczników w okolicach rue Saint - Denis .
+1	Zaczęło	zacząć	VERB	_	_	0	ROOT	Y	begin.01	_	_
+2	się	się	PRON	_	_	1	expl:pv	_	_	_	_
+3	to	to	PRON	_	_	1	nsubj	_	_	A1	_
+4	latem	lato	NOUN	_	_	1	obl	_	_	AM-TMP	AM-TMP
+5	2002	2002	ADJ	_	_	6	amod:flat	_	_	_	_
+6	roku	rok	NOUN	_	_	4	nmod:flat	_	_	_	_
+7	,	,	PUNCT	_	_	16	punct	_	_	_	_
+8	kiedy	kiedy	ADV	_	_	16	advmod	_	_	_	R-AM-TMP
+9	Sarkozy	sarkozy	NOUN	_	_	16	nsubj	_	_	_	A0
+10	,	,	PUNCT	_	_	12	punct	_	_	_	_
+11	ówczesny	ówczesny	ADJ	_	_	12	amod	_	_	_	_
+12	minister	minister	NOUN	_	_	9	conj	_	_	_	R-A0
+13	spraw	sprawa	NOUN	_	_	12	nmod:arg	_	_	_	_
+14	wewnętrznych	wewnętrzny	ADJ	_	_	13	amod	_	_	_	_
+15	,	,	PUNCT	_	_	9	punct	_	_	_	_
+16	wprowadził	wprowadzić	VERB	_	_	6	acl:relcl	Y	introduce.02	_	_
+17	surowe	surowy	ADJ	_	_	18	amod	_	_	_	_
+18	kary	kara	NOUN	_	_	16	obj	_	_	_	A1
+19	dla	dla	ADP	_	_	20	case	_	_	_	_
+20	uliczników	ulicznik	NOUN	_	_	18	nmod	_	_	_	_
+21	w	w	ADP	_	_	22	case	_	_	_	_
+22	okolicach	okolica	NOUN	_	_	16	obl	_	_	_	_
+23	rue	rue	NOUN	_	_	22	nmod:arg	_	_	_	_
+24	Saint	saint	PROPN	_	_	23	flat	_	_	_	_
+25	-	-	PUNCT	_	_	23	appos	_	_	_	_
+26	Denis	denis	PROPN	_	_	23	appos	_	_	_	_
+27	.	.	PUNCT	_	_	1	punct	_	_	_	_
+
+
+# sentence-text = Większość istotnych dokumentów dotyczących kilkumiesięcznego okresu pracy Rumsfelda jest nadal utajniona , choć nie ulega wątpliwości , że podobnie jak w Biurze Równych Szans ( OEO ) , podjął on swoją misję z pasją .
+1	Większość	większość	NOUN	_	_	11	nsubj:pass	_	_	_	_	_
+2	istotnych	istotny	ADJ	_	_	3	amod	_	_	_	_	_
+3	dokumentów	dokument	NOUN	_	_	1	nmod:arg	_	_	A1	_	_
+4	dotyczących	dotyczących	ADJ	_	_	3	acl	_	_	_	_	_
+5	kilkumiesięcznego	kilkumiesięczny	ADJ	_	_	6	amod	_	_	_	_	_
+6	okresu	okres	NOUN	_	_	4	iobj	_	_	_	_	_
+7	pracy	praca	NOUN	_	_	6	nmod:arg	_	_	_	_	_
+8	Rumsfelda	rumsfelda	PROPN	_	_	6	nmod	_	_	_	_	_
+9	jest	jest	AUX	_	_	11	aux:pass	Y	be.01	_	_	_
+10	nadal	nadal	ADV	_	_	11	advmod	_	_	AM-TMP	_	_
+11	utajniona	utajniona	ADJ	_	_	0	ROOT	_	_	A2	_	_
+12	,	,	PUNCT	_	_	15	punct	_	_	_	_	_
+13	choć	choć	SCONJ	_	_	15	mark	_	_	_	_	_
+14	nie	nie	PART	_	_	15	advmod:neg	_	_	_	_	_
+15	ulega	ulegać	VERB	_	_	11	advcl	Y	be.03	_	_	_
+16	wątpliwości	wątpliwość	NOUN	_	_	15	iobj	_	_	_	_	_
+17	,	,	PUNCT	_	_	29	punct	_	_	_	_	_
+18	że	że	SCONJ	_	_	29	mark	_	_	_	_	_
+19	podobnie	podobnie	ADV	_	_	29	advmod	_	_	_	_	_
+20	jak	jak	SCONJ	_	_	22	mark	_	_	_	_	_
+21	w	w	ADP	_	_	22	case	_	_	_	_	_
+22	Biurze	biuro	NOUN	_	_	19	obl:cmpr	_	_	_	_	_
+23	Równych	równy	ADJ	_	_	24	amod:flat	_	_	_	_	_
+24	Szans	szansa	NOUN	_	_	22	nmod:flat	_	_	_	_	_
+25	(	(	PUNCT	_	_	26	punct	_	_	_	_	_
+26	OEO	oeo	PROPN	_	_	19	nmod	_	_	_	_	_
+27	)	)	PUNCT	_	_	26	punct	_	_	_	_	_
+28	,	,	PUNCT	_	_	19	punct	_	_	_	_	_
+29	podjął	podjąć	VERB	_	_	15	ccomp	Y	take_on.09	_	_	_
+30	on	on	PRON	_	_	29	nsubj	_	_	_	_	A0
+31	swoją	swoją	DET	_	_	32	det:poss	_	_	_	_	_
+32	misję	misja	NOUN	_	_	29	obj	_	_	_	_	A1
+33	z	z	ADP	_	_	34	case	_	_	_	_	_
+34	pasją	pasja	NOUN	_	_	29	obl:arg	_	_	_	_	AM-MNR
+35	.	.	PUNCT	_	_	11	punct	_	_	_	_	_
+
+
+# sentence-text = [ Chiny muszą polegać na sobie , aby stać się potężne .
+1	[	[	PUNCT	_	_	3	punct	_	_	_	_
+2	Chiny	china	NOUN	_	_	3	nsubj	_	_	A0	A1
+3	muszą	musić	VERB	_	_	0	ROOT	_	_	_	_
+4	polegać	polegać	VERB	_	_	3	xcomp	Y	rely.01	_	_
+5	na	na	ADP	_	_	6	case	_	_	_	_
+6	sobie	sobie	PRON	_	_	4	obl:arg	_	_	A1	_
+7	,	,	PUNCT	_	_	9	punct	_	_	_	_
+8	aby	aby	SCONJ	_	_	9	mark	_	_	_	_
+9	stać	stać	VERB	_	_	4	advcl	Y	become.01	_	_
+10	się	się	PRON	_	_	9	expl:pv	_	_	_	_
+11	potężne	potężny	ADJ	_	_	9	xcomp:pred	_	_	_	A2
+12	.	.	PUNCT	_	_	3	punct	_	_	_	_
+
+
+# sentence-text = Nie widzę sensu w twierdzeniu , że równowaga , która jest dynamiczna i ciągle się zmienia , jest " rozwiązaniem " .
+1	Nie	nie	PART	_	_	2	advmod:neg	_	_	AM-NEG	_	_	_
+2	widzę	widzieć	VERB	_	_	0	ROOT	Y	see.01	_	_	_	_
+3	sensu	sens	NOUN	_	_	2	obj	_	_	A1	_	_	_
+4	w	w	ADP	_	_	5	case	_	_	_	_	_	_
+5	twierdzeniu	twierdzenie	NOUN	_	_	2	obl:arg	_	_	_	_	_	_
+6	,	,	PUNCT	_	_	20	punct	_	_	_	_	_	_
+7	że	że	SCONJ	_	_	20	mark	_	_	_	_	_	_
+8	równowaga	równowaga	NOUN	_	_	20	nsubj	_	_	_	A1	A1	A1
+9	,	,	PUNCT	_	_	12	punct	_	_	_	_	_	_
+10	która	która	DET	_	_	12	nsubj	_	_	_	R-A1	R-A1	R-A1
+11	jest	jest	AUX	_	_	12	cop	Y	be.02	_	_	_	_
+12	dynamiczna	dynamiczny	ADJ	_	_	8	acl:relcl	_	_	_	A2	_	_
+13	i	i	CCONJ	_	_	16	cc	_	_	_	_	_	_
+14	ciągle	ciągle	ADV	_	_	16	advmod	_	_	_	_	AM-TMP	_
+15	się	się	PRON	_	_	16	expl:pv	_	_	_	_	_	_
+16	zmienia	zmieniać	VERB	_	_	12	conj	Y	change.01	_	_	_	_
+17	,	,	PUNCT	_	_	20	punct	_	_	_	_	_	_
+18	jest	jest	AUX	_	_	20	cop	Y	be.02	A1	_	_	_
+19	"	"	PUNCT	_	_	20	punct	_	_	_	_	_	_
+20	rozwiązaniem	rozwiązanie	NOUN	_	_	5	ccomp	_	_	_	_	_	A2
+21	"	"	PUNCT	_	_	20	punct	_	_	_	_	_	_
+22	.	.	PUNCT	_	_	2	punct	_	_	_	_	_	_
+
+
+# sentence-text = Prawdziwy mężczyzna pozwoliłby przynajmniej byłemu członkowi zarządu przeczytać powód , dla którego został zbanowany , ale zapomniałem , że mam do czynienia z tchórzem !
+1	Prawdziwy	prawdziwy	ADJ	_	_	2	amod	_	_	_	_	_	_
+2	mężczyzna	mężczyzna	NOUN	_	_	3	nsubj	_	_	A0	_	_	_
+3	pozwoliłby	pozwolić	VERB	_	_	0	ROOT	Y	let.01	_	_	_	_
+4	przynajmniej	przynajmniej	PART	_	_	5	advmod:emph	_	_	AM-ADV	_	_	_
+5	byłemu	były	PROPN	_	_	6	amod	_	_	_	_	_	_
+6	członkowi	członek	NOUN	_	_	3	iobj	_	_	A1	A0	_	_
+7	zarządu	zarząd	NOUN	_	_	3	obj	_	_	_	_	_	_
+8	przeczytać	przeczytać	VERB	_	_	3	xcomp	Y	read.01	_	_	_	_
+9	powód	powód	NOUN	_	_	8	obj	_	_	_	A1	_	_
+10	,	,	PUNCT	_	_	14	punct	_	_	_	_	_	_
+11	dla	dla	ADP	_	_	12	case	_	_	_	_	_	_
+12	którego	którego	DET	_	_	14	obl	_	_	_	R-A1	_	_
+13	został	został	AUX	_	_	14	aux:pass	_	become.01	_	_	_	_
+14	zbanowany	zbanowany	ADJ	_	_	9	acl:relcl	_	_	_	A2	_	_
+15	,	,	PUNCT	_	_	17	punct	_	_	_	_	_	_
+16	ale	ale	CCONJ	_	_	17	cc	_	_	_	_	_	_
+17	zapomniałem	zapomnieć	VERB	_	_	3	conj	Y	forget.01	_	_	_	_
+18	,	,	PUNCT	_	_	20	punct	_	_	_	_	_	_
+19	że	że	SCONJ	_	_	20	mark	_	_	_	_	_	_
+20	mam	mieć	VERB	_	_	17	ccomp	Y	have.02	_	_	A1	_
+21	do	do	ADP	_	_	22	case	_	_	_	_	_	_
+22	czynienia	czynienie	NOUN	_	_	20	obl:arg	_	_	_	_	_	A1
+23	z	z	ADP	_	_	24	case	_	_	_	_	_	_
+24	tchórzem	tchórz	NOUN	_	_	22	obl:arg	_	_	_	_	_	_
+25	!	!	PUNCT	_	_	3	punct	_	_	_	_	_	_
+
+
+# sentence-text = On jest uczonym , więc go zapytaj .
+1	On	on	PRON	_	_	3	nsubj	_	_	A1	_
+2	jest	jest	AUX	_	_	3	cop	Y	be.01	_	_
+3	uczonym	uczony	ADJ	_	_	0	ROOT	_	_	A2	_
+4	,	,	PUNCT	_	_	7	punct	_	_	_	_
+5	więc	więc	SCONJ	_	_	7	mark	_	_	_	_
+6	go	on	PRON	_	_	7	obj	_	_	_	A2
+7	zapytaj	zapytać	VERB	_	_	3	advcl	Y	ask.01	_	_
+8	.	.	PUNCT	_	_	3	punct	_	_	_	_
+
+
+# sentence-text = Podczas przesuwania krzesła Qingqing popchnął je Niektóre dzieci w naszej klasie przesuwają krzesła właśnie w ten sposób .
+1	Podczas	podczas	ADP	_	_	2	case	_	_	AM-TMP	_
+2	przesuwania	przesuwania	NOUN	_	_	5	obl	_	_	_	_
+3	krzesła	krzesło	NOUN	_	_	2	obj	_	_	_	_
+4	Qingqing	qingqing	PROPN	_	_	5	nsubj	_	_	A0	_
+5	popchnął	popchnąć	VERB	_	_	0	ROOT	Y	push.01	_	_
+6	je	on	PRON	_	_	5	obj	_	_	A1	_
+7	Niektóre	niektóre	DET	_	_	8	det	_	_	_	_
+8	dzieci	dziecko	NOUN	_	_	12	nsubj	_	_	_	A0
+9	w	w	ADP	_	_	11	case	_	_	_	_
+10	naszej	naszej	DET	_	_	11	det:poss	_	_	_	_
+11	klasie	klasa	NOUN	_	_	12	obl	_	_	_	_
+12	przesuwają	przesuwać	VERB	_	_	5	conj	Y	move.01	_	_
+13	krzesła	krzesło	NOUN	_	_	12	obj	_	_	_	A1
+14	właśnie	właśnie	PART	_	_	17	advmod:emph	_	_	_	_
+15	w	w	ADP	_	_	17	case	_	_	_	_
+16	ten	ten	DET	_	_	17	det	_	_	_	_
+17	sposób	sposób	NOUN	_	_	12	obl	_	_	_	AM-MNR
+18	.	.	PUNCT	_	_	5	punct	_	_	_	_
+
+
+# sentence-text = Czy rząd o tym pomyślał ?
+1	Czy	czy	PART	_	_	5	advmod	_	_	_
+2	rząd	rząd	NOUN	_	_	5	nsubj	_	_	A0
+3	o	o	ADP	_	_	4	case	_	_	_
+4	tym	tym	PRON	_	_	5	obl:arg	_	_	A2
+5	pomyślał	pomyśleć	VERB	_	_	0	ROOT	Y	think.01	_
+6	?	?	PUNCT	_	_	5	punct	_	_	_
+
+
+# sentence-text = Ale jak użytkownicy telefonów komórkowych mają tendencję do zakupu nowych słuchawek tylko raz na kilka lat , to ' s prawdopodobne , że dziesiątki milionów Cingular ' s około 60 milionów abonentów będą nosić wokół urządzeń z nazwą i logo Cingular przez wiele lat .
+1	Ale	ale	CCONJ	_	_	6	cc	_	_	_	_
+2	jak	jak	SCONJ	_	_	6	advmod	_	_	_	_
+3	użytkownicy	użytkownik	NOUN	_	_	6	nsubj	_	_	A0	_
+4	telefonów	telefon	NOUN	_	_	3	nmod:arg	_	_	_	_
+5	komórkowych	komórkowy	ADJ	_	_	4	amod	_	_	_	_
+6	mają	mieć	VERB	_	_	0	ROOT	Y	have.01	_	_
+7	tendencję	tendencja	NOUN	_	_	6	iobj	_	_	_	_
+8	do	do	ADP	_	_	9	case	_	_	_	_
+9	zakupu	zakup	NOUN	_	_	7	nmod:arg	_	_	_	_
+10	nowych	nowy	ADJ	_	_	11	amod	_	_	_	_
+11	słuchawek	słuchawki	NOUN	_	_	9	nmod:arg	_	_	A1	_
+12	tylko	tylko	PART	_	_	13	advmod:emph	_	_	_	_
+13	raz	raz	NOUN	_	_	7	nmod	_	_	AM-TMP	_
+14	na	na	ADP	_	_	16	case	_	_	_	_
+15	kilka	kilka	DET	_	_	16	det:numgov	_	_	_	_
+16	lat	rok	NOUN	_	_	13	nmod:arg	_	_	_	_
+17	,	,	PUNCT	_	_	21	punct	_	_	_	_
+18	to	to	SCONJ	_	_	20	mark	_	_	_	_
+19	'	'	PUNCT	_	_	20	punct	_	_	_	_
+20	s	s	X	_	_	21	nsubj	_	_	_	_
+21	prawdopodobne	prawdopodobny	ADJ	_	_	6	advcl	_	_	_	_
+22	,	,	PUNCT	_	_	34	punct	_	_	_	_
+23	że	że	SCONJ	_	_	34	mark	_	_	_	_
+24	dziesiątki	dziesiątka	NOUN	_	_	34	nsubj	_	_	_	_
+25	milionów	milion	NOUN	_	_	24	nmod	_	_	_	_
+26	Cingular	cingular	PROPN	_	_	24	nmod	_	_	_	_
+27	'	'	PUNCT	_	_	26	punct	_	_	_	_
+28	s	s	PROPN	_	_	24	nmod	_	_	_	_
+29	około	około	PART	_	_	30	advmod:emph	_	_	_	_
+30	60	60	NUM	_	_	32	nummod	_	_	_	_
+31	milionów	milion	NOUN	_	_	30	flat	_	_	_	_
+32	abonentów	abonent	NOUN	_	_	20	nmod	_	_	_	A0
+33	będą	być	AUX	_	_	34	aux	_	_	_	_
+34	nosić	nosić	VERB	_	_	21	csubj	Y	carry.01	_	_
+35	wokół	wokół	ADP	_	_	36	case	_	_	_	_
+36	urządzeń	urządzenie	NOUN	_	_	34	obl	_	_	_	_
+37	z	z	ADP	_	_	38	case	_	_	_	_
+38	nazwą	nazwa	NOUN	_	_	36	nmod	_	_	_	_
+39	i	i	CCONJ	_	_	40	cc	_	_	_	_
+40	logo	logo	NOUN	_	_	36	conj	_	_	_	A1
+41	Cingular	cingular	PROPN	_	_	36	nmod	_	_	_	_
+42	przez	przez	ADP	_	_	16	case	_	_	_	_
+43	wiele	wiele	DET	_	_	16	det:numgov	_	_	_	_
+44	lat	rok	NOUN	_	_	34	obl	_	_	_	_
+45	.	.	PUNCT	_	_	6	punct	_	_	_	_
+
+
+# sentence-text = Od ponad 10 lat jeżdżę do szczęśliwego Jemenu na większość moich wakacji , za to , co można tam znaleźć z tanich cen , piękno , konserwatyzm , szczodrość i niezniszczony charakter jego mieszkańców , choć usługi są nadal słabe , ale zaczęły się poprawiać .
+1	Od	od	ADP	_	_	4	case	_	_	_	_	_	_	_
+2	ponad	ponad	PART	_	_	3	advmod:emph	_	_	_	_	_	_	_
+3	10	10	NUM	_	_	4	nummod	_	_	_	_	_	_	_
+4	lat	rok	NOUN	_	_	5	obl	_	_	AM-TMP	_	_	_	_
+5	jeżdżę	jeżdżę	PROPN	_	_	0	ROOT	Y	go.01	_	_	_	_	_
+6	do	do	ADP	_	_	8	case	_	_	_	_	_	_	_
+7	szczęśliwego	szczęśliwy	ADJ	_	_	8	amod	_	_	_	_	_	_	_
+8	Jemenu	Jemen	NOUN	_	_	5	obl	_	_	A4	_	_	_	_
+9	na	na	ADP	_	_	10	case	_	_	_	_	_	_	_
+10	większość	większość	NOUN	_	_	5	obl	_	_	_	_	_	_	_
+11	moich	moich	DET	_	_	12	det:poss	_	_	_	_	_	_	_
+12	wakacji	wakacje	NOUN	_	_	10	nmod:arg	_	_	_	_	_	_	_
+13	,	,	PUNCT	_	_	15	punct	_	_	_	_	_	_	_
+14	za	za	ADP	_	_	15	case	_	_	_	_	_	_	_
+15	to	to	PRON	_	_	5	obl	_	_	_	_	_	_	_
+16	,	,	PUNCT	_	_	18	punct	_	_	_	_	_	_	_
+17	co	co	PRON	_	_	20	obj	_	_	_	A1	_	_	_
+18	można	można	VERB	_	_	15	acl:relcl	_	_	_	_	_	_	_
+19	tam	tam	ADV	_	_	20	advmod	_	_	_	_	_	_	_
+20	znaleźć	znaleźć	VERB	_	_	18	xcomp	Y	find.01	_	_	_	_	_
+21	z	z	ADP	_	_	23	case	_	_	_	_	_	_	_
+22	tanich	tani	ADJ	_	_	23	amod	_	_	_	_	_	_	_
+23	cen	cena	NOUN	_	_	20	obl:arg	_	_	_	_	_	_	_
+24	,	,	PUNCT	_	_	25	punct	_	_	_	_	_	_	_
+25	piękno	piękno	NOUN	_	_	23	conj	_	_	_	_	_	_	_
+26	,	,	PUNCT	_	_	27	punct	_	_	_	_	_	_	_
+27	konserwatyzm	konserwatyzm	NOUN	_	_	23	conj	_	_	_	_	_	_	_
+28	,	,	PUNCT	_	_	29	punct	_	_	_	_	_	_	_
+29	szczodrość	szczodrość	NOUN	_	_	23	conj	_	_	_	_	_	_	_
+30	i	i	CCONJ	_	_	32	cc	_	_	_	_	_	_	_
+31	niezniszczony	niezniszczony	ADJ	_	_	32	amod	_	_	_	_	_	_	_
+32	charakter	charakter	NOUN	_	_	23	conj	_	_	_	_	_	_	_
+33	jego	on	PRON	_	_	34	nmod	_	_	_	_	_	_	_
+34	mieszkańców	mieszkaniec	NOUN	_	_	32	nmod	_	_	_	_	_	_	_
+35	,	,	PUNCT	_	_	40	punct	_	_	_	_	_	_	_
+36	choć	choć	SCONJ	_	_	40	mark	_	_	_	_	_	_	_
+37	usługi	usługa	NOUN	_	_	40	nsubj	_	_	_	_	A1	_	_
+38	są	są	AUX	_	_	40	cop	Y	be.01	_	_	_	_	_
+39	nadal	nadal	ADV	_	_	40	advmod	_	_	_	_	AM-TMP	_	_
+40	słabe	słaby	ADJ	_	_	18	advcl	_	_	_	_	A2	_	_
+41	,	,	PUNCT	_	_	43	punct	_	_	_	_	_	_	_
+42	ale	ale	CCONJ	_	_	43	cc	_	_	_	_	_	_	_
+43	zaczęły	zacząć	VERB	_	_	40	conj	Y	start.01	_	_	_	_	_
+44	się	się	PRON	_	_	45	expl:pv	_	_	_	_	_	_	_
+45	poprawiać	poprawiać	VERB	_	_	43	xcomp	Y	improve.01	_	_	_	_	_
+46	.	.	PUNCT	_	_	5	punct	_	_	_	_	_	_	_
+
+
+# sentence-text = Mama powiedziała , że celowo pozwoliłam ci wygrać , bo inaczej przegrasz .
+1	Mama	mama	NOUN	_	_	2	nsubj	_	_	A0	_	_	_
+2	powiedziała	powiedzieć	VERB	_	_	0	ROOT	Y	say.01	_	_	_	_
+3	,	,	PUNCT	_	_	6	punct	_	_	_	_	_	_
+4	że	że	SCONJ	_	_	6	mark	_	_	_	_	_	_
+5	celowo	celowo	ADV	_	_	6	advmod	_	_	_	AN-MNR	_	_
+6	pozwoliłam	pozwolić	VERB	_	_	2	ccomp:obj	Y	let.01	_	_	_	_
+7	ci	ty	PRON	_	_	8	iobj	_	_	_	A1	_	_
+8	wygrać	wygrać	VERB	_	_	6	xcomp	Y	win.01	_	_	_	_
+9	,	,	PUNCT	_	_	12	punct	_	_	_	_	_	_
+10	bo	bo	SCONJ	_	_	12	mark	_	_	_	_	_	AM-DIS
+11	inaczej	inaczej	ADV	_	_	12	advmod	_	_	_	_	_	_
+12	przegrasz	przegrać	VERB	_	_	6	advcl	Y	lose.03	_	_	_	_
+13	.	.	PUNCT	_	_	2	punct	_	_	_	_	_	_
+
+
+# sentence-text = Myśl Mao Zedonga była najcenniejszym bogactwem duchowym narodu chińskiego .
+1	Myśl	myśl	NOUN	_	_	6	nsubj	_	_	A1
+2	Mao	mao	PROPN	_	_	1	flat	_	_	_
+3	Zedonga	Zedong	PROPN	_	_	2	flat	_	_	_
+4	była	była	AUX	_	_	6	cop	Y	be.01	_
+5	najcenniejszym	cenny	ADJ	_	_	6	amod	_	_	_
+6	bogactwem	bogactwo	NOUN	_	_	0	ROOT	_	_	A2
+7	duchowym	duchowy	ADJ	_	_	6	amod	_	_	_
+8	narodu	naród	NOUN	_	_	6	nmod	_	_	_
+9	chińskiego	chiński	ADJ	_	_	8	amod	_	_	_
+10	.	.	PUNCT	_	_	6	punct	_	_	_
+
+
+# sentence-text = Jeśli nie ma powodu , aby zdecydować , kompilator musi wybrać drugą interpretację .
+1	Jeśli	jeśli	SCONJ	_	_	3	mark	_	_	_	_	_
+2	nie	nie	PART	_	_	3	advmod:neg	_	_	_	_	_
+3	ma	mieć	VERB	_	_	10	advcl	Y	have.03	_	_	_
+4	powodu	powód	NOUN	_	_	3	nsubj	_	_	A1	_	_
+5	,	,	PUNCT	_	_	7	punct	_	_	_	_	_
+6	aby	aby	SCONJ	_	_	7	mark	_	_	_	_	_
+7	zdecydować	zdecydować	VERB	_	_	3	advcl	Y	decide.01	_	_	_
+8	,	,	PUNCT	_	_	7	punct	_	_	_	_	_
+9	kompilator	kompilator	NOUN	_	_	10	nsubj	_	_	_	_	A0
+10	musi	musić	VERB	_	_	0	ROOT	_	_	_	_	_
+11	wybrać	wybrać	VERB	_	_	10	xcomp	Y	pick.01	_	_	_
+12	drugą	drugi	ADJ	_	_	13	amod	_	_	_	_	_
+13	interpretację	interpretacja	NOUN	_	_	11	obj	_	_	_	_	A1
+14	.	.	PUNCT	_	_	10	punct	_	_	_	_	_
+
+
+# sentence-text = W kluczowym okresie dla wznowienia rozmów sześciostronnych na temat kwestii nuklearnej na Półwyspie Koreańskim , 3 grudnia japońskie media ujawniły , że w zamian za wsparcie Rosji w rozmowach sześciostronnych , Korea Północna przekazała Rosji wyłączne prawo importu rudy uranu .
+1	W	w	ADP	_	_	3	case	_	_	_	_
+2	kluczowym	kluczowy	ADJ	_	_	3	amod	_	_	_	_
+3	okresie	okres	NOUN	_	_	20	obl	_	_	AM-TMP	_
+4	dla	dla	ADP	_	_	5	case	_	_	_	_
+5	wznowienia	wznowienie	NOUN	_	_	3	nmod	_	_	_	_
+6	rozmów	rozmowy	NOUN	_	_	5	obj	_	_	_	_
+7	sześciostronnych	sześciostronnych	ADJ	_	_	6	amod	_	_	_	_
+8	na	na	ADP	_	_	10	case	_	_	_	_
+9	temat	temat	NOUN	_	_	8	fixed	_	_	_	_
+10	kwestii	kwestia	NOUN	_	_	5	obl:arg	_	_	_	_
+11	nuklearnej	nuklearny	ADJ	_	_	10	acl	_	_	_	_
+12	na	na	ADP	_	_	13	case	_	_	_	_
+13	Półwyspie	półwyspa	NOUN	_	_	11	obl	_	_	_	_
+14	Koreańskim	koreański	ADJ	_	_	13	amod:flat	_	_	_	_
+15	,	,	PUNCT	_	_	16	punct	_	_	_	_
+16	3	3	ADJ	_	_	5	conj	_	_	_	_
+17	grudnia	grudzień	NOUN	_	_	16	nmod:flat	_	_	AM-TMP	_
+18	japońskie	japoński	ADJ	_	_	19	amod	_	_	_	_
+19	media	medium	NOUN	_	_	20	nsubj	_	_	A0	_
+20	ujawniły	ujawnić	VERB	_	_	0	ROOT	Y	reveal.01	_	_
+21	,	,	PUNCT	_	_	34	punct	_	_	_	_
+22	że	że	SCONJ	_	_	34	mark	_	_	_	_
+23	w	w	ADP	_	_	26	case	_	_	_	_
+24	zamian	zamiana	NOUN	_	_	23	fixed	_	_	_	_
+25	za	za	ADP	_	_	23	fixed	_	_	_	_
+26	wsparcie	wsparcie	NOUN	_	_	34	obl	_	_	_	_
+27	Rosji	Rosja	PROPN	_	_	26	nmod	_	_	_	_
+28	w	w	ADP	_	_	29	case	_	_	_	_
+29	rozmowach	rozmowy	NOUN	_	_	26	nmod	_	_	_	_
+30	sześciostronnych	sześciostronnych	ADJ	_	_	29	amod	_	_	_	_
+31	,	,	PUNCT	_	_	34	punct	_	_	_	_
+32	Korea	korea	PROPN	_	_	34	nsubj	_	_	_	A0
+33	Północna	północny	ADJ	_	_	32	amod:flat	_	_	_	_
+34	przekazała	przekazać	VERB	_	_	20	ccomp:obj	Y	give.01	A1	_
+35	Rosji	Rosja	PROPN	_	_	34	obj	_	_	_	A2
+36	wyłączne	wyłączny	ADJ	_	_	27	amod	_	_	_	_
+37	prawo	prawo	NOUN	_	_	34	obj	_	_	_	A1
+38	importu	import	NOUN	_	_	37	nmod:arg	_	_	_	_
+39	rudy	ruda	NOUN	_	_	38	nmod:arg	_	_	_	_
+40	uranu	uran	NOUN	_	_	38	nmod:arg	_	_	_	_
+41	.	.	PUNCT	_	_	20	punct	_	_	_	_
+
+
+# sentence-text = Na przykład niektóre plemiona jedzą dopiero po tym jak gość zje i kończą dopiero gdy on skończy nawet jeśli zostanie na całą godzinę
+1	Na	na	ADP	_	_	5	parataxis:insert	_	_	_	_	_	_	_
+2	przykład	przykład	NOUN	_	_	1	fixed	_	_	_	_	_	_	_
+3	niektóre	niektóry	DET	_	_	4	det	_	_	_	_	_	_	_
+4	plemiona	plemię	NOUN	_	_	5	nsubj	_	_	A0	_	_	_	_
+5	jedzą	jeść	VERB	_	_	0	ROOT	Y	eat.01	_	_	_	_	_
+6	dopiero	dopiero	PART	_	_	5	advmod:emph	_	_	AM-ADV	_	_	_	_
+7	po	po	ADP	_	_	8	case	_	_	_	_	_	_	_
+8	tym	to	PRON	_	_	5	obl:arg	_	_	_	_	_	_	_
+9	jak	jak	SCONJ	_	_	11	mark	_	_	_	_	_	_	_
+10	gość	gość	NOUN	_	_	11	nsubj	_	_	_	A0	_	_	_
+11	zje	zwać	VERB	_	_	5	advcl	Y	eat.01	AM-TMP	_	_	_	_
+12	i	i	CCONJ	_	_	13	cc	_	_	_	_	_	_	_
+13	kończą	kończyć	VERB	_	_	11	conj	Y	finish.01	_	_	_	_	_
+14	dopiero	dopiero	PART	_	_	17	advmod:emph	_	_	_	_	AM-ADV	_	_
+15	gdy	gdy	ADV	_	_	17	advmod	_	_	_	_	_	_	_
+16	on	on	PRON	_	_	17	nsubj	_	_	_	_	_	A0	_
+17	skończy	skończyć	VERB	_	_	13	advcl	Y	finish.01	_	_	AM-TMP	_	_
+18	nawet	nawet	PART	_	_	17	advmod:emph	_	_	_	_	_	_	_
+19	jeśli	jeśli	SCONJ	_	_	20	mark	_	_	_	_	_	_	_
+20	zostanie	zostać	VERB	_	_	17	advcl	Y	stay.01	AM-ADV	_	AM-ADV	_	_
+21	na	na	ADP	_	_	23	case	_	_	_	_	_	_	_
+22	całą	cały	ADJ	_	_	23	amod	_	_	_	_	_	_	_
+23	godzinę	godzina	NOUN	_	_	20	obl	_	_	_	_	_	_	AM-TMP
+
+
+# sentence-text = To może wspierać albo wychowania lub natury .
+1	To	to	PRON	_	_	2	nsubj	_	_	A0
+2	może	móc	VERB	_	_	0	ROOT	_	_	AM-MOD
+3	wspierać	wspierać	VERB	_	_	2	xcomp	Y	support.01	_
+4	albo	albo	CCONJ	_	_	5	cc	_	_	_
+5	wychowania	wychowanie	NOUN	_	_	3	obj	_	_	A1
+6	lub	lub	CCONJ	_	_	7	cc	_	_	_
+7	natury	natura	NOUN	_	_	5	conj	_	_	_
+8	.	.	PUNCT	_	_	2	punct	_	_	_
+
+
+# sentence-text = jest to ten sam argument rozcieńczony .
+1	jest	jest	AUX	_	_	5	aux	Y	be.01	_
+2	to	to	AUX	_	_	5	cop	_	_	A1
+3	ten	ten	DET	_	_	5	det	_	_	_
+4	sam	sam	ADJ	_	_	5	amod	_	_	_
+5	argument	argument	NOUN	_	_	0	ROOT	_	_	A2
+6	rozcieńczony	rozcieńczony	ADJ	_	_	5	acl	_	_	_
+7	.	.	PUNCT	_	_	5	punct	_	_	_
+
+
+# sentence-text = Ten żarliwy zachwyt jest widoczny gdy zwykli ludzie stają się obsesyjnie surfujący po Internecie przez całą noc lub gdy mniej zwykli ludzie zaczynają włamywać się do systemów komputerowych
+1	Ten	ten	DET	_	_	3	det	_	_	_	_	_	_
+2	żarliwy	żarliwy	ADJ	_	_	3	amod	_	_	_	_	_	_
+3	zachwyt	zachwyt	NOUN	_	_	5	nsubj	_	_	A1	_	_	_
+4	jest	być	AUX	_	_	5	cop	Y	be.01	_	_	_	_
+5	widoczny	widoczny	ADJ	_	_	0	ROOT	_	_	A2	_	_	_
+6	gdy	gdy	ADV	_	_	7	advmod	_	_	_	AM-TMP	_	_
+7	zwykli	zwykl	VERB	_	_	9	advcl	_	_	_	_	_	_
+8	ludzie	człowiek	NOUN	_	_	7	nsubj	_	_	_	A1	_	_
+9	stają	stawać	VERB	_	_	5	conj	Y	become.01	AM-TMP	_	_	_
+10	się	się	PRON	_	_	9	expl:pv	_	_	_	_	_	_
+11	obsesyjnie	obsesyjnie	ADV	_	_	12	advmod	_	_	_	A2	_	_
+12	surfujący	surfować	ADJ	_	_	23	acl	_	_	_	_	_	_
+13	po	po	ADP	_	_	14	case	_	_	_	_	_	_
+14	Internecie	Internet	PROPN	_	_	12	obl	_	_	_	_	_	_
+15	przez	przez	ADP	_	_	17	case	_	_	_	_	_	_
+16	całą	cały	ADJ	_	_	17	amod	_	_	_	_	_	_
+17	noc	noc	NOUN	_	_	12	obl:agent	_	_	_	_	_	_
+18	lub	lub	CCONJ	_	_	7	cc	_	_	_	_	_	_
+19	gdy	gdy	ADV	_	_	7	advmod	_	_	_	_	_	_
+20	mniej	mało	ADV	_	_	7	advmod	_	_	_	_	_	_
+21	zwykli	zwyc	VERB	_	_	23	advcl	_	_	_	_	_	_
+22	ludzie	człowiek	NOUN	_	_	7	nsubj	_	_	_	_	A0	A0
+23	zaczynają	zaczynać	VERB	_	_	9	xcomp:pred	Y	begin.01	_	_	_	_
+24	włamywać	włamywać	VERB	_	_	23	xcomp	Y	break.02	_	_	A1	_
+25	się	się	PRON	_	_	24	expl:pv	_	_	_	_	_	_
+26	do	do	ADP	_	_	27	case	_	_	_	_	_	_
+27	systemów	system	NOUN	_	_	24	obl:arg	_	_	_	_	_	A1
+28	komputerowych	komputerowy	ADJ	_	_	27	amod	_	_	_	_	_	_
+
+
+# sentence-text = Spacerując po lotnisku zauważyłem tylko jeden samolot z osłonami na skrzydłach .
+1	Spacerując	spacerować	VERB	_	_	4	advcl	Y	walk.01	_	_
+2	po	po	ADP	_	_	3	case	_	_	_	_
+3	lotnisku	lotnisko	NOUN	_	_	4	obl	_	_	A2	_
+4	zauważyłem	zauważyć	VERB	_	_	0	ROOT	Y	notice.01	_	_
+5	tylko	tylko	PART	_	_	7	advmod:emph	_	_	_	AM-ADV
+6	jeden	jeden	ADJ	_	_	7	amod	_	_	_	_
+7	samolot	samolot	NOUN	_	_	4	obj	_	_	_	A1
+8	z	z	ADP	_	_	9	case	_	_	_	_
+9	osłonami	osłona	NOUN	_	_	7	nmod	_	_	_	_
+10	na	na	ADP	_	_	11	case	_	_	_	_
+11	skrzydłach	skrzydło	NOUN	_	_	9	nmod	_	_	_	_
+12	.	.	PUNCT	_	_	4	punct	_	_	_	_
+
+
+# sentence-text = Pozostawiając obywatelowi taką swobodę działania i bycia , jaka jest zgodna z porządkiem i prawami innych , instytucje czynią go prawdziwie wolnym człowiekiem .
+1	Pozostawiając	pozostawiać	VERB	_	_	19	advcl	Y	leave.01	_	_	_
+2	obywatelowi	obywatel	NOUN	_	_	1	iobj	_	_	A1	_	_
+3	taką	taką	DET	_	_	4	det	_	_	_	_	_
+4	swobodę	swoboda	NOUN	_	_	1	obj	_	_	A2	_	_
+5	działania	działanie	NOUN	_	_	4	nmod:arg	_	_	_	_	_
+6	i	i	CCONJ	_	_	7	cc	_	_	_	_	_
+7	bycia	bycie	NOUN	_	_	5	conj	_	_	_	_	_
+8	,	,	PUNCT	_	_	9	punct	_	_	_	_	_
+9	jaka	jaka	DET	_	_	5	acl:relcl	_	_	_	R-A2	_
+10	jest	jest	AUX	_	_	9	cop	Y	be.01	_	_	_
+11	zgodna	zgodny	ADJ	_	_	9	nsubj	_	_	_	_	_
+12	z	z	ADP	_	_	13	case	_	_	_	_	_
+13	porządkiem	porządek	NOUN	_	_	11	obl:arg	_	_	_	A1	_
+14	i	i	CCONJ	_	_	15	cc	_	_	_	_	_
+15	prawami	prawo	NOUN	_	_	13	conj	_	_	_	_	_
+16	innych	inny	ADJ	_	_	15	amod	_	_	_	_	_
+17	,	,	PUNCT	_	_	1	punct	_	_	_	_	_
+18	instytucje	instytucja	NOUN	_	_	19	nsubj	_	_	_	_	A0
+19	czynią	czynić	VERB	_	_	0	ROOT	Y	make.01	_	_	_
+20	go	on	PRON	_	_	19	obj	_	_	_	_	A1
+21	prawdziwie	prawdziwie	ADV	_	_	23	parataxis:insert	_	_	_	_	_
+22	wolnym	wolny	ADJ	_	_	23	amod	_	_	_	_	_
+23	człowiekiem	człowiek	NOUN	_	_	19	obl	_	_	_	_	_
+24	.	.	PUNCT	_	_	19	punct	_	_	_	_	_
+
+
+# sentence-text = I nic nie wskazuje na to , że ktokolwiek inny uruchomił wyłączniki .
+1	I	i	CCONJ	_	_	4	cc	_	_	_	_
+2	nic	nic	PRON	_	_	4	nsubj	_	_	A0	_
+3	nie	nie	PART	_	_	4	advmod:neg	_	_	AM-NEG	_
+4	wskazuje	wskazywać	VERB	_	_	0	ROOT	Y	indicate.01	_	_
+5	na	na	ADP	_	_	6	case	_	_	_	_
+6	to	to	PRON	_	_	4	obl:arg	_	_	A1	_
+7	,	,	PUNCT	_	_	11	punct	_	_	_	_
+8	że	że	SCONJ	_	_	11	mark	_	_	_	_
+9	ktokolwiek	ktokolwiek	PRON	_	_	11	nsubj	_	_	_	A0
+10	inny	inny	ADJ	_	_	9	amod	_	_	_	_
+11	uruchomił	uruchomić	VERB	_	_	6	ccomp:cleft	Y	trigger.01	_	_
+12	wyłączniki	wyłącznik	NOUN	_	_	11	obj	_	_	_	A2
+13	.	.	PUNCT	_	_	4	punct	_	_	_	_
+
+
+# sentence-text = Wręcz przeciwnie , w ciągu ostatniego tygodnia miały miejsce kolejne przypadki strzelania przez policję do cywilów .
+1	Wręcz	wręcz	PART	_	_	2	advmod:emph	_	_	_	_
+2	przeciwnie	przeciwnie	ADV	_	_	8	parataxis:insert	_	_	AM-DIS	_
+3	,	,	PUNCT	_	_	8	punct	_	_	_	_
+4	w	w	ADP	_	_	7	case	_	_	_	_
+5	ciągu	ciąg	NOUN	_	_	4	fixed	_	_	_	_
+6	ostatniego	ostatni	ADJ	_	_	7	amod	_	_	_	_
+7	tygodnia	tydzień	NOUN	_	_	8	obl	_	_	AM-TMP	_
+8	miały	mieć	VERB	_	_	0	ROOT	Y	have.03	_	_
+9	miejsce	miejsce	NOUN	_	_	8	iobj	_	_	_	_
+10	kolejne	kolejny	ADJ	_	_	11	amod	_	_	_	_
+11	przypadki	przypadek	NOUN	_	_	8	iobj	_	_	A1	_
+12	strzelania	strzelanie	NOUN	_	_	11	nmod:arg	Y	shoot.02	_	_
+13	przez	przez	ADP	_	_	14	case	_	_	_	_
+14	policję	policja	NOUN	_	_	12	obl:agent	_	_	_	A0
+15	do	do	ADP	_	_	16	case	_	_	_	_
+16	cywilów	cywil	NOUN	_	_	11	nmod	_	_	_	A1
+17	.	.	PUNCT	_	_	8	punct	_	_	_	_
+
+
+# sentence-text = Pozdrawiam .
+1	Pozdrawiam	pozdrawiać	VERB	_	_	0	ROOT	Y	greet.01	_	This is VERB, Pozdrowienia would be Noun, there is no form in colorado propbank	1	My	my	PRON	PRP$	_
+2	.	.	PUNCT	_	_	1	punct	_	_	_
+
+
+# sentence-text = Te nieczyste obrzydliwości ... nie rządzą się ani sumieniem , ani religią , ani obyczajem , ani moralnością , każdy kto chce czuć się z nimi bezpiecznie , musi czuć się bezpiecznie przed ukąszeniem węża w jego własnej norze .
+1	Te	te	DET	_	_	3	det	_	_	_	_	_	_
+2	nieczyste	czysty	ADJ	_	_	3	amod	_	_	_	_	_	_
+3	obrzydliwości	obrzydliwość	NOUN	_	_	0	ROOT	_	_	A1	_	_	_
+4	...	...	PUNCT	_	_	3	punct	_	_	_	_	_	_
+5	nie	nie	PART	_	_	6	advmod:neg	_	_	AM-NEG	_	_	_
+6	rządzą	rządzić	VERB	_	_	0	ROOT	Y	govern.01	_	_	_	_
+7	się	się	PRON	_	_	6	expl:pv	_	_	_	_	_	_
+8	ani	ani	PART	_	_	9	cc:preconj	_	_	_	_	_	_
+9	sumieniem	sumienie	NOUN	_	_	6	iobj	_	_	A0	_	_	_
+10	,	,	PUNCT	_	_	12	punct	_	_	_	_	_	_
+11	ani	ani	CCONJ	_	_	12	cc	_	_	_	_	_	_
+12	religią	religia	NOUN	_	_	9	conj	_	_	_	_	_	_
+13	,	,	PUNCT	_	_	15	punct	_	_	_	_	_	_
+14	ani	ani	CCONJ	_	_	15	cc	_	_	_	_	_	_
+15	obyczajem	obyczaj	NOUN	_	_	9	conj	_	_	_	_	_	_
+16	,	,	PUNCT	_	_	18	punct	_	_	_	_	_	_
+17	ani	ani	CCONJ	_	_	18	cc	_	_	_	_	_	_
+18	moralnością	moralność	NOUN	_	_	9	conj	_	_	_	_	_	_
+19	,	,	PUNCT	_	_	22	punct	_	_	_	_	_	_
+20	każdy	każdy	DET	_	_	21	det	_	_	_	A0	A0	A0
+21	kto	kto	PRON	_	_	22	nsubj	_	_	_	R-A0	R-A0	_
+22	chce	chcieć	VERB	_	_	6	conj	Y	want.01	_	_	_	_
+23	czuć	czuć	VERB	_	_	22	xcomp	Y	feel.01	_	A1	_	_
+24	się	się	PRON	_	_	23	expl:pv	_	_	_	_	_	_
+25	z	z	ADP	_	_	26	case	_	_	_	_	_	_
+26	nimi	on	PRON	_	_	23	obl:arg	_	_	_	_	_	_
+27	bezpiecznie	bezpiecznie	ADV	_	_	23	advmod	_	_	_	_	A1	_
+28	,	,	PUNCT	_	_	29	punct	_	_	_	_	_	_
+29	musi	musić	VERB	_	_	6	conj	_	_	_	_	_	AM-MOD
+30	czuć	czuć	VERB	_	_	29	xcomp	Y	feel.01	_	_	_	_
+31	się	się	PRON	_	_	23	expl:pv	_	_	_	_	_	_
+32	bezpiecznie	bezpiecznie	ADV	_	_	23	advmod	_	_	_	_	_	A1
+33	przed	przed	ADP	_	_	34	case	_	_	_	_	_	_
+34	ukąszeniem	ukąszenie	NOUN	_	_	23	obl	_	_	_	_	_	_
+35	węża	wąż	NOUN	_	_	34	obj	_	_	_	_	_	_
+36	w	w	ADP	_	_	39	case	_	_	_	_	_	_
+37	jego	on	PRON	_	_	39	nmod	_	_	_	_	_	_
+38	własnej	własny	ADJ	_	_	39	amod	_	_	_	_	_	_
+39	norze	nora	NOUN	_	_	23	obl	_	_	_	_	_	_
+40	.	.	PUNCT	_	_	6	punct	_	_	_	_	_	_
+
+
+# sentence-text = A rozum proletariacki nie ma sensu dla prawa burżuazyjnego !
+1	A	a	PART	_	_	5	cc	_	_
+2	rozum	rozum	NOUN	_	_	5	nsubj	_	A0
+3	proletariacki	proletariacki	ADJ	_	_	2	amod	_	_
+4	nie	nie	PART	_	_	5	advmod:neg	_	AM-NEG
+5	ma	mieć	VERB	_	_	0	ROOT	have.03	_
+6	sensu	sens	NOUN	_	_	5	iobj	_	A1
+7	dla	dla	ADP	_	_	8	case	_	_
+8	prawa	prawo	NOUN	_	_	5	obl	_	_
+9	burżuazyjnego	burżuazyjny	ADJ	_	_	8	amod	_	_
+10	!	!	PUNCT	_	_	5	punct	_	_
+
+
+# sentence-text = Nie każdy może być nazwany synem ludu i narodu .
+1	Nie	nie	PART	_	_	2	advmod:neg	_	_	_	_
+2	każdy	każdy	DET	_	_	3	nsubj	_	_	_	A1
+3	może	móc	VERB	_	_	0	ROOT	_	_	_	AM-MOD
+4	być	być	AUX	_	_	5	aux:pass	Y	be.03	_	_
+5	nazwany	nazwany	ADJ	_	_	3	xcomp	Y	call.01	_	_
+6	synem	syn	NOUN	_	_	5	iobj	_	_	_	A2
+7	ludu	lud	NOUN	_	_	6	nmod:arg	_	_	_	_
+8	i	i	CCONJ	_	_	9	cc	_	_	_	_
+9	narodu	naród	NOUN	_	_	7	conj	_	_	_	_
+10	.	.	PUNCT	_	_	3	punct	_	_	_	_
+
+
+# sentence-text = Kilka głównych wniosków z 2006 r . dość dobrze wyjaśnia główne tendencje rozwojowe na rynkach w ubiegłym roku , a mianowicie , że obecna sytuacja na rynkach finansowych ucieleśnia skutki wszystkich tych zmian , które wzajemnie na siebie oddziałują .
+1	Kilka	kilka	DET	_	_	3	det:numgov	_	_	_	_	_
+2	głównych	główny	ADJ	_	_	3	amod	_	_	_	_	_
+3	wniosków	wniosek	NOUN	_	_	10	nsubj	_	_	A0	_	_
+4	z	z	ADP	_	_	6	case	_	_	_	_	_
+5	2006	2006	ADJ	_	_	6	amod:flat	_	_	_	_	_
+6	r	r	X	_	_	3	nmod	_	_	_	_	_
+7	.	.	PUNCT	_	_	6	punct	_	_	_	_	_
+8	dość	dość	PART	_	_	9	advmod:emph	_	_	_	_	_
+9	dobrze	dobrze	ADV	_	_	10	advmod	_	_	AM-MNR	_	_
+10	wyjaśnia	wyjaśniać	VERB	_	_	0	ROOT	Y	explain.01	_	_	_
+11	główne	główny	ADJ	_	_	12	amod	_	_	_	_	_
+12	tendencje	tendencja	NOUN	_	_	10	obj	_	_	A1	_	_
+13	rozwojowe	rozwojowy	ADJ	_	_	12	amod	_	_	_	_	_
+14	na	na	ADP	_	_	15	case	_	_	_	_	_
+15	rynkach	rynka	NOUN	_	_	12	nmod	_	_	_	_	_
+16	w	w	ADP	_	_	18	case	_	_	_	_	_
+17	ubiegłym	ubiegły	ADJ	_	_	18	amod	_	_	_	_	_
+18	roku	rok	NOUN	_	_	10	obl	_	_	AM-TMP	_	_
+19	,	,	PUNCT	_	_	21	punct	_	_	_	_	_
+20	a	a	CCONJ	_	_	21	cc	_	_	_	_	_
+21	mianowicie	mianowicie	CCONJ	_	_	10	conj	_	_	_	_	_
+22	,	,	PUNCT	_	_	25	punct	_	_	_	_	_
+23	że	że	SCONJ	_	_	25	mark	_	_	_	_	_
+24	obecna	obecny	ADJ	_	_	25	amod	_	_	_	AM-TMP	_	should it be AM-TMP?	24	in	in	ADP
+25	sytuacja	sytuacja	NOUN	_	_	10	csubj	_	_	_	A1	_
+26	na	na	ADP	_	_	15	case	_	_	_	_	_
+27	rynkach	rynka	NOUN	_	_	25	nmod	_	_	_	_	_
+28	finansowych	finansowy	ADJ	_	_	15	amod	_	_	_	_	_
+29	ucieleśnia	ucieleśnia	NOUN	_	_	15	nmod:arg	_	embody.01	_	_	_	it should be VERB! - parser returned incorrect pos	29	the	the	DET
+30	skutki	skutek	NOUN	_	_	29	obj	_	_	_	A2	_
+31	wszystkich	wszystkich	DET	_	_	33	det	_	_	_	_	_
+32	tych	tych	DET	_	_	33	det	_	_	_	_	_
+33	zmian	zmiana	NOUN	_	_	30	nmod:arg	_	_	_	_	A0
+34	,	,	PUNCT	_	_	39	punct	_	_	_	_	_
+35	które	które	DET	_	_	39	nsubj	_	_	_
+36	wzajemnie	wzajemnie	ADV	_	_	39	advmod	_	_	_	_	_
+37	na	na	ADP	_	_	38	case	_	_	_	_	_
+38	siebie	siebie	PRON	_	_	39	obl:arg	_	_	_	_	A1
+39	oddziałują	oddziaływać	VERB	_	_	33	acl:relcl	Y	interact.01	_	_	_
+40	.	.	PUNCT	_	_	10	punct	_	_	_	_	_
+
+
+# sentence-text = Rajaaa100@Hotmail . Com .
+1	Rajaaa100@Hotmail	rajaaa100@hotmail	NOUN	_	_	0	ROOT	_	_
+2	.	.	PUNCT	_	_	1	punct	_	_
+3	Com	com	PROPN	_	_	0	ROOT	_	_
+4	.	.	PUNCT	_	_	3	punct	_	_
+
+
+# sentence-text = Ale prawdopodobny wzorzec emisji tych dźwięków stworzonych przez człowieka różni się od wzorca podziemnych wstrząsów , więc to prosi naszych krajowych pracowników zajmujących się rozpoznawaniem wzorców , aby poświęcili trochę czasu i wysiłku na próby odróżnienia tych dźwięków od wstrząsów , spróbowali oddzielić podziemne wibracje od wibracji spowodowanych przez ludzi .
+1	Ale	ale	CCONJ	_	_	10	cc	_	_	_	_	_	_	_
+2	prawdopodobny	prawdopodobny	ADJ	_	_	3	amod	_	_	_	_	_	_	_
+3	wzorzec	wzorzec	NOUN	_	_	10	nsubj	_	_	A1	_	_	_	_
+4	emisji	emisja	NOUN	_	_	3	nmod:arg	_	_	_	_	_	_	_
+5	tych	tych	DET	_	_	6	det	_	_	_	_	_	_	_
+6	dźwięków	dźwięk	NOUN	_	_	4	nmod:arg	_	_	_	_	_	_	_
+7	stworzonych	stworzonych	ADJ	_	_	6	acl	_	_	_	_	_	_	_
+8	przez	przez	ADP	_	_	9	case	_	_	_	_	_	_	_
+9	człowieka	człowiek	NOUN	_	_	7	obl:agent	_	_	_	_	_	_	_
+10	różni	różnić	VERB	_	_	0	ROOT	Y	differ.02	_	_	_	_	_
+11	się	się	PRON	_	_	10	expl:pv	_	_	_	_	_	_	_
+12	od	od	ADP	_	_	13	case	_	_	_	_	_	_	_
+13	wzorca	wzorzec	NOUN	_	_	10	obl:arg	_	_	A2	_	_	_	_
+14	podziemnych	podziemny	ADJ	_	_	15	amod	_	_	_	_	_	_	_
+15	wstrząsów	wstrząs	NOUN	_	_	10	obj	_	_	_	_	_	_	_
+16	,	,	PUNCT	_	_	19	punct	_	_	_	_	_	_	_
+17	więc	więc	SCONJ	_	_	19	mark	_	_	_	_	_	_	_
+18	to	to	PRON	_	_	19	nsubj	_	_	_	A0	A0	_	_
+19	prosi	prosić	VERB	_	_	10	advcl	Y	ask.01	_	_	_	_	_
+20	naszych	naszych	DET	_	_	22	det:poss	_	_	_	_	_	_	_
+21	krajowych	krajowy	ADJ	_	_	22	amod	_	_	_	_	_	_	_
+22	pracowników	pracownik	NOUN	_	_	19	obj	_	_	_	A2	_	A0	A0
+23	zajmujących	zajmujący	ADJ	_	_	22	acl	_	_	_	_	_	_	_
+24	się	się	PRON	_	_	23	expl:pv	_	_	_	_	_	_	_
+25	rozpoznawaniem	rozpoznawaniem	NOUN	_	_	23	iobj	_	_	_	_	_	_	_
+26	wzorców	wzorzec	NOUN	_	_	25	nmod:arg	_	_	_	_	_	_	_
+27	,	,	PUNCT	_	_	29	punct	_	_	_	_	_	_	_
+28	aby	aby	SCONJ	_	_	29	mark	_	_	_	_	_	_	_
+29	poświęcili	poświęcić	VERB	_	_	19	advcl	Y	spend.02	_	_	_	_	_
+30	trochę	trochę	DET	_	_	31	det:numgov	_	_	_	_	_	_	_
+31	czasu	czas	NOUN	_	_	29	obj	_	_	_	_	_	_	_
+32	i	i	CCONJ	_	_	33	cc	_	_	_	_	_	_	_
+33	wysiłku	wysiłek	NOUN	_	_	31	conj	_	_	_	_	_	_	_
+34	na	na	ADP	_	_	35	case	_	_	_	_	_	_	_
+35	próby	próba	NOUN	_	_	29	obl:arg	_	_	_	_	A2	_	_
+36	odróżnienia	odróżnienie	NOUN	_	_	35	nmod:arg	_	_	_	_	_	_	_
+37	tych	tych	DET	_	_	6	det	_	_	_	_	_	_	_
+38	dźwięków	dźwięk	NOUN	_	_	36	obj	_	_	_	_	_	_	_
+39	od	od	ADP	_	_	15	case	_	_	_	_	_	_	_
+40	wstrząsów	wstrząs	NOUN	_	_	36	obl:arg	_	_	_	_	_	_	_
+41	,	,	PUNCT	_	_	42	punct	_	_	_	_	_	_	_
+42	spróbowali	spróbować	VERB	_	_	19	conj	Y	try.01	_	_	_	_	_
+43	oddzielić	oddzielić	VERB	_	_	42	xcomp	Y	separate.02	_	_	_	_	_
+44	podziemne	podziemny	ADJ	_	_	45	amod	_	_	_	_	_	_	_
+45	wibracje	wibracja	NOUN	_	_	43	obj	_	_	_	_	_	A1	A1
+46	od	od	ADP	_	_	47	case	_	_	_	_	_	_	_
+47	wibracji	wibracja	NOUN	_	_	45	nmod	_	_	_	_	_	_	A2
+48	spowodowanych	spowodowanych	ADJ	_	_	47	acl	_	_	_	_	_	_	_
+49	przez	przez	ADP	_	_	50	case	_	_	_	_	_	_	_
+50	ludzi	człowiek	NOUN	_	_	48	obl:agent	_	_	_	_	_	_	_
+51	.	.	PUNCT	_	_	10	punct	_	_	_	_	_	_	_
+
+
+# sentence-text = Ale kiedy brakuje tego poziomu , rzeczy wydają się być pozbawione powagi
+1	Ale	ale	CCONJ	_	_	8	cc	_	_	AM-DIS	_
+2	kiedy	kiedy	ADV	_	_	3	advmod	_	_	AM-TMP	_
+3	brakuje	brakować	VERB	_	_	8	advcl	Y	lack.01	_	_
+4	tego	tego	DET	_	_	5	det	_	_	_	_
+5	poziomu	poziom	NOUN	_	_	3	iobj	_	_	A1	_
+6	,	,	PUNCT	_	_	3	punct	_	_	_	_
+7	rzeczy	rzecz	NOUN	_	_	8	nsubj	_	_	_	A1
+8	wydają	wydawać	VERB	_	_	0	ROOT	Y	seem.01	_	_
+9	się	się	PRON	_	_	8	expl:pv	_	_	_	_
+10	być	być	AUX	_	_	11	aux:pass	_	_	_	_
+11	pozbawione	pozbawione	ADJ	_	_	12	acl	_	_	_	_
+12	powagi	powaga	NOUN	_	_	8	nsubj	_	_	_	A2
+
+
+# sentence-text = Jaka wielka szkoda !
+1	Jaka	jaka	DET	_	_	3	det	_	_
+2	wielka	wielki	ADJ	_	_	3	amod	_	_
+3	szkoda	szkoda	NOUN	_	_	0	ROOT	_	_
+4	!	!	PUNCT	_	_	3	punct	_	_
+
+
+# sentence-text = I to właśnie skłoniło zarówno wrogów , jak i przyjaciół do wezwania psychologów i filozofów do sformułowania hasła tak , aby było ono zgodne z emocjami i posiadało moc przebijania serca bez wyczerpywania umysłu .
+1	I	i	PART	_	_	4	cc	_	_	_	_	_	_	_	_	_
+2	to	to	PRON	_	_	3	advmod:emph	_	_	_	_	_	_	_	_	_
+3	właśnie	właśnie	PART	_	_	4	advmod	_	_	A0	_	_	_	_	_	_
+4	skłoniło	skłonić	VERB	_	_	0	ROOT	Y	lead.03	_	_	_	_	_	_	_
+5	zarówno	zarówno	CCONJ	_	_	6	cc:preconj	_	_	_	_	_	_	_	_	_
+6	wrogów	wróg	NOUN	_	_	4	nsubj	_	_	A1	A0	_	_	_	_	_
+7	,	,	PUNCT	_	_	10	punct	_	_	_	_	_	_	_	_	_
+8	jak	jak	CCONJ	_	_	10	cc	_	_	_	_	_	_	_	_	_
+9	i	i	CCONJ	_	_	8	fixed	_	_	_	_	_	_	_	_	_
+10	przyjaciół	przyjaciel	NOUN	_	_	6	conj	_	_	_	_	_	_	_	_	_
+11	do	do	ADP	_	_	12	case	_	_	_	_	_	_	_	_	_
+12	wezwania	wezwanie	NOUN	_	_	10	nmod	_	call_on.05	A2	_	_	_	_	_	_
+13	psychologów	psycholog	NOUN	_	_	12	obj	_	_	_	A1	A0	_	_	_	_
+14	i	i	CCONJ	_	_	15	cc	_	_	_	_	_	_	_	_	_
+15	filozofów	filozof	NOUN	_	_	13	conj	_	_	_	_	_	_	_	_	_
+16	do	do	ADP	_	_	17	case	_	_	_	_	_	_	_	_	_
+17	sformułowania	sformułowanie	NOUN	_	_	12	nmod	_	formulate.01	_	A2	_	_	_	_	_
+18	hasła	hasło	NOUN	_	_	17	obj	_	_	_	_	A1	_	_	_	_
+19	tak	tak	ADV	_	_	10	advmod	_	_	_	_	_	_	_	_	_
+20	,	,	PUNCT	_	_	24	punct	_	_	_	_	_	_	_	_	_
+21	aby	aby	SCONJ	_	_	24	mark	_	_	_	_	_	_	_	_	_
+22	było	było	AUX	_	_	24	cop	Y	be.01	_	_	_	_	_	_	_
+23	ono	on	PRON	_	_	24	nsubj	_	_	_	_	_	A1	A0	_	_
+24	zgodne	zgodny	ADJ	_	_	10	dep	_	_	_	_	_	A2	_	_	_
+25	z	z	ADP	_	_	26	case	_	_	_	_	_	_	_	_	_
+26	emocjami	emocja	NOUN	_	_	24	obl:arg	_	_	_	_	_	_	_	_	_
+27	i	i	CCONJ	_	_	28	cc	_	_	_	_	_	_	_	_	_
+28	posiadało	posiadać	VERB	_	_	24	conj	Y	possess.01	_	_	_	_	_	_	_
+29	moc	moc	NOUN	_	_	28	obj	_	_	_	_	_	_	A1	A0	_
+30	przebijania	przebijania	NOUN	_	_	29	nmod:arg	_	pierce.01	_	_	_	_	_	_	_
+31	serca	serce	NOUN	_	_	30	obj	_	_	_	_	_	_	_	A1	_
+32	bez	bez	ADP	_	_	33	case	_	_	_	_	_	_	_	_	_
+33	wyczerpywania	wyczerpywania	NOUN	_	_	28	obl	_	exhaust.01	_	_	_	_	_	_	_
+34	umysłu	umysł	NOUN	_	_	33	obj	_	_	_	_	_	_	_	_	A1
+35	.	.	PUNCT	_	_	4	punct	_	_	_	_	_	_	_	_	_
+
+
+# sentence-text = Więc , jeden żołnierz wstał i opowiedział o jakiejś zrównanej z ziemią dziurze w Iraku ?
+1	Więc	więc	SCONJ	_	_	5	mark	_	_	AM-DIS	AM-DIS	_
+2	,	,	PUNCT	_	_	5	punct	_	_	_	_	_
+3	jeden	jeden	ADJ	_	_	4	amod	_	_	_	_	_
+4	żołnierz	żołnierz	NOUN	_	_	5	nsubj	_	_	A1	A0	_
+5	wstał	wstać	VERB	_	_	0	ROOT	Y	stand_up.07	_	_	_
+6	i	i	CCONJ	_	_	7	cc	_	_	_	_	_
+7	opowiedział	opowiedzieć	VERB	_	_	5	conj	Y	talk.01	_	_	_
+8	o	o	ADP	_	_	13	case	_	_	_	_	_
+9	jakiejś	jakiejś	DET	_	_	13	det	_	_	_	_	_
+10	zrównanej	zrównanej	ADJ	_	_	9	fixed	Y	raze.01	_	_	_	raze = zrównanej z ziemią	10	some	some	DET
+11	z	z	ADP	_	_	12	case	_	_	_	_	_
+12	ziemią	ziemia	NOUN	_	_	10	obl	_	_	_	_	_
+13	dziurze	dziura	NOUN	_	_	7	obl:arg	_	_	_	A1	A1
+14	w	w	ADP	_	_	15	case	_	_	_	_	_
+15	Iraku	Irak	PROPN	_	_	13	nmod	_	_	_	AM-LOC	AM-LOC
+16	?	?	PUNCT	_	_	5	punct	_	_	_	_	_
+
+
+# sentence-text = & Rzeczywistość ma piekielny czas na przeniknięcie przez mgłę w mojej głowie .
+1	&	&	PUNCT	_	_	3	punct	_	_	AM-DIS	_
+2	Rzeczywistość	rzeczywistość	NOUN	_	_	3	nsubj	_	_	A0	A0
+3	ma	mieć	VERB	_	_	0	ROOT	Y	have.03	_	_
+4	piekielny	piekielny	ADJ	_	_	5	amod	_	_	_	_
+5	czas	czas	NOUN	_	_	3	iobj	_	_	A1	_
+6	na	na	ADP	_	_	7	case	_	_	_	_
+7	przeniknięcie	przeniknięcie	NOUN	_	_	3	obl	Y	penetrate.01	_	_
+8	przez	przez	ADP	_	_	9	case	_	_	_	_
+9	mgłę	mgła	NOUN	_	_	7	obl:agent	_	_	_	A1
+10	w	w	ADP	_	_	12	case	_	_	_	_
+11	mojej	mojej	DET	_	_	12	det:poss	_	_	_	_
+12	głowie	głowa	NOUN	_	_	3	obl	_	_	_	_
+13	.	.	PUNCT	_	_	3	punct	_	_	_	_
+
+
+# sentence-text = Ci właściciele gruntów mogliby zaoferować budowę lub rozbudowę dróg w pobliżu swoich nieruchomości .
+1	Ci	ci	DET	_	_	2	det	_	_	_	_	_
+2	właściciele	właściciel	NOUN	_	_	4	nsubj	_	_	A0	A0	A0
+3	gruntów	grunt	NOUN	_	_	2	nmod:arg	_	_	_	_	_
+4	mogliby	móc	VERB	_	_	0	ROOT	_	_	_	_	_
+5	zaoferować	zaoferować	VERB	_	_	4	xcomp	Y	offer.01	_	_	_
+6	budowę	budowa	NOUN	_	_	5	obj	Y	build.01	A1	_	_
+7	lub	lub	CCONJ	_	_	8	cc	_	_	_	_	_
+8	rozbudowę	rozbudowa	NOUN	_	_	6	conj	Y	expand.01	_	_	_
+9	dróg	drogi	NOUN	_	_	8	nmod:arg	_	_	_	A1	A1
+10	w	w	ADP	_	_	13	case	_	_	_	_	_
+11	pobliżu	pobliże	NOUN	_	_	10	fixed	_	_	_	_	_
+12	swoich	swoich	DET	_	_	13	det:poss	_	_	_	_	_
+13	nieruchomości	nieruchomość	NOUN	_	_	5	obl	_	_	_	_	_
+14	.	.	PUNCT	_	_	4	punct	_	_	_	_	_
+
+
+# sentence-text = ale każdy , kto myśli , że cokolwiek z tego zostanie rozwiązane , w jakikolwiek sposób , bez mnóstwa pieniędzy , musi wrócić do punktu wyjścia .
+1	ale	ale	CCONJ	_	_	2	cc	_	_	AM-DIS	_	AM-DIS	_
+2	każdy	każdy	DET	_	_	22	nsubj	_	_	A0	_	A0	A0
+3	,	,	PUNCT	_	_	5	punct	_	_	_	_	_	_
+4	kto	kto	PRON	_	_	5	nsubj	_	_	R-A0	_	_	_
+5	myśli	myślić	VERB	_	_	2	acl:relcl	Y	think.01	_	_	_	_
+6	,	,	PUNCT	_	_	12	punct	_	_	_	_	_	_
+7	że	że	SCONJ	_	_	12	mark	_	_	_	_	_	_
+8	cokolwiek	cokolwiek	PRON	_	_	12	nsubj:pass	_	_	_	A1	_	_
+9	z	z	ADP	_	_	10	case	_	_	_	_	_	_
+10	tego	tego	PRON	_	_	8	nmod	_	_	_	_	_	_
+11	zostanie	zostanie	AUX	_	_	12	aux:pass	_	_	_	_	_	_
+12	rozwiązane	rozwiązane	ADJ	_	_	5	ccomp	Y	solve.01	A1	_	_	_
+13	,	,	PUNCT	_	_	16	punct	_	_	_	_	_	_
+14	w	w	ADP	_	_	16	case	_	_	_	_	_	_
+15	jakikolwiek	jakikolwiek	DET	_	_	16	det	_	_	_	_	_	_
+16	sposób	sposób	NOUN	_	_	12	obl	_	_	_	A2	_	_
+17	,	,	PUNCT	_	_	22	punct	_	_	_	_	_	_
+18	bez	bez	ADP	_	_	19	case	_	_	_	_	_	_
+19	mnóstwa	mnóstwo	NOUN	_	_	22	obl	_	_	_	_	_	_
+20	pieniędzy	pieniądz	NOUN	_	_	19	nmod:arg	_	_	_	_	_	_
+21	,	,	PUNCT	_	_	19	punct	_	_	_	_	_	_
+22	musi	musić	VERB	_	_	0	ROOT	Y	need.01	_	_	_	_
+23	wrócić	wrócić	VERB	_	_	22	xcomp	Y	go.02	_	_	A1	_
+24	do	do	ADP	_	_	25	case	_	_	_	_	_	_
+25	punktu	punkt	NOUN	_	_	23	obl	_	_	_	_	_	A4
+26	wyjścia	wyjście	NOUN	_	_	25	nmod	_	_	_	_	_	_
+27	.	.	PUNCT	_	_	22	punct	_	_	_	_	_	_
+
+
+# sentence-text = Znajduje się w odległości dwóch BILIONÓW lat świetlnych od nas , jest to najdalszy zasięg , jaki może osiągnąć sprzęt amatorski , a zwłaszcza z naszego podwórka .
+1	Znajduje	znajdywać	VERB	_	_	0	ROOT	Y	lay.01	_	_	_
+2	się	się	PRON	_	_	1	expl:pv	_	_	_	_	_
+3	w	w	ADP	_	_	4	case	_	_	_	_	_
+4	odległości	odległość	NOUN	_	_	1	obl	_	_	A2	_	_
+5	dwóch	dwa	NUM	_	_	7	nummod	_	_	_	_	_
+6	BILIONÓW	bilionów	PROPN	_	_	5	flat	_	_	_	_	_
+7	lat	rok	NOUN	_	_	4	nmod:arg	_	_	_	_	_
+8	świetlnych	świetlny	ADJ	_	_	7	amod	_	_	_	_	_
+9	od	od	ADP	_	_	10	case	_	_	_	_	_
+10	nas	my	PRON	_	_	8	obl:cmpr	_	_	_	_	_
+11	,	,	PUNCT	_	_	15	punct	_	_	_	_	_
+12	jest	jest	AUX	_	_	15	aux	Y	be.01	_	_	_
+13	to	to	AUX	_	_	15	cop	_	_	_	A1	_
+14	najdalszy	daleki	ADJ	_	_	15	amod	_	_	_	_	_
+15	zasięg	zasięg	NOUN	_	_	1	conj	_	_	_	A2	A1
+16	,	,	PUNCT	_	_	18	punct	_	_	_	_	_
+17	jaki	jaki	DET	_	_	19	obj	_	_	_	_	_
+18	może	móc	VERB	_	_	15	acl:relcl	_	_	_	_	AM-MOD
+19	osiągnąć	osiągnąć	VERB	_	_	18	xcomp	Y	reach.02	_	_	_
+20	sprzęt	sprzęt	NOUN	_	_	19	obj	_	_	_	_	A0
+21	amatorski	amatorski	ADJ	_	_	20	amod	_	_	_	_	_
+22	,	,	PUNCT	_	_	27	punct	_	_	_	_	_
+23	a	a	CCONJ	_	_	27	cc	_	_	_	_	_
+24	zwłaszcza	zwłaszcza	PART	_	_	27	advmod:emph	_	_	_	_	_
+25	z	z	ADP	_	_	27	case	_	_	_	_	_
+26	naszego	naszego	DET	_	_	27	det:poss	_	_	_	_	_
+27	podwórka	podwórko	NOUN	_	_	15	conj	_	_	_	_	_
+28	.	.	PUNCT	_	_	1	punct	_	_	_	_	_
+
+
+# sentence-text = Odkąd wprowadziliśmy się do ogrodu Fenghua , wciąż dzieją się tam dziwne rzeczy .
+1	Odkąd	odkąd	ADV	_	_	2	advmod	_	_	_	_
+2	wprowadziliśmy	wprowadzić	VERB	_	_	0	ROOT	Y	move.01	_	_
+3	się	się	PRON	_	_	2	expl:pv	_	_	_	_
+4	do	do	ADP	_	_	5	case	_	_	_	_
+5	ogrodu	ogród	NOUN	_	_	2	obl	_	_	A2	_
+6	Fenghua	fenghua	NOUN	_	_	2	nsubj	_	_	_	_
+7	,	,	PUNCT	_	_	9	punct	_	_	_	_
+8	wciąż	wciąż	ADV	_	_	9	advmod	_	_	_	_
+9	dzieją	dziać	VERB	_	_	2	conj	Y	happen.01	_	_
+10	się	się	PRON	_	_	9	expl:pv	_	_	_	_
+11	tam	tam	ADV	_	_	9	advmod	_	_	_	_
+12	dziwne	dziwny	ADJ	_	_	13	amod	_	_	_	_
+13	rzeczy	rzecz	NOUN	_	_	9	nsubj	_	_	_	A1
+14	.	.	PUNCT	_	_	2	punct	_	_	_	_
+
+
+# sentence-text = Krótko mówiąc , ich celem jest powrót do islamskiego kalifatu , co jest ich najdroższym i najcenniejszym życzeniem .
+1	Krótko	krótko	ADV	_	_	2	advmod	_	_	AM-DIS	_	_	_
+2	mówiąc	mówić	VERB	_	_	5	parataxis:insert	Y	speak.01	_	_	_	_
+3	,	,	PUNCT	_	_	2	punct	_	_	_	_	_	_
+4	ich	on	PRON	_	_	5	nmod	_	_	_	_	_	_
+5	celem	cel	NOUN	_	_	0	ROOT	_	_	_	A1	_	_
+6	jest	jest	AUX	_	_	5	cop	Y	be.01	_	_	_	_
+7	powrót	powrót	NOUN	_	_	5	nsubj	_	return.01	_	A2	_	_
+8	do	do	ADP	_	_	10	case	_	_	_	_	_	_
+9	islamskiego	islamski	ADJ	_	_	10	amod	_	_	_	_	_	_
+10	kalifatu	kalifat	NOUN	_	_	7	nmod	_	_	_	_	A4	_
+11	,	,	PUNCT	_	_	6	punct	_	_	_	_	_	_
+12	co	co	PRON	_	_	6	nsubj	_	_	_	_	_	A1
+13	jest	jest	AUX	_	_	7	acl:relcl	Y	be.01	_	_	_	_
+14	ich	on	PRON	_	_	6	nsubj	_	_	_	_	_	_
+15	najdroższym	drogi	ADJ	_	_	4	amod	_	_	_	_	_	_
+16	i	i	CCONJ	_	_	18	cc	_	_	_	_	_	_
+17	najcenniejszym	cenny	ADJ	_	_	18	amod	_	_	_	_	_	_
+18	życzeniem	życzenie	NOUN	_	_	15	conj	_	_	_	_	_	A2
+19	.	.	PUNCT	_	_	5	punct	_	_	_	_	_	_
+
+
+# sentence-text = [ Bcc ] Ty i CY nie możecie być razem .
+1	[	[	PUNCT	_	_	2	punct	_	_	_
+2	Bcc	bcc	PROPN	_	_	0	ROOT	_	_	_
+3	]	]	PUNCT	_	_	2	punct	_	_	_
+4	Ty	ty	PRON	_	_	8	nsubj	_	_	_
+5	i	i	PART	_	_	6	cc	_	_	_
+6	CY	cy	PROPN	_	_	8	nsubj	_	_	_
+7	nie	nie	PART	_	_	8	advmod:neg	_	_	_
+8	możecie	móc	VERB	_	_	0	ROOT	_	_	_
+9	być	być	VERB	_	_	8	xcomp	Y	be.03	_
+10	razem	razem	ADV	_	_	9	advmod	_	_	_
+11	.	.	PUNCT	_	_	8	punct	_	_	_
+
+
+# sentence-text = Wydaje mi się , że cały sens istnienia dróg polega na ułatwianiu interesom publicznym dotarcia do i z prywatnych przedsiębiorstw .
+1	Wydaje	wydawać	VERB	_	_	0	ROOT	Y	seem.01	_	_	_	_	_
+2	mi	ja	PRON	_	_	1	iobj	_	_	A2	_	_	_	_
+3	się	się	PRON	_	_	1	expl:pv	_	_	_	_	_	_	_
+4	,	,	PUNCT	_	_	10	punct	_	_	_	_	_	_	_
+5	że	że	SCONJ	_	_	10	mark	_	_	_	_	_	_	_
+6	cały	cały	ADJ	_	_	7	amod	_	_	_	_	_	_	_
+7	sens	sens	NOUN	_	_	10	nsubj	_	_	_	A1	A0	_	_
+8	istnienia	istnienie	NOUN	_	_	7	nmod:arg	Y	exist.01	_	_	_	_	_
+9	dróg	drogi	NOUN	_	_	8	nsubj	_	_	_	_	_	_	_
+10	polega	polegać	VERB	_	_	1	csubj	Y	rely.01	A1	A2	_	A0	_
+11	na	na	ADP	_	_	12	case	_	_	_	_	_	_	_
+12	ułatwianiu	ułatwianiu	NOUN	_	_	10	obl:arg	Y	facilitate.01	_	_	A1	_	_
+13	interesom	interes	NOUN	_	_	12	obj	_	_	_	_	_	A1	A1
+14	publicznym	publiczny	ADJ	_	_	15	amod	_	_	_	_	_	_	_
+15	dotarcia	dotarcia	NOUN	_	_	13	nmod	Y	get.05	_	_	_	_	_
+16	do	do	ADP	_	_	15	dep	_	_	_	_	_	_	_
+17	i	i	CCONJ	_	_	20	cc	_	_	_	_	_	_	_
+18	z	z	ADP	_	_	20	case	_	_	_	_	_	_	_
+19	prywatnych	prywatny	ADJ	_	_	20	amod	_	_	_	_	_	_	_
+20	przedsiębiorstw	przedsiębiorstwo	NOUN	_	_	15	conj	_	_	_	_	_	_	A2
+21	.	.	PUNCT	_	_	1	punct	_	_	_	_	_	_	_
+
+
+# sentence-text = Czy małpy przystosowują się do swoich ograniczonych siedlisk z ograniczonymi źródłami pożywienia , czy też jesteśmy świadkami ich zbliżania się do wyginięcia ?
+1	Czy	czy	PART	_	_	3	advmod	_	_	_	_	_	_
+2	małpy	małpa	NOUN	_	_	3	nsubj	_	_	A0	_	_	_
+3	przystosowują	przystosowywać	VERB	_	_	0	ROOT	Y	adapt.01	_	_	_	_
+4	się	się	PRON	_	_	3	expl:pv
+5	do	do	ADP	_	_	8	case	_	_	_	_	_	_
+6	swoich	swoich	DET	_	_	8	det:poss	_	_	_	_	_	_
+7	ograniczonych	ograniczony	ADJ	_	_	8	amod	_	_	_	_	_	_
+8	siedlisk	siedlisko	NOUN	_	_	3	obl:arg	_	_	A2	_	_	_
+9	z	z	ADP	_	_	11	case	_	_	_	_	_	_
+10	ograniczonymi	ograniczony	ADJ	_	_	11	amod	_	_	_	_	_	_
+11	źródłami	źródło	NOUN	_	_	8	nmod	_	_	_	_	_	_
+12	pożywienia	pożywienie	NOUN	_	_	11	nmod:arg	_	_	_	_	_	_
+13	,	,	PUNCT	_	_	17	punct	_	_	_	_	_	_
+14	czy	czy	CCONJ	_	_	17	cc	_	_	_	_	_	_
+15	też	też	PART	_	_	17	advmod:emph	_	_	_	_	_	_
+16	jesteśmy	jesteśmy	AUX	_	_	17	cop	Y	be.01	_	_	_	_
+17	świadkami	świadek	NOUN	_	_	3	conj	_	_	_	A2	_	_
+18	ich	on	PRON	_	_	19	obj	_	_	_	_	A1	A1
+19	zbliżania	zbliżać	VERB	_	_	17	nmod:arg	Y	approach.01	_	_	_	_
+20	się	się	PRON	_	_	19	expl:pv	_	_	_	_	_	_
+21	do	do	ADP	_	_	22	case	_	_	_	_	_	_
+22	wyginięcia	wyginięcie	NOUN	_	_	19	obl:arg	Y	extinction.01	_	_	A2	_
+23	?	?	PUNCT	_	_	3	punct	_	_	_	_	_	_
+
+
+# sentence-text = Na własne oczy widziałem jedną z nich z odsłoniętą dolną częścią brzucha z podwyższonego entuzjazmu !
+1	Na	na	ADP	_	_	3	case	_	_	_	_	_
+2	własne	własny	ADJ	_	_	3	amod	_	_	_	_	_
+3	oczy	oko	NOUN	_	_	4	obl	_	_	_	_	_
+4	widziałem	widzieć	VERB	_	_	0	ROOT	Y	see.01	_	_	_
+5	jedną	jeden	ADJ	_	_	4	obj	_	_	A1	A0	A0
+6	z	z	ADP	_	_	7	case	_	_	_	_	_
+7	nich	on	PRON	_	_	5	obl	_	_	_	_	_
+8	z	z	ADP	_	_	9	case	_	_	_	_	_
+9	odsłoniętą	odsłoniętą	ADJ	_	_	5	obl:arg	Y	reveal.01	_	_	_
+10	dolną	dolny	ADJ	_	_	11	amod	_	_	_	_	_
+11	częścią	część	NOUN	_	_	9	iobj	_	_	_	A1	_
+12	brzucha	brzucho	NOUN	_	_	11	nmod:arg	_	_	_	_	_
+13	z	z	ADP	_	_	15	case	_	_	_	_	_
+14	podwyższonego	podwyższonego	ADJ	_	_	15	acl	Y	increase.01	_	_	_
+15	entuzjazmu	entuzjazm	NOUN	_	_	9	obl	_	_	_	_	A1
+16	!	!	PUNCT	_	_	4	punct	_	_	_	_	_
+
+
+# sentence-text = Pamiętam mój pierwszy rok studiów w Qinghua , poszedłem na mój pierwszy przedmiot obieralny o nazwie " Inspiracje w historii fizyki " . "
+1	Pamiętam	pamiętać	VERB	_	_	0	ROOT	Y	remember.01	_	_
+2	mój	mój	DET	_	_	4	det:poss	_	_	_	_
+3	pierwszy	pierwszy	ADJ	_	_	4	amod	_	_	_	_
+4	rok	rok	NOUN	_	_	1	obj	_	_	A1	_
+5	studiów	studium	NOUN	_	_	4	nmod:arg	_	_	_	_
+6	w	w	ADP	_	_	7	case	_	_	_	_
+7	Qinghua	qinghua	PROPN	_	_	5	nmod	_	_	AM-LOC	_
+8	,	,	PUNCT	_	_	9	punct	_	_	_	_
+9	poszedłem	pójść	VERB	_	_	1	conj	Y	go.02	_	_
+10	na	na	ADP	_	_	13	case	_	_	_	_
+11	mój	mój	DET	_	_	13	det:poss	_	_	_	_
+12	pierwszy	pierwszy	ADJ	_	_	13	amod	_	_	_	_
+13	przedmiot	przedmiot	NOUN	_	_	9	obl:arg	_	_	_	A4
+14	obieralny	obieralny	ADJ	_	_	13	amod	_	_	_	_
+15	o	o	ADP	_	_	16	case	_	_	_	_
+16	nazwie	nazwa	NOUN	_	_	13	nmod	_	_	_	_
+17	"	"	PUNCT	_	_	18	punct	_	_	_	_
+18	Inspiracje	inspiracja	NOUN	_	_	16	nmod	_	_	_	_
+19	w	w	ADP	_	_	20	case	_	_	_	_
+20	historii	historia	NOUN	_	_	18	nmod	_	_	_	_
+21	fizyki	fizyka	NOUN	_	_	20	nmod	_	_	_	_
+22	"	"	PUNCT	_	_	18	punct	_	_	_	_
+23	.	.	PUNCT	_	_	1	punct	_	_	_	_
+24	"	"	PUNCT	_	_	0	ROOT	_	_	_	_
+
+
+# sentence-text = Naprawdę jestem zbyt zdenerwowany .
+1	Naprawdę	naprawdę	PART	_	_	4	advmod:emph	_	_	_
+2	jestem	jestem	AUX	_	_	4	aux:pass	Y	be.01	_
+3	zbyt	zbyt	ADV	_	_	4	advmod	_	_	_
+4	zdenerwowany	zdenerwowany	ADJ	_	_	0	ROOT	_	_	A2
+5	.	.	PUNCT	_	_	4	punct	_	_	_
+
+
+# sentence-text = Ciemna twarz ogólnie rzecz biorąc , skóra ludzi , którzy spożywają zbyt dużo soli jest szorstka i ciemna .
+1	Ciemna	ciemny	ADJ	_	_	2	amod	_	_	_	_	_
+2	twarz	twarz	NOUN	_	_	5	obj	_	_	A1	_	_
+3	ogólnie	ogólnie	ADV	_	_	5	advmod	_	_	AM-NMR	_	_
+4	rzecz	rzecz	NOUN	_	_	5	obj	_	_	_	_	_
+5	biorąc	brać	VERB	_	_	7	parataxis:insert	Y	take.01	_	_	_
+6	,	,	PUNCT	_	_	5	punct	_	_	_	_	_
+7	skóra	skóra	NOUN	_	_	16	nsubj	_	_	_	_	A1
+8	ludzi	człowiek	NOUN	_	_	7	nmod	_	_	_	A0	_
+9	,	,	PUNCT	_	_	11	punct	_	_	_	_	_
+10	którzy	którzy	DET	_	_	11	nsubj	_	_	_	R-A1	_
+11	spożywają	spożywać	VERB	_	_	8	acl:relcl	Y	consume.01	_	_	_
+12	zbyt	zbyt	ADV	_	_	14	advmod	_	_	_	_	_
+13	dużo	dużo	ADV	_	_	14	det:numgov	_	_	_	_	_
+14	soli	sól	NOUN	_	_	11	obj	_	_	_	A1	_
+15	jest	jest	AUX	_	_	7	cop	Y	be.01	_	_	_
+16	szorstka	szorstka	NOUN	_	_	0	ROOT	_	_	_	_	A2
+17	i	i	CCONJ	_	_	18	cc	_	_	_	_	_
+18	ciemna	ciemny	ADJ	_	_	16	conj	_	_	_	_	_
+19	.	.	PUNCT	_	_	16	punct	_	_	_	_	_
+
+
+# sentence-text = O ile budowniczowie nie będą dostarczać przystępnych cenowo mieszkań ze stratą - co dla mnie wydaje się absurdalne - nie będzie tu przystępnych cenowo mieszkań bez jeszcze większych dotacji podatkowych .
+1	O	o	ADP	_	_	6	mark	_	_	_	_	_	_
+2	ile	ile	ADV	_	_	1	fixed	_	_	_	_	_	_
+3	budowniczowie	budowniczy	NOUN	_	_	6	nsubj	_	_	_	A0	_	_
+4	nie	nie	PART	_	_	6	advmod:neg	_	_	_	_	_	_
+5	będą	być	AUX	_	_	6	aux	Y	be.03	_	_	_	_
+6	dostarczać	dostarczać	VERB	_	_	0	ROOT	Y	supply.01	_	_	_	_
+7	przystępnych	przystępny	ADJ	_	_	9	amod	_	_	_	_	_	_
+8	cenowo	cenowo	ADV	_	_	7	advmod	_	_	_	_	_	_
+9	mieszkań	mieszkanie	NOUN	_	_	6	iobj	_	_	_	A1	_	_
+10	ze	z	ADP	_	_	11	case	_	_	_	_	_	_
+11	stratą	strata	NOUN	_	_	9	nmod	_	_	_	AM-MNR	_	_
+12	-	-	PUNCT	_	_	16	punct	_	_	_	_	_	_
+13	co	co	PRON	_	_	16	nsubj	_	_	_	_	_	_
+14	dla	dla	ADP	_	_	15	case	_	_	_	_	_	_
+15	mnie	ja	PRON	_	_	16	obl	_	_	_	_	A2	_
+16	wydaje	wydawać	VERB	_	_	6	advcl:relcl	Y	seem.01	_	_	_	_
+17	się	się	PRON	_	_	16	expl:pv	_	_	_	_	_	_
+18	absurdalne	absurdalny	ADJ	_	_	16	xcomp:pred	_	_	_	_	A1	_
+19	-	-	PUNCT	_	_	21	punct	_	_	_	_	_	_
+20	nie	nie	PART	_	_	21	advmod:neg	_	_	_	_	_	AM-NEG
+21	będzie	być	AUX	_	_	16	conj	Y	be.02	_	_	_	_
+22	tu	tu	ADV	_	_	7	advmod	_	_	_	_	_	_
+23	przystępnych	przystępny	ADJ	_	_	21	punct	_	_	_	_	_	_
+24	cenowo	cenowo	ADV	_	_	9	advmod	_	_	_	_	_	_
+25	mieszkań	mieszkanie	NOUN	_	_	0	ROOT	_	_	_	_	_	A1
+26	bez	bez	ADP	_	_	29	case	_	_	_	_	_	_
+27	jeszcze	jeszcze	PART	_	_	28	advmod:emph	_	_	_	_	_	_
+28	większych	wielki	ADJ	_	_	29	amod	_	_	_	_	_	_
+29	dotacji	dotacja	NOUN	_	_	9	nmod	_	_	_	_	_	_
+30	podatkowych	podatkowy	ADJ	_	_	29	amod	_	_	_	_	_	_
+31	.	.	PUNCT	_	_	9	punct	_	_	_	_	_	_
+
+
+# sentence-text = Właściwe miejsce dla tych najemników jest obok ich upokorzonego pana w klatce oskarżonego .
+1	Właściwe	właściwy	ADJ	_	_	2	amod	_	_	_	_
+2	miejsce	miejsce	NOUN	_	_	6	nsubj	_	_	A1	_
+3	dla	dla	ADP	_	_	5	case	_	_	_	_
+4	tych	tych	DET	_	_	5	det	_	_	_	_
+5	najemników	najemnik	NOUN	_	_	2	nmod	_	_	_	_
+6	jest	być	VERB	_	_	0	ROOT	Y	be.01	_	_
+7	obok	obok	ADP	_	_	9	advmod	_	_	_	_
+8	ich	on	PRON	_	_	9	obj	_	_	_	_
+9	upokorzonego	upokorzonego	ADJ	_	_	6	dep	Y	humiliate.01	_	_
+10	pana	pan	NOUN	_	_	9	obj	_	_	A2	A1
+11	w	w	ADP	_	_	12	case	_	_	_	_
+12	klatce	klatka	NOUN	_	_	9	obl:arg	_	_	_	_
+13	oskarżonego	oskarżony	NOUN	_	_	12	nmod	_	_	_	_
+14	.	.	PUNCT	_	_	6	punct	_	_	_	_
+
+
+# sentence-text = Nigdy nie gardziła mną z powodu mojej biedy , nigdy też niczego ode mnie nie żądała .
+1	Nigdy	nigdy	ADV	_	_	3	advmod	_	_	_	_
+2	nie	nie	PART	_	_	3	advmod:neg	_	_	AM-NEG	_
+3	gardziła	gardzić	VERB	_	_	0	ROOT	Y	despise.01	_	_
+4	mną	ja	PRON	_	_	3	iobj	_	_	A1	_
+5	z	z	ADP	_	_	8	case	_	_	_	_
+6	powodu	powód	NOUN	_	_	5	fixed	_	_	_	_
+7	mojej	mojej	DET	_	_	8	det:poss	_	_	_	_
+8	biedy	bieda	NOUN	_	_	3	obl	_	_	_	_
+9	,	,	PUNCT	_	_	16	punct	_	_	_	_
+10	nigdy	nigdy	ADV	_	_	16	advmod	_	_	_	_
+11	też	też	PART	_	_	10	advmod:emph	_	_	_	_
+12	niczego	niczego	PRON	_	_	16	obj	_	_	_	A1
+13	ode	od	ADP	_	_	14	case	_	_	_	_
+14	mnie	ja	PRON	_	_	16	obl:arg	_	_	_	A2
+15	nie	nie	PART	_	_	16	advmod:neg	_	_	_	AM-NEG
+16	żądała	żądać	VERB	_	_	3	conj	Y	request.01	_	_
+17	.	.	PUNCT	_	_	3	punct	_	_	_	_
+
+
+# sentence-text = Czy ceny strefowe to palec na skali ?
+1	Czy	czy	PART	_	_	5	advmod	_	_
+2	ceny	cena	NOUN	_	_	5	nsubj	_	_
+3	strefowe	strefowy	ADJ	_	_	2	amod	_	_
+4	to	to	AUX	_	_	5	cop	_	_
+5	palec	palec	NOUN	_	_	0	ROOT	_	_
+6	na	na	ADP	_	_	7	case	_	_
+7	skali	skala	NOUN	_	_	5	nmod:arg	_	_
+8	?	?	PUNCT	_	_	5	punct	_	_
+
+
+# sentence-text = Biały Czy mogę wprowadzić Louise w tym momencie ?
+1	Biały	biały	ADJ	_	_	3	nsubj	_	_	AM-DIS
+2	Czy	czy	PART	_	_	3	advmod	_	_	AM-MOD
+3	mogę	móc	VERB	_	_	0	ROOT	_	_	A0
+4	wprowadzić	wprowadzić	VERB	_	_	3	xcomp	Y	bring.01	_
+5	Louise	louise	PROPN	_	_	4	obj	_	_	A1
+6	w	w	ADP	_	_	8	case	_	_	_
+7	tym	tym	DET	_	_	8	det	_	_	_
+8	momencie	moment	NOUN	_	_	4	obl	_	_	AM-TMP
+9	?	?	PUNCT	_	_	3	punct	_	_	_
+
+
+# sentence-text = Nie , publiczne poparcie dla Hezbollahu przerodziło się nawet w ogromne oburzenie ze strony Iranu i jego sojuszników w regionie arabskim .
+1	Nie	nie	PART	_	_	7	advmod:emph	_	_	AM-DIS	_
+2	,	,	PUNCT	_	_	4	punct	_	_	_	_
+3	publiczne	publiczny	ADJ	_	_	4	amod	_	_	_	_
+4	poparcie	popart	NOUN	_	_	7	nsubj	_	_	A1	_
+5	dla	dla	ADP	_	_	6	case	_	_	_	_
+6	Hezbollahu	Hezbollah	PROPN	_	_	4	nmod	_	_	_	_
+7	przerodziło	przerodzić	VERB	_	_	0	ROOT	Y	turn.02	_	_
+8	się	się	PRON	_	_	7	expl:pv	_	_	_	_
+9	nawet	nawet	PART	_	_	12	advmod:emph	_	_	AM-ADV	_
+10	w	w	ADP	_	_	12	case	_	_	_	_
+11	ogromne	ogromny	ADJ	_	_	12	amod	_	_	_	AM-NMR
+12	oburzenie	oburzenie	NOUN	_	_	7	obl:arg	Y	indignation.01	A2	_
+13	ze	z	ADP	_	_	15	case	_	_	_	_
+14	strony	strona	NOUN	_	_	13	fixed	_	_	_	_
+15	Iranu	Iran	PROPN	_	_	12	nmod	_	_	_	A1
+16	i	i	CCONJ	_	_	18	cc	_	_	_	_
+17	jego	on	PRON	_	_	18	nmod	_	_	_	_
+18	sojuszników	sojusznik	NOUN	_	_	15	conj	_	_	_	_
+19	w	w	ADP	_	_	20	case	_	_	_	_
+20	regionie	region	NOUN	_	_	12	nmod	_	_	_	_
+21	arabskim	arabski	ADJ	_	_	20	amod	_	_	_	_
+22	.	.	PUNCT	_	_	7	punct	_	_	_	_
+
+
+# sentence-text = [ ] Powinnaś stanąć przy swoim dziecku .
+1	[	[	PUNCT	_	_	0	ROOT	_	_	_
+2	]	]	PUNCT	_	_	1	punct	_	_	_
+3	Powinnaś	powinnaś	VERB	_	_	0	ROOT	_	_	_
+4	stanąć	stanąć	VERB	_	_	3	xcomp	Y	stand.01	_
+5	przy	przy	ADP	_	_	7	case	_	_	_
+6	swoim	swoim	DET	_	_	7	det:poss	_	_	_
+7	dziecku	dziecko	NOUN	_	_	4	obl	_	_	A1
+8	.	.	PUNCT	_	_	3	punct	_	_	_
+
+
+# sentence-text = Brat Gotowy na forum Dziękuję za krótkie wprowadzenie do Nasriego
+1	Brat	brat	NOUN	_	_	5	nsubj	_	_	A0
+2	Gotowy	gotowy	ADJ	_	_	1	amod:flat	_	_	AM-DIS
+3	na	na	ADP	_	_	4	case	_	_	_
+4	forum	forum	NOUN	_	_	1	nmod	_	_	_
+5	Dziękuję	dziękować	VERB	_	_	0	ROOT	Y	thank.01	_
+6	za	za	ADP	_	_	8	case	_	_	_
+7	krótkie	krótki	ADJ	_	_	8	amod	_	_	_
+8	wprowadzenie	wprowadzenie	NOUN	_	_	5	obl:arg	_	_	A2
+9	do	do	ADP	_	_	10	case	_	_	_
+10	Nasriego	nasriego	PROPN	_	_	8	nmod	_	_	_
+
+
+# sentence-text = Haier uważa transnarodowe fuzje i przejęcia za ważny punkt zwrotny w realizacji swojej globalizacji
+1	Haier	Haier	NOUN	_	_	2	nsubj	_	_	A0	_
+2	uważa	uważać	VERB	_	_	0	ROOT	_	see.01	_	_
+3	transnarodowe	transnarodowy	ADJ	_	_	4	amod	_	_	AM-ADJ	_
+4	fuzje	fuzja	NOUN	_	_	2	obj	_	_	A1	_
+5	i	i	CCONJ	_	_	6	cc	_	_	_	_
+6	przejęcia	przejąć	NOUN	_	_	4	conj	_	_	_	_
+7	za	za	ADP	_	_	9	case	_	_	_	_
+8	ważny	ważny	ADJ	_	_	9	amod	_	_	_	_
+9	punkt	punkt	NOUN	_	_	6	nmod:arg	_	_	_	A0
+10	zwrotny	zwrotny	ADJ	_	_	9	amod	_	_	_	_
+11	w	w	ADP	_	_	12	case	_	_	_	_
+12	realizacji	realizacja	NOUN	_	_	9	nmod:arg	_	realize.01	_	_
+13	swojej	swój	DET	_	_	14	det:poss	_	_	_	_
+14	globalizacji	globalizacja	NOUN	_	_	12	nmod:arg	Y	_	_	A1
+
+
+# sentence-text = Jakie jest Twoje zdanie na temat kobiet prowadzących samochody ?
+1	Jakie	jakie	DET	_	_	0	ROOT	_	_	A2	_
+2	jest	jest	AUX	_	_	1	cop	Y	be.01	_	_
+3	Twoje	twoje	DET	_	_	4	det:poss	_	_	_	_
+4	zdanie	zdanie	NOUN	_	_	1	nsubj	_	_	A1	_
+5	na	na	ADP	_	_	7	case	_	_	_	_
+6	temat	temat	NOUN	_	_	5	fixed	_	_	_	_
+7	kobiet	kobieta	NOUN	_	_	4	nmod	_	_	_	A0
+8	prowadzących	prowadzący	ADJ	_	_	7	acl	Y	drive.01	_	_
+9	samochody	samochód	NOUN	_	_	8	obj	_	_	_	A1
+10	?	?	PUNCT	_	_	1	punct	_	_	_	_
+
+
+# sentence-text = Idź za głosem .
+1	Idź	iść	VERB	_	_	0	ROOT	Y	walk.01	_
+2	za	za	ADP	_	_	3	case	_	_	_
+3	głosem	głos	NOUN	_	_	1	obl	_	_	A2
+4	.	.	PUNCT	_	_	1	punct	_	_	_
+
+
+# sentence-text = Jednocześnie dzięki informacjom wywiadowczym które otrzymywał jako pierwszy wysokiej rangi urzędnik amerykański który udał się do Iraku od czasu paktu bagdadzkiego z lat 50-tych miał on wyjątkową świadomość jak żadna inna wysoka rangą osoba w Waszyngtonie brutalnego charakteru reżimu Saddama Husajna a w szczególności stojącej za nim polityki sekciarskiej regionalnej plemiennej i klanowej
+1	Jednocześnie	jednocześnie	ADV	_	_	25	advmod	_	_	_	_	AM-TMP	_
+2	dzięki	dzięki	ADP	_	_	3	case	_	_	_	_	_	_
+3	informacjom	informacja	NOUN	_	_	25	obl	_	_	A1	_	AM-LOC	_
+4	wywiadowczym	wywiadowczy	ADJ	_	_	3	amod	_	_	_	_	_	_
+5	które	który	DET	_	_	6	obj	_	_	_	_	_	_
+6	otrzymywał	otrzymywać	VERB	_	_	25	xcomp	Y	receive.01	_	_	_	_
+7	jako	jako	SCONJ	_	_	11	mark	_	_	_	_	_	_
+8	pierwszy	pierwszy	ADJ	_	_	11	amod	_	_	_	_	_	_
+9	wysokiej	wysoki	ADJ	_	_	10	amod	_	_	_	_	_	_
+10	rangi	rang	NOUN	_	_	8	obl	_	_	_	_	_	_
+11	urzędnik	urzędnik	NOUN	_	_	25	obl	_	_	_	A0	_	_
+12	amerykański	amerykański	ADJ	_	_	13	amod	_	_	_	_	_	_
+13	który	który	DET	_	_	14	nsubj	_	_	_	_	_	_
+14	udał	udać	VERB	_	_	25	advcl	Y	go.02	_	_	_	_
+15	się	się	PRON	_	_	14	expl:pv	_	_	_	_	_	_
+16	do	do	ADP	_	_	17	case	_	_	_	_	_	_
+17	Iraku	Irak	PROPN	_	_	14	obl	_	_	_	A4	_	_
+18	od	od	ADP	_	_	19	case	_	_	_	_	_	_
+19	czasu	czas	NOUN	_	_	14	obl	_	_	_	_	_	_
+20	paktu	pakt	NOUN	_	_	19	nmod:arg	_	_	_	AM-TMP	_	_
+21	bagdadzkiego	bagdadzki	ADJ	_	_	20	amod	_	_	_	_	_	_
+22	z	z	ADP	_	_	23	case	_	_	_	_	_	_
+23	lat	rok	NOUN	_	_	14	obl	_	_	_	_	_	_
+24	50-tych	50-ty	ADJ	_	_	23	amod	_	_	_	_	_	_
+25	miał	mieć	VERB	_	_	0	ROOT	Y	have.01	_	_	_	_
+26	on	on	PRON	_	_	28	nsubj	_	_	_	_	A1	_
+27	wyjątkową	wyjątkowy	ADJ	_	_	28	amod	_	_	_	_	_	_
+28	świadomość	świadomość	NOUN	_	_	25	iobj	_	_	_	_	A2	_
+29	jak	jak	SCONJ	_	_	33	mark	_	_	_	_	_	_
+30	żadna	żaden	DET	_	_	33	det	_	_	_	_	_	_
+31	inna	inny	ADJ	_	_	33	amod	_	_	_	_	_	_
+32	wysoka	wysoki	ADJ	_	_	33	amod	_	_	_	_	_	_
+33	rangą	ranga	NOUN	_	_	28	obl:cmpr	_	_	_	_	_	_
+34	osoba	osoba	NOUN	_	_	33	nsubj	_	_	_	_	_	_
+35	w	w	ADP	_	_	36	case	_	_	_	_	_	_
+36	Waszyngtonie	Waszyngton	PROPN	_	_	34	nmod	_	_	_	_	_	_
+37	brutalnego	brutalny	ADJ	_	_	38	amod	_	_	_	_	_	_
+38	charakteru	charakter	NOUN	_	_	36	nmod:arg	_	_	_	_	_	_
+39	reżimu	reżim	NOUN	_	_	38	nmod:arg	_	_	_	_	_	_
+40	Saddama	Saddam	PROPN	_	_	39	nmod:arg	_	_	_	_	_	A0
+41	Husajna	Husajn	PROPN	_	_	40	flat	_	_	_	_	_	_
+42	a	a	CCONJ	_	_	48	cc	_	_	_	_	_	_
+43	w	w	ADP	_	_	48	parataxis:insert	_	_	_	_	_	_
+44	szczególności	szczególność	NOUN	_	_	35	fixed	_	_	_	_	_	_
+45	stojącej	stać	ADJ	_	_	48	acl	Y	stand.08	_	_	_	_
+46	za	za	ADP	_	_	47	case	_	_	_	_	_	_
+47	nim	on	PRON	_	_	45	obl	_	_	_	_	_	R-A0
+48	polityki	polityka	NOUN	_	_	33	nmod	_	_	_	_	_	A1
+49	sekciarskiej	sekciarski	ADJ	_	_	50	amod	_	_	_	_	_	_
+50	regionalnej	regionalny	ADJ	_	_	48	amod	_	_	_	_	_	_
+51	plemiennej	plemienny	ADJ	_	_	50	amod	_	_	_	_	_	_
+52	i	i	CCONJ	_	_	53	cc	_	_	_	_	_	_
+53	klanowej	klanowy	ADJ	_	_	51	conj	_	_	_	_	_	_
+
+
+# sentence-text = Uwaga , ta cena gazu zawiera wszystkie podatki .
+1	Uwaga	uwaga	NOUN	_	_	0	ROOT	_	_	_
+2	,	,	PUNCT	_	_	6	punct	_	_	_
+3	ta	ta	DET	_	_	4	det	_	_	_
+4	cena	cena	NOUN	_	_	6	nsubj	_	_	A2
+5	gazu	gaz	NOUN	_	_	4	nmod:arg	_	_	_
+6	zawiera	zawierać	VERB	_	_	1	acl:relcl	Y	include.01	_
+7	wszystkie	wszystkie	DET	_	_	8	det	_	_	_
+8	podatki	podatek	NOUN	_	_	6	obj	_	_	A1
+9	.	.	PUNCT	_	_	1	punct	_	_	_
+
+
+# sentence-text = Szczerze mówiąc , dziwi mnie całkowite milczenie ze strony dyrekcji generalnej i ministerstwa informacji .
+1	Szczerze	szczerze	ADV	_	_	2	advmod	_	_	AM-ADV
+2	mówiąc	mówić	VERB	_	_	4	parataxis:insert	_	_	_
+3	,	,	PUNCT	_	_	2	punct	_	_	_
+4	dziwi	dziwić	VERB	_	_	0	ROOT	Y	surprise.01	_
+5	mnie	ja	PRON	_	_	4	iobj	_	_	A1
+6	całkowite	całkowity	ADJ	_	_	7	amod	_	_	_
+7	milczenie	milczenie	NOUN	_	_	4	nsubj	_	_	_
+8	ze	z	ADP	_	_	10	case	_	_	_
+9	strony	strona	NOUN	_	_	8	fixed	_	_	_
+10	dyrekcji	dyrekcja	NOUN	_	_	7	nmod	_	_	A0
+11	generalnej	generalny	ADJ	_	_	10	amod	_	_	_
+12	i	i	CCONJ	_	_	13	cc	_	_	_
+13	ministerstwa	ministerstwo	NOUN	_	_	10	conj	_	_	_
+14	informacji	informacja	NOUN	_	_	13	nmod:arg	_	_	_
+15	.	.	PUNCT	_	_	4	punct	_	_	_
+
+
+# sentence-text = Po drugie Sztokholm miał na tyle przytomności umysłu i uczciwości rządowej aby połączyć to jako eksperyment i pozwolić obywatelom zdemontować to później jeśli uznają że nie było to warte zachodu
+1	Po	po	ADP	_	_	3	case	_	_	_	_	_	_	_	_
+2	drugie	drugi	ADJ	_	_	3	amod	_	_	_	_	_	_	_	_
+3	Sztokholm	Sztokholm	PROPN	_	_	4	obl	_	_	A0	_	_	_	_	_
+4	miał	mieć	VERB	_	_	0	ROOT	Y	have.03	_	_	_	_	_	_
+5	na	na	ADP	_	_	6	case	_	_	_	_	_	_	_	_
+6	tyle	tyle	DET	_	_	7	det:numgov	_	_	_	_	_	_	_	_
+7	przytomności	przytomność	NOUN	_	_	4	iobj	_	_	A1	_	_	_	_	_
+8	umysłu	umysł	NOUN	_	_	7	nmod	Y	_	_	_	_	_	_	_
+9	i	i	CCONJ	_	_	10	cc	_	_	_	_	_	_	_	_
+10	uczciwości	uczciwość	NOUN	_	_	8	conj	_	_	_	_	_	_	_	_
+11	rządowej	rządowy	ADJ	_	_	10	amod	_	_	_	_	_	_	_	_
+12	aby	aby	SCONJ	_	_	13	mark	_	_	_	_	_	_	_	_
+13	połączyć	połączyć	VERB	_	_	4	advcl	Y	put.03	_	_	_	_	_	_
+14	to	to	PRON	_	_	13	obj	_	_	_	A1	_	_	_	_
+15	jako	jako	SCONJ	_	_	16	mark	_	_	_	_	_	_	_	_
+16	eksperyment	eksperyment	NOUN	_	_	13	obl	_	_	_	_	_	_	_	_
+17	i	i	CCONJ	_	_	18	cc	_	_	_	_	_	_	_	_
+18	pozwolić	pozwolić	VERB	_	_	4	conj	Y	allow.01	_	_	_	_	_	_
+19	obywatelom	obywatel	NOUN	_	_	20	obj	_	_	_	_	_	_	A0	_
+20	zdemontować	zdemontować	VERB	_	_	18	xcomp	Y	dismantle.01	_	_	A1	A1	_	_
+21	to	to	PRON	_	_	20	obj	_	_	_	_	_	_	A1	_
+22	później	późno	ADV	_	_	29	advmod	_	_	_	_	_	_	AM-TMP	_
+23	jeśli	jeśli	SCONJ	_	_	29	mark	_	_	_	_	_	_	_	_
+24	uznają	uznawać	VERB	_	_	29	punct	_	think.01	_	_	_	_	_	_
+25	że	że	SCONJ	_	_	29	mark	_	_	_	_	_	_	_	_
+26	nie	nie	PART	_	_	27	advmod:neg	_	_	_	_	_	_	_	AM-NEG
+27	było	być	AUX	_	_	29	cop	Y	be.01	_	_	_	_	_	_
+28	to	to	PRON	_	_	29	nsubj	_	_	_	_	_	_	_	A1
+29	warte	wart	ADJ	_	_	30	amod	_	_	_	_	_	_	_	_
+30	zachodu	zachód	NOUN	_	_	14	nmod	_	_	_	_	_	_	_	A2
+
+
+# sentence-text = Dochody ogromnej większości bogatych ludzi w Chinach są dochodami niezgłoszonymi , a niezgłoszone dochody są problemem , którego chińskie społeczeństwo nie będzie w stanie rozwiązać przez długi czas ; jest to cecha charakterystyczna Chin , niekontrolowana czarna dziura w chińskim nadzorze społecznym .
+1	Dochody	dochód	NOUN	_	_	9	nsubj	_	_	A1	_	_	_
+2	ogromnej	ogromny	ADJ	_	_	3	amod	_	_	_	_	_	_
+3	większości	większość	NOUN	_	_	1	nmod	_	_	_	_	_	_
+4	bogatych	bogaty	ADJ	_	_	5	amod	_	_	_	_	_	_
+5	ludzi	człowiek	NOUN	_	_	3	nmod:arg	_	_	_	_	_	_
+6	w	w	ADP	_	_	7	case	_	_	_	_	_	_
+7	Chinach	Chiny	PROPN	_	_	5	nmod	_	_	_	_	_	_
+8	są	są	AUX	_	_	9	cop	Y	be.01	_	_	_	_
+9	dochodami	dochód	NOUN	_	_	0	ROOT	_	_	A2	_	_	_
+10	niezgłoszonymi	niezgłoszonymi	ADJ	_	_	9	amod	_	_	_	_	_	_
+11	,	,	PUNCT	_	_	16	punct	_	_	_	_	_	_
+12	a	a	CCONJ	_	_	16	cc	_	_	_	_	_	_
+13	niezgłoszone	niezgłoszone	ADJ	_	_	14	acl	_	_	_	_	_	_
+14	dochody	dochód	NOUN	_	_	16	nsubj	_	_	_	A1	_	_
+15	są	są	AUX	_	_	16	cop	Y	be.01	_	_	_	_
+16	problemem	problem	NOUN	_	_	9	conj	_	_	_	A2	A1	_
+17	,	,	PUNCT	_	_	22	punct	_	_	_	_	_	_
+18	którego	którego	DET	_	_	25	iobj	_	_	_	_	R-A1	_
+19	chińskie	chiński	ADJ	_	_	20	amod	_	_	_	_	_	_
+20	społeczeństwo	społeczeństwo	NOUN	_	_	22	nsubj	_	_	_	_	A0	_
+21	nie	nie	PART	_	_	22	advmod:neg	_	_	_	_	AM-NEG	_
+22	będzie	będzie	VERB	_	_	16	acl:relcl	_	_	_	_	AM-MOD	_
+23	w	w	ADP	_	_	24	case	_	_	_	_	_	_
+24	stanie	stań	NOUN	_	_	22	obl:arg	_	_	_	_	_	_
+25	rozwiązać	rozwiązać	VERB	_	_	22	xcomp	Y	solve.01	_	_	_	_
+26	przez	przez	ADP	_	_	28	case	_	_	_	_	_	_
+27	długi	długi	ADJ	_	_	28	amod	_	_	_	_	_	_
+28	czas	czas	NOUN	_	_	25	obl	_	_	_	_	AM-TMP	_
+29	;	;	PUNCT	_	_	33	punct	_	_	_	_	_	_
+30	jest	jest	AUX	_	_	32	aux	Y	be.01	_	_	_	_
+31	to	to	AUX	_	_	32	advmod:emph	_	_	_	_	_	A1
+32	cecha	cecha	ADJ	_	_	33	advmod:emph	_	_	_	_	_	_
+33	charakterystyczna	charakterystyczny	ADJ	_	_	34	amod	_	_	_	_	_	A2
+34	Chin	Chiny	PROPN	_	_	16	nsubj	_	_	_	_	_	_
+35	,	,	PUNCT	_	_	36	punct	_	_	_	_	_	_
+36	niekontrolowana	niekontrolowana	NOUN	_	_	38	amod	_	_	_	_	_	_
+37	czarna	czarny	ADJ	_	_	38	amod	_	_	_	_	_	_
+38	dziura	dziura	NOUN	_	_	9	conj	_	_	_	_	_	_
+39	w	w	ADP	_	_	41	case	_	_	_	_	_	_
+40	chińskim	chiński	ADJ	_	_	41	amod	_	_	_	_	_	_
+41	nadzorze	nadzór	NOUN	_	_	38	nmod	_	_	_	_	_	_
+42	społecznym	społeczny	ADJ	_	_	41	amod	_	_	_	_	_	_
+43	.	.	PUNCT	_	_	9	punct	_	_	_	_	_	_
+
+
+# sentence-text = [ Podczas każdych wakacji szkolnych , większość dzieci na wsi musi wrócić do domu , aby pomóc w pracy na roli .
+1	[	[	PUNCT	_	_	4	punct	_	_	_	_
+2	Podczas	podczas	ADP	_	_	4	case	_	_	_	_
+3	każdych	każdych	DET	_	_	4	acl	_	_	_	_
+4	wakacji	wakacje	NOUN	_	_	0	ROOT	_	_	_	_
+5	szkolnych	szkolny	ADJ	_	_	4	amod	_	_	_	_
+6	,	,	PUNCT	_	_	11	punct	_	_	_	_
+7	większość	większość	NOUN	_	_	11	nsubj	_	_	_	_
+8	dzieci	dziecko	NOUN	_	_	7	nmod:arg	_	_	A1	_
+9	na	na	ADP	_	_	10	case	_	_	_	_
+10	wsi	wieś	NOUN	_	_	8	nmod	_	_	_	_
+11	musi	musić	VERB	_	_	4	acl:relcl	_	_	_	_
+12	wrócić	wrócić	VERB	_	_	11	xcomp	Y	return.01	_	_
+13	do	do	ADP	_	_	14	case	_	_	_	_
+14	domu	dom	NOUN	_	_	12	obl	_	_	A4	_
+15	,	,	PUNCT	_	_	17	punct	_	_	_	_
+16	aby	aby	SCONJ	_	_	17	mark	_	_	_	_
+17	pomóc	pomóc	VERB	_	_	11	advcl	Y	help.01	_	_
+18	w	w	ADP	_	_	19	case	_	_	_	_
+19	pracy	praca	NOUN	_	_	17	obl:arg	_	_	_	A1
+20	na	na	ADP	_	_	21	case	_	_	_	_
+21	roli	rola	NOUN	_	_	17	obl	_	_	_	_
+22	.	.	PUNCT	_	_	4	punct	_	_	_	_
+
+
+# sentence-text = Ale oni zawsze są w grupach , a to oznacza pewną śmierć .
+1	Ale	ale	CCONJ	_	_	4	cc	_	_	_	_
+2	oni	on	PRON	_	_	4	nsubj	_	_	A1	_
+3	zawsze	zawsze	ADV	_	_	4	advmod	_	_	AM-TMP	_
+4	są	być	VERB	_	_	0	ROOT	Y	be.01	_	_
+5	w	w	ADP	_	_	6	case	_	_	_	_
+6	grupach	grupa	NOUN	_	_	4	obl	_	_	A2	_
+7	,	,	PUNCT	_	_	10	punct	_	_	_	_
+8	a	a	CCONJ	_	_	10	cc	_	_	_	_
+9	to	to	PRON	_	_	10	nsubj	_	_	_	A1
+10	oznacza	oznaczać	VERB	_	_	4	conj	Y	mean.01	_	_
+11	pewną	pewną	DET	_	_	12	det	_	_	_	_
+12	śmierć	śmierć	NOUN	_	_	10	iobj	_	_	_	A2
+13	.	.	PUNCT	_	_	4	punct	_	_	_	_
+
+
+# sentence-text = Zgodnie z oficjalnym kursem wymiany jednego dolara amerykańskiego na 7,9 RMB , cena ta jest równoważna 4,80 juanów / litr .
+1	Zgodnie	zgodnie	ADV	_	_	16	advmod	_	_	_
+2	z	z	ADP	_	_	4	case	_	_	_
+3	oficjalnym	oficjalny	ADJ	_	_	4	amod	_	_	_
+4	kursem	kurs	NOUN	_	_	1	obl:arg	_	_	_
+5	wymiany	wymiana	NOUN	_	_	4	nmod:arg	_	_	_
+6	jednego	jeden	ADJ	_	_	7	amod	_	_	_
+7	dolara	dolar	NOUN	_	_	5	nmod:arg	_	_	_
+8	amerykańskiego	amerykański	ADJ	_	_	7	amod	_	_	_
+9	na	na	ADP	_	_	11	case	_	_	_
+10	7,9	7,9	NUM	_	_	11	nummod:gov	_	_	_
+11	RMB	rmb	X	_	_	7	nmod	_	_	_
+12	,	,	PUNCT	_	_	16	punct	_	_	_
+13	cena	cena	NOUN	_	_	16	nsubj	_	_	A1
+14	ta	ta	DET	_	_	13	det	_	_	_
+15	jest	jest	AUX	_	_	16	cop	Y	be.01	_
+16	równoważna	równoważny	ADJ	_	_	0	ROOT	_	_	A2
+17	4,80	4,80	NUM	_	_	18	nummod:gov	_	_	_
+18	juanów	juan	NOUN	_	_	16	iobj	_	_	_
+19	/	/	PUNCT	_	_	20	punct	_	_	_
+20	litr	litr	NOUN	_	_	18	conj	_	_	_
+21	.	.	PUNCT	_	_	16	punct	_	_	_
+
+
+# sentence-text = W wielu artykułach krytykowano problem korupcji a w kilku poruszano tak drażliwe kwestie jak Tybet czy Igrzyska Olimpijskie w Pekinie
+1	W	w	ADP	_	_	3	case	_	_	_	_
+2	wielu	wiele	DET	_	_	3	det:nummod	_	_	_	_
+3	artykułach	artykuł	NOUN	_	_	4	obl	_	_	_	_
+4	krytykowano	krytykować	VERB	_	_	0	ROOT	Y	criticize.01	_	_
+5	problem	problem	NOUN	_	_	4	obj	_	_	_	_
+6	korupcji	korupcja	NOUN	_	_	5	nmod	_	_	A1	_
+7	a	a	CCONJ	_	_	10	cc	_	_	_	_
+8	w	w	ADP	_	_	9	case	_	_	_	_
+9	kilku	kilka	DET	_	_	10	obl	_	_	_	_
+10	poruszano	poruszać	VERB	_	_	4	conj	Y	discuss.01	_	_
+11	tak	tak	ADV	_	_	12	advmod	_	_	_	_
+12	drażliwe	drażliwy	ADJ	_	_	13	amod	_	_	_	_
+13	kwestie	kwestia	NOUN	_	_	10	obj	_	_	_	A1
+14	jak	jak	SCONJ	_	_	15	mark	_	_	_	_
+15	Tybet	Tybet	NOUN	_	_	11	obl:cmpr	_	_	_	_
+16	czy	czy	CCONJ	_	_	17	cc	_	_	_	_
+17	Igrzyska	Igrzyska	NOUN	_	_	15	conj	_	_	_	_
+18	Olimpijskie	olimpijski	ADJ	_	_	17	amod	_	_	_	_
+19	w	w	ADP	_	_	20	case	_	_	_	_
+20	Pekinie	Pekin	PROPN	_	_	15	nmod	_	_	_	_
+
+
+# sentence-text = Hiszpańskie pociągi i zamachy bombowe w Stambule to dopiero początek
+1	Hiszpańskie	hiszpański	ADJ	_	_	2	amod	_	_	_	_
+2	pociągi	pociąg	NOUN	_	_	10	nsubj	_	_	_	_
+3	i	i	CCONJ	_	_	4	cc	_	_	_	_
+4	zamachy	zamach	NOUN	_	_	2	conj	_	_	_	_
+5	bombowe	bombowy	ADJ	_	_	4	amod	_	_	_	_
+6	w	w	ADP	_	_	7	case	_	_	_	_
+7	Stambule	Stambule	NOUN	_	_	4	nmod	_	_	_	_	to "jest"	7	bombings	bombing	NOUN	NNS
+8	to	to	AUX	_	_	10	cop	_	_	_	_
+9	dopiero	dopiero	PART	_	_	10	advmod:emph	_	_	_	_
+10	początek	początek	NOUN	_	_	0	ROOT	_	_	_	_
+
+
+# sentence-text = Uważam że to co wtedy powiedział było bardzo szczere
+1	Uważam	uważać	VERB	_	_	0	ROOT	Y	believe.01	_	_	_
+2	że	że	SCONJ	_	_	6	mark	_	_	_	_	_
+3	to	to	PRON	_	_	6	obj	_	_	A1	A1	_
+4	co	co	PRON	_	_	6	obj	_	_	_	_	_
+5	wtedy	wtedy	ADV	_	_	6	advmod	_	_	_	AM-TMP	_
+6	powiedział	powiedzieć	VERB	_	_	9	advcl	Y	say.01	_	_	A1
+7	było	być	AUX	_	_	9	cop	Y	be.01	_	_	_
+8	bardzo	bardzo	ADV	_	_	9	advmod	_	_	_	_	_
+9	szczere	szczery	ADJ	_	_	1	ccomp:obj	_	_	_	_	A2
+
+
+# sentence-text = Do tej pory w tym roku odnotowano 17 wypadków w pobliżu skrzyżowania z Winterfield Road w porównaniu do 12 w całym 2004 roku
+1	Do	do	ADP	_	_	3	case	_	_	_
+2	tej	ten	DET	_	_	3	det	_	_	_
+3	pory	pora	NOUN	_	_	7	obl	_	_	AM-TMP
+4	w	w	ADP	_	_	6	case	_	_	_
+5	tym	ten	DET	_	_	6	det	_	_	_
+6	roku	rok	NOUN	_	_	7	obl	_	_	_
+7	odnotowano	odnotować	VERB	_	_	0	ROOT	Y	report.01	_
+8	17	17	NUM	_	_	9	nummod:gov	_	_	_
+9	wypadków	wypadek	NOUN	_	_	7	obj	_	_	A1
+10	w	w	ADP	_	_	12	case	_	_	_
+11	pobliżu	pobliże	NOUN	_	_	4	fixed	_	_	_
+12	skrzyżowania	skrzyżowanie	NOUN	_	_	9	nmod	_	_	_
+13	z	z	ADP	_	_	14	case	_	_	_
+14	Winterfield	Winterfield	PROPN	_	_	12	nmod	_	_	AM-LOC
+15	Road	Road	PROPN	_	_	14	flat	_	_	_
+16	w	w	ADP	_	_	19	case	_	_	_
+17	porównaniu	porównanie	NOUN	_	_	4	fixed	_	_	_
+18	do	do	ADP	_	_	4	fixed	_	_	_
+19	12	12	NUM	_	_	7	obl	_	_	_
+20	w	w	ADP	_	_	6	case	_	_	_
+21	całym	cały	ADJ	_	_	6	amod	_	_	_
+22	2004	2004	ADJ	_	_	6	amod:flat	_	_	AM-TMP
+23	roku	rok	NOUN	_	_	19	nmod	_	_	_
+
+
+# sentence-text = Jak myślisz , jaką część południowo - zachodniej części USA obejmie chmura radiacyjna , geniuszu ?
+1	Jak	jak	SCONJ	_	_	2	advmod	_	_	_	_
+2	myślisz	myślić	VERB	_	_	0	ROOT	Y	think.01	_	_
+3	,	,	PUNCT	_	_	5	punct	_	_	_	_
+4	jaką	jaką	DET	_	_	5	det	_	_	_	_
+5	część	część	NOUN	_	_	11	obj	_	_	_	_
+6	południowo	południowy	ADJ	_	_	9	amod	_	_	_	_
+7	-	-	PUNCT	_	_	8	punct	_	_	_	_
+8	zachodniej	zachodni	ADJ	_	_	6	conj	_	_	_	_
+9	części	część	NOUN	_	_	5	nmod:arg	_	_	_	A1
+10	USA	usa	PROPN	_	_	9	nmod:arg	_	_	_	_
+11	obejmie	objąć	VERB	_	_	2	ccomp	Y	cover.02	_	_
+12	chmura	chmura	NOUN	_	_	11	nsubj	_	_	_	A2
+13	radiacyjna	radiacyjny	ADJ	_	_	12	amod	_	_	_	_
+14	,	,	PUNCT	_	_	15	punct	_	_	_	_
+15	geniuszu	geniusz	PROPN	_	_	13	conj	_	_	_	AM-DIS
+16	?	?	PUNCT	_	_	11	punct	_	_	_	_
+
+
+# sentence-text = Możesz sortować te dane i tworzyć tabele zbiorcze do analizy
+1	Możesz	móc	VERB	_	_	0	ROOT	_	_	_	_
+2	sortować	sortować	VERB	_	_	1	xcomp	Y	sort.01	_	_
+3	te	ten	DET	_	_	4	det	_	_	_	_
+4	dane	dane	NOUN	_	_	2	obj	_	_	A1	_
+5	i	i	CCONJ	_	_	6	cc	_	_	_	_
+6	tworzyć	tworzyć	VERB	_	_	2	conj	Y	create.01	_	_
+7	tabele	tabela	NOUN	_	_	6	obj	_	_	_	A1
+8	zbiorcze	zbiorczy	ADJ	_	_	7	amod	_	_	_	_
+9	do	do	ADP	_	_	10	case	_	_	_	_
+10	analizy	analiza	NOUN	_	_	6	obl	_	_	_	_
+
+
+# sentence-text = Tylko gdyby Chiny zlikwidowały niezgłoszone dochody , podatek dochodowy miałby wpływ na bogatych ludzi .
+1	Tylko	tylko	PART	_	_	2	advmod:emph	_	_	_	_
+2	gdyby	gdyby	SCONJ	_	_	4	mark	_	_	_	_
+3	Chiny	china	NOUN	_	_	4	nsubj	_	_	A0	_
+4	zlikwidowały	zlikwidować	VERB	_	_	10	advcl	Y	eliminate.01	_	_
+5	niezgłoszone	niezgłoszone	ADJ	_	_	6	acl	_	_	_	_
+6	dochody	dochód	NOUN	_	_	4	obj	_	_	A1	_
+7	,	,	PUNCT	_	_	10	punct	_	_	_	_
+8	podatek	podatek	NOUN	_	_	10	nsubj	_	_	_	A0
+9	dochodowy	dochodowy	ADJ	_	_	8	amod	_	_	_	_
+10	miałby	mieć	VERB	_	_	0	ROOT	Y	have.01	_	_
+11	wpływ	wpływ	NOUN	_	_	10	iobj	_	_	_	A1
+12	na	na	ADP	_	_	14	case	_	_	_	_
+13	bogatych	bogaty	ADJ	_	_	14	amod	_	_	_	_
+14	ludzi	człowiek	NOUN	_	_	11	nmod:arg	_	_	_	_
+15	.	.	PUNCT	_	_	10	punct	_	_	_	_
+
+
+# sentence-text = Ale proszę nie obrażaj naszej inteligencji twierdząc że wszystko to mogłoby być złagodzone gdybyśmy tylko częściej i bardziej właściwie czcili jakiegoś Boga
+1	Ale	ale	CCONJ	_	_	2	cc	_	_	_	_	_	_	_	_
+2	proszę	prosić	VERB	_	_	0	ROOT	Y	please.01	_	AM-DIS	_	_	_	_
+3	nie	nie	PART	_	_	4	advmod:neg	_	_	_	AM-NEG	_	_	_	_
+4	obrażaj	obrażać	VERB	_	_	2	xcomp	Y	insult.01	_	_	_	_	_	_
+5	naszej	nasz	DET	_	_	6	det:poss	_	_	_	_	_	_	_	_
+6	inteligencji	inteligencja	NOUN	_	_	4	iobj	_	_	_	A1	_	_	_	_
+7	twierdząc	twierdzić	VERB	_	_	4	advcl	_	claim.01	_	_	_	_	_	_
+8	że	że	SCONJ	_	_	14	mark	_	_	_	_	_	_	_	_
+9	wszystko	wszystko	PRON	_	_	14	iobj	_	_	_	_	_	_	A1	_
+10	to	ten	DET	_	_	11	det	_	_	_	_	A1	_	_	_
+11	mogłoby	mogłoba	NOUN	_	_	14	nsubj	_	_	_	_	_	_	AM-MOD	_
+12	być	być	AUX	_	_	13	aux:pass	Y	be.03	_	_	_	_	_	_
+13	złagodzone	złagodzić	ADJ	_	_	14	xcomp	Y	mitigate.01	_	_	_	_	_	_
+14	gdybyśmy	gdybyśma	VERB	_	_	7	ccomp	_	_	_	_	_	_	_	_
+15	tylko	tylko	PART	_	_	16	advmod:emph	_	_	_	_	_	_	_	AM-ADV
+16	częściej	często	ADV	_	_	14	advmod	_	_	_	_	_	_	_	AM-MNR
+17	i	i	CCONJ	_	_	20	cc	_	_	_	_	_	_	_	_
+18	bardziej	bardzo	ADV	_	_	20	advmod	_	_	_	_	_	_	_	_
+19	właściwie	właściwie	ADV	_	_	20	parataxis:insert	_	_	_	_	_	_	_	_
+20	czcili	czcić	VERB	_	_	16	conj	Y	worship.01	_	_	_	_	AM-ADV	_
+21	jakiegoś	jakiś	DET	_	_	22	det	_	_	_	_	_	_	_	_
+22	Boga	Bóg	PROPN	_	_	20	obj	_	_	_	_	_	_	_	A1
+
+
+# sentence-text = To jeszcze bardziej rozszerzyło wpływy i rozgłos Dalian w Japonii przyciągając uwagę japońskich mediów informacyjnych i ludzi ze wszystkich sektorów oraz zapoczątkowując nową rundę gorączki Dalian w Japonii
+1	To	to	AUX	_	_	4	nsubj	_	_	A0	A0	A0
+2	jeszcze	jeszcze	PART	_	_	3	advmod:emph	_	_	_	_	_
+3	bardziej	bardzo	ADV	_	_	4	advmod	_	_	A2	_	_
+4	rozszerzyło	rozszerzyć	VERB	_	_	0	ROOT	Y	expand.01	_	_	_
+5	wpływy	wpływ	NOUN	_	_	4	obj	_	_	A1	_	_
+6	i	i	CCONJ	_	_	7	cc	_	_	_	_	_
+7	rozgłos	rozgłos	NOUN	_	_	5	conj	_	_	_	_	_
+8	Dalian	Dalian	PROPN	_	_	7	nmod:arg	_	_	_	_	_
+9	w	w	ADP	_	_	10	case	_	_	_	_	_
+10	Japonii	Japonia	PROPN	_	_	4	obl	_	_	AM-LOC	_	_
+11	przyciągając	przyciągawać	VERB	_	_	4	advcl	Y	attract.01	_	_	_
+12	uwagę	uwaga	NOUN	_	_	11	obj	_	_	_	A1	_
+13	japońskich	japoński	ADJ	_	_	14	amod	_	_	_	_	_
+14	mediów	media	NOUN	_	_	12	nmod	_	_	_	_	_
+15	informacyjnych	informacyjny	ADJ	_	_	14	amod	_	_	_	_	_
+16	i	i	CCONJ	_	_	17	cc	_	_	_	_	_
+17	ludzi	człowiek	NOUN	_	_	14	conj	_	_	_	_	_
+18	ze	z	ADP	_	_	20	case	_	_	_	_	_
+19	wszystkich	wszystek	DET	_	_	20	det	_	_	_	_	_
+20	sektorów	sektor	NOUN	_	_	17	nmod	_	_	_	_	_
+21	oraz	oraz	CCONJ	_	_	22	cc	_	_	_	_	_
+22	zapoczątkowując	zapoczątkowywać	VERB	_	_	11	conj	Y	kick_off.04	_	_	_
+23	nową	nowy	ADJ	_	_	24	amod	_	_	_	_	_
+24	rundę	runda	NOUN	_	_	22	obj	_	_	_	_	A1
+25	gorączki	gorączka	NOUN	_	_	24	nmod	_	_	_	_	_
+26	Dalian	Dalian	PROPN	_	_	25	nmod	_	_	_	_	_
+27	w	w	ADP	_	_	10	case	_	_	_	_	_
+28	Japonii	Japonia	PROPN	_	_	22	obl	_	_	_	_	_
+
+
