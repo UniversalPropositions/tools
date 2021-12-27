@@ -1482,7 +1482,7 @@
 1	Czy	czy	PART	_	_	3	advmod	_	_	_	_	_	_
 2	małpy	małpa	NOUN	_	_	3	nsubj	_	_	A0	_	_	_
 3	przystosowują	przystosowywać	VERB	_	_	0	ROOT	Y	adapt.01	_	_	_	_
-4	się	się	PRON	_	_	3	expl:pv
+4	się	się	PRON	_	_	3	expl:pv	_	_	_	_	_	_
 5	do	do	ADP	_	_	8	case	_	_	_	_	_	_
 6	swoich	swoich	DET	_	_	8	det:poss	_	_	_	_	_	_
 7	ograniczonych	ograniczony	ADJ	_	_	8	amod	_	_	_	_	_	_
@@ -2168,5 +2168,4 @@
 26	Dalian	Dalian	PROPN	_	_	25	nmod	_	_	_	_	_
 27	w	w	ADP	_	_	10	case	_	_	_	_	_
 28	Japonii	Japonia	PROPN	_	_	22	obl	_	_	_	_	_
-
 
