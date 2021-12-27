@@ -1,3 +1,8 @@
+'''
+Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza 
+into more than one sentence. It creates new files with _ at the beginning of the file name.
+'''
+
 import argparse
 import time
 import re

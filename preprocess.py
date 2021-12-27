@@ -1,3 +1,9 @@
+'''
+Script prepares parallel corpus based on datasets in moses format configured in 
+config/config.json file.
+Processing results are stored in ./data/[pipeline]/bitext_raw/ folder.
+'''
+
 import argparse
 import time
 import re
@@ -5,9 +11,9 @@ import impl.utils as utils
 import logging
 import glob
 import os
+from typing import Tuple, List
 
 LINESEP = "\n"
-EXCLUDED_VALIDATION_LANG = ["zh"]
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)s %(message)s', 
@@ -19,47 +25,92 @@ logging.basicConfig(
   ]
 )
 
-def validate_alpha(text):
-  #skip sentences with zero length encoded characters
+def validate_alpha(text: str) -> bool:
+  '''
+  Performs three validations checking if there are some incorrect characters in a sentence
+  that can cause later problem during processing. Our goal is to remove such sentences from processing.
+  Verifications:
+  - check for "\\x" and "\\u" characters
+  - check for "�" character
+  - check if there is at least one alpha character in a given sentence
+
+  :param text: text to be validated
+  :return: validation result
+  '''
+  #check for \\x and \\u characters
   for tok in text:
     r = repr(tok)
     if "\\x" in r or "\\u" in r:
       return False
-  #skip sentences with this strange character that caused problem
+  #check for "�" character
   if "�" in text:
     return False
-  #skip sentence without at least one alpha character
+  #check if there is at least one alpha character in a given sentence
   for tok in text:
     if tok.isalpha():
       return True
   return False
 
-def preprocess(sentence):
-  result = re.sub('\s+',' ', sentence) #replace multiple spaces with one
+def preprocess(sentence: str) -> str:
+  '''
+  Replaces all multiple spaces in a given sentence with one space
+  
+  :param sentence: sentence to be fixed
+  :return: fixed sentence
+  '''
+  result = re.sub('\s+',' ', sentence)
   return result
 
-def validate_tokens(text, min, max):
-  global ml
+def validate_tokens(text: str, min: int, max: int) -> bool:
+  '''
+  Validates tokens length. We select sentences for further processing with tokens length between 
+  config/params/min_tokens and config/params/max_tokens. 
+  
+  :param text: text to be validated
+  :param min: min acceptable tokens length
+  :param max: max acceptable tokens length
+  :return: token validation result
+  '''
   tokens = text.split(" ")
   length = len(tokens)  
   if length >= min and length <= max:
     return True
   return False
 
-def validate(text, context, lang):
+def validate(text: str, context: dict, lang: str) -> Tuple[bool, str]:
+  '''
+  Main validation function that calls:
+  - validate_alpha
+  - validate tokens (excluding some languages: ZH where we cannot apply filtering based on tokens length)
+  - exclude duplicated sentences from processed dataset - there is a common map for source and target language.
+  
+  :param text: text to be validated
+  :param context: context object with configuration
+  :param lang: language for which validation will be performed
+  :return: validation result
+  :return: validation error message
+  '''
   if not validate_alpha(text):
     return False, "Alpha validation failed"
   params = context["config"]["params"]
-  if lang not in EXCLUDED_VALIDATION_LANG:
+  if lang not in params["excluded_tokens_validation"]:
     if not validate_tokens(text, params["min_tokens"], params["max_tokens"]):
       return False, "Incorrect tokens length"
   if text in context["map"]:
-    return False, "Duplicate sentence" #we do not allow for duplicates both in source and target language
+    return False, "Duplicate sentence"
   else:
     context["map"][text] = {}
   return True, ""
 
-def get_data_from_file(folder, type, lang):
+def get_data_from_file(folder: str, type: str, lang: str) -> List[str]:
+  '''
+  Reads the content of source file with raw parallel corpus for a given language
+  
+  :param folder: folder that contains a file to be read
+  :param type: type of source file: europarl, tatoeba, subtitles
+  :param lang: we read only a file for src or tgt language
+  :return: list of strings with sentences
+  '''
   path = folder + "/" + type + "/*."+lang
   files = glob.glob(path)
   if len(files) != 1:
@@ -67,7 +118,16 @@ def get_data_from_file(folder, type, lang):
   with open(files[0], "r", encoding="utf-8") as f:
     return f.read().split(LINESEP)
 
-def process(folder, type, src_lang, tgt_lang, context):
+def process(folder: str, type: str, src_lang: str, tgt_lang: str, context: dict):  
+  '''
+  The main processing function
+  
+  :param folder: folder that contains a file to be read
+  :param type: type of source file: europarl, tatoeba, subtitles
+  :param src_lang: source language for parallel corpus
+  :param tgt_lang: target language for parallel corpus
+  :param context: context with processing parameters
+  '''
   data = context["data"]
   counter = 0
   src = get_data_from_file(folder, type, src_lang)
