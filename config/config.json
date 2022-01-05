@@ -22,10 +22,22 @@
                 "subtitles": 2000000
             }
         },
-        "en-fr": {
+        "en-fr-combined": {
             "source": "en-fr",
             "sentences": {
                 "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-fr": {
+            "source": "en-fr",
+            "sentences": {
+                "europarl": 0
+            }
+        },
+        "en-fr-tatoeba": {
+            "source": "en-fr",
+            "sentences": {
                 "tatoeba": 0
             }
         },
@@ -50,10 +62,22 @@
                 "tatoeba": 0
             }
         },
-        "en-pt": {
+        "en-pt-combined": {
             "source": "en-pt",
             "sentences": {
                 "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-pt": {
+            "source": "en-pt",
+            "sentences": {
+                "europarl": 0
+            }
+        },
+        "en-pt-tatoeba": {
+            "source": "en-pt",
+            "sentences": {
                 "tatoeba": 0
             }
         },
@@ -68,6 +92,18 @@
             "source": "en-pl",
             "sentences": {
                 "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-pl-europarl": {
+            "source": "en-pl",
+            "sentences": {
+                "europarl": 0
+            }
+        },
+        "en-pl-tatoeba": {
+            "source": "en-pl",
+            "sentences": {
                 "tatoeba": 0
             }
         },
