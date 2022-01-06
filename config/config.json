@@ -6,7 +6,8 @@
         "processes": 1,
         "batch_size": 10000,
         "batch_save": false,
-        "limit": 0
+        "limit": 0,
+        "excluded_tokens_validation": ["zh"]
     },
     "pipelines": {
         "en-fr-200k": {
