@@ -9,6 +9,7 @@ Available scripts:
 - wordalignment.py
 - merge-align.py
 - postprocess.py
+- meta-conllu-srl.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
@@ -85,6 +86,34 @@ Used only if params.save_batch is set to true. Allows to merge all the batch res
 Execution log is stored in ./logs/mergealign.log file.
 
 ### postprocess.py
+Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza into more than one sentence. It creates new files with _ at the beginning of the file name.
+Execution log is stored in ./logs/postprocess.log file.
+
+### meta-conllu-srl.py
+Script converts conllu file with SRL information inside metadata['srl'] to conllu format with SRL predicates/labels on the token level. It is possible to process one file or the group of files using pattern mask with % char meaning any string.
+Execution log is stored in ./logs/meta-conllu-srl.log file.
+All the replacements that were performed are visible in the log file, for example:
+```
+2022/01/06 12:42:55 INFO Replacements:
+2022/01/06 12:42:55 INFO arg0 -> A0
+2022/01/06 12:42:55 INFO arg1 -> A1
+2022/01/06 12:42:55 INFO argm-loc -> AM-LOC
+2022/01/06 12:42:55 INFO argm-adv -> AM-ADV
+2022/01/06 12:42:55 INFO argm-dis -> AM-DIS
+2022/01/06 12:42:55 INFO argm-tmp -> AM-TMP
+2022/01/06 12:42:55 INFO arg2 -> A2
+2022/01/06 12:42:55 INFO argm-neg -> AM-NEG
+```
+Sample script execution for single file:
+```
+python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/CF0001.conllu --output_file=./data/meta-conllu-srl/output/CF0001.conllu
+```
+Sample script execution for the group of files using name patterns:
+```
+python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/%.conllu --output_file=./data/meta-conllu-srl/output/output.conllu
+```
+
+### meta-conllu-srl.py
 Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza into more than one sentence. It creates new files with _ at the beginning of the file name.
 Execution log is stored in ./logs/postprocess.log file.
 
