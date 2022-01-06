@@ -105,6 +105,7 @@ All the replacements that were performed are visible in the log file, for exampl
 2022/01/06 12:42:55 INFO argm-neg -> AM-NEG
 ```
 If listed replacements are not correct it is necessary to modify fix_name function in the script.
+
 In case SRL information is not available for a given sentence - this sentence will be just moved to the output file without any processing and information about it will be stored in the log:
 ```
 2022/01/06 12:56:12 INFO Sentence 1 - SRL metadata not available
