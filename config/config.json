@@ -33,12 +33,14 @@
         "en-fr": {
             "source": "en-fr",
             "sentences": {
-                "europarl": 0
+                "europarl": 0,
+                "tatoeba": 1
             }
         },
         "en-fr-tb": {
             "source": "en-fr",
             "sentences": {
+                "europarl": 1,
                 "tatoeba": 0
             }
         },
@@ -73,12 +75,14 @@
         "en-pt": {
             "source": "en-pt",
             "sentences": {
-                "europarl": 0
+                "europarl": 0,
+                "tatoeba": 1
             }
         },
         "en-pt-tb": {
             "source": "en-pt",
             "sentences": {
+                "europarl": 1,
                 "tatoeba": 0
             }
         },
@@ -99,12 +103,14 @@
         "en-pl-ep": {
             "source": "en-pl",
             "sentences": {
-                "europarl": 0
+                "europarl": 0,
+                "tatoeba": 1
             }
         },
         "en-pl-tb": {
             "source": "en-pl",
             "sentences": {
+                "europarl": 1,
                 "tatoeba": 0
             }
         },
