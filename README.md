@@ -113,10 +113,6 @@ Sample script execution for the group of files using name patterns:
 python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/%.conllu --output_file=./data/meta-conllu-srl/output/output.conllu
 ```
 
-### meta-conllu-srl.py
-Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza into more than one sentence. It creates new files with _ at the beginning of the file name.
-Execution log is stored in ./logs/postprocess.log file.
-
 ## Python virtual environment
 Create python virtual environment:
 ```
