@@ -35,7 +35,7 @@
                 "europarl": 0
             }
         },
-        "en-fr-tatoeba": {
+        "en-fr-tb": {
             "source": "en-fr",
             "sentences": {
                 "tatoeba": 0
@@ -75,7 +75,7 @@
                 "europarl": 0
             }
         },
-        "en-pt-tatoeba": {
+        "en-pt-tb": {
             "source": "en-pt",
             "sentences": {
                 "tatoeba": 0
@@ -95,13 +95,13 @@
                 "tatoeba": 0
             }
         },
-        "en-pl-europarl": {
+        "en-pl-ep": {
             "source": "en-pl",
             "sentences": {
                 "europarl": 0
             }
         },
-        "en-pl-tatoeba": {
+        "en-pl-tb": {
             "source": "en-pl",
             "sentences": {
                 "tatoeba": 0
