@@ -104,6 +104,14 @@ All the replacements that were performed are visible in the log file, for exampl
 2022/01/06 12:42:55 INFO arg2 -> A2
 2022/01/06 12:42:55 INFO argm-neg -> AM-NEG
 ```
+In case SRL information is not available for a given sentence - this sentence will be just moved to the output file without any processing and information about it will be stored in the log:
+```
+2022/01/06 12:56:12 INFO Sentence 1 - SRL metadata not available
+```
+There is one constant in the script that allow to decide which field determines predicate:
+```
+PREDICATE_FIELD = ‘roleset’ #or ‘frameFile’
+```
 Sample script execution for single file:
 ```
 python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/CF0001.conllu --output_file=./data/meta-conllu-srl/output/CF0001.conllu
