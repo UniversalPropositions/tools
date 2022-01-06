@@ -90,7 +90,7 @@ Script removes from parsed, tokenized, aligned datasets lines that were parsed b
 Execution log is stored in ./logs/postprocess.log file.
 
 ### meta-conllu-srl.py
-Script converts conllu file with SRL information inside metadata['srl'] to conllu format with SRL predicates/labels on the token level. It is possible to process one file or the group of files using pattern mask with % char meaning any string.
+Script converts conllu file with SRL information inside metadata['srl'] to conllu format with SRL predicates/labels on the token level. It is possible to process one file or the group of files using special character % as the pattern replacing any string.
 Execution log is stored in ./logs/meta-conllu-srl.log file.
 All the replacements that were performed are visible in the log file, for example:
 ```
