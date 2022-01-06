@@ -35,38 +35,58 @@ Configuration file attributes:
         - tatoeba (optional) - url to tatoeba dataset
         - subtitles (optional) - url to subtitles dataset
 
+## Processing assumptions
+### Preprocessing
+- Multiple parallel corpora datasets are combined into one parallel corpora file
+- Sentences with character encoding problems (\x, \u, �) are removed from source and target language dataset
+- Sentences with the number of tokens lower than 5 and greater than 80 are removed
+- Sentences that does not contain at least one alpha character are removed
+- Multiple spaces in sentences are replaced by one space
+- Duplicated sentences are removed
+### Parsing
+- Stanza parser is used with processors: tokenize, pos, lemma, depparse
+- In case some tokens contain space character at the end of this token we automatically strip it (for token, lemma and word)
+- Multi-word tokens (https://stanfordnlp.github.io/stanza/mwt.html) are removed from output CoNLL-U file, we keep only original token
+### Word alignment
+- Simalign library is used (https://github.com/cisnlp/simalign) with parameters: model="bert", token_type="word", matching_methods='i" (multilingual bert model, word alignments and itermax word alignments matching method)
+### Postprocessing
+- Sentences from both corpora that were split into multiple sentences by Stanza are removed from all the processing results, we keep only sentences that were parsed by Stanza as single sentence.
+
+## Scripts
 ### download.py
 Script downloads selected parallel corpus based on configuration defined in config/config.json file.
 
 ### preprocess.py
-Script prepares parallel corpus based on datasets in moses format configured in config/config.json file, removing:
-- sentences that do not contain any alpha characters
-- sentences that have tokens less than min_tokens or more than max_tokens
-- duplicated sentences
-- some problematic characters from sentences
+Script prepares parallel corpus based on datasets in moses format configured in config/config.json file.
 
 Processing results are stored in ./data/[pipeline]/bitext_raw/ folder.
 Information about removed sentences is stored in the same folder in the preprocess.log file.
 It is possible to limit the number of sentences in the pipeline configuration.
+Execution log is stored in ./logs/preprocess.log file.
 
 ### parse.py
-Script executes stanza tokenization on a given list of sentences for a given language and produces output ConLLu file and output tokenized file.
+Script executes stanza tokenization on a given list of sentences for a given language and produces output CoNLL-U file and output tokenized file.
 Input files are read from ./data/[pipeline]/bitext_raw/ folder.
 Output files are stored in: ./data/[pipeline]/parsed/ and ./data/[pipeline]/tokenized/ folders.
+Execution log is stored in ./logs/parse.log file.
 
 ### merge-parse.py
 Used only if params.save_batch is set to true. Allows to merge all the batch results from ./data/[pipeline]/tokenized/tmp/ and ./data/[pipeline]/parsed/tmp to single files that contain all sentences stored in ./data/[pipeline]/tokenized/ and ./data/[pipeline]/parsed/ folders.
+Execution log is stored in ./logs/mergeparse.log file.
 
 ### wordalignment.py
 Scripts executes word alignments on two parallel text files for source and target language.
 Input files are read from ./data/[pipeline]/tokenized.
 Output file is stored in ./data/[pipeline]/aligned/training.align file.
+Execution log is stored in ./logs/wordalignment.log file.
 
 ### merge-align.py
 Used only if params.save_batch is set to true. Allows to merge all the batch results from ./data/[pipeline]/align/tmp/ to a single file that contain all sentences stored in ./data/[pipeline]/align/ folder.
+Execution log is stored in ./logs/mergealign.log file.
 
 ### postprocess.py
 Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza into more than one sentence. It creates new files with _ at the beginning of the file name.
+Execution log is stored in ./logs/postprocess.log file.
 
 ## Python virtual environment
 Create python virtual environment:
@@ -120,30 +140,30 @@ data
 This is important to keep the order of scripts execution.
 ### download.py
 ```
-python.exe download.py --pipeline=en-fr
+python3 download.py --source=en-fr
 ```
 ### preprocess.py
 ```
-python.exe preprocess.py --pipeline=en-fr
+python3 preprocess.py --pipeline=en-fr
 ```
 ### parse.py
 ```
-python.exe parse.py --pipeline=en-fr --lang=en
-python.exe parse.py --pipeline=en-fr --lang=fr
+python3 parse.py --pipeline=en-fr --lang=en
+python3 parse.py --pipeline=en-fr --lang=fr
 ```
 ### merga-parse.py
 ```
-python.exe merge-parse.py --pipeline=en-fr 
+python3 merge-parse.py --pipeline=en-fr 
 ```
 ### wordalignment.py
 ```
-python.exe wordalignment.py --pipeline=en-fr
+python3 wordalignment.py --pipeline=en-fr
 ```
 ### merga-align.py
 ```
-python.exe merge-align.py --pipeline=en-fr 
+python3 merge-align.py --pipeline=en-fr 
 ```
 ### postprocess.py
 ```
-python.exe postprocess.py --pipeline=en-fr 
+python3 postprocess.py --pipeline=en-fr 
 ```

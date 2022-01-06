@@ -1,3 +1,8 @@
+'''
+Scripts executes word alignments on two parallel text files for source and target language.
+Input files are read from ./data/[pipeline]/tokenized.
+Output file is stored in ./data/[pipeline]/aligned/training.align file.
+'''
 import argparse
 from conllu import parse_incr
 import time
@@ -24,7 +29,16 @@ logging.basicConfig(
   ]
 )
 
-def check_if_result(pipeline, index):
+def check_if_result(pipeline: str, index: int):
+  '''
+  Checks if temporary result is available in the file system for a given pipeline, 
+  language and batch index
+
+  :param pipeline: processing pipeline from config.json file
+  :param lang: source or target language identifier
+  :param index: batch index to be checked
+  :return: information if file is present or not
+  '''
   folder = "./data/" + pipeline +  "/aligned/tmp"
   s = ""
   if index:
@@ -32,8 +46,15 @@ def check_if_result(pipeline, index):
   output_file = folder + "/training." + s + "align"
   return os.path.isfile(output_file)
 
-def save_alignments(pipeline, batches, index = None, batch_size = None):
+def save_alignments(pipeline: str, batches: dict, index: int = None, batch_size: int = None):
+  '''
+  Saves alignment results into file
 
+  :param pipeline: processed pipeline name from config.json file
+  :param batches: Word alignment results returned by batch processing to be stored in output file
+  :index: batch number (applies only when config.json parameter batch_save=true)
+  :batch_size: batch size (applies only when config.json parameter batch_save=true)
+  '''
   sentences = []
   for b in batches:
     for d in b["data"]:
@@ -56,8 +77,15 @@ def save_alignments(pipeline, batches, index = None, batch_size = None):
   with open(output_file, 'w', encoding='utf8') as f:
     f.write('\n'.join(sentences))
 
-def process_batch(batch_data):
-  
+def process_batch(batch_data: dict) -> dict:
+  '''
+  Processes single word alignment batch
+
+  :param batch_data: dictionary containing all information required to process a given batch
+  :return: dictionary with batch processing result, in case batch_save is set to true in 
+          config.json None is returned and then merge-align.py script must be used to merge partial
+          results into one file
+  '''
   global aligner
 
   index = batch_data["index"]

@@ -1,3 +1,10 @@
+'''
+Used only if params.save_batch is set to true. Allows to merge all the batch results 
+from ./data/[pipeline]/tokenized/tmp/ and ./data/[pipeline]/parsed/tmp to single files 
+that contain all sentences stored in ./data/[pipeline]/tokenized/ and 
+./data/[pipeline]/parsed/ folders.
+'''
+
 import argparse
 import impl.utils as utils
 import logging
@@ -14,7 +21,15 @@ logging.basicConfig(
   ]
 )
 
-def merge_lang(pipeline, type, ext, lang):
+def merge_lang(pipeline: str, type: str, ext: str, lang: str):
+  '''
+  Merges parse results for source or target language stored in /tmp folder (for batch_save=true) into one file
+
+  :param pipeline: pipeline name from config.json file that is processed
+  :param type: file type to be processed: parsed or tokenized
+  :param ext: file extension to be processed
+  :param lang: language to be processed
+  '''
   folder = "./data/" + pipeline + "/" + type
   try:
     mask = folder + "/tmp/" + pipeline + "." + lang + "*"
@@ -32,7 +47,15 @@ def merge_lang(pipeline, type, ext, lang):
   except Exception as e:
     logging.error(e)
 
-def merge(config, pipeline, type, ext):
+def merge(config: dict, pipeline: str, type: str, ext: str):
+  '''
+  Merges parse results stored in /tmp folder (for batch_save=true) into one file
+
+  :param config: config.json file content
+  :param pipeline: pipeline name from config.json file that is processed
+  :param type: file type to be processed: parsed or tokenized
+  :param ext: file extension to be processed
+  '''
   src = config["pipelines"][pipeline]["source"]
   src_lang = config["sources"][src]["src_lang"]
   tgt_lang = config["sources"][src]["tgt_lang"]
@@ -56,7 +79,7 @@ if __name__ == '__main__':
 
   logging.info(f'Processing {args.pipeline}')
 
-  merge(config, args.pipeline, "tokenized","txt")
+  merge(config, args.pipeline, "tokenized", "txt")
   merge(config, args.pipeline, "parsed", "conllu")
 
   s2 = time.time()
