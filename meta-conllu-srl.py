@@ -32,13 +32,20 @@ def fix_name(name):
   if key not in replacements:
     replacements[key] = name
   return name
-  
+
+def filter_frames_nopb(counter, srl):
+  nsrl = [d for d in srl if d['roleset'] != 'nopb']
+  if len(nsrl) != len(srl):
+    logging.info(f'Sentence {counter} - filtered because of nopb roleset')
+  return nsrl
+
 def fix(counter, tokentree):
   if 'srl' in tokentree.metadata:
     srl_json = tokentree.metadata['srl']
     srl = json.loads(srl_json)
     #sort frames by predicate token number
     srl = sorted(srl, key=lambda item: item['target'][0])
+    srl = filter_frames_nopb(counter, srl)
     for i, t in enumerate(tokentree):
       #delete multiword tokens
       if type(t['id']) == tuple:
@@ -62,9 +69,11 @@ def fix(counter, tokentree):
         for t in tokens:
           tokentree[t-1]['a'+str(i + 1)] = fix_name(name)
     logging.info(f'Sentence {counter} - Processed')
+    return tokentree
   else:
     logging.info(f'Sentence {counter} - SRL metadata not available')
-  return tokentree
+    return None
+  
 
 def process_file(f, fulltokenlist):
   with open(f, "r", encoding="utf-8") as data_file:
@@ -72,7 +81,8 @@ def process_file(f, fulltokenlist):
     for tokentree_in in parse_incr(data_file, fields=fields):
       counter += 1
       tokentree_out = fix(counter, tokentree_in)
-      fulltokenlist.append(tokentree_out)
+      if tokentree_out:
+        fulltokenlist.append(tokentree_out)
 
 if __name__ == '__main__':
 
@@ -102,7 +112,9 @@ if __name__ == '__main__':
   for f in files:
     logging.info(f'Processing file: {f}')
     process_file(f, fulltokenlist)
-    
+  
+  logging.info(f'Total number of sentence: {len(fulltokenlist)}')
+
   with open(args.output_file, 'w', encoding='utf8') as f:
     f.writelines([tokentree.serialize() for tokentree in fulltokenlist])
   
