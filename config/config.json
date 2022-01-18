@@ -17,10 +17,30 @@
                 "tatoeba": 20000
             }
         },
+        "en-zh-2M": {
+            "source": "en-zh",
+            "sentences": {
+                "subtitles": 2000000
+            }
+        },
+        "en-fr-combined": {
+            "source": "en-fr",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
         "en-fr": {
             "source": "en-fr",
             "sentences": {
                 "europarl": 0,
+                "tatoeba": 1
+            }
+        },
+        "en-fr-tb": {
+            "source": "en-fr",
+            "sentences": {
+                "europarl": 1,
                 "tatoeba": 0
             }
         },
@@ -45,10 +65,24 @@
                 "tatoeba": 0
             }
         },
+        "en-pt-combined": {
+            "source": "en-pt",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
         "en-pt": {
             "source": "en-pt",
             "sentences": {
                 "europarl": 0,
+                "tatoeba": 1
+            }
+        },
+        "en-pt-tb": {
+            "source": "en-pt",
+            "sentences": {
+                "europarl": 1,
                 "tatoeba": 0
             }
         },
@@ -66,10 +100,38 @@
                 "tatoeba": 0
             }
         },
+        "en-pl-ep": {
+            "source": "en-pl",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 1
+            }
+        },
+        "en-pl-tb": {
+            "source": "en-pl",
+            "sentences": {
+                "europarl": 1,
+                "tatoeba": 0
+            }
+        },
         "en-vi": {
             "source": "en-vi",
             "sentences": {
                 "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-vi-os": {
+            "source": "en-vi",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 1
+            }
+        },
+        "en-vi-tb": {
+            "source": "en-vi",
+            "sentences": {
+                "subtitles": 1,
                 "tatoeba": 0
             }
         },
