@@ -9,6 +9,7 @@ Available scripts:
 - wordalignment.py
 - merge-align.py
 - postprocess.py
+- meta-conllu-srl.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
@@ -87,6 +88,40 @@ Execution log is stored in ./logs/mergealign.log file.
 ### postprocess.py
 Script removes from parsed, tokenized, aligned datasets lines that were parsed by stanza into more than one sentence. It creates new files with _ at the beginning of the file name.
 Execution log is stored in ./logs/postprocess.log file.
+
+### meta-conllu-srl.py
+Script converts conllu file with SRL information inside metadata['srl'] to conllu format with SRL predicates/labels on the token level. It is possible to process one file or the group of files using special character % as the pattern replacing any string.
+Execution log is stored in ./logs/meta-conllu-srl.log file.
+All the replacements that were performed are visible in the log file, for example:
+```
+2022/01/06 12:42:55 INFO Replacements:
+2022/01/06 12:42:55 INFO arg0 -> A0
+2022/01/06 12:42:55 INFO arg1 -> A1
+2022/01/06 12:42:55 INFO argm-loc -> AM-LOC
+2022/01/06 12:42:55 INFO argm-adv -> AM-ADV
+2022/01/06 12:42:55 INFO argm-dis -> AM-DIS
+2022/01/06 12:42:55 INFO argm-tmp -> AM-TMP
+2022/01/06 12:42:55 INFO arg2 -> A2
+2022/01/06 12:42:55 INFO argm-neg -> AM-NEG
+```
+If listed replacements are not correct it is necessary to modify fix_name function in the script.
+
+In case SRL information is not available for a given sentence - this sentence will be just moved to the output file without any processing and information about it will be stored in the log:
+```
+2022/01/06 12:56:12 INFO Sentence 1 - SRL metadata not available
+```
+There is one constant in the script that allow to decide which field determines predicate:
+```
+PREDICATE_FIELD = ‘roleset’ #or ‘frameFile’
+```
+Sample script execution for single file:
+```
+python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/CF0001.conllu --output_file=./data/meta-conllu-srl/output/CF0001.conllu
+```
+Sample script execution for the group of files using name patterns:
+```
+python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/%.conllu --output_file=./data/meta-conllu-srl/output/output.conllu
+```
 
 ## Python virtual environment
 Create python virtual environment:

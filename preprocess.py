@@ -136,6 +136,8 @@ def process(folder: str, type: str, src_lang: str, tgt_lang: str, context: dict)
     s = preprocess(item[0])
     t = preprocess(item[1])
     counter += 1
+    if counter % 1000 == 0:
+      logging.info(f'{counter}')
     so, sm = validate(s, context, src_lang)
     to, tm = validate(t, context, tgt_lang)
     if so and to:
