@@ -52,6 +52,8 @@ Configuration file attributes:
 - Simalign library is used (https://github.com/cisnlp/simalign) with parameters: model="bert", token_type="word", matching_methods='i" (multilingual bert model, word alignments and itermax word alignments matching method)
 ### Postprocessing
 - Sentences from both corpora that were split into multiple sentences by Stanza are removed from all the processing results, we keep only sentences that were parsed by Stanza as single sentence.
+### Reverse align
+- This is the script to be executed on the pipelines completed before 2022-02-16. Do not use it for all new pipelines executed after this date because word_alignemnt.py script already saves data in proper order.
 
 ## Scripts
 ### download.py
