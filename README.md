@@ -194,11 +194,15 @@ python3 merge-parse.py --pipeline=en-fr
 ```
 python3 wordalignment.py --pipeline=en-fr
 ```
-### merga-align.py
+### merge-align.py
 ```
 python3 merge-align.py --pipeline=en-fr 
 ```
 ### postprocess.py
 ```
 python3 postprocess.py --pipeline=en-fr 
+```
+### reverse-align.py
+```
+python3 reverse-align.py --pipeline=en-fr
 ```

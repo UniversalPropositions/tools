@@ -105,10 +105,12 @@ def process_batch(batch_data: dict) -> dict:
     else:
       device = "cpu"
     lang = batch_data["lang"]
+    #add tokenize_pretokenized=False in case we need to provide tokenized content
     nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, depparse_min_length_to_batch_separately=40, deepparse_batch_size=25)
     logging.info(f'Initializing NLP batch: {index}, process: {current_process}, device: {device}')
   
   data = batch_data["data"]
+  #tokens = data.text.split(" ")
   processed = nlp(data)
   for p in processed:
     for s in p.sentences:
