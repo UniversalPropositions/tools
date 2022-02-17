@@ -58,6 +58,10 @@ def save_alignments(pipeline: str, batches: dict, index: int = None, batch_size:
   sentences = []
   for b in batches:
     for d in b["data"]:
+      # Direction SL to TL
+      # sentence = ' '.join([str(x[0]) + '-' + str(x[1]) for x in d])
+      # sentences.append(sentence)
+      # Direction TL to SL. This is required for the projection method.
       sentence = ' '.join([str(x[1]) + '-' + str(x[0]) for x in d])
       sentences.append(sentence)
 
