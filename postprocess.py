@@ -164,7 +164,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(
       description='Preprocess')
   parser.add_argument('--pipeline', type=str,
-                      help='Language pipeline', default="en-fr-200k")
+                      help='Language pipeline')
 
   args = parser.parse_args()
 

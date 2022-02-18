@@ -1,9 +1,0 @@
-en-fr
-en-fi
-en-de
-en-it
-en-pt
-en-pl
-en-es
-en-vi
-en-zh

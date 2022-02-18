@@ -2,7 +2,7 @@
     "params": {
         "min_tokens": 5,
         "max_tokens": 80,
-        "gpu": true,
+        "gpu": false,
         "processes": 1,
         "batch_size": 10000,
         "batch_save": false,
@@ -170,11 +170,11 @@
                 "tatoeba": 0
             }
         },
-        "en-vi-100": {
+        "en-vi-1": {
             "source": "en-vi",
             "sentences": {
-                "subtitles": 50,
-                "tatoeba": 50
+                "subtitles": 1,
+                "tatoeba": 1
             }
         },
         "en-vi-os": {

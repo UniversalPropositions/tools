@@ -54,7 +54,8 @@ Configuration file attributes:
 - Sentences from both corpora that were split into multiple sentences by Stanza are removed from all the processing results, we keep only sentences that were parsed by Stanza as single sentence.
 ### Reverse align
 - This is the script to be executed on the pipelines completed before 2022-02-16. Do not use it for all new pipelines executed after this date because word_alignemnt.py script already saves data in proper order.
-
+### Fix align
+- This is the script to be executed on the pipelines completed before 2022-02-16. Do not use it for all new pipelines executed after this date because word_alignemnt.py script already saves data in proper way.
 ## Scripts
 ### download.py
 Script downloads selected parallel corpus based on configuration defined in config/config.json file.
@@ -207,4 +208,8 @@ python3 postprocess.py --pipeline=en-fr
 ### reverse-align.py
 ```
 python3 reverse-align.py --pipeline=en-fr
+```
+### fix-align.py
+```
+python3 fix-align.py --pipeline=en-fr
 ```
