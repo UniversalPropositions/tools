@@ -218,6 +218,7 @@ def save(pipeline: str, lang: str, sorted_result: dict, index: int = None, batch
   '''
   asentences = []
   sentences = []
+  tsentences = []
   for s in sorted_result:
     for d in s['data']:
       atokens = []
@@ -231,9 +232,11 @@ def save(pipeline: str, lang: str, sorted_result: dict, index: int = None, batch
         for word in sent.words:
           tokens.append(word.text)
       sentence = " ".join(tokens)
+      tsentence = "|||".join(tokens)
 
       asentences.append(asentence)
       sentences.append(sentence)
+      tsentences.append(tsentence)
 
   s = ""
   if index:
@@ -251,7 +254,7 @@ def save(pipeline: str, lang: str, sorted_result: dict, index: int = None, batch
   file_tokenized = folder_tokenized + "/" + pipeline + "." + lang + ".tokenized." + s + "txt"
     
   with open(file_tokenized, 'w', encoding='utf8') as f:
-    f.write('\n'.join(sentences))
+    f.write('\n'.join(tsentences))
 
   counter = 0
   with open(file_parsed, 'w', encoding='utf8') as f:

@@ -194,8 +194,8 @@ if __name__ == '__main__':
   counter = 0
   for data in zip(source_data, target_data):
     counter += 1
-    source_tokens = data[0].split(" ")
-    target_tokens = data[1].split(" ")
+    source_tokens = data[0].split("|||")
+    target_tokens = data[1].split("|||")
     sentences.append({
       "counter": counter,
       "src": source_tokens,
