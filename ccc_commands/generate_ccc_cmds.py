@@ -254,9 +254,11 @@ def generate_config(pairs, df, subset=100):
 
         if subset !=0:
             frac = int(subset/sources)
-            pair = pair+"-"+str(subset)
+
+            pipeline = pair
+            pair = pair + "-" + str(subset)
             data["pipelines"][pair] = {}
-            data["pipelines"][pair]["source"] = pair
+            data["pipelines"][pair]["source"] = pipeline
             data["pipelines"][pair]["sentences"] = {}
             if tl in df["europarl"].values:
                 data["pipelines"][pair]["sentences"]["europarl"] = frac

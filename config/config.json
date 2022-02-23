@@ -18,7 +18,7 @@
             }
         },
         "en-cs-100": {
-            "source": "en-cs-100",
+            "source": "en-cs",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -32,7 +32,7 @@
             }
         },
         "en-de-100": {
-            "source": "en-de-100",
+            "source": "en-de",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -46,7 +46,7 @@
             }
         },
         "en-el-100": {
-            "source": "en-el-100",
+            "source": "en-el",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -60,7 +60,7 @@
             }
         },
         "en-en-100": {
-            "source": "en-en-100",
+            "source": "en-en",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -74,7 +74,7 @@
             }
         },
         "en-es-100": {
-            "source": "en-es-100",
+            "source": "en-es",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -88,7 +88,7 @@
             }
         },
         "en-fi-100": {
-            "source": "en-fi-100",
+            "source": "en-fi",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -102,7 +102,7 @@
             }
         },
         "en-fr-100": {
-            "source": "en-fr-100",
+            "source": "en-fr",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -116,7 +116,7 @@
             }
         },
         "en-hi-100": {
-            "source": "en-hi-100",
+            "source": "en-hi",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -130,7 +130,7 @@
             }
         },
         "en-hu-100": {
-            "source": "en-hu-100",
+            "source": "en-hu",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -144,7 +144,7 @@
             }
         },
         "en-id-100": {
-            "source": "en-id-100",
+            "source": "en-id",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -158,7 +158,7 @@
             }
         },
         "en-it-100": {
-            "source": "en-it-100",
+            "source": "en-it",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -172,7 +172,7 @@
             }
         },
         "en-ja-100": {
-            "source": "en-ja-100",
+            "source": "en-ja",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -186,7 +186,7 @@
             }
         },
         "en-kk-100": {
-            "source": "en-kk-100",
+            "source": "en-kk",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -200,7 +200,7 @@
             }
         },
         "en-ko-100": {
-            "source": "en-ko-100",
+            "source": "en-ko",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -213,7 +213,7 @@
             }
         },
         "en-mr-100": {
-            "source": "en-mr-100",
+            "source": "en-mr",
             "sentences": {
                 "tatoeba": 100
             }
@@ -226,7 +226,7 @@
             }
         },
         "en-nl-100": {
-            "source": "en-nl-100",
+            "source": "en-nl",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -240,7 +240,7 @@
             }
         },
         "en-pl-100": {
-            "source": "en-pl-100",
+            "source": "en-pl",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -254,7 +254,7 @@
             }
         },
         "en-pt-100": {
-            "source": "en-pt-100",
+            "source": "en-pt",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -268,7 +268,7 @@
             }
         },
         "en-ro-100": {
-            "source": "en-ro-100",
+            "source": "en-ro",
             "sentences": {
                 "europarl": 50,
                 "tatoeba": 50
@@ -282,7 +282,7 @@
             }
         },
         "en-ru-100": {
-            "source": "en-ru-100",
+            "source": "en-ru",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -296,7 +296,7 @@
             }
         },
         "en-ta-100": {
-            "source": "en-ta-100",
+            "source": "en-ta",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -310,7 +310,7 @@
             }
         },
         "en-te-100": {
-            "source": "en-te-100",
+            "source": "en-te",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -323,7 +323,7 @@
             }
         },
         "en-tk-100": {
-            "source": "en-tk-100",
+            "source": "en-tk",
             "sentences": {
                 "tatoeba": 100
             }
@@ -336,7 +336,7 @@
             }
         },
         "en-uk-100": {
-            "source": "en-uk-100",
+            "source": "en-uk",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -350,7 +350,7 @@
             }
         },
         "en-ur-100": {
-            "source": "en-ur-100",
+            "source": "en-ur",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -364,7 +364,7 @@
             }
         },
         "en-vi-100": {
-            "source": "en-vi-100",
+            "source": "en-vi",
             "sentences": {
                 "subtitles": 50,
                 "tatoeba": 50
@@ -377,7 +377,7 @@
             }
         },
         "en-zh-100": {
-            "source": "en-zh-100",
+            "source": "en-zh",
             "sentences": {
                 "subtitles": 100
             }
