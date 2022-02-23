@@ -27,162 +27,175 @@ def full_pipeline_per_pair(pair):
 
 
 def full_pipeline_all_pair(pairs):
+    f=open("fullset.txt", "w")
+
     get_data = ""
     for pair in pairs:
         sl, tl = pair.split("-")
-
-        get_data += "jbsub -mem 64g -cores 1+1 -out logs/dnld-{} -name dnld-{}  'python download.py --source={}'\n".format(tl,
+        if tl != "en":
+            get_data += "jbsub -mem 64g -cores 1+1 -out logs/dnld-{} -name dnld-{}  'python download.py --source={}'\n".format(tl,
                                                                                                                         tl,
                                                                                                                         pair)
-    print(get_data)
+    f.write(get_data)
+    f.write("\n")
 
     pre_data = ""
     for pair in pairs:
         sl, tl = pair.split("-")
+        if tl != "en":
+            pre_data += "jbsub -mem 64g -cores 1+1 -out logs/pre-{} -name pre-{}  'python preprocess.py --pipeline={}'\n".format(
+            tl, tl, pair)
 
-        pre_data += "jbsub -mem 64g -cores 1+1 -out logs/pre-{} -name pre-{}  'python preprocess.py --pipeline={}'\n".format(
-        tl, tl, pair)
-
-    print(pre_data)
+    f.write(pre_data)
+    f.write("\n")
 
     parse_en_data = ""
     for pair in pairs:
         sl, tl = pair.split("-")
-
-        parse_en_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
-        sl + tl + tl, sl + tl + tl, pair, tl)
-
-    print(parse_en_data)
-
-
-    parse_tl_data = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        parse_tl_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
+        if tl != "en":
+            parse_en_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
             sl + tl + tl, sl + tl + tl, pair, tl)
 
-    print(parse_tl_data)
-
-
-    merge_parse = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        merge_parse += "jbsub -mem 64g -cores 1+1 -out logs/parjoin-{} -name parjoin-{} 'python merge-parse.py --pipeline={}'\n".format(
-            sl + tl + tl, sl + tl + tl, pair)
-
-    print(merge_parse)
-
-
-    aligner = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        aligner += "jbsub -mem 64g -cores 1+1 -out logs/wd-{} -name wd-{} -require v100 'python wordalignment.py --pipeline={}'\n".format(
-            sl + tl, sl + tl, pair)
-
-    print(aligner)
-
-
-    merge_aligner = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        merge_aligner += "jbsub -mem 64g -cores 1+1 -out logs/Mwd-{} -name Mwd-{} 'python merge-align.py --pipeline={}'\n".format(
-            sl + tl, sl + tl, pair)
-
-
-    print(merge_aligner)
-
-
-    post_data = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        post_data += "jbsub -mem 64g -cores 1+1 -out logs/post-{} -name post-{} 'python postprocess.py --pipeline={}'\n".format(
-            sl + tl, sl + tl, pair)
-
-    print(post_data)
-
-
-def full_pipeline_all_pair_sample(pairs, sample):
-    get_data = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-        get_data += "jbsub -mem 64g -cores 1+1 -out logs/dnld-{} -name dnld-{}  'python download.py --source={}'\n".format(tl,
-                                                                                                                        tl,
-                                                                                                                        pair)
-    print(get_data)
-
-    pre_data = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        pre_data += "jbsub -mem 64g -cores 1+1 -out logs/pre-{} -name pre-{}  'python preprocess.py --pipeline={}'\n".format(
-        tl+"-"+str(sample), tl+"-"+str(sample), pair+"-"+str(sample))
-
-    print(pre_data)
-
-    parse_en_data = ""
-    for pair in pairs:
-        sl, tl = pair.split("-")
-
-        parse_en_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
-        sl + tl + tl+"-"+str(sample), sl + tl + tl+"-"+str(sample), pair+"-"+str(sample), tl)
-
-    print(parse_en_data)
-
+    f.write(parse_en_data)
+    f.write("\n")
 
     parse_tl_data = ""
     for pair in pairs:
         sl, tl = pair.split("-")
+        if tl != "en":
+            parse_tl_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
+                sl + tl + tl, sl + tl + tl, pair, tl)
 
-        parse_tl_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
-            sl + tl + tl+"-"+str(sample), sl + tl + tl+"-"+str(sample), pair+"-"+str(sample), tl)
-
-    print(parse_tl_data)
-
+    f.write(parse_tl_data)
+    f.write("\n")
 
     merge_parse = ""
     for pair in pairs:
         sl, tl = pair.split("-")
+        if tl != "en":
+            merge_parse += "jbsub -mem 64g -cores 1+1 -out logs/parjoin-{} -name parjoin-{} 'python merge-parse.py --pipeline={}'\n".format(
+                sl + tl + tl, sl + tl + tl, pair)
 
-        merge_parse += "jbsub -mem 64g -cores 1+1 -out logs/parjoin-{} -name parjoin-{} 'python merge-parse.py --pipeline={}'\n".format(
-            sl + tl + tl+"-"+str(sample), sl + tl + tl+"-"+str(sample), pair+"-"+str(sample))
-
-    print(merge_parse)
-
+    f.write(merge_parse)
+    f.write("\n")
 
     aligner = ""
     for pair in pairs:
         sl, tl = pair.split("-")
+        if tl != "en":
+            aligner += "jbsub -mem 64g -cores 1+1 -out logs/wd-{} -name wd-{} -require v100 'python wordalignment.py --pipeline={}'\n".format(
+                sl + tl, sl + tl, pair)
 
-        aligner += "jbsub -mem 64g -cores 1+1 -out logs/wd-{} -name wd-{} -require v100 'python wordalignment.py --pipeline={}'\n".format(
-            sl + tl+"-"+str(sample), sl + tl+"-"+str(sample), pair+"-"+str(sample))
-
-    print(aligner)
-
+    f.write(aligner)
+    f.write("\n")
 
     merge_aligner = ""
     for pair in pairs:
         sl, tl = pair.split("-")
+        if tl != "en":
+            merge_aligner += "jbsub -mem 64g -cores 1+1 -out logs/Mwd-{} -name Mwd-{} 'python merge-align.py --pipeline={}'\n".format(
+                sl + tl, sl + tl, pair)
 
-        merge_aligner += "jbsub -mem 64g -cores 1+1 -out logs/Mwd-{} -name Mwd-{} 'python merge-align.py --pipeline={}'\n".format(
-            sl + tl+"-"+str(sample), sl + tl+"-"+str(sample), pair+"-"+str(sample))
 
-
-    print(merge_aligner)
-
+    f.write(merge_aligner)
+    f.write("\n")
 
     post_data = ""
     for pair in pairs:
         sl, tl = pair.split("-")
+        if tl != "en":
+            post_data += "jbsub -mem 64g -cores 1+1 -out logs/post-{} -name post-{} 'python postprocess.py --pipeline={}'\n".format(
+                sl + tl, sl + tl, pair)
 
-        post_data += "jbsub -mem 64g -cores 1+1 -out logs/post-{} -name post-{} 'python postprocess.py --pipeline={}'\n".format(
-            sl + tl+"-"+str(sample), sl + tl+"-"+str(sample), pair+"-"+str(sample))
+    f.write(post_data)
+    f.write("\n")
+    f.close()
 
-    print(post_data)
+def full_pipeline_all_pair_sample(pairs, sample):
+    f=open("subset"+"-"+str(sample)+".txt", "w")
+
+    get_data = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            get_data += "jbsub -mem 64g -cores 1+1 -out logs/dnld-{} -name dnld-{}  'python download.py --source={}'\n".format(tl,
+                                                                                                                        tl,
+                                                                                                                        pair)
+    f.write(get_data)
+    f.write("\n")
+
+    pre_data = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            pre_data += "jbsub -mem 64g -cores 1+1 -out logs/pre-{} -name pre-{}  'python preprocess.py --pipeline={}'\n".format(
+            tl+"-"+str(sample), tl+"-"+str(sample), pair+"-"+str(sample))
+
+    f.write(pre_data)
+    f.write("\n")
+
+    parse_en_data = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            parse_en_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
+            sl + tl + tl+"-"+str(sample), sl + tl + tl+"-"+str(sample), pair+"-"+str(sample), tl)
+
+    f.write(parse_en_data)
+    f.write("\n")
+
+    parse_tl_data = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            parse_tl_data += "jbsub -mem 64g -cores 1+1 -out logs/par-{} -name par-{} -require v100 'python parse.py --pipeline={} --lang={}'\n".format(
+                sl + tl + tl+"-"+str(sample), sl + tl + tl+"-"+str(sample), pair+"-"+str(sample), tl)
+
+    f.write(parse_tl_data)
+    f.write("\n")
+
+    merge_parse = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            merge_parse += "jbsub -mem 64g -cores 1+1 -out logs/parjoin-{} -name parjoin-{} 'python merge-parse.py --pipeline={}'\n".format(
+                sl + tl + tl+"-"+str(sample), sl + tl + tl+"-"+str(sample), pair+"-"+str(sample))
+
+    f.write(merge_parse)
+    f.write("\n")
+
+    aligner = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            aligner += "jbsub -mem 64g -cores 1+1 -out logs/wd-{} -name wd-{} -require v100 'python wordalignment.py --pipeline={}'\n".format(
+                sl + tl+"-"+str(sample), sl + tl+"-"+str(sample), pair+"-"+str(sample))
+
+    f.write(aligner)
+    f.write("\n")
+
+    merge_aligner = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            merge_aligner += "jbsub -mem 64g -cores 1+1 -out logs/Mwd-{} -name Mwd-{} 'python merge-align.py --pipeline={}'\n".format(
+                sl + tl+"-"+str(sample), sl + tl+"-"+str(sample), pair+"-"+str(sample))
+
+
+    f.write(merge_aligner)
+    f.write("\n")
+
+    post_data = ""
+    for pair in pairs:
+        sl, tl = pair.split("-")
+        if tl != "en":
+            post_data += "jbsub -mem 64g -cores 1+1 -out logs/post-{} -name post-{} 'python postprocess.py --pipeline={}'\n".format(
+                sl + tl+"-"+str(sample), sl + tl+"-"+str(sample), pair+"-"+str(sample))
+
+    f.write(post_data)
+    f.write("\n")
+
+    f.close()
 
 
 def generate_config(pairs, df, subset=100):
@@ -202,20 +215,25 @@ def generate_config(pairs, df, subset=100):
     for pair in pairs:
         sources = 0
         sl, tl = pair.split("-")
+
+        if sl>tl:
+            pipeline = tl+"-"+sl
+        else:
+            pipeline = pair
         data["sources"][pair] = {}
         data["sources"][pair]["src_lang"] = sl
         data["sources"][pair]["tgt_lang"] = tl
         data["sources"][pair]["datasets"] = {}
         if tl in df["europarl"].values:
-            data["sources"][pair]["datasets"] ["europarl"] = "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/{}.txt.zip".format(pair)
+            data["sources"][pair]["datasets"] ["europarl"] = "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/{}.txt.zip".format(pipeline)
         elif tl in df["opensubtitles"].values:
-            data["sources"][pair]["datasets"] ["subtitles"] = "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/{}.txt.zip".format(pair)
+            data["sources"][pair]["datasets"] ["subtitles"] = "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/{}.txt.zip".format(pipeline)
         if tl in df["tatoeba"].values:
             data["sources"][pair]["datasets"][
-                "tatoeba"] = "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/{}.txt.zip".format(pair)
+                "tatoeba"] = "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/{}.txt.zip".format(pipeline)
         if tl == "zh":
             data["sources"][pair]["datasets"][
-                "subtitles"] = "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/{}.txt.zip".format(pair+"_cn")
+                "subtitles"] = "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/{}.txt.zip".format(pipeline+"_cn")
 
         data["pipelines"][pair] = {}
         data["pipelines"][pair]["source"] = pair

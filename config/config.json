@@ -388,24 +388,24 @@
             "src_lang": "en",
             "tgt_lang": "cs",
             "datasets": {
-                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-cs.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-cs.txt.zip"
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/cs-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/cs-en.txt.zip"
             }
         },
         "en-de": {
             "src_lang": "en",
             "tgt_lang": "de",
             "datasets": {
-                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-de.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-de.txt.zip"
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/de-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/de-en.txt.zip"
             }
         },
         "en-el": {
             "src_lang": "en",
             "tgt_lang": "el",
             "datasets": {
-                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-el.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-el.txt.zip"
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/el-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/el-en.txt.zip"
             }
         },
         "en-en": {
