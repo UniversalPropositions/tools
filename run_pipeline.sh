@@ -20,9 +20,9 @@ echo "target : ${strarr[1]}"
 #  printf "$val\n"
 #done
 
-python preprocess.py --pipeline=$PIPELINE
-python parse.py --pipeline=$PIPELINE --lang="${strarr[0]}"
-python parse.py --pipeline=$PIPELINE --lang="${strarr[1]}"
-python merge-parse.py --pipeline=$PIPELINE
-python wordalignment.py --pipeline=$PIPELINE
-python merge-align.py --pipeline=$PIPELINE
+python preprocess.py --pipeline="$PIPELINE"
+python parse.py --pipeline="$PIPELINE" --lang="${strarr[0]}"
+python parse.py --pipeline="$PIPELINE" --lang="${strarr[1]}"
+python merge-parse.py --pipeline="$PIPELINE"
+python wordalignment.py --pipeline="$PIPELINE"
+python merge-align.py --pipeline="$PIPELINE"
