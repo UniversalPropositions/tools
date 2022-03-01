@@ -1,12 +1,12 @@
 #bash
-src=$1
-tgt=$2
-pipeline=$src-$tgt
+pipeline=$1
+src=$2
+tgt=$3
 file_aligned=./data/$pipeline/aligned/_training.align
-file_parsed_src=./data/$pipeline/parsed/_$src-$tgt.$src.parsed.conllu
-file_parsed_tgt=./data/$pipeline/parsed/_$src-$tgt.$tgt.parsed.conllu
-file_tokenized_src=./data/$pipeline/tokenized/_$src-$tgt.$src.tokenized.txt
-file_tokenized_tgt=./data/$pipeline/tokenized/_$src-$tgt.$tgt.tokenized.txt
+file_parsed_src=./data/$pipeline/parsed/_$pipeline.$src.parsed.conllu
+file_parsed_tgt=./data/$pipeline/parsed/_$pipeline.$tgt.parsed.conllu
+file_tokenized_src=./data/$pipeline/tokenized/_$pipeline.$src.tokenized.txt
+file_tokenized_tgt=./data/$pipeline/tokenized/_$pipeline.$tgt.tokenized.txt
 
 aligned_len=$(grep -iF "" $file_aligned | wc -l);
 parsed_src_len=$(grep -iF "sent_id" $file_parsed_src | wc -l);
