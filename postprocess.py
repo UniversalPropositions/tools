@@ -159,13 +159,13 @@ def remove_sentences(pipeline, src_lang, tgt_lang, sentences):
   remove_from_text (folder + 'aligned/training.align', sentences)
   # logging.info("Updating src srl")
   # remove_from_srl(folder + 'tokenized/'+ pipeline + "." + src_lang + ".tokenized.txt.srl", sentences)
-  nnsrl = folder + "/labeled"
-
-  if not os.path.exists(nnsrl):
-    os.makedirs(nnsrl)
-  labeled_file = os.path.join(nnsrl, "_{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
-  logging.info("Updating src srl")
-  remove_from_srl(folder + 'parsed/'+ pipeline + "." + src_lang + ".parsed-spade.srl.conllu", sentences, labeled_file)
+  # nnsrl = folder + "/labeled"
+  #
+  # if not os.path.exists(nnsrl):
+  #   os.makedirs(nnsrl)
+  # labeled_file = os.path.join(nnsrl, "_{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
+  # logging.info("Updating src srl")
+  # remove_from_srl(folder + 'parsed/'+ pipeline + "." + src_lang + ".parsed-spade.srl.conllu", sentences, labeled_file)
 
 
 
