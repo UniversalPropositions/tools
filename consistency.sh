@@ -1,4 +1,20 @@
 #bash
+# execute chmod 777 consistency.sh to make it executable (only once)
+# then call it for example: ./consistency.sh en-fr-200k en fr
+# so this is ./consistency [pipeline] [src_lang] [tgt_lang] (edited) 
+# sample error response:
+#   en-fr-200k: error
+#   aligned: 0
+#   parsed_src: 184025
+#   parsed_tgt: 184025
+#   tokenized_src: 184025
+#   tokenized_tgt: 184025
+# sample ok response:
+#   en-fr-200k: ok
+#   sentences: 184025
+# it works always on _* files (edited) 
+# it can take a minute for large files
+
 pipeline=$1
 src=$2
 tgt=$3
