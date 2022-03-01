@@ -54,6 +54,8 @@ def download_file(source: str, type: str, url: str):
   file = segments[len(segments) - 1]
   path = dir + '/' + file
   r = requests.get(url, allow_redirects=True)
+  if r.status_code == 404:
+    print("URL does not exist")
   os.makedirs(dir, exist_ok = True)
   data = r.content
   length = round(len(data) / 1024 / 1024)
@@ -76,7 +78,7 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(
       description='Download')
   parser.add_argument('--source', type=str,
-                      help='Language source')
+                      help='Language source', default="en-de")
 
   args = parser.parse_args()
 

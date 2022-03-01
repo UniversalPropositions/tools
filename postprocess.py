@@ -88,11 +88,11 @@ def remove_from_text(file, sentences):
   except Exception as e:
     logging.error(e)
 
-def remove_from_srl(file, sentences):
+def remove_from_srl(file, sentences, output_file):
   try:
-    segments = file.split("/")
-    segments[-1] = "_" + segments[-1]
-    output_file = "/".join(segments)
+    # segments = file.split("/")
+    # segments[-1] = "_" + segments[-1]
+    # output_file = "/".join(segments)
 
     output = open(output_file, 'w', encoding='utf8')
 
@@ -106,6 +106,7 @@ def remove_from_srl(file, sentences):
     output.close()
   except Exception as e:
     logging.error(e)
+
 
 def doc2conll_text(doc):
   doc_conll = CoNLL.doc2conll(doc)
@@ -156,8 +157,18 @@ def remove_sentences(pipeline, src_lang, tgt_lang, sentences):
   remove_from_text (folder + 'tokenized/'+ pipeline + "." + tgt_lang + ".tokenized.txt", sentences)
   logging.info("Updating aligned")
   remove_from_text (folder + 'aligned/training.align', sentences)
-  logging.info("Updating src srl")
-  remove_from_srl (folder + 'tokenized/'+ pipeline + "." + src_lang + ".tokenized.txt.srl", sentences)
+  # logging.info("Updating src srl")
+  # remove_from_srl(folder + 'tokenized/'+ pipeline + "." + src_lang + ".tokenized.txt.srl", sentences)
+  # nnsrl = folder + "/labeled"
+  #
+  # if not os.path.exists(nnsrl):
+  #   os.makedirs(nnsrl)
+  # labeled_file = os.path.join(nnsrl, "_{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
+  # logging.info("Updating src srl")
+  # remove_from_srl(folder + 'parsed/'+ pipeline + "." + src_lang + ".parsed-spade.srl.conllu", sentences, labeled_file)
+
+
+
 
 if __name__ == '__main__':
 
