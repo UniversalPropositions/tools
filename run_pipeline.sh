@@ -19,7 +19,7 @@ echo "target : ${strarr[1]}"
 #do
 #  printf "$val\n"
 #done
-
+#
 python preprocess.py --pipeline="$PIPELINE"
 python parse.py --pipeline="$PIPELINE" --lang="${strarr[0]}"
 python parse.py --pipeline="$PIPELINE" --lang="${strarr[1]}"
