@@ -16,8 +16,19 @@
 # it can take a minute for large files
 
 pipeline=$1
-src=$2
-tgt=$3
+
+# Set - as the delimiter
+IFS='-'
+
+#Read the split words into an array based on space delimiter
+read -a strarr <<< "$PIPELINE"
+
+echo "source : ${strarr[0]}"
+echo "target : ${strarr[1]}"
+
+src="${strarr[0]}"
+tgt="${strarr[1]}"
+
 file_aligned=./data/$pipeline/aligned/_training.align
 file_parsed_src=./data/$pipeline/parsed/_$pipeline.$src.parsed.conllu
 file_parsed_tgt=./data/$pipeline/parsed/_$pipeline.$tgt.parsed.conllu
