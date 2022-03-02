@@ -21,7 +21,7 @@ pipeline=$1
 IFS='-'
 
 #Read the split words into an array based on space delimiter
-read -a strarr <<< "$PIPELINE"
+read -a strarr <<< "$pipeline"
 
 echo "source : ${strarr[0]}"
 echo "target : ${strarr[1]}"
