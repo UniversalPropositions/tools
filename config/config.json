@@ -112,14 +112,16 @@
             "source": "en-hi",
             "sentences": {
                 "subtitles": 0,
-                "tatoeba": 0
+                "tatoeba": 0,
+                "ccaligned": 200000
             }
         },
         "en-hi-100": {
             "source": "en-hi",
             "sentences": {
                 "subtitles": 50,
-                "tatoeba": 50
+                "tatoeba": 50,
+                "ccaligned": 50
             }
         },
         "en-hu": {
@@ -209,13 +211,15 @@
         "en-mr": {
             "source": "en-mr",
             "sentences": {
-                "tatoeba": 0
+                "tatoeba": 0,
+                "ccaligned": 0
             }
         },
         "en-mr-100": {
             "source": "en-mr",
             "sentences": {
-                "tatoeba": 100
+                "tatoeba": 50,
+                "ccaligned": 50
             }
         },
         "en-nl": {
@@ -292,28 +296,32 @@
             "source": "en-ta",
             "sentences": {
                 "subtitles": 0,
-                "tatoeba": 0
+                "tatoeba": 0,
+                "ccaligned": 0
             }
         },
         "en-ta-100": {
             "source": "en-ta",
             "sentences": {
                 "subtitles": 50,
-                "tatoeba": 50
+                "tatoeba": 50,
+                "ccaligned": 50
             }
         },
         "en-te": {
             "source": "en-te",
             "sentences": {
                 "subtitles": 0,
-                "tatoeba": 0
+                "tatoeba": 0,
+                "ccaligned": 0
             }
         },
         "en-te-100": {
             "source": "en-te",
             "sentences": {
                 "subtitles": 50,
-                "tatoeba": 50
+                "tatoeba": 50,
+                "ccaligned": 50
             }
         },
         "en-tk": {
@@ -346,14 +354,16 @@
             "source": "en-ur",
             "sentences": {
                 "subtitles": 0,
-                "tatoeba": 0
+                "tatoeba": 0,
+                "ccaligned": 0
             }
         },
         "en-ur-100": {
             "source": "en-ur",
             "sentences": {
                 "subtitles": 50,
-                "tatoeba": 50
+                "tatoeba": 50,
+                "ccaligned": 50
             }
         },
         "en-vi": {
@@ -445,7 +455,8 @@
             "tgt_lang": "hi",
             "datasets": {
                 "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-hi.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-hi.txt.zip"
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-hi.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-hi.txt.zip"
             }
         },
         "en-hu": {
@@ -500,7 +511,8 @@
             "src_lang": "en",
             "tgt_lang": "mr",
             "datasets": {
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-mr.txt.zip"
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-mr.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-mr.txt.zip"
             }
         },
         "en-nl": {
@@ -548,7 +560,8 @@
             "tgt_lang": "ta",
             "datasets": {
                 "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ta.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ta.txt.zip"
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ta.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-ta.txt.zip"
             }
         },
         "en-te": {
@@ -556,7 +569,8 @@
             "tgt_lang": "te",
             "datasets": {
                 "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-te.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-te.txt.zip"
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-te.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-te.txt.zip"
             }
         },
         "en-tk": {
@@ -579,7 +593,8 @@
             "tgt_lang": "ur",
             "datasets": {
                 "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ur.txt.zip",
-                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ur.txt.zip"
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ur.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-ur.txt.zip"
             }
         },
         "en-vi": {
