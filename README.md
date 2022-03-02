@@ -189,7 +189,7 @@ python3 preprocess.py --pipeline=en-fr
 python3 parse.py --pipeline=en-fr --lang=en
 python3 parse.py --pipeline=en-fr --lang=fr
 ```
-### merga-parse.py
+### merge-parse.py
 ```
 python3 merge-parse.py --pipeline=en-fr 
 ```
