@@ -277,7 +277,7 @@
         "en-ru": {
             "source": "en-ru",
             "sentences": {
-                "subtitles": 0,
+                "subtitles": 2000000,
                 "tatoeba": 0
             }
         },
@@ -373,7 +373,7 @@
         "en-zh": {
             "source": "en-zh",
             "sentences": {
-                "subtitles": 0
+                "subtitles": 2000000
             }
         },
         "en-zh-100": {
