@@ -26,8 +26,8 @@ read -a strarr <<< "$pipeline"
 echo "source : ${strarr[0]}"
 echo "target : ${strarr[1]}"
 
-src="${strarr[0]}"
-tgt="${strarr[1]}"
+src=${strarr[0]}
+tgt=${strarr[1]}
 
 file_aligned=./data/$pipeline/aligned/_training.align
 file_parsed_src=./data/$pipeline/parsed/_$pipeline.$src.parsed.conllu
