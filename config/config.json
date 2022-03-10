@@ -124,6 +124,14 @@
                 "ccaligned": 50
             }
         },
+        "en-hi-10000": {
+            "source": "en-hi",
+            "sentences": {
+                "subtitles": 5000,
+                "tatoeba": 5000,
+                "ccaligned": 5000
+            }
+        },
         "en-hu": {
             "source": "en-hu",
             "sentences": {
