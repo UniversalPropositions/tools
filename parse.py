@@ -106,7 +106,7 @@ def process_batch(batch_data: dict) -> dict:
       device = "cpu"
     lang = batch_data["lang"]
     #add tokenize_pretokenized=False in case we need to provide tokenized content
-    nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, depparse_min_length_to_batch_separately=40, deepparse_batch_size=25, dir="/stanza_resources")
+    nlp = stanza.Pipeline(lang, processors='tokenize,pos,lemma,depparse', use_gpu=gpu, depparse_min_length_to_batch_separately=40, deepparse_batch_size=25)
     logging.info(f'Initializing NLP batch: {index}, process: {current_process}, device: {device}')
   
   data = batch_data["data"]
@@ -157,6 +157,8 @@ def process_language(config: dict, pipeline: str, lang: str, selected_sentences:
 
   with open(input_file, "r", encoding="utf-8") as f:
     sentences = f.read().split(LINESEP)
+
+  sentences = list(filter(None, sentences))
 
   if selected_sentences:
     sentences = [ sentences[i] for i in selected_sentences ]
