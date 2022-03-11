@@ -2,7 +2,7 @@
     "params": {
         "min_tokens": 5,
         "max_tokens": 80,
-        "gpu": false,
+        "gpu": true,
         "processes": 1,
         "batch_size": 10000,
         "batch_save": true,
