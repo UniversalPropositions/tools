@@ -10,6 +10,7 @@ Available scripts:
 - merge-align.py
 - postprocess.py
 - meta-conllu-srl.py
+- download-ud.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
@@ -35,6 +36,7 @@ Configuration file attributes:
         - europarl (optional) - url to europarl dataset
         - tatoeba (optional) - url to tatoeba dataset
         - subtitles (optional) - url to subtitles dataset
+- universal-dependencies (map) - key is the universal-dependencies language code, value is repository url
 
 ## Processing assumptions
 ### Preprocessing
@@ -125,6 +127,8 @@ Sample script execution for the group of files using name patterns:
 ```
 python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/%.conllu --output_file=./data/meta-conllu-srl/output/output.conllu
 ```
+### download-ud.py
+Script downloads conllu files (dev, train, test) based on configuration defined in config/config.json file in universal-dependencies section.
 
 ## Python virtual environment
 Create python virtual environment:
@@ -212,4 +216,8 @@ python3 reverse-align.py --pipeline=en-fr
 ### fix-align.py
 ```
 python3 fix-align.py --pipeline=en-fr
+```
+### download-ud.py
+```
+python3 download-ud.py --ud=pl
 ```
