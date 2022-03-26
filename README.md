@@ -236,8 +236,7 @@ python3 download-ud.py --ud=pl
 ```
 ### postprocess-spade.py
 ```
-python3 postprocess-spade.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./data/ud/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=./data/ud/h
-i/hi_hdtb-up-dev.conllu.conllu
+python3 postprocess-spade.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./data/ud/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=./data/ud/hi/hi_hdtb-up-dev.conllu
 ```
 ### merge-ud-srl.py
 ```
