@@ -129,7 +129,12 @@ python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/%.conl
 ```
 ### download-ud.py
 Script downloads conllu files (dev, train, test) based on configuration defined in config/config.json file in universal-dependencies section.
-
+### postprocess-spade.py
+Script creates a new conllu file based on UD conllu file and spade conllu file.
+It is important to add conllup library to python virtual environment:
+```
+pip install --force-reinstall dist/conllup-0.1.0-py3-none-any.whl
+```
 ## Python virtual environment
 Create python virtual environment:
 ```
@@ -220,4 +225,9 @@ python3 fix-align.py --pipeline=en-fr
 ### download-ud.py
 ```
 python3 download-ud.py --ud=pl
+```
+### postprocess-spade.py
+```
+python3 postprocess-spade.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./data/ud/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=./data/ud/h
+i/hi_hdtb-ud-dev.conllu.spade.srl.conllu
 ```

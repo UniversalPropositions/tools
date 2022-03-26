@@ -5,6 +5,7 @@ charset-normalizer==2.0.7
 click==8.0.3
 colorama==0.4.4
 conllu==4.4.1
+conllup @ dist/conllup-0.1.0-py3-none-any.whl
 cymem==2.0.6
 decorator==5.1.0
 emoji==1.6.1
@@ -32,6 +33,7 @@ requests==2.26.0
 sacremoses==0.0.46
 scikit-learn==1.0.1
 scipy==1.7.2
+simalign==0.3
 six==1.16.0
 smart-open==5.2.1
 spacy==3.2.0
@@ -43,6 +45,7 @@ stanza==1.3.0
 thinc==8.0.13
 threadpoolctl==3.0.0
 tokenizers==0.10.3
+torch==1.10.2
 tqdm==4.62.3
 transformers==4.12.5
 typer==0.4.0
