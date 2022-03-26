@@ -11,6 +11,8 @@ Available scripts:
 - postprocess.py
 - meta-conllu-srl.py
 - download-ud.py
+- postprocess-spade.py
+- merge-ud-srl.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
@@ -135,6 +137,12 @@ It is important to add conllup library to python virtual environment:
 ```
 pip install --force-reinstall dist/conllup-0.1.0-py3-none-any.whl
 ```
+### merge-ud-srl.py
+Script merges UD and UP files.
+It is important to add conllup library to python virtual environment:
+```
+pip install --force-reinstall dist/conllup-0.1.0-py3-none-any.whl
+```
 ## Python virtual environment
 Create python virtual environment:
 ```
@@ -229,5 +237,10 @@ python3 download-ud.py --ud=pl
 ### postprocess-spade.py
 ```
 python3 postprocess-spade.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./data/ud/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=./data/ud/h
-i/hi_hdtb-ud-dev.conllu.spade.srl.conllu
+i/hi_hdtb-up-dev.conllu.conllu
+```
+### merge-ud-srl.py
+```
+python3 merge-ud-srl.py --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --in
+put_up=./data/ud/hi/hi_hdtb-up-dev.conllu --output=./data/ud/hi/hi_hdtb-srl-dev.conllu
 ```
