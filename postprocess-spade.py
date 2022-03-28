@@ -10,6 +10,10 @@ import json
 from conllup.model.tree import Tree
 from conllup.model.tree import Token
 from conllup.model.tree import Metadata
+from conllup.model.column import Column, ColumnType
+from conllup.model.frame import Frame
+from conllup.model.predicate import Predicate
+from conllup.model.argument import Argument
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)s %(message)s', 
@@ -21,76 +25,44 @@ logging.basicConfig(
   ]
 )
 
-def get_verb(srl, id):
-  for verb in srl["verbs"]:
-    if verb["verb"][0] == id:
-      return verb
-  return None
-
-def create_dep(args):
-  #AM-DIS:1|A1:3|AM-NEG:5|A2:6
-  tokens = []
-  for arg in args:
-    name = arg[1]
-    pos = arg[0]
-    tokens.append(f'{name}:{pos}')
-  return '|'.join(tokens)
-
-def create_span(args):
-  #AM-DIS:1|A1:3|AM-NEG:5|A2:6-10
-  tokens = []
-  for arg in args:
-    name = arg[1]
-    start = arg[2]
-    end = arg[3]
-    if start == end:
-      tokens.append(f'{name}:{start}')
-    else:
-      tokens.append(f'{name}:{start}-{end}')
-  return '|'.join(tokens)
-
 def process(source, ud, spade):
-  definition = ["ID", "UP:PREDS", "UP:DEPARGS", "UP:SPANARGS"]
+
+  columns = [
+    Column("ID", ColumnType.ID),
+    Column("UP:PREDS", ColumnType.UP_PREDS),
+    Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
+    Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
+  ]
   
-  tree = Tree(definition)
+  tree = Tree(columns)
   
   file_name = source
   sent_id = ud.metadata['sent_id'].value
   text = ud.metadata['text'].value
   span_srl = spade.metadata["span_srl"].value
+  srl = json.loads(span_srl)
 
-  metadata = tree.create_metadata("source_sent_id")
-  metadata.set_value(f"conllu http://hdl.handle.net/11234/1-4611 {file_name} {sent_id}")
+  metadata = tree.add_metadata("source_sent_id", f"conllu http://hdl.handle.net/11234/1-4611 {file_name} {sent_id}")
   
-  metadata = tree.create_metadata("sent_id")
-  metadata.set_value(f"{sent_id}")
+  metadata = tree.add_metadata("sent_id", f"{sent_id}")
   
-  metadata = tree.create_metadata("text")
-  metadata.set_value(text)
+  metadata = tree.add_metadata("text", text)
 
   for t in spade.tokens:
 
     token = spade.tokens[t]
 
     id = int(t)
-    srl = json.loads(span_srl)
 
-    verb = get_verb(srl, id)
+    tree.add_token(id)
 
-    if verb:
-      predicate = verb["verb"][1]
-      dep = create_dep(verb["arguments"])
-      span = create_span(verb["arguments"])
-    else:
-      predicate = "_"
-      dep = "_"
-      span = "_"
-
-    tt = tree.create_token(id)
-    tt.set_attribute("ID", token.attributes['ID'])
-    tt.set_attribute("UP:PREDS", predicate)
-    tt.set_attribute("UP:DEPARGS", dep)
-    tt.set_attribute("UP:SPANARGS", span)
+  for verb in srl["verbs"]:
+    predicate = verb["verb"]
+    frame = Frame()
+    tree.add_frame(frame)
+    frame.set_predicate(Predicate(predicate[1], token=predicate[0]))
+    for argument in verb["arguments"]:
+      frame.add_argument(Argument(argument[1], head=argument[0], start=argument[2], end=argument[3]))
 
   return tree
 

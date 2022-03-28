@@ -8,8 +8,8 @@ import argparse
 from conllup import zip_parse
 import json
 from conllup.model.tree import Tree
-from conllup.model.tree import Token
-from conllup.model.tree import Metadata
+from conllup.model.metadata import Metadata
+from conllup.model.column import Column, ColumnType
 
 logging.basicConfig(
   format='%(asctime)s %(levelname)s %(message)s', 
@@ -22,18 +22,28 @@ logging.basicConfig(
 )
 
 def process(ud, up):
-  definition = ["ID", "FORM", "LEMMA", "UPOS", "XPOS", "FEATS", "HEAD", "DEPREL", "DEPS", "MISC", "UP:PREDS", "UP:DEPARGS", "UP:SPANARGS"]
-  
-  tree = Tree(definition)
-  
-  metadata = tree.create_metadata("source_sent_id")
-  metadata.set_value(up.metadata["source_sent_id"].value)
 
-  metadata = tree.create_metadata("sent_id")
-  metadata.set_value(up.metadata["sent_id"].value)
+  columns = [
+            Column("ID", ColumnType.ID),
+            Column("FORM"), 
+            Column("LEMMA"),
+            Column("UPOS"), 
+            Column("XPOS"),
+            Column("FEATS"),
+            Column("HEAD"),
+            Column("DEPREL"),
+            Column("DEPS"),
+            Column("MISC"),
+            Column("UP:PREDS", ColumnType.UP_PREDS),
+            Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
+            Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
+        ]
 
-  metadata = tree.create_metadata("text")
-  metadata.set_value(up.metadata["text"].value)
+  tree = Tree(columns)
+  
+  metadata = tree.add_metadata("source_sent_id", up.metadata["source_sent_id"].value)
+  metadata = tree.add_metadata("sent_id", up.metadata["sent_id"].value)
+  metadata = tree.add_metadata("text", up.metadata["text"].value)
 
   for t in ud.tokens:
 
@@ -42,8 +52,7 @@ def process(ud, up):
 
     id = int(t)
 
-    tt = tree.create_token(id)
-    tt.set_attribute("ID", ud_token.attributes['ID'])
+    tt = tree.add_token(id)
     tt.set_attribute("FORM", ud_token.attributes['FORM'])
     tt.set_attribute("LEMMA", ud_token.attributes['LEMMA'])
     tt.set_attribute("UPOS", ud_token.attributes['UPOS'])
@@ -54,9 +63,8 @@ def process(ud, up):
     tt.set_attribute("DEPS", ud_token.attributes['DEPS'])
     tt.set_attribute("MISC", ud_token.attributes['MISC'])
 
-    tt.set_attribute("UP:PREDS", up_token.attributes["UP:PREDS"])
-    tt.set_attribute("UP:DEPARGS", up_token.attributes["UP:DEPARGS"])
-    tt.set_attribute("UP:SPANARGS", up_token.attributes["UP:SPANARGS"])
+  for frame in up.get_frames():
+    tree.add_frame(frame)
 
   return tree
 
