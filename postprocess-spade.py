@@ -52,7 +52,7 @@ def process(source, ud, spade):
   for t in spade.tokens:
 
     token = spade.tokens[t]
-    text += token
+    text += " _"
     id = int(t)
 
     tree.add_token(id)
