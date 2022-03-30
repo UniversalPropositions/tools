@@ -10,6 +10,9 @@ Available scripts:
 - merge-align.py
 - postprocess.py
 - meta-conllu-srl.py
+- download-ud.py
+- postprocess-spade.py
+- merge-ud-srl.py
 
 ## Configuration file
 Configuration file location is: config/config.json.
@@ -35,6 +38,7 @@ Configuration file attributes:
         - europarl (optional) - url to europarl dataset
         - tatoeba (optional) - url to tatoeba dataset
         - subtitles (optional) - url to subtitles dataset
+- universal-dependencies (map) - key is the universal-dependencies language code, value is repository url
 
 ## Processing assumptions
 ### Preprocessing
@@ -125,7 +129,20 @@ Sample script execution for the group of files using name patterns:
 ```
 python3 meta-conllu-srl.py --input_file_mask=./data/meta-conllu-srl/input/%.conllu --output_file=./data/meta-conllu-srl/output/output.conllu
 ```
-
+### download-ud.py
+Script downloads conllu files (dev, train, test) based on configuration defined in config/config.json file in universal-dependencies section.
+### postprocess-spade.py
+Script creates a new conllu file based on UD conllu file and spade conllu file.
+It is important to add conllup library to python virtual environment:
+```
+pip install --force-reinstall dist/conllup-0.1.0-py3-none-any.whl
+```
+### merge-ud-srl.py
+Script merges UD and UP files.
+It is important to add conllup library to python virtual environment:
+```
+pip install --force-reinstall dist/conllup-0.1.0-py3-none-any.whl
+```
 ## Python virtual environment
 Create python virtual environment:
 ```
@@ -212,4 +229,17 @@ python3 reverse-align.py --pipeline=en-fr
 ### fix-align.py
 ```
 python3 fix-align.py --pipeline=en-fr
+```
+### download-ud.py
+```
+python3 download-ud.py --ud=pl
+```
+### postprocess-spade.py
+```
+python3 postprocess-spade.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./data/ud/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=./data/ud/hi/hi_hdtb-up-dev.conllu
+```
+### merge-ud-srl.py
+```
+python3 merge-ud-srl.py --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --in
+put_up=./data/ud/hi/hi_hdtb-up-dev.conllu --output=./data/ud/hi/hi_hdtb-srl-dev.conllu
 ```
