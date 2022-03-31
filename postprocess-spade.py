@@ -29,9 +29,9 @@ def process(source, ud, spade):
 
   columns = [
     Column("ID", ColumnType.ID),
-    Column("UP:PREDS", ColumnType.UP_PREDS),
-    Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
-    Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
+    Column("UP:PRED", ColumnType.UP_PREDS),
+    Column("UP:ARGHEADS", ColumnType.UP_DEPARGS),
+    Column("UP:ARGSPANS", ColumnType.UP_SPANARGS)
   ]
   
   tree = Tree(columns)
@@ -48,14 +48,15 @@ def process(source, ud, spade):
   
   metadata = tree.add_metadata("text", text)
 
+  text = ""
   for t in spade.tokens:
 
     token = spade.tokens[t]
-
+    text += " _"
     id = int(t)
 
     tree.add_token(id)
-
+  metadata = tree.add_metadata("text", text)
   for verb in srl["verbs"]:
     predicate = verb["verb"]
     frame = Frame()
