@@ -1,0 +1,644 @@
+{
+    "params": {
+        "min_tokens": 5,
+        "max_tokens": 80,
+        "gpu": true,
+        "processes": 1,
+        "batch_size": 10000,
+        "batch_save": true,
+        "limit": 0,
+        "excluded_tokens_validation": ["zh", "ja"]
+    },
+    "pipelines": {
+        "en-cs": {
+            "source": "en-cs",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-cs-100": {
+            "source": "en-cs",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-de": {
+            "source": "en-de",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-de-100": {
+            "source": "en-de",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-el": {
+            "source": "en-el",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-el-100": {
+            "source": "en-el",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-en": {
+            "source": "en-en",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-en-100": {
+            "source": "en-en",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-es": {
+            "source": "en-es",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-es-100": {
+            "source": "en-es",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-fi": {
+            "source": "en-fi",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-fi-100": {
+            "source": "en-fi",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-fr": {
+            "source": "en-fr",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-fr-100": {
+            "source": "en-fr",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-hi": {
+            "source": "en-hi",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0,
+                "ccaligned": 2000000
+            }
+        },
+        "en-hi-100": {
+            "source": "en-hi",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50,
+                "ccaligned": 50
+            }
+        },
+        "en-hu": {
+            "source": "en-hu",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-hu-100": {
+            "source": "en-hu",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-id": {
+            "source": "en-id",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-id-100": {
+            "source": "en-id",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-it": {
+            "source": "en-it",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-it-100": {
+            "source": "en-it",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-ja": {
+            "source": "en-ja",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-ja-100": {
+            "source": "en-ja",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-kk": {
+            "source": "en-kk",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-kk-100": {
+            "source": "en-kk",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-ko": {
+            "source": "en-ko",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-ko-100": {
+            "source": "en-ko",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-mr": {
+            "source": "en-mr",
+            "sentences": {
+                "tatoeba": 0,
+                "ccaligned": 0
+            }
+        },
+        "en-mr-100": {
+            "source": "en-mr",
+            "sentences": {
+                "tatoeba": 50,
+                "ccaligned": 50
+            }
+        },
+        "en-nl": {
+            "source": "en-nl",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-nl-100": {
+            "source": "en-nl",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-pl": {
+            "source": "en-pl",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-pl-100": {
+            "source": "en-pl",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-pt": {
+            "source": "en-pt",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-pt-100": {
+            "source": "en-pt",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-ro": {
+            "source": "en-ro",
+            "sentences": {
+                "europarl": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-ro-100": {
+            "source": "en-ro",
+            "sentences": {
+                "europarl": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-ru": {
+            "source": "en-ru",
+            "sentences": {
+                "subtitles": 2000000,
+                "tatoeba": 0
+            }
+        },
+        "en-ru-100": {
+            "source": "en-ru",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-ta": {
+            "source": "en-ta",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0,
+                "ccaligned": 0
+            }
+        },
+        "en-ta-100": {
+            "source": "en-ta",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50,
+                "ccaligned": 50
+            }
+        },
+        "en-te": {
+            "source": "en-te",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0,
+                "ccaligned": 0
+            }
+        },
+        "en-te-100": {
+            "source": "en-te",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50,
+                "ccaligned": 50
+            }
+        },
+        "en-tk": {
+            "source": "en-tk",
+            "sentences": {
+                "tatoeba": 0
+            }
+        },
+        "en-tk-100": {
+            "source": "en-tk",
+            "sentences": {
+                "tatoeba": 100
+            }
+        },
+        "en-uk": {
+            "source": "en-uk",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-uk-100": {
+            "source": "en-uk",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-ur": {
+            "source": "en-ur",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0,
+                "ccaligned": 0
+            }
+        },
+        "en-ur-100": {
+            "source": "en-ur",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50,
+                "ccaligned": 50
+            }
+        },
+        "en-vi": {
+            "source": "en-vi",
+            "sentences": {
+                "subtitles": 0,
+                "tatoeba": 0
+            }
+        },
+        "en-vi-100": {
+            "source": "en-vi",
+            "sentences": {
+                "subtitles": 50,
+                "tatoeba": 50
+            }
+        },
+        "en-zh": {
+            "source": "en-zh",
+            "sentences": {
+                "subtitles": 2000000
+            }
+        },
+        "en-zh-100": {
+            "source": "en-zh",
+            "sentences": {
+                "subtitles": 100
+            }
+        }
+    },
+    "sources": {
+        "en-cs": {
+            "src_lang": "en",
+            "tgt_lang": "cs",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/cs-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/cs-en.txt.zip"
+            }
+        },
+        "en-de": {
+            "src_lang": "en",
+            "tgt_lang": "de",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/de-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/de-en.txt.zip"
+            }
+        },
+        "en-el": {
+            "src_lang": "en",
+            "tgt_lang": "el",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/el-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/el-en.txt.zip"
+            }
+        },
+        "en-en": {
+            "src_lang": "en",
+            "tgt_lang": "en",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-en.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-en.txt.zip"
+            }
+        },
+        "en-es": {
+            "src_lang": "en",
+            "tgt_lang": "es",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-es.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-es.txt.zip"
+            }
+        },
+        "en-fi": {
+            "src_lang": "en",
+            "tgt_lang": "fi",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-fi.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-fi.txt.zip"
+            }
+        },
+        "en-fr": {
+            "src_lang": "en",
+            "tgt_lang": "fr",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-fr.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-fr.txt.zip"
+            }
+        },
+        "en-hi": {
+            "src_lang": "en",
+            "tgt_lang": "hi",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-hi.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-hi.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-hi.txt.zip"
+            }
+        },
+        "en-hu": {
+            "src_lang": "en",
+            "tgt_lang": "hu",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-hu.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-hu.txt.zip"
+            }
+        },
+        "en-id": {
+            "src_lang": "en",
+            "tgt_lang": "id",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-id.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-id.txt.zip"
+            }
+        },
+        "en-it": {
+            "src_lang": "en",
+            "tgt_lang": "it",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-it.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-it.txt.zip"
+            }
+        },
+        "en-ja": {
+            "src_lang": "en",
+            "tgt_lang": "ja",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ja.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ja.txt.zip"
+            }
+        },
+        "en-kk": {
+            "src_lang": "en",
+            "tgt_lang": "kk",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-kk.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-kk.txt.zip"
+            }
+        },
+        "en-ko": {
+            "src_lang": "en",
+            "tgt_lang": "ko",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ko.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ko.txt.zip"
+            }
+        },
+        "en-mr": {
+            "src_lang": "en",
+            "tgt_lang": "mr",
+            "datasets": {
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-mr.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-mr.txt.zip"
+            }
+        },
+        "en-nl": {
+            "src_lang": "en",
+            "tgt_lang": "nl",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-nl.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-nl.txt.zip"
+            }
+        },
+        "en-pl": {
+            "src_lang": "en",
+            "tgt_lang": "pl",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-pl.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-pl.txt.zip"
+            }
+        },
+        "en-pt": {
+            "src_lang": "en",
+            "tgt_lang": "pt",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-pt.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-pt.txt.zip"
+            }
+        },
+        "en-ro": {
+            "src_lang": "en",
+            "tgt_lang": "ro",
+            "datasets": {
+                "europarl": "https://object.pouta.csc.fi/OPUS-Europarl/v8/moses/en-ro.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ro.txt.zip"
+            }
+        },
+        "en-ru": {
+            "src_lang": "en",
+            "tgt_lang": "ru",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ru.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ru.txt.zip"
+            }
+        },
+        "en-ta": {
+            "src_lang": "en",
+            "tgt_lang": "ta",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ta.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ta.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-ta.txt.zip"
+            }
+        },
+        "en-te": {
+            "src_lang": "en",
+            "tgt_lang": "te",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-te.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-te.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-te.txt.zip"
+            }
+        },
+        "en-tk": {
+            "src_lang": "en",
+            "tgt_lang": "tk",
+            "datasets": {
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-tk.txt.zip"
+            }
+        },
+        "en-uk": {
+            "src_lang": "en",
+            "tgt_lang": "uk",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-uk.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-uk.txt.zip"
+            }
+        },
+        "en-ur": {
+            "src_lang": "en",
+            "tgt_lang": "ur",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-ur.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-ur.txt.zip",
+                "ccaligned": "https://object.pouta.csc.fi/OPUS-CCAligned/v1/moses/en-ur.txt.zip"
+            }
+        },
+        "en-vi": {
+            "src_lang": "en",
+            "tgt_lang": "vi",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-vi.txt.zip",
+                "tatoeba": "https://object.pouta.csc.fi/OPUS-Tatoeba/v2021-07-22/moses/en-vi.txt.zip"
+            }
+        },
+        "en-zh": {
+            "src_lang": "en",
+            "tgt_lang": "zh",
+            "datasets": {
+                "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-zh_cn.txt.zip"
+            }
+        }
+    },
+    "universal-dependencies": {
+        "cs": "https://github.com/UniversalDependencies/UD_Czech-CAC",
+        "de": "https://github.com/UniversalDependencies/UD_German-GSD",
+        "el": "https://github.com/UniversalDependencies/UD_Greek-GDT ",
+        "es": "https://github.com/UniversalDependencies/UD_Spanish-GSD",
+        "fi": "https://github.com/UniversalDependencies/UD_Finnish-TDT",
+        "fr": "https://github.com/UniversalDependencies/UD_French-GSD",
+        "hi": "https://github.com/UniversalDependencies/UD_Hindi-HDTB",
+        "hu": "https://github.com/UniversalDependencies/UD_Hungarian-Szeged",
+        "id": "https://github.com/UniversalDependencies/UD_Indonesian-GSD",
+        "it": "https://github.com/UniversalDependencies/UD_Italian-ISDT",
+        "ja": "https://github.com/UniversalDependencies/UD_Japanese-GSD",
+        "kk": "https://github.com/UniversalDependencies/UD_Kazakh-KTB",
+        "ko": "https://github.com/UniversalDependencies/UD_Korean-GSD",
+        "mr": "https://github.com/UniversalDependencies/UD_Marathi-UFAL",
+        "nl": "https://github.com/UniversalDependencies/UD_Dutch-Alpino",
+        "pl": "https://github.com/UniversalDependencies/UD_Polish-PDB",
+        "pt": "https://github.com/UniversalDependencies/UD_Portuguese-Bosque",
+        "ro": "https://github.com/UniversalDependencies/UD_Romanian-RRT",
+        "ru": "https://github.com/UniversalDependencies/UD_Russian-GSD",
+        "ta": "https://github.com/UniversalDependencies/UD_Tamil-TTB",
+        "te": "https://github.com/UniversalDependencies/UD_Telugu-MTG",
+        "tk": "https://github.com/UniversalDependencies/UD_Turkish-IMST",
+        "uk": "https://github.com/UniversalDependencies/UD_Ukrainian-IU",
+        "ur": "https://github.com/UniversalDependencies/UD_Urdu-UDTB",
+        "vi": "https://github.com/UniversalDependencies/UD_Vietnamese-VTB",
+        "zh": "https://github.com/UniversalDependencies/UD_Chinese-GSD"
+    }
+}
