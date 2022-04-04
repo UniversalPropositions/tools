@@ -47,7 +47,7 @@ Configuration file attributes:
 - Sentences with the number of tokens lower than 5 and greater than 80 are removed
 - Sentences that does not contain at least one alpha character are removed
 - Multiple spaces in sentences are replaced by one space
-- Duplicated sentences are removed
+- Duplicate sentences are removed
 ### Parsing
 - Stanza parser is used with processors: tokenize, pos, lemma, depparse
 - In case some tokens contain space character at the end of this token we automatically strip it (for token, lemma and word)

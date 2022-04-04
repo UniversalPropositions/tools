@@ -54,10 +54,8 @@ def process(source, ud, spade):
     token = spade.tokens[t]
     text += " _"
     id = int(t)
-
     tree.add_token(id)
 
-  tree.add_metadata("text", text)
   for verb in srl["verbs"]:
     predicate = verb["verb"]
     frame = Frame()
@@ -92,9 +90,9 @@ if __name__ == '__main__':
     f1 = open(args.input_ud, encoding='utf8')
     f2 = open(args.input_spade, encoding='utf8')
     fo = open(args.output, "w", encoding='utf8')
-    for tree in zip_parse(f1, f2):
-      ud_tree = tree[0]
-      spade_tree = tree[1]
+    for tr in zip_parse(f1, f2):
+      ud_tree = tr[0]
+      spade_tree = tr[1]
       counter += 1
       new_tree = process(args.source, ud_tree, spade_tree)
       str_tree = new_tree.to_conllup()
@@ -102,6 +100,7 @@ if __name__ == '__main__':
 
   except Exception as e:
     logging.error(e)
+    raise e
   
   t1 = time.time()
 
