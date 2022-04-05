@@ -49,9 +49,7 @@ def process(ud, up):
 
     ud_token = ud.tokens[t]
 
-    id = int(t)
-
-    tt = tree.add_token(id)
+    tt = tree.add_token(t)
     tt.set_attribute("FORM", ud_token.attributes['FORM'])
     tt.set_attribute("LEMMA", ud_token.attributes['LEMMA'])
     tt.set_attribute("UPOS", ud_token.attributes['UPOS'])

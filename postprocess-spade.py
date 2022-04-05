@@ -48,10 +48,9 @@ def process(source, ud, spade):
   tree.add_metadata("text", text)
 
   text = ""
-  for t in spade.tokens:
+  for t in ud.tokens:
     text += " _"
-    id = int(t)
-    tree.add_token(id)
+    tree.add_token(t)
 
   for verb in srl["verbs"]:
     predicate = verb["verb"]
