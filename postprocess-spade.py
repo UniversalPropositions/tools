@@ -36,13 +36,12 @@ def process(source, ud, spade):
   
   tree = Tree(columns)
   
-  file_name = source
   sent_id = ud.metadata['sent_id'].value
   text = ud.metadata['text'].value
   span_srl = spade.metadata["span_srl"].value
   srl = json.loads(span_srl)
 
-  tree.add_metadata("source_sent_id", f"conllu http://hdl.handle.net/11234/1-4611 {file_name} {sent_id}")
+  tree.add_metadata("source_sent_id", f"conllu http://hdl.handle.net/11234/1-4611 {source} {sent_id}")
   
   tree.add_metadata("sent_id", f"{sent_id}")
   
@@ -50,8 +49,6 @@ def process(source, ud, spade):
 
   text = ""
   for t in spade.tokens:
-
-    token = spade.tokens[t]
     text += " _"
     id = int(t)
     tree.add_token(id)
