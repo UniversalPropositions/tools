@@ -45,11 +45,11 @@ def process(source, ud, spade):
   
   tree.add_metadata("sent_id", f"{sent_id}")
 
-  text = ""
-  for t in ud.tokens:
-    text += " _"
+  for t in spade.tokens:
     tree.add_token(t)
+    text += "_ "
 
+  text = text.strip()
   tree.add_metadata("text", text)
 
   for verb in srl["verbs"]:
