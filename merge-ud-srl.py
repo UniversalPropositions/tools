@@ -43,7 +43,7 @@ def process(ud, up):
   
   tree.add_metadata("source_sent_id", up.metadata["source_sent_id"].value)
   tree.add_metadata("sent_id", up.metadata["sent_id"].value)
-  tree.add_metadata("text", up.metadata["text"].value)
+  tree.add_metadata("text", ud.metadata["text"].value)
 
   for t in ud.tokens:
 
