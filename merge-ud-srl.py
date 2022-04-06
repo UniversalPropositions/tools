@@ -24,35 +24,32 @@ logging.basicConfig(
 def process(ud, up):
 
   columns = [
-            Column("ID", ColumnType.ID),
-            Column("FORM"), 
-            Column("LEMMA"),
-            Column("UPOS"), 
-            Column("XPOS"),
-            Column("FEATS"),
-            Column("HEAD"),
-            Column("DEPREL"),
-            Column("DEPS"),
-            Column("MISC"),
-            Column("UP:PREDS", ColumnType.UP_PREDS),
-            Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
-            Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
-        ]
+    Column("ID", ColumnType.ID),
+    Column("FORM"), 
+    Column("LEMMA"),
+    Column("UPOS"), 
+    Column("XPOS"),
+    Column("FEATS"),
+    Column("HEAD"),
+    Column("DEPREL"),
+    Column("DEPS"),
+    Column("MISC"),
+    Column("UP:PREDS", ColumnType.UP_PREDS),
+    Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
+    Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
+  ]
 
   tree = Tree(columns)
   
-  metadata = tree.add_metadata("source_sent_id", up.metadata["source_sent_id"].value)
-  metadata = tree.add_metadata("sent_id", up.metadata["sent_id"].value)
-  metadata = tree.add_metadata("text", up.metadata["text"].value)
+  tree.add_metadata("source_sent_id", up.metadata["source_sent_id"].value)
+  tree.add_metadata("sent_id", up.metadata["sent_id"].value)
+  tree.add_metadata("text", ud.metadata["text"].value)
 
   for t in ud.tokens:
 
     ud_token = ud.tokens[t]
-    up_token = up.tokens[t]
 
-    id = int(t)
-
-    tt = tree.add_token(id)
+    tt = tree.add_token(t)
     tt.set_attribute("FORM", ud_token.attributes['FORM'])
     tt.set_attribute("LEMMA", ud_token.attributes['LEMMA'])
     tt.set_attribute("UPOS", ud_token.attributes['UPOS'])
@@ -100,6 +97,7 @@ if __name__ == '__main__':
 
   except Exception as e:
     logging.error(e)
+    raise e
   
   t1 = time.time()
 
