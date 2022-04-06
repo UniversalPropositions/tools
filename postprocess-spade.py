@@ -46,7 +46,7 @@ def process(source, ud, spade):
   tree.add_metadata("sent_id", f"{sent_id}")
 
   text = ""
-  for t in spade.tokens:
+  for t in ud.tokens:
     tree.add_token(t)
     text += "_ "
 
