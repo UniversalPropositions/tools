@@ -37,23 +37,22 @@ def process(source, ud, spade):
   tree = Tree(columns)
   
   sent_id = ud.metadata['sent_id'].value
-  text = ud.metadata['text'].value
+  #text = ud.metadata['text'].value
   span_srl = spade.metadata["span_srl"].value
   srl = json.loads(span_srl)
 
   tree.add_metadata("source_sent_id", f"conllu http://hdl.handle.net/11234/1-4611 {source} {sent_id}")
   
   tree.add_metadata("sent_id", f"{sent_id}")
-  
+
+  text = ""
+  for t in spade.tokens:
+    tree.add_token(t)
+    text += "_ "
+
+  text = text.strip()
   tree.add_metadata("text", text)
 
-  for t in spade.tokens:
-
-    token = spade.tokens[t]
-
-    id = int(t)
-
-    tree.add_token(id)
   for verb in srl["verbs"]:
     predicate = verb["verb"]
     frame = Frame()
