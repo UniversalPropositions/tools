@@ -91,6 +91,7 @@ if __name__ == '__main__':
       ud_tree = tree[0]
       up_tree = tree[1]
       counter += 1
+      print(f"sentence {counter}")
       new_tree = process(ud_tree, up_tree)
       str_tree = new_tree.to_conllup()
       fo.write(str_tree + "\n\n")
