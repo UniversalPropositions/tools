@@ -29,9 +29,9 @@ def process(source, ud, spade):
 
   columns = [
     Column("ID", ColumnType.ID),
-    Column("UP:PREDS", ColumnType.UP_PREDS),
-    Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
-    Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
+    Column("UP:PRED", ColumnType.UP_PREDS),
+    Column("UP:ARGHEADS", ColumnType.UP_DEPARGS),
+    Column("UP:ARGSPANS", ColumnType.UP_SPANARGS)
   ]
   
   tree = Tree(columns)
@@ -103,3 +103,4 @@ if __name__ == '__main__':
   t1 = time.time()
 
   logging.info(f'Total postprocess-spade time: {(t1 - t0):.2f} s, processed sentences: {counter}')
+
