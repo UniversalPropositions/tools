@@ -5,7 +5,7 @@ Script fixes word_alignment results using parse results for tokens that contain 
 import argparse
 import time
 import json
-import impl.utils as utils
+from utils import read_config
 import logging
 from stanza.utils.conll import CoNLL
 
@@ -128,7 +128,7 @@ if __name__ == '__main__':
 
   try:
 
-    config = utils.read_config()
+    config = read_config()
 
     args = parser.parse_args()
 

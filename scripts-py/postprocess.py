@@ -6,7 +6,7 @@ into more than one sentence. It creates new files with _ at the beginning of the
 import argparse
 import time
 import re
-import impl.utils as utils
+from utils import read_config
 import logging
 import glob
 import os
@@ -90,10 +90,6 @@ def remove_from_text(file, sentences):
 
 def remove_from_srl(file, sentences, output_file):
   try:
-    # segments = file.split("/")
-    # segments[-1] = "_" + segments[-1]
-    # output_file = "/".join(segments)
-
     output = open(output_file, 'w', encoding='utf8')
 
     sentence_number = 0
@@ -185,7 +181,7 @@ if __name__ == '__main__':
 
   try:
 
-    config = utils.read_config()
+    config = read_config()
 
     args = parser.parse_args()
 

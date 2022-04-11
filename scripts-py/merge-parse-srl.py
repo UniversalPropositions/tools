@@ -1,6 +1,6 @@
 import os
 import argparse
-import impl.utils as utils
+from utils import read_config
 
 def read_large_data(filename):
     """
@@ -31,7 +31,7 @@ if __name__ == "__main__":
     parser.add_argument('--pipeline', type=str, default="en-fr-200k")
 
     args = parser.parse_args()
-    config = utils.read_config()
+    config = read_config()
     pipeline = config["pipelines"][args.pipeline]
     source = config["sources"][pipeline["source"]]
     src_lang = source["src_lang"]

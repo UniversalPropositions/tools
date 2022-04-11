@@ -6,9 +6,7 @@ import logging
 import time
 import argparse
 from conllup import zip_parse
-import json
 from conllup.model.tree import Tree
-from conllup.model.metadata import Metadata
 from conllup.model.column import Column, ColumnType
 
 logging.basicConfig(
@@ -34,9 +32,9 @@ def process(ud, up):
     Column("DEPREL"),
     Column("DEPS"),
     Column("MISC"),
-    Column("UP:PREDS", ColumnType.UP_PREDS),
-    Column("UP:DEPARGS", ColumnType.UP_DEPARGS),
-    Column("UP:SPANARGS", ColumnType.UP_SPANARGS)
+    Column("UP:PRED", ColumnType.UP_PRED),
+    Column("UP:ARGHEADS", ColumnType.UP_ARGHEADS),
+    Column("UP:ARGSPANS", ColumnType.UP_ARGSPANS)
   ]
 
   tree = Tree(columns)

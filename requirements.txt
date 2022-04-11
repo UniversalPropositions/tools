@@ -1,3 +1,7 @@
+requests
+matplotlib
+numpy
+torch
+stanza
+conllu
 conllup @ file:///Users/michal/git/essp/up2/dist/conllup-0.1.0-py3-none-any.whl
-Pillow==9.0.1
-pybind11==2.9.1

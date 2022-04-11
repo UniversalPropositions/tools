@@ -1,8 +1,38 @@
 # UniversalPropositions 2.0 - processing scripts
 
+## Virtual Environment
+```
+mkdir envs
+cd envs
+python3 -m venv up2
+cd ..
+source envs/up2/bin/activate
+pip install --upgrade pip
+```
+
+## Make scripts executable
+```
+chmod 700 ./scripts-sh/*.sh
+chmod 700 ./test/*.sh
+```
+## Libraries
+Visit https://pytorch.org/get-started/locally/ and select appropriate version for your environment. For example for Windows pip with Cuda 11.3:
+```
+pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+```
+For mac:
+```
+pip3 install torch
+```
+Other libraries:
+```
+pip install --upgrade git+https://github.com/cisnlp/simalign.git#egg=simalign
+pip install -r requirements.txt
+```
 ## Description
 Available scripts:
 - download.py
+- histogram.py
 - preprocess.py
 - parse.py
 - merge-parse.py
@@ -155,20 +185,7 @@ Activate python virtual environment:
 ```
 source envs/ud20/bin/activate
 ```
-## Libraries
-Visit https://pytorch.org/get-started/locally/ and select appropriate version for your environment. For example for Windows pip with Cuda 11.3:
-```
-pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
-```
-For mac:
-```
-pip3 install torch torchvision torchaudio
-```
-Other libraries:
-```
-pip install --upgrade git+https://github.com/cisnlp/simalign.git#egg=simalign
-pip install -r requirements.txt
-```
+
 ## Folders structure
 Sample folder structure
 ```
@@ -196,6 +213,10 @@ This is important to keep the order of scripts execution.
 ### download.py
 ```
 python3 download.py --source=en-fr
+```
+### histogram.py
+```
+python3 py-scripts/histogram.py --file=./data/source/en-fr/europarl/Europarl.en-fr.en
 ```
 ### preprocess.py
 ```

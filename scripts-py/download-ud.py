@@ -9,7 +9,7 @@ import requests
 import os
 import zipfile
 import logging
-import impl.utils as utils
+from utils import read_config
 import glob
 import re
 from urllib.parse import urlparse
@@ -74,7 +74,7 @@ if __name__ == '__main__':
 
   t0 = time.time()
 
-  config = utils.read_config()
+  config = read_config()
 
   if args.ud not in config["universal-dependencies"]:
     raise Exception("Universal dependencies definition not available")

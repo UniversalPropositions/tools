@@ -7,7 +7,7 @@ Processing results are stored in ./data/[pipeline]/bitext_raw/ folder.
 import argparse
 import time
 import re
-import impl.utils as utils
+from utils import read_config
 import logging
 import glob
 import os
@@ -161,7 +161,7 @@ if __name__ == '__main__':
 
   try:
 
-    config = utils.read_config()
+    config = read_config()
 
     args = parser.parse_args()
 

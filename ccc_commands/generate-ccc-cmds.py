@@ -275,7 +275,7 @@ def generate_config(pairs, df, subset=100):
 
 if __name__ == "__main__":
 
-    with open("../sr-tl.txt", "r") as f:
+    with open("sr-tl.txt", "r") as f:
         pairs = f.readlines()
     pairs = [x.strip() for x in pairs]
     pair = "en-fr"
@@ -290,7 +290,7 @@ if __name__ == "__main__":
 
     config = generate_config(pairs, dfs["Common_languages"])
 
-    with open("config_new.json", "w") as file:
+    with open("config.json", "w") as file:
 
         app_json = json.dump(config, file, indent=4)
     # print(app_json)

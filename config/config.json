@@ -2,10 +2,10 @@
     "params": {
         "min_tokens": 5,
         "max_tokens": 80,
-        "gpu": true,
+        "gpu": false,
         "processes": 1,
         "batch_size": 10000,
-        "batch_save": true,
+        "batch_save": false,
         "limit": 0,
         "excluded_tokens_validation": ["zh", "ja"]
     },

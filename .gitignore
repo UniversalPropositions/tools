@@ -129,5 +129,5 @@ dmypy.json
 envs
 .vscode
 data/
-logs/
+logs/*
 .DS_Store

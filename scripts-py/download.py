@@ -9,7 +9,7 @@ import requests
 import os
 import zipfile
 import logging
-import impl.utils as utils
+from utils import read_config
 import glob
 
 REPLACEMENTS = [
@@ -86,7 +86,7 @@ if __name__ == '__main__':
 
   t0 = time.time()
 
-  config = utils.read_config()
+  config = read_config()
 
   if args.source not in config["sources"]:
     raise Exception("Source definition not available")

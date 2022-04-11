@@ -29,9 +29,9 @@ def process(source, ud, spade):
 
   columns = [
     Column("ID", ColumnType.ID),
-    Column("UP:PRED", ColumnType.UP_PREDS),
-    Column("UP:ARGHEADS", ColumnType.UP_DEPARGS),
-    Column("UP:ARGSPANS", ColumnType.UP_SPANARGS)
+    Column("UP:PRED", ColumnType.UP_PRED),
+    Column("UP:ARGHEADS", ColumnType.UP_ARGHEADS),
+    Column("UP:ARGSPANS", ColumnType.UP_ARGSPANS)
   ]
   
   tree = Tree(columns)

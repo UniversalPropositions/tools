@@ -4,7 +4,7 @@ from ./data/[pipeline]/align/tmp/ to a single file that contain all sentences st
 in ./data/[pipeline]/align/ folder.
 '''
 import argparse
-import impl.utils as utils
+from utils import read_config
 import logging
 import time
 import glob
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
  
-  config = utils.read_config()
+  config = read_config()
 
   if args.pipeline not in config["pipelines"]:
     raise Exception("Pipeline not available")

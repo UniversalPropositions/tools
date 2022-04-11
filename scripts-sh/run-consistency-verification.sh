@@ -1,5 +1,5 @@
 #bash
-# execute chmod 777 consistency.sh to make it executable (only once)
+# execute chmod 700 consistency.sh to make it executable (only once)
 # then call it for example: ./consistency.sh en-fr-200k en fr
 # so this is ./consistency [pipeline] [src_lang] [tgt_lang] (edited) 
 # sample error response:

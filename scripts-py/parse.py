@@ -15,8 +15,7 @@ import torch
 from stanza.utils.conll import CoNLL
 import json
 import logging
-import impl.utils as utils
-from random import randrange
+from utils import read_config, get_cuda_info, set_cuda_device
 import os 
 from typing import List
 
@@ -100,8 +99,10 @@ def process_batch(batch_data: dict) -> dict:
       current_process = 1
     gpu = batch_data["gpu"]
     if gpu:
+      if torch.cuda.device_count() == 0:
+        raise Exception("GPU device not found")
       device = current_process % torch.cuda.device_count()
-      utils.set_cuda_device(device)
+      set_cuda_device(device)
     else:
       device = "cpu"
     lang = batch_data["lang"]
@@ -283,7 +284,7 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
  
-  config = utils.read_config()
+  config = read_config()
 
   if args.pipeline not in config["pipelines"]:
     raise Exception("Pipeline not available")
@@ -297,7 +298,7 @@ if __name__ == '__main__':
   except Exception:
     selected_sentences = None
     
-  cuda = utils.get_cuda_info()
+  cuda = get_cuda_info()
 
   logging.info("Cuda: " + json.dumps(cuda))
 

@@ -10,7 +10,7 @@ from simalign import SentenceAligner
 from multiprocessing import Pool
 import multiprocessing
 import torch
-import impl.utils as utils
+from utils import read_config, set_cuda_device, get_cuda_info
 import logging
 import os
 import json
@@ -111,7 +111,7 @@ def process_batch(batch_data: dict) -> dict:
     gpu = batch_data["gpu"]
     if gpu:
       device = current_process % torch.cuda.device_count()
-      utils.set_cuda_device(device)
+      set_cuda_device(device)
       device = "cuda:"+str(device)
     else:
       device = "cpu"
@@ -156,12 +156,12 @@ if __name__ == '__main__':
 
   args = parser.parse_args()
 
-  config = utils.read_config()
+  config = read_config()
 
   if args.pipeline not in config["pipelines"]:
       raise Exception("Pipeline not available")
 
-  cuda = utils.get_cuda_info()
+  cuda = get_cuda_info()
 
   logging.info("Cuda: " + json.dumps(cuda))
 
