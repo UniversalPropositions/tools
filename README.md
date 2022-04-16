@@ -63,7 +63,11 @@ Configuration file attributes:
         - europarl (optional) - url to europarl dataset
         - tatoeba (optional) - url to tatoeba dataset
         - subtitles (optional) - url to subtitles dataset
-
+## Tests
+Run tests:
+```
+python run-tests.py
+```
 ## Processing assumptions
 ### Preprocessing
 - Multiple parallel corpora datasets are combined into one parallel corpora file
