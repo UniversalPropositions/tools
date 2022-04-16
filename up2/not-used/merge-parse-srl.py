@@ -2,6 +2,7 @@ import os
 import argparse
 from utils import read_config
 
+
 def read_large_data(filename):
     """
     To get one sentence at a time from a big file
@@ -24,9 +25,8 @@ def read_large_data(filename):
         yield sen
 
 
-
-
 if __name__ == "__main__":
+    
     parser = argparse.ArgumentParser(description='Merge Parser with srl')
     parser.add_argument('--pipeline', type=str, default="en-fr-200k")
 
@@ -48,19 +48,15 @@ if __name__ == "__main__":
     if not os.path.exists(nnsrl):
         os.makedirs(nnsrl)
 
-    parsed_file = os.path.join(parsed, "_{}.{}.parsed.conllu".format(args.pipeline, src_lang))
-    srl_file = os.path.join(tokenized, "_{}.{}.tokenized.txt.srl".format(args.pipeline, src_lang))
-    labeled_file = os.path.join(nnsrl, "_{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
+    parsed_file = os.path.join(
+        parsed, "_{}.{}.parsed.conllu".format(args.pipeline, src_lang))
+    srl_file = os.path.join(
+        tokenized, "_{}.{}.tokenized.txt.srl".format(args.pipeline, src_lang))
+    labeled_file = os.path.join(
+        nnsrl, "_{}.{}.labeled.nn.conllu".format(args.pipeline, src_lang))
     f_out = open(labeled_file, "w")
-    # for sen_id, sen in enumerate(read_large_data(parsed_file)):
-    #     print("\rsen no {}".format(sen_id), end="")
-    # print("\n")
-    # for sen_id, sen in enumerate(read_large_data(labeled_file)):
-    #     print("\rsen no {}".format(sen_id), end="")
-    # data = Reader(parsed_file, "conllu")
     i = 0
-    for  sen_parse, sen_srl in zip(read_large_data(parsed_file), read_large_data(srl_file)):
-        # print(sen_parse[1], sen_srl[0])
+    for sen_parse, sen_srl in zip(read_large_data(parsed_file), read_large_data(srl_file)):
         parse_srl = []
         parse_sen = []
         srl_sen = []
@@ -93,8 +89,3 @@ if __name__ == "__main__":
 
         i += 1
     f_out.close()
-    print("haha")
-
-
-
-

@@ -1,1 +1,0 @@
-./scripts-sh/run-pipeline.sh en-pl-100

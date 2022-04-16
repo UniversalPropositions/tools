@@ -5,7 +5,7 @@
         "gpu": false,
         "processes": 1,
         "batch_size": 10000,
-        "batch_save": false,
+        "batch_save": true,
         "limit": 0,
         "excluded_tokens_validation": ["zh", "ja"]
     },
@@ -399,6 +399,12 @@
             "sentences": {
                 "subtitles": 100
             }
+        },
+        "en-test": {
+            "source": "en-test",
+            "sentences": {
+                "europarl": 0
+            }
         }
     },
     "sources": {
@@ -619,34 +625,13 @@
             "datasets": {
                 "subtitles": "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/moses/en-zh_cn.txt.zip"
             }
+        },
+        "en-test": {
+            "src_lang": "en",
+            "tgt_lang": "pl",
+            "datasets": {
+                "europarl": "./tests/data/Europarl.zip"
+            }
         }
-    },
-    "universal-dependencies": {
-        "cs": "https://github.com/UniversalDependencies/UD_Czech-CAC",
-        "de": "https://github.com/UniversalDependencies/UD_German-GSD",
-        "el": "https://github.com/UniversalDependencies/UD_Greek-GDT ",
-        "es": "https://github.com/UniversalDependencies/UD_Spanish-GSD",
-        "fi": "https://github.com/UniversalDependencies/UD_Finnish-TDT",
-        "fr": "https://github.com/UniversalDependencies/UD_French-GSD",
-        "hi": "https://github.com/UniversalDependencies/UD_Hindi-HDTB",
-        "hu": "https://github.com/UniversalDependencies/UD_Hungarian-Szeged",
-        "id": "https://github.com/UniversalDependencies/UD_Indonesian-GSD",
-        "it": "https://github.com/UniversalDependencies/UD_Italian-ISDT",
-        "ja": "https://github.com/UniversalDependencies/UD_Japanese-GSD",
-        "kk": "https://github.com/UniversalDependencies/UD_Kazakh-KTB",
-        "ko": "https://github.com/UniversalDependencies/UD_Korean-GSD",
-        "mr": "https://github.com/UniversalDependencies/UD_Marathi-UFAL",
-        "nl": "https://github.com/UniversalDependencies/UD_Dutch-Alpino",
-        "pl": "https://github.com/UniversalDependencies/UD_Polish-PDB",
-        "pt": "https://github.com/UniversalDependencies/UD_Portuguese-Bosque",
-        "ro": "https://github.com/UniversalDependencies/UD_Romanian-RRT",
-        "ru": "https://github.com/UniversalDependencies/UD_Russian-GSD",
-        "ta": "https://github.com/UniversalDependencies/UD_Tamil-TTB",
-        "te": "https://github.com/UniversalDependencies/UD_Telugu-MTG",
-        "tk": "https://github.com/UniversalDependencies/UD_Turkish-IMST",
-        "uk": "https://github.com/UniversalDependencies/UD_Ukrainian-IU",
-        "ur": "https://github.com/UniversalDependencies/UD_Urdu-UDTB",
-        "vi": "https://github.com/UniversalDependencies/UD_Vietnamese-VTB",
-        "zh": "https://github.com/UniversalDependencies/UD_Chinese-GSD"
     }
 }
