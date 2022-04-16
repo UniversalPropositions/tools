@@ -1,4 +1,4 @@
-# UniversalPropositions 2.0 - tools
+# Universal Propositions 2.0 - tools
 
 ## Virtual Environment
 ```
@@ -24,7 +24,8 @@ pip install --upgrade git+https://github.com/cisnlp/simalign.git#egg=simalign
 pip install -r requirements.txt
 ```
 ## Description
-Repository contains two groups of scripts. 
+Repository contains two groups of scripts.
+
 Scripts to be executed before bootstrap training:
 - download.py
 - preprocess.py
@@ -33,6 +34,7 @@ Scripts to be executed before bootstrap training:
 - wordalignment.py
 - merge_align.py
 - postprocess.py
+
 Script to be executed after bootstrap training:
 - spade_to_up.py
 - merge_ud_up.py
@@ -97,7 +99,7 @@ Input files are read from ./data/[pipeline]/bitext_raw/ folder.
 Output files are stored in: ./data/[pipeline]/parsed/ and ./data/[pipeline]/tokenized/ folders.
 Execution log is stored in ./logs/parse.log file.
 
-### merge-parse.py
+### merge_parse.py
 Used only if params.save_batch is set to true. Allows to merge all the batch results from ./data/[pipeline]/tokenized/tmp/ and ./data/[pipeline]/parsed/tmp to single files that contain all sentences stored in ./data/[pipeline]/tokenized/ and ./data/[pipeline]/parsed/ folders.
 Execution log is stored in ./logs/merge_parse.log file.
 
@@ -107,7 +109,7 @@ Input files are read from ./data/[pipeline]/tokenized.
 Output file is stored in ./data/[pipeline]/aligned/training.align file.
 Execution log is stored in ./logs/wordalignment.log file.
 
-### merge-align.py
+### merge_align.py
 Used only if params.save_batch is set to true. Allows to merge all the batch results from ./data/[pipeline]/align/tmp/ to a single file that contains all sentences stored in ./data/[pipeline]/align/ folder.
 Execution log is stored in ./logs/merge-align.log file.
 
