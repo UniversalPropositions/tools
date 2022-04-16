@@ -182,10 +182,9 @@ python3 up2/postprocess.py --pipeline=en-fr
 ```
 ### spade_to_up.py
 ```
-python3 up2/spade_to_up.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./data/ud/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=./data/ud/hi/hi_hdtb-up-dev.conllu
+python3 up2/spade_to_up.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_ud=./tests/data/ud/hi/hi_hdtb-ud-dev.conllu --input_spade=./tests/data/spade/hi/hi_hdtb-ud-dev.conllu.spade.conllu --output=././tests/data/up/hi/hi_hdtb-up-dev.conllu
 ```
 ### merge_ud_up.py
 ```
-python3 up2/merge_ud_up.py --input_ud=./data/ud/hi/hi_hdtb-ud-dev.conllu --in
-put_up=./data/ud/hi/hi_hdtb-up-dev.conllu --output=./data/ud/hi/hi_hdtb-srl-dev.conllu
+python3 up2/merge_ud_up.py input_ud=./tests/data/ud/hi/ --input_up=./tests/data/up/hi/ --output=./tests/data/ud-up/hi/
 ```
