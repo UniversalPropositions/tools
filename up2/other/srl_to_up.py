@@ -26,16 +26,16 @@ logging.basicConfig(
 def process(input: Tree) -> Tree:
     
     output_columns = [
-        Column("ID", ColumnType.ID),
-        Column("FORM"),
-        Column("LEMMA"),
-        Column("UPOS"),
-        Column("XPOS"),
-        Column("FEATS"),
-        Column("HEAD"),
-        Column("DEPREL"),
-        Column("UP:PRED", ColumnType.UP_PRED),
-        Column("UP:ARGHEADS", ColumnType.UP_ARGHEADS),
+        Column("STANZA:ID", ColumnType.ID),
+        Column("STANZA:FORM"),
+        Column("STANZA:LEMMA"),
+        Column("STANZA:UPOS"),
+        Column("STANZA:XPOS"),
+        Column("STANZA:FEATS"),
+        Column("STANZA:HEAD"),
+        Column("STANZA:DEPREL"),
+        Column("GOLD:PRED", ColumnType.UP_PRED),
+        Column("GOLD:ARGHEADS", ColumnType.UP_ARGHEADS),
     ]
 
     output = Tree(output_columns)
@@ -50,7 +50,8 @@ def process(input: Tree) -> Tree:
     for t in input.get_tokens():
         token = output.add_token(t.get_id())
         for c in output.get_columns_by_type(ColumnType.BASIC):
-            token.set_attribute(c, t.get_attribute(c))
+            cc = c.get_name().split(":")[1]
+            token.set_attribute(c, t.get_attribute(cc))
 
     return output
 
