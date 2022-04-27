@@ -1,4 +1,4 @@
-# Universal Propositions 2.0 - tools
+# Universal Propositions - tools
 
 ## Virtual Environment
 ```
