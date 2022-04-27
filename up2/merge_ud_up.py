@@ -52,20 +52,18 @@ def process(ud: Tree, up: Tree) -> Tree:
     for m in ud.get_metadata():
         tree.add_metadata(m, ud.get_metadata(m).get_value())
 
-    for t in ud.tokens:
+    for ud_token in ud.get_tokens():
 
-        ud_token = ud.tokens[t]
-
-        tt = tree.add_token(t)
-        tt.set_attribute("FORM", ud_token.attributes['FORM'])
-        tt.set_attribute("LEMMA", ud_token.attributes['LEMMA'])
-        tt.set_attribute("UPOS", ud_token.attributes['UPOS'])
-        tt.set_attribute("XPOS", ud_token.attributes['XPOS'])
-        tt.set_attribute("FEATS", ud_token.attributes['FEATS'])
-        tt.set_attribute("HEAD", ud_token.attributes['HEAD'])
-        tt.set_attribute("DEPREL", ud_token.attributes['DEPREL'])
-        tt.set_attribute("DEPS", ud_token.attributes['DEPS'])
-        tt.set_attribute("MISC", ud_token.attributes['MISC'])
+        tt = tree.add_token(ud_token.get_id())
+        tt.set_attribute("FORM", ud_token.get_attribute('FORM'))
+        tt.set_attribute("LEMMA", ud_token.get_attribute('LEMMA'))
+        tt.set_attribute("UPOS", ud_token.get_attribute('UPOS'))
+        tt.set_attribute("XPOS", ud_token.get_attribute('XPOS'))
+        tt.set_attribute("FEATS", ud_token.get_attribute('FEATS'))
+        tt.set_attribute("HEAD", ud_token.get_attribute('HEAD'))
+        tt.set_attribute("DEPREL", ud_token.get_attribute('DEPREL'))
+        tt.set_attribute("DEPS", ud_token.get_attribute('DEPS'))
+        tt.set_attribute("MISC", ud_token.get_attribute('MISC'))
 
     for frame in up.get_frames():
         tree.add_frame(frame)
@@ -104,7 +102,7 @@ def process_file(ud, up, output):
             f'Processing time: {(t1 - t0):.2f} s, processed sentences: {counter}')
 
 def process_folders(ud, up, out):
-    files = glob.glob(f'{up}/**/*.conllu', recursive=True)
+    files = glob.glob(f'{up}/**/*.conllu*', recursive=True)
     for up_file in files:
         ud_file = up_file.replace(up, ud).replace("-up-", "-ud-").replace(".conllup", ".conllu")
         out_file = up_file.replace(up, out).replace("-up-", "-ud-up-")

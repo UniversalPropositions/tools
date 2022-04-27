@@ -1,5 +1,4 @@
 requests
-matplotlib
 numpy
 torch
 stanza

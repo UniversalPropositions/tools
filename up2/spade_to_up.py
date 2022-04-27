@@ -44,8 +44,8 @@ def process(source: str, ud: Tree, spade: Tree) -> Tree:
 
     tree = Tree(columns)
 
-    sent_id = ud.metadata['sent_id'].value
-    span_srl = spade.metadata["span_srl"].value
+    sent_id = ud.get_metadata('sent_id').get_value()
+    span_srl = spade.get_metadata("span_srl").get_value()
     srl = json.loads(span_srl)
 
     tree.add_metadata(
@@ -54,8 +54,8 @@ def process(source: str, ud: Tree, spade: Tree) -> Tree:
     tree.add_metadata("sent_id", f"{sent_id}")
 
     text = ""
-    for t in ud.tokens:
-        tree.add_token(t)
+    for t in ud.get_tokens():
+        tree.add_token(t.get_id())
         text += "_ "
 
     text = text.strip()

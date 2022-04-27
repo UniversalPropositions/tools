@@ -10,13 +10,9 @@ source envs/up/bin/activate
 pip install --upgrade pip
 ```
 ## Libraries
-Visit https://pytorch.org/get-started/locally/ and select appropriate version for your environment. For example for Windows pip with Cuda 11.3:
+`requirements.txt` file assumes standard torch library without GPU support will be used. To install torch with GPU support visit https://pytorch.org/get-started/locally/ and select appropriate version for your environment and remove torch from `requirements.txt`. For example for Windows pip with Cuda 11.3 it can be:
 ```
 pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio===0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
-```
-For Mac OS X:
-```
-pip3 install torch
 ```
 Other libraries:
 ```
