@@ -19,7 +19,8 @@ from up2.utils import read_config, get_cuda_info, set_cuda_device
 import os
 from typing import List
 
-os.makedirs("./logs", exist_ok=True)
+if not os.path.exists("./logs/"):
+    os.makedirs("./logs/")
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',

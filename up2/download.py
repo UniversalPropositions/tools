@@ -18,7 +18,8 @@ REPLACEMENTS = [
     }
 ]
 
-os.makedirs("./logs", exist_ok=True)
+if not os.path.exists("./logs/"):
+    os.makedirs("./logs/")
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
