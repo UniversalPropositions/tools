@@ -11,8 +11,9 @@ from os import path
 import glob
 import os
 
-os.makedirs("./logs", exist_ok=True)
-
+if not os.path.exists("./logs/"):
+    os.makedirs("./logs/")
+        
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
     datefmt='%Y/%m/%d %H:%M:%S',
