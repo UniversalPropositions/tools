@@ -19,6 +19,8 @@ from up2.utils import read_config, get_cuda_info, set_cuda_device
 import os
 from typing import List
 
+os.makedirs("./logs", exist_ok=True)
+
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
     datefmt='%Y/%m/%d %H:%M:%S',

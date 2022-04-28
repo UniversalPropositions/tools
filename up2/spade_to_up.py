@@ -12,7 +12,10 @@ from conllup.model.frame import Frame
 from conllup.model.predicate import Predicate
 from conllup.model.argument import Argument
 from os import path
+import os
 import glob
+
+os.makedirs("./logs", exist_ok=True)
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',

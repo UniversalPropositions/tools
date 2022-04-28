@@ -9,6 +9,9 @@ from up2.utils import read_config
 import logging
 import time
 import glob
+import os
+
+os.makedirs("./logs", exist_ok=True)
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',

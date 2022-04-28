@@ -11,6 +11,8 @@ from os import path
 import glob
 import os
 
+os.makedirs("./logs", exist_ok=True)
+
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
     datefmt='%Y/%m/%d %H:%M:%S',
@@ -109,7 +111,9 @@ def process_folders(ud, up, out):
         process_file(ud_file, up_file, out_file)
 
 def merge_ud_up(input_ud, input_up, output):
-    if path.isdir(input_ud) and path.isdir(input_up) and path.isdir(output):
+    if path.isdir(input_ud) and path.isdir(input_up):
+        if not os.path.exists(output):
+            os.makedirs(output, exist_ok=True)
         process_folders(input_ud, input_up, output)
     elif path.isfile(input_ud) and path.isfile(input_up):
         process_file(input_ud, input_up, output)

@@ -8,8 +8,11 @@ import time
 from up2.utils import read_config
 import logging
 from stanza.utils.conll import CoNLL
+import os
 
 LINESEP = "\n"
+
+os.makedirs("./logs", exist_ok=True)
 
 logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
