@@ -15,6 +15,8 @@ logging.basicConfig(
     format='%(asctime)s %(levelname)s %(message)s',
     datefmt='%Y/%m/%d %H:%M:%S',
     level=logging.INFO,
+    if not os.path.exists("./logs/"):
+        os.makedirs("./logs/")
     handlers=[
         logging.FileHandler("./logs/merge_ud_up.log"),
         logging.StreamHandler()
