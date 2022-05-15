@@ -7,7 +7,7 @@ Processing results are stored in ./data/[pipeline]/bitext_raw/ folder.
 import argparse
 import time
 import re
-from up2.utils import read_config
+from utils import read_config
 import logging
 import glob
 import os

@@ -8,7 +8,7 @@ import requests
 import os
 import zipfile
 import logging
-from up2.utils import read_config
+from utils import read_config
 import glob
 
 REPLACEMENTS = [

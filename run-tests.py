@@ -1,6 +1,9 @@
 import unittest
+import sys
 
-#import tests.test_download
+sys.path.insert(0, "./up2")
+
+import tests.test_download
 import tests.test_preprocess
 import tests.test_parse
 import tests.test_merge_parse

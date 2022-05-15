@@ -182,5 +182,5 @@ python3 up2/spade_to_up.py --source=UD_Hindi-HDTB/hi_hdtb-ud-dev.conllu --input_
 ```
 ### merge_ud_up.py
 ```
-python3 up2/merge_ud_up.py input_ud=./tests/data/ud/hi/ --input_up=./tests/data/up/hi/ --output=./tests/data/ud-up/hi/
+python3 up2/merge_ud_up.py --input_ud=./tests/data/ud/hi/ --input_up=./tests/data/up/hi/ --output=./tests/data/ud-up/hi/
 ```

@@ -15,7 +15,7 @@ import torch
 from stanza.utils.conll import CoNLL
 import json
 import logging
-from up2.utils import read_config, get_cuda_info, set_cuda_device
+from utils import read_config, get_cuda_info, set_cuda_device
 import os
 from typing import List
 

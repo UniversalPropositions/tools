@@ -10,7 +10,7 @@ from simalign import SentenceAligner
 from multiprocessing import Pool
 import multiprocessing
 import torch
-from up2.utils import read_config, set_cuda_device, get_cuda_info
+from utils import read_config, set_cuda_device, get_cuda_info
 import logging
 import os
 import json

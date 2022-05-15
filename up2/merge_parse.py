@@ -5,7 +5,7 @@ that contain all sentences stored in ./data/[pipeline]/tokenized/ and
 ./data/[pipeline]/parsed/ folders.
 '''
 import argparse
-from up2.utils import read_config
+from utils import read_config
 import logging
 import time
 import glob

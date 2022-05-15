@@ -4,7 +4,7 @@ from ./data/[pipeline]/align/tmp/ to a single file that contain all sentences st
 in ./data/[pipeline]/align/ folder.
 '''
 import argparse
-from up2.utils import read_config
+from utils import read_config
 import logging
 import time
 import glob
