@@ -43,8 +43,6 @@ def process(ud: Tree, up: Tree) -> Tree:
         Column("FEATS"),
         Column("HEAD"),
         Column("DEPREL"),
-        Column("DEPS"),
-        Column("MISC"),
         Column("UP:PRED", ColumnType.UP_PRED),
         Column("UP:ARGHEADS", ColumnType.UP_ARGHEADS),
         Column("UP:ARGSPANS", ColumnType.UP_ARGSPANS)
@@ -65,8 +63,6 @@ def process(ud: Tree, up: Tree) -> Tree:
         tt.set_attribute("FEATS", ud_token.get_attribute('FEATS'))
         tt.set_attribute("HEAD", ud_token.get_attribute('HEAD'))
         tt.set_attribute("DEPREL", ud_token.get_attribute('DEPREL'))
-        tt.set_attribute("DEPS", ud_token.get_attribute('DEPS'))
-        tt.set_attribute("MISC", ud_token.get_attribute('MISC'))
 
     for frame in up.get_frames():
         tree.add_frame(frame)
