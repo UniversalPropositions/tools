@@ -22,8 +22,6 @@ COLUMNS = [
     Column("FEATS"),
     Column("HEAD"),
     Column("DEPREL"),
-    Column("DEPS"),
-    Column("MISC"),
     Column("UP:FLAG", ColumnType.UP_FLAG),
     Column("UP:PRED", ColumnType.UP_PRED),
     Column("UP:FRAME", ColumnType.UP_FRAME)
