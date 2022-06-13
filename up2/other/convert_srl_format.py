@@ -91,6 +91,8 @@ def process_file(up, output):
     t0 = time.time()
     counter = 0
     output_csv = output.replace(".conllu", ".csv")
+    output_txt = output.replace(".conllu", ".txt")
+    f_txt = open(output_txt, "w", encoding='utf8')
     if path.exists(output):
         logging.info("UP output file already exists ... skipping")
     else:
@@ -106,6 +108,7 @@ def process_file(up, output):
                 new_tree = process(tree)
                 str_tree = new_tree.to_conllup(False) #do not put global.columns
                 sen_id, sen_text = metaparse(str_tree, id)
+                f_txt.write(sen_text+"\n")
                 sen_texts.append(sen_text)
                 sen_ids.append(sen_id)
                 fo.write(str_tree + "\n\n")
@@ -114,6 +117,7 @@ def process_file(up, output):
             raise e
         df = pd.DataFrame(zip(sen_ids, sen_texts), columns=["id", "text"])
         df.to_csv(output_csv,index=False)
+        f_txt.close()
         t1 = time.time()
 
         logging.info(
