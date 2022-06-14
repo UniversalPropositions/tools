@@ -65,14 +65,14 @@ def metaparse(sen: str, id: int) -> tuple:
             if re.match(r'^# [0-9]+ #', meta_line):#len(meta_line.split("#")) >= 3: #
                 sen_id = int(meta_line.split("#")[1])
                 sen_txt = "#".join(meta_line.split("#")[2:]).strip()
-            elif meta_line.startswith("sentence-text:"):
-                sen_txt =  "sentence-text:".join(meta_line.split("sentence-text:")[1:]).strip()
-                continue
-            elif meta_line.startswith("# text = "):
-                sen_txt =  "text = ".join(meta_line.split("text = ")[1:]).strip()
-                continue
-            elif len(meta_line.split("sentence-text:")) > 1 and not re.match(r'^# \d # ', meta_line):
-                sen_txt =  "#".join(meta_line.split("#")[1:]).strip()
+            # elif meta_line.startswith("sentence-text:"):
+            #     sen_txt =  "sentence-text:".join(meta_line.split("sentence-text:")[1:]).strip()
+            #     continue
+            # elif meta_line.startswith("# text = "):
+            #     sen_txt =  "text = ".join(meta_line.split("text = ")[1:]).strip()
+            #     continue
+            # elif len(meta_line.split("sentence-text:")) > 1 and not re.match(r'^# \d # ', meta_line):
+            #     sen_txt =  "#".join(meta_line.split("#")[1:]).strip()
 
         if meta_line.startswith("# srl = "):
             srl =  json.loads("srl = ".join(meta_line.split("srl = ")[1:]).strip())
@@ -102,16 +102,24 @@ def process_file(up, output):
             os.makedirs(dir, exist_ok=True)
             fo = open(output, "w", encoding='utf8')
             for id, tree in enumerate(parse(f)):
+                do_not_include = 0
                 counter += 1
                 if counter % 1000 == 0:
                     print(f"sentence {counter}")
                 new_tree = process(tree)
                 str_tree = new_tree.to_conllup(False) #do not put global.columns
-                sen_id, sen_text = metaparse(str_tree, id)
-                f_txt.write(sen_text+"\n")
-                sen_texts.append(sen_text)
-                sen_ids.append(sen_id)
-                fo.write(str_tree + "\n\n")
+                sen_tree = str_tree.split("\n")
+                for tok_line in sen_tree:
+                    # print(tok_line)
+                    if (tok_line[0]!= "#") and (len(tok_line.split("\t")[0].split("-")) > 1):
+                        do_not_include = 1
+                        break
+                if do_not_include == 0:
+                    sen_id, sen_text = metaparse(str_tree, id)
+                    f_txt.write(sen_text+"\n")
+                    sen_texts.append(sen_text)
+                    sen_ids.append(sen_id)
+                    fo.write(str_tree + "\n\n")
         except Exception as e:
             logging.error(e)
             raise e
@@ -154,5 +162,6 @@ if __name__ == '__main__':
                         help='Output SRL conllu file/folder')
 
     args = parser.parse_args()
-
+    args.input_up="/Users/ishan/git/external/universalproposition/UDUP_German-GSD"
+    args.output="/Users/ishan/git/external/universalproposition/conllu/UP_German-GSD"
     convert_srl_format(args.input_up, args.output)
