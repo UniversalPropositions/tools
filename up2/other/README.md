@@ -15,3 +15,13 @@ It is possible to provide folders as arguments or single files.
 ```
 python3 up2/other/convert_srl_format.py --input_up=./data/up_data --output=./data/up_data_old_format
 ```
+## fix_up.py
+Fixes predicate/sense position and argument tokens for sentences with some additional tokens like for example: 14.1
+It is important to have up to date conllup library installed on virtual environment:
+```
+pip install --force dist/conllup-0.1.0-py3-none-any.whl
+```
+It is possible to provide folders as arguments or single files.
+```
+python3 up2/other/fix_up.py --input_up=./data/up --output=./data/up_fixed
+```
