@@ -12,6 +12,9 @@ from conllup.model.column import Column, ColumnType
 from os import path
 import glob
 import os
+import re
+import json
+import pandas as pd
 
 COLUMNS = [
     Column("ID", ColumnType.ID),
@@ -52,10 +55,44 @@ def process(up: Tree) -> Tree:
 
     return up
 
+def metaparse(sen: str, id: int) -> tuple:
+    sen_txt = ''
+    sen_id = ''
+    sen = sen.split("\n")
+
+    for meta_line in sen:
+        if sen_txt == '':
+            if re.match(r'^# [0-9]+ #', meta_line):#len(meta_line.split("#")) >= 3: #
+                sen_id = int(meta_line.split("#")[1])
+                sen_txt = "#".join(meta_line.split("#")[2:]).strip()
+            elif meta_line.startswith("sentence-text:"):
+                sen_txt =  "sentence-text:".join(meta_line.split("sentence-text:")[1:]).strip()
+                continue
+            elif meta_line.startswith("# text = "):
+                sen_txt =  "text = ".join(meta_line.split("text = ")[1:]).strip()
+                continue
+            elif len(meta_line.split("sentence-text:")) > 1 and not re.match(r'^# \d # ', meta_line):
+                sen_txt =  "#".join(meta_line.split("#")[1:]).strip()
+
+        if meta_line.startswith("# srl = "):
+            srl =  json.loads("srl = ".join(meta_line.split("srl = ")[1:]).strip())
+        if meta_line.startswith("# sent_id = "):
+            sen_id =  "sent_id = ".join(meta_line.split("sent_id = ")[1:]).strip()
+    if sen_id == '':
+        sen_id = id
+    if sen_txt == '':
+        sen_txt = " ".join(list(map(list, zip(*[x.split("\t")  for x in sen if x[0] != "#"])))[1])
+    return (sen_id, sen_txt)
+
 def process_file(up, output):
+    sen_ids = []
+    sen_texts = []
     logging.info(f'Starting {up}')
     t0 = time.time()
     counter = 0
+    output_csv = output.replace(".conllu", ".csv")
+    output_txt = output.replace(".conllu", ".txt")
+    f_txt = open(output_txt, "w", encoding='utf8')
     if path.exists(output):
         logging.info("UP output file already exists ... skipping")
     else:
@@ -64,17 +101,23 @@ def process_file(up, output):
             dir = path.dirname(output)
             os.makedirs(dir, exist_ok=True)
             fo = open(output, "w", encoding='utf8')
-            for tree in parse(f):
+            for id, tree in enumerate(parse(f)):
                 counter += 1
                 if counter % 1000 == 0:
                     print(f"sentence {counter}")
                 new_tree = process(tree)
                 str_tree = new_tree.to_conllup(False) #do not put global.columns
+                sen_id, sen_text = metaparse(str_tree, id)
+                f_txt.write(sen_text+"\n")
+                sen_texts.append(sen_text)
+                sen_ids.append(sen_id)
                 fo.write(str_tree + "\n\n")
         except Exception as e:
             logging.error(e)
             raise e
-
+        df = pd.DataFrame(zip(sen_ids, sen_texts), columns=["id", "text"])
+        df.to_csv(output_csv,index=False)
+        f_txt.close()
         t1 = time.time()
 
         logging.info(
